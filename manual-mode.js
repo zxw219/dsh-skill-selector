@@ -9,7 +9,7 @@ const idsOf = trial => trial.kind === 'combination' ? trial.members.map(m => m.s
 export const selectionMarker = id => `[DSH技能选择:${id}]`;
 
 export class ManualSkillMode {
-  constructor(ctx, settings, service) { Object.assign(this, {ctx, settings, service}); }
+  constructor(ctx, settings, service) { Object.assign(this, {ctx, settings, service}); this.published = new WeakMap(); }
   enabled() { return this.settings.global.get().enabled; }
   status() { return {enabled:this.enabled(),scope:'profile',notice:'当前配置下所有对话统一生效。普通消息不自动加载技能；发送选择草稿或 /技能名 才加载。已加载的历史内容不会清除。关闭后恢复原调用规则。'}; }
   async set(enabled) {
@@ -23,8 +23,42 @@ export class ManualSkillMode {
   async enter(payload, next) {
     // Prepend this outer listener so the returned decision already includes the native catalog/invocations.
     const decision = await next();
-    if (decision.kind === 'reject' || !this.enabled()) return decision;
+    if (decision.kind === 'reject') return decision;
     const {agent, signal} = payload;
+    const enabled = this.enabled();
+    let previous = this.published.get(agent);
+    if (previous === undefined) {
+      // Recover policy state after restart/fork from visible durable messages, including v0.6.0.
+      const session = agent.session;
+      if (session?.eventAt && session.surface?.nodes) {
+        const visible = new Set(session.surface.nodes);
+        for (let index = session.seq - 1; index >= 0; index--) {
+          const event = session.eventAt(index);
+          if (event?.type !== 'user/message' || !visible.has(event.seq)) continue;
+          const message = event.data;
+          if (message.source?.kind === 'skill-selector-policy') { previous = message.source.enabled; break; }
+          if (message.source?.kind === 'skill-catalog' && textOf(message) === POLICY) { previous = true; break; }
+        }
+      }
+    }
+    if (previous !== undefined) this.published.set(agent,previous);
+    if (!enabled) {
+      if (previous !== true) { this.published.set(agent,false); return decision; }
+      const messages = [...decision.messages];
+      // Native catalog caches may suppress an update. Re-publish current scoped availability,
+      // never an old cached catalog, and explicitly retire the earlier manual instruction.
+      if (!messages.some(m => m.source?.kind === 'skill-catalog')) {
+        const snapshot = this.ctx.tools.get('skill',agent)
+          ? await this.service.registry(agent).snapshot({cwd:await this.ctx.workingDirectory.ensure(agent,signal),scope:agent,signal})
+          : {skills:[],complete:true};
+        const entries = snapshot.skills.filter(s => s.invocation.modelInvocable).map(s => ({name:s.name,description:s.description}));
+        const escape = text => text.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+        messages.push(injection('<available_skills>\n'+entries.map(s => '- `'+s.name+'`: '+escape(s.description)).join('\n')+'\n</available_skills>\n当前目录替换此前的空目录；仅按当前可用技能和宿主原生调用规则加载。'+(!snapshot.complete?' 技能发现尚未完整，仅使用已确认项目。':''),{kind:'skill-catalog',form:'catalog',entries,update:true,...(!snapshot.complete?{incomplete:true}:{})}));
+      }
+      messages.push(injection('手动技能模式已关闭。此前“普通消息不自动加载技能、仅选择草稿授权”的模式限制已撤销；后续恢复宿主原生技能目录与调用规则。仍遵守用户要求及宿主权限。',{kind:'skill-selector-policy',enabled:false}));
+      this.published.set(agent,false);
+      return {...decision,messages};
+    }
     const direct = payload.messages.filter(m => m.role === 'user' && m.source?.kind === 'user');
     const permitted = new Set();
     const selected = [];
@@ -64,8 +98,12 @@ export class ManualSkillMode {
       }
       messages.push(injection(`<skill_content name="${id}">\n${resourceBase ? '<skill_resources>\n'+JSON.stringify(resourceBase)+'\n相对参考资源从上述位置读取。\n</skill_resources>\n' : ''}<skill_instructions>\n${content}\n</skill_instructions>\n</skill_content>`, {kind:'skill-invocation',name:id,form:'instructions'}));
     }
-    // Publish an empty replacement catalog, including its durable provenance, to retire earlier automatic catalogs.
-    messages.push(injection(POLICY,{kind:'skill-catalog',form:'catalog',entries:[],update:true}));
+    // Filter every step, but publish guidance only on entry or a real mode transition.
+    if (previous !== true) {
+      messages.push(injection(POLICY,{kind:'skill-catalog',form:'catalog',entries:[],update:true}));
+      messages.push(injection('手动技能模式状态：已开启。',{kind:'skill-selector-policy',enabled:true}));
+      this.published.set(agent,true);
+    }
     return {...decision,messages};
   }
 }
