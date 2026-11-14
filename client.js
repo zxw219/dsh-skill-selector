@@ -1,6 +1,6 @@
 /* Native skill selector client. React is supplied by the DSH module loader. */
 window.__ModuleLoader__.load({
-  id: 'dsh-skill-selector-grouped',
+  id: 'dsh-skill-selector-default-manual',
   factory(require) {
     const React = require('react');
     const h = React.createElement;

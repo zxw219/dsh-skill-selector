@@ -25,7 +25,7 @@ export class ManualSkillMode {
     if (existing) return existing;
     if (!this.initializing.has(id)) {
       // Snapshot defaults once. Future default edits never rewrite existing conversations.
-      const initial = {enabled:false,allowlist:[...this.settings.global.get().allowlist]};
+      const initial = {enabled:true,allowlist:[...this.settings.global.get().allowlist]};
       const pending = table.put(id,initial).then(()=>initial).finally(()=>this.initializing.delete(id));
       this.initializing.set(id,pending);
     }
@@ -34,7 +34,7 @@ export class ManualSkillMode {
   enabled(agent) { return this.settings.table('sessions').get(this.sessionId(agent))?.enabled ?? false; }
   async status(agent) {
     const policy = await this.ensure(agent);
-    return {...policy,allowlist:[...policy.allowlist],scope:'session',sessionId:agent.id,defaultAllowlist:[...this.settings.global.get().allowlist],notice:'开关和自动调用名单仅影响当前对话。新对话默认关闭手动模式，并在首次使用策略时复制默认白名单；修改默认名单不覆盖已有对话。关闭时恢复原生规则，历史技能内容不清除。'};
+    return {...policy,allowlist:[...policy.allowlist],scope:'session',sessionId:agent.id,defaultAllowlist:[...this.settings.global.get().allowlist],notice:'开关和自动调用名单仅影响当前对话。新对话默认开启手动模式，并在首次使用策略时复制默认白名单；修改默认名单不覆盖已有对话。关闭时恢复原生规则，历史技能内容不清除。'};
   }
   async set(agent, enabled) {
     if (typeof enabled !== 'boolean') throw Error('手动模式必须为布尔值');

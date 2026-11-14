@@ -13,14 +13,18 @@ const msg=(text,kind='user')=>({id:randomUUID(),role:'user',source:{kind},conten
 const skill=name=>({...msg('Body'),source:{kind:'skill-invocation',name,form:'instructions'}});
 const catalog={...msg('all skills'),source:{kind:'skill-catalog',form:'catalog',entries:[{name:'automatic',description:'automatic'}]}};
 const enter=(agent,messages=[],injected=[])=>mode.enter({agent,messages,signal:new AbortController().signal},async()=>({kind:'enter',messages:[...messages,...injected],startsRequestSeries:true}));
-await mode.ensure(a);assert.equal(mode.enabled(a),false);
+await mode.ensure(a);assert.equal(mode.enabled(a),true);
 await mode.setAllowlist(a,['automatic'],true);await mode.ensure(b);
 assert.deepEqual((await mode.status(a)).allowlist,[]);assert.deepEqual((await mode.status(b)).allowlist,['automatic']);
 await mode.setAllowlist(a,['other'],true);await mode.ensure(c);
 assert.deepEqual((await mode.status(b)).allowlist,['automatic']);assert.deepEqual((await mode.status(c)).allowlist,['other']);
 await Promise.all([mode.ensure(d),mode.ensure(d)]);assert.deepEqual((await mode.status(d)).allowlist,['other']);
 await mode.set(a,true);await mode.setAllowlist(a,['automatic']);loaded.length=0;
-assert.equal(mode.enabled(b),false);assert.equal(mode.guard({name:'skill',agent:b,arguments:{name:'other'}}),undefined);
+assert.equal(mode.enabled(b),true);
+assert.ok(mode.guard({name:'skill',agent:b,arguments:{name:'other'}}),'A new conversation starts restricted');
+await mode.set(b,false);
+assert.equal(mode.enabled(b),false);
+assert.equal(mode.guard({name:'skill',agent:b,arguments:{name:'other'}}),undefined);
 assert.equal(mode.guard({name:'skill',agent:a,arguments:JSON.stringify({name:'automatic'}),parent:Symbol()}),undefined);
 assert.ok(mode.guard({name:'skill',agent:a,arguments:{name:'other'},parent:Symbol()}));assert.ok(mode.guard({name:'skill',arguments:{name:'automatic'}}));assert.equal(mode.guard({name:'read'}),undefined);
 let result=await enter(a,[msg('普通聊天')],[catalog,skill('not-allowed')]);assert.equal(result.startsRequestSeries,true);assert.ok(!result.messages.some(m=>m.source?.kind==='skill-invocation'));assert.deepEqual(result.messages.find(m=>m.source?.kind==='skill-catalog').source.entries.map(s=>s.name),['automatic']);
@@ -39,7 +43,7 @@ await mode.set(a,false);result=await enter(a);assert.deepEqual(result.messages.f
 result=await enter(a,[msg(prompt)]);assert.ok(result.messages.some(m=>m.source?.name==='model-only'),'An explicit saved draft still loads after switching off');
 const original={kind:'enter',messages:[catalog]};assert.equal(await mode.enter({agent:a,messages:[]},async()=>original),original);
 // Old global policy in visible history is explicitly revoked; fresh B remains native.
-const legacy={...msg('legacy'),source:{kind:'skill-selector-policy',enabled:true}};const old={id:'old',session:{seq:1,surface:{nodes:[0]},eventAt:()=>({seq:0,type:'user/message',data:legacy})}};
+const legacy={...msg('legacy'),source:{kind:'skill-selector-policy',enabled:true}};sessions.set('old',{enabled:false,allowlist:[]});const old={id:'old',session:{seq:1,surface:{nodes:[0]},eventAt:()=>({seq:0,type:'user/message',data:legacy})}};
 result=await new ManualSkillMode(ctx,settings,service).enter({agent:old,messages:[]},async()=>({kind:'enter',messages:[]}));assert.ok(result.messages.some(m=>m.source?.enabled===false));
 await assert.rejects(()=>mode.set(a,'false'),/布尔/);
 console.log('PASS: session switch isolation; one-time default snapshots; default edits preserve existing sessions; nested allowlist guard; filtered catalog updates; manual model-only/combo drafts; spoof and cross-session rejection; stale ID removal; old global-policy revocation; native restoration.');

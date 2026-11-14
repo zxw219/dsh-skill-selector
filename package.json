@@ -1,6 +1,6 @@
 {
-  "name": "dsh-skill-selector-grouped",
-  "version": "0.8.0",
+  "name": "dsh-skill-selector-default-manual",
+  "version": "0.9.0",
   "private": true,
   "dependencies": {
     "zod": "^4.0.0"
