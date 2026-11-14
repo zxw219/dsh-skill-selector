@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-11-13T19:58:43Z",
+  "purpose": "Read-only verification of full official online originals for DSH sidebar browser; no replacement sample application, local installation, profile modification or server startup.",
+  "desktopWebviewActuallyVerified": false,
+  "desktopWebviewVerificationOwner": "lead",
+  "recommendation": "Use the author-hosted online originals below. Both are reachable, so local deployment is unnecessary. Verify actual DSH desktop rendering and clipboard/export/storage operations separately.",
+  "projects": [
+    {
+      "name": "AI Visual Prompt Cookbook",
+      "requestedRepository": "https://github.com/VigoZhao/AI-Visual-Prompt-Cookbook",
+      "officialRepository": "https://github.com/VigoZhao/AI-Visual-Prompt-Cookbook",
+      "readme": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/main/README.md",
+      "recommendedUrl": "https://prompts.vigocreativeai.com/site/",
+      "officialLinkEvidence": "The official README links this domain and /site/ path as its online gallery.",
+      "http": {
+        "status": 200,
+        "finalUrl": "https://prompts.vigocreativeai.com/site/",
+        "contentType": "text/html; charset=utf-8",
+        "readableContent": "AI Visual Prompt Cookbook title, how-to-use instructions, categories and style index. Individual style pages expose the complete JSON in readable HTML.",
+        "xFrameOptions": null,
+        "contentSecurityPolicy": null
+      },
+      "fullContentEvidence": {
+        "declaredStyleCount": 186,
+        "liveDataStyleCount": 186,
+        "entriesWithJsonText": 186,
+        "standardPreviewCountDeclaredInReadme": 372,
+        "categories": ["Photo + Doodle", "Zine + Collage", "Type Posters", "Travel + City", "Editorial + Minimal", "Product + Campaign"],
+        "dataUrl": "https://prompts.vigocreativeai.com/site/styles-data.js?v=de24972cd8",
+        "dataHttpStatus": 200,
+        "exampleFullStylePage": "https://prompts.vigocreativeai.com/site/styles/acid-parallax/",
+        "exampleFullStylePageHttpStatus": 200,
+        "completeBoundary": "The full library is 186 reusable style systems, each with its complete style.json plus examples and preview assets. Complete JSON includes prompt_template, environment_variables, examples values, style fidelity anchors, source exclusions and negative_prompt where supplied. A handful of example prompts or a short brief is not the full library. Family grouping can collapse cards without removing entries."
+      },
+      "authorRecommendedUsage": [
+        "Browse/search the gallery and select a style, example and aspect ratio.",
+        "Copy the complete style.json into ChatGPT, Gemini, Claude or another LLM image workflow and replace variables/example values for the intended subject.",
+        "For tools expecting a plain prompt, use the gallery rendered text; short briefs are convenience alternatives rather than equivalent complete style JSON."
+      ],
+      "latestRepositoryEvidence": {
+        "url": "https://api.github.com/repos/VigoZhao/AI-Visual-Prompt-Cookbook/commits/main",
+        "status": 200,
+        "sha": "e3f7f518c5529c50fc2e0084df00f766a72eabeb",
+        "authorDate": "2026-11-13T15:06:11Z"
+      }
+    },
+    {
+      "name": "Prompt Fill",
+      "requestedRepository": "https://github.com/4xiaxia/PromptFill",
+      "requestedRepositoryIsFork": true,
+      "officialRepository": "https://github.com/TanShilongMario/PromptFill",
+      "forkRelationshipEvidence": "https://api.github.com/repos/4xiaxia/PromptFill",
+      "readme": "https://raw.githubusercontent.com/TanShilongMario/PromptFill/main/README.md",
+      "requestedRepositoryReadme": "https://raw.githubusercontent.com/4xiaxia/PromptFill/main/README.md",
+      "recommendedUrl": "https://www.aipromptfill.com/",
+      "officialLinkEvidence": "The requested GitHub fork API declares parent/source TanShilongMario/PromptFill and homepage https://aipromptfill.com; the fork README itself recommends cloning TanShilongMario/PromptFill.",
+      "http": {
+        "status": 200,
+        "finalUrl": "https://www.aipromptfill.com/",
+        "contentType": "text/html; charset=utf-8",
+        "apexUrl": "https://aipromptfill.com/",
+        "apexRedirectStatus": 307,
+        "apexLocation": "https://www.aipromptfill.com/",
+        "readableContent": "HTML title is 提示词填空器 (Prompt Fill) - 专业的 AI 提示词管理与管理工具. The application is a React SPA, so text-only fetch yields little UI text. Live application bundle and full JSON library were separately verified.",
+        "xFrameOptions": null,
+        "contentSecurityPolicy": null
+      },
+      "fullContentEvidence": {
+        "appVersion": "1.1.6",
+        "dataVersion": "1.2.3",
+        "liveTemplateCount": 248,
+        "bankCount": 290,
+        "bankOptionCount": 2291,
+        "templatesUrl": "https://www.aipromptfill.com/data/templates.json",
+        "templatesHttpStatus": 200,
+        "banksUrl": "https://www.aipromptfill.com/data/banks.json",
+        "banksHttpStatus": 200,
+        "appBundleUrl": "https://www.aipromptfill.com/assets/index-B1D9X2_D.js",
+        "appBundleHttpStatus": 200,
+        "appBundleVersionEvidence": ["APP_VERSION=\"1.1.6\"", "SYSTEM_DATA_VERSION=\"1.2.3\""],
+        "requestedForkAppVersion": "1.1.4",
+        "requestedForkDataVersion": "1.2.1",
+        "requestedForkTemplateCount": 84,
+        "requestedForkDataUrl": "https://raw.githubusercontent.com/4xiaxia/PromptFill/main/public/data/templates.json",
+        "requestedForkDataHttpStatus": 200,
+        "completeBoundary": "The current original is the upstream author-hosted full editor and library: 248 bilingual templates, variable banks, discovery/search, visual variable editing, preview dropdowns, copy, JSON import/export and JPG export. Includes four GIF templates and community adaptations with creator/source credits. The requested fork remains an older 84-template snapshot. Full original does not imply free image-model inference or guaranteed availability of optional cloud AI/short-link services; those operations were not invoked. Independent video editor/knowledge/UI Test pages were removed upstream in v1.1.4, while video templates remain. GIF preview remains animated, long-image export remains static JPG."
+      },
+      "authorRecommendedUsage": [
+        "Manage categories and create variable banks; browse or clone a template.",
+        "In the visual template editor, type / or { for autocomplete, or enter {{variable}} / {{key: value}} and drag banks into the prompt.",
+        "Switch to preview interaction and choose dropdown values or add custom options.",
+        "Copy the final prompt or export a JPG; use JSON import/export for backup and cross-device transfer.",
+        "User data is held in browser storage (IndexedDB; some README passages retain older LocalStorage wording). Folder storage and clipboard/export capabilities need verification in the actual DSH browser host."
+      ],
+      "localFallbackIfOnlineUnavailable": {
+        "neededNow": false,
+        "authorInstructions": ["Node.js v18+", "git clone https://github.com/TanShilongMario/PromptFill.git", "npm install", "npm run dev", "npm run build"],
+        "optionalShareApiConfig": "VITE_SHARE_API_URL",
+        "shareApiRequirement": "Optional; without it the app uses long-URL sharing. No private share server is required for the editor/library."
+      },
+      "latestRepositoryEvidence": {
+        "url": "https://api.github.com/repos/TanShilongMario/PromptFill/commits/main",
+        "status": 200,
+        "sha": "5f9ab45cd096e6d2f1a7ccc077f97a8ba166fc35",
+        "authorDate": "2026-11-08T16:05:14Z"
+      }
+    }
+  ],
+  "embeddingEvidence": {
+    "onlineOriginals": "Both final app HTML GET responses lacked X-Frame-Options and Content-Security-Policy at verification time. This is positive header evidence only, not proof of successful embedding or working DSH desktop permissions.",
+    "githubRepositories": {
+      "status": 200,
+      "xFrameOptions": "deny",
+      "contentSecurityPolicyFrameAncestors": "'none'",
+      "consequence": "Ordinary browser iframe embedding of GitHub repository pages is blocked by GitHub; prefer the online originals above. Native desktop webview behavior must be tested by lead."
+    }
+  },
+  "verificationLimits": [
+    "Read-only HTTP/content/header investigation; did not claim successful DSH desktop rendering.",
+    "Did not invoke AI generation, sharing APIs, clipboard, file export, local folder picker or modify either online application's user state.",
+    "Responses and main branches can change after this timestamp."
+  ]
+}

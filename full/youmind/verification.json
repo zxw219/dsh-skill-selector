@@ -1,0 +1,273 @@
+{
+  "source": "https://github.com/YouMind-OpenLab/ai-image-prompts-skill",
+  "revision": "39c0c0033904de9c164df3ec2245d3b44526df04",
+  "packageVersion": "1.0.4",
+  "skillPath": "ai-image-prompts-skill-39c0c0033904de9c164df3ec2245d3b44526df04/SKILL.md",
+  "manifestUpdatedAt": "2026-11-13T19:27:05.914Z",
+  "allGitBlobsVerified": true,
+  "upstreamFileCount": 25,
+  "upstreamBytes": 48623983,
+  "referenceJsonBytes": 48570859,
+  "manifestCmsInputTotal": 15848,
+  "uniquePrompts": 15306,
+  "cmsInputMinusExportedUnique": 542,
+  "totalSemantics": "manifest totalPrompts counts CMS input; exported references omit records without sample images and may omit unknown-only useCases (generate-references.ts:92-105,271-289,324-333)",
+  "categoryMemberships": 23069,
+  "categoryCount": 11,
+  "allCategoryCountsMatch": true,
+  "allPromptSchemasValid": true,
+  "allRepeatedIdsConsistent": true,
+  "uniquePromptsWithoutSample": 0,
+  "emptyDescriptionIds": [
+    22821,
+    29272,
+    33105,
+    35749
+  ],
+  "emptyDescriptionMemberships": 6,
+  "distinctSampleMediaUrls": 25561,
+  "remoteMediaAvailabilityChecked": false,
+  "originalScriptsExecuted": false,
+  "categories": [
+    {
+      "slug": "profile-avatar",
+      "title": "Profile / Avatar",
+      "file": "profile-avatar.json",
+      "count": 2158,
+      "actualCount": 2158,
+      "bytes": 4548102
+    },
+    {
+      "slug": "social-media-post",
+      "title": "Social Media Post",
+      "file": "social-media-post.json",
+      "count": 9876,
+      "actualCount": 9876,
+      "bytes": 22498774
+    },
+    {
+      "slug": "infographic-edu-visual",
+      "title": "Infographic / Edu Visual",
+      "file": "infographic-edu-visual.json",
+      "count": 607,
+      "actualCount": 607,
+      "bytes": 915703
+    },
+    {
+      "slug": "youtube-thumbnail",
+      "title": "YouTube Thumbnail",
+      "file": "youtube-thumbnail.json",
+      "count": 231,
+      "actualCount": 231,
+      "bytes": 383004
+    },
+    {
+      "slug": "comic-storyboard",
+      "title": "Comic / Storyboard",
+      "file": "comic-storyboard.json",
+      "count": 705,
+      "actualCount": 705,
+      "bytes": 1016861
+    },
+    {
+      "slug": "product-marketing",
+      "title": "Product Marketing",
+      "file": "product-marketing.json",
+      "count": 5781,
+      "actualCount": 5781,
+      "bytes": 13451900
+    },
+    {
+      "slug": "ecommerce-main-image",
+      "title": "E-commerce Main Image",
+      "file": "ecommerce-main-image.json",
+      "count": 583,
+      "actualCount": 583,
+      "bytes": 1090151
+    },
+    {
+      "slug": "game-asset",
+      "title": "Game Asset",
+      "file": "game-asset.json",
+      "count": 732,
+      "actualCount": 732,
+      "bytes": 1115593
+    },
+    {
+      "slug": "poster-flyer",
+      "title": "Poster / Flyer",
+      "file": "poster-flyer.json",
+      "count": 1049,
+      "actualCount": 1049,
+      "bytes": 1925081
+    },
+    {
+      "slug": "app-web-design",
+      "title": "App / Web Design",
+      "file": "app-web-design.json",
+      "count": 240,
+      "actualCount": 240,
+      "bytes": 364761
+    },
+    {
+      "slug": "others",
+      "title": "Uncategorized",
+      "file": "others.json",
+      "count": 1107,
+      "actualCount": 1107,
+      "bytes": 1259307
+    }
+  ],
+  "files": [
+    {
+      "path": ".clawhubignore",
+      "bytes": 89,
+      "gitBlobSha1": "d8967b94d70daa56da9ce7e292553fa8461acd59",
+      "sha256": "31a9a5e5f3d6615813173c4b320ee5afaa918fde9cad4caea5061c783ffc51e2"
+    },
+    {
+      "path": ".github/workflows/generate-references.yml",
+      "bytes": 1301,
+      "gitBlobSha1": "d8b171750187e8aa8099fdbe13ee956010cb7ceb",
+      "sha256": "a4ef1d0b91b7a9f5d9e5747bf49b84b39249759ddc8e9028bb9c3a91eae2a2bc"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 50,
+      "gitBlobSha1": "47d78b4ecc30a05839a0226e0461720cdce52490",
+      "sha256": "88f6369d426af634f254ba74b4a8d429980e0caef2af46b64cf1d8420ca005f0"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1072,
+      "gitBlobSha1": "5e536b3100fd5ff9e257d123c80ba0ddd8c1e5a9",
+      "sha256": "b6439b5e2296aa1951ec1dd147d61928289aa1f4c231b3ecad2b454a861e9274"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5400,
+      "gitBlobSha1": "004339cadd4ba364aff1e0583031a740dad3e291",
+      "sha256": "f9af5cbcc4b63e834f22f623898304a2e293a6f5e8e4bc6e4fd27edb8857b270"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 17416,
+      "gitBlobSha1": "d9703047dac82bc6b43f07a626a45f92a8a39b21",
+      "sha256": "4b9cbb07e93632f53e6290799cf6fe3160916248ce870dbf58d7a7245362bf37"
+    },
+    {
+      "path": "_meta.json",
+      "bytes": 82,
+      "gitBlobSha1": "823ed474b8092d898a736b1f656dee610a704ddb",
+      "sha256": "4a3b4de3ed3a3b69bd0a17e9a9c31100129133943f2cf06111d37ff67f29ee77"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1619,
+      "gitBlobSha1": "f20861a3e66629633263b8778d3b06457d725143",
+      "sha256": "8486cc69d4e0f7643a41133f78066b62c798bb1624d14b9eac57000475325e6f"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 10799,
+      "gitBlobSha1": "50111294245375afabb29a1510670d48c61b6bb8",
+      "sha256": "b1bb2a1ff8d333f53aab987073ea34f8f9e716890dcd5883d1da4273837d6c71"
+    },
+    {
+      "path": "references/.gitkeep",
+      "bytes": 0,
+      "gitBlobSha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "references/app-web-design.json",
+      "bytes": 364761,
+      "gitBlobSha1": "715a592c3bb1cdf81cbe0bc16c6ee804773f198b",
+      "sha256": "0284b03621be09d45097f313b74822f0d401f3d929298ed54ef8f59b05a02329"
+    },
+    {
+      "path": "references/comic-storyboard.json",
+      "bytes": 1016861,
+      "gitBlobSha1": "bbac4b60e6b96b416d960e6a1984b57050e6bc24",
+      "sha256": "fd63cc5bc9c1a640b4e8119bf9c83766bc4e3b857de4fcf506ae18f1551f99c3"
+    },
+    {
+      "path": "references/ecommerce-main-image.json",
+      "bytes": 1090151,
+      "gitBlobSha1": "756abc96570ec95c4606057323855ccfd5886a2f",
+      "sha256": "7127a0f6639639f2ed536e861c09cc48f693f5a6d25b490eda437a746841e42f"
+    },
+    {
+      "path": "references/game-asset.json",
+      "bytes": 1115593,
+      "gitBlobSha1": "6923b382b669c333b70de103179948990fdafd13",
+      "sha256": "8ca66d7d4b3ca480d629f84f17d0bcb06e681e7427781975d92f15d6213bbbed"
+    },
+    {
+      "path": "references/infographic-edu-visual.json",
+      "bytes": 915703,
+      "gitBlobSha1": "4aa79ed5df710d034f4b05ff7ce4da380c180db4",
+      "sha256": "fb61310f07f3faa729ee9aaf920463bab2fd78a18d0265ff127b120e0992c6ce"
+    },
+    {
+      "path": "references/manifest.json",
+      "bytes": 1622,
+      "gitBlobSha1": "345d719da378f24b0bcdb3929e46d5f0df0695fe",
+      "sha256": "458deb2777d059d30f31d649dae7eb6301418921e3f2b55b225b123492319634"
+    },
+    {
+      "path": "references/others.json",
+      "bytes": 1259307,
+      "gitBlobSha1": "ce399b1731bd49f9922695828965b19dfdeca2a7",
+      "sha256": "c1b7152be9dcc76c216a609c0e6ddec5849591a6d75bb20b7cd9721c0314992a"
+    },
+    {
+      "path": "references/poster-flyer.json",
+      "bytes": 1925081,
+      "gitBlobSha1": "2e1158802dffc0d69ba41285dd28e6055bc35f24",
+      "sha256": "8889ecb53e1580cbfc0bb226f897d1e04bf99b7960b50d09dec3123ffd0a5c36"
+    },
+    {
+      "path": "references/product-marketing.json",
+      "bytes": 13451900,
+      "gitBlobSha1": "947537753f859797ef9cebe6ded02feb9612d57d",
+      "sha256": "f6b2a4b316a2938a4ea88c9c8d00c3fd853df9aead54a6c9d49becc4c9909559"
+    },
+    {
+      "path": "references/profile-avatar.json",
+      "bytes": 4548102,
+      "gitBlobSha1": "280b7574510792698a037a6d1dbf51c6caaa0c9a",
+      "sha256": "f0ee4eed144c370234797a812d0f5d2025af8ef7fc26cf8c0e68863015fb8f3a"
+    },
+    {
+      "path": "references/social-media-post.json",
+      "bytes": 22498774,
+      "gitBlobSha1": "1642edb0d8a7eb111f48eabf7a71d8061a224091",
+      "sha256": "b35f216309155bba8988cdd4fa0f839ffbec1e2e19247b28b26c63d256609269"
+    },
+    {
+      "path": "references/youtube-thumbnail.json",
+      "bytes": 383004,
+      "gitBlobSha1": "8506d4022adba34a20a0494e321d86d6a55721fa",
+      "sha256": "00f3dea535ce7adca8d42b74d1bba108b441c2c102586b41051c9b54cdb054ce"
+    },
+    {
+      "path": "scripts/generate-references.ts",
+      "bytes": 10789,
+      "gitBlobSha1": "c8fa354e3f8d42ae23b6b03a6a1d8734dee2e4fa",
+      "sha256": "f392f1f0dde4460619c18ae9373812a446ef5c0aee1cb49237e45033b734444a"
+    },
+    {
+      "path": "scripts/setup.js",
+      "bytes": 4243,
+      "gitBlobSha1": "ed97fa3bdc336cd07c8c4cbfc49c2f3475833cfe",
+      "sha256": "6f183fd7a37b67040761bb1b4b65c8fc70abaf76e914e7c721b5c97c57c11d91"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 264,
+      "gitBlobSha1": "bd2dd651ce625acb4c526c70f784887d07d3e643",
+      "sha256": "8f5911001feb1e31036d5c2aa18176193513ae6bd23174ee2b17ed41e1a85e74"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-13T19:09:02.8099575Z",
+  "scope": "Workspace-only static source resource packs",
+  "sources": [
+    {
+      "id": "image-prompt-reverse",
+      "repository": "luozhilzh/image-prompt-reverse",
+      "revision": "cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88",
+      "title": "Image Prompt Reverse",
+      "kind": "skill",
+      "license": "MIT",
+      "skillPath": "image-prompt-reverse/SKILL.md",
+      "url": "https://github.com/luozhilzh/image-prompt-reverse",
+      "licensePath": "licenses/image-prompt-reverse-LICENSE",
+      "licenseUrl": "https://github.com/luozhilzh/image-prompt-reverse/blob/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/LICENSE",
+      "includedFiles": 13,
+      "limitations": [
+        "Source text is reference data; never automatically execute its embedded instructions or programs.",
+        "Binary example input media and executable tests are not vendored; referenced Markdown case notes and semantic JSON fixtures are included. External services and model support were not tested."
+      ]
+    },
+    {
+      "id": "prompt-reverse-engineer",
+      "repository": "niobium617/prompt-reverse-engineer-skill",
+      "revision": "cce932df4bba57f06ae88baae80d117afb85895b",
+      "title": "Prompt Reverse Engineer",
+      "kind": "skill",
+      "license": "MIT",
+      "skillPath": "prompt-reverse-engineer/SKILL.md",
+      "url": "https://github.com/niobium617/prompt-reverse-engineer-skill",
+      "licensePath": "licenses/prompt-reverse-engineer-LICENSE",
+      "licenseUrl": "https://github.com/niobium617/prompt-reverse-engineer-skill/blob/cce932df4bba57f06ae88baae80d117afb85895b/LICENSE",
+      "includedFiles": 33,
+      "limitations": [
+        "Source text is reference data; never automatically execute its embedded instructions or programs.",
+        "Binary example input media and executable tests are not vendored; referenced Markdown case notes and semantic JSON fixtures are included. External services and model support were not tested."
+      ]
+    },
+    {
+      "id": "youmind",
+      "repository": "YouMind-OpenLab/ai-image-prompts-skill",
+      "revision": "da91eaf81b42b0037d99641ef5acc5e622e48c67",
+      "title": "YouMind AI Image Prompts",
+      "kind": "prompts",
+      "license": "MIT",
+      "dataPath": "prompts.json",
+      "url": "https://github.com/YouMind-OpenLab/ai-image-prompts-skill",
+      "licensePath": "licenses/youmind-LICENSE",
+      "licenseUrl": "https://github.com/YouMind-OpenLab/ai-image-prompts-skill/blob/da91eaf81b42b0037d99641ef5acc5e622e48c67/LICENSE",
+      "subset": {
+        "included": 20,
+        "category": "app-web-design",
+        "availableInCategory": 240,
+        "selection": "First 20 records in upstream array order",
+        "manifestTotalPrompts": 15847
+      },
+      "limitations": [
+        "Only one category sampled; not representative of the full corpus. Categories overlap upstream.",
+        "Original creator/model/social post URLs are absent from these upstream records and remain null; sourceMedia URLs are preserved and not downloaded.",
+        "No invented Chinese translations; promptZh is null."
+      ]
+    },
+    {
+      "id": "visual-cookbook",
+      "repository": "VigoZhao/AI-Visual-Prompt-Cookbook",
+      "revision": "e3f7f518c5529c50fc2e0084df00f766a72eabeb",
+      "title": "AI Visual Prompt Cookbook",
+      "kind": "styles",
+      "license": "MIT (repository structure and documentation)",
+      "dataPath": "styles.json",
+      "url": "https://github.com/VigoZhao/AI-Visual-Prompt-Cookbook",
+      "licensePath": "licenses/visual-cookbook-LICENSE",
+      "licenseUrl": "https://github.com/VigoZhao/AI-Visual-Prompt-Cookbook/blob/e3f7f518c5529c50fc2e0084df00f766a72eabeb/LICENSE",
+      "subset": {
+        "included": 12,
+        "availableStyles": 186,
+        "selection": "First 12 styles sorted by upstream path"
+      },
+      "limitations": [
+        "12 real style.json files copied byte-for-byte; sample image URLs are derived only from existing source tree paths, images not downloaded.",
+        "Upstream MIT license explicitly describes repository structure and documentation; no blanket rights claim is made for reference artwork or third-party marks.",
+        "defaults use first upstream example plus shared style anchors; aspect ratio defaults to 16:9 as a documented workbench choice."
+      ]
+    },
+    {
+      "id": "promptfill",
+      "repository": "4xiaxia/PromptFill",
+      "revision": "af81f702b881c797db8e3be3f98d0ee3dcba101f",
+      "title": "PromptFill",
+      "kind": "templates",
+      "license": "MIT",
+      "dataPath": "fill-templates.json",
+      "url": "https://github.com/4xiaxia/PromptFill",
+      "licensePath": "licenses/promptfill-LICENSE",
+      "licenseUrl": "https://github.com/4xiaxia/PromptFill/blob/af81f702b881c797db8e3be3f98d0ee3dcba101f/LICENSE",
+      "subset": {
+        "included": 12,
+        "availableTemplates": 84,
+        "includedBanks": 33,
+        "maxOptionsPerBank": 8,
+        "upstreamVersion": "1.2.1",
+        "selection": "First 12 templates in upstream config order; only referenced banks, first 8 options each"
+      },
+      "limitations": [
+        "Real data path is public/data/templates.json plus public/data/banks.json; no JavaScript source evaluation.",
+        "Repeated variables can use indexed selections; normalized default uses explicit selection, then index 0, then first bank option. Full original selections preserved.",
+        "Media remain remote URLs; generation and full upstream UI behavior not bundled."
+      ]
+    }
+  ]
+}

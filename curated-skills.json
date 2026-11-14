@@ -1,0 +1,343 @@
+[
+  {
+    "id": "gptimage2-prompt-assistant",
+    "title": "GPT Image 2 提示词助手",
+    "category": "image",
+    "platforms": [
+      "GPT Image 2"
+    ],
+    "description": "编写、诊断和优化文生图、编辑、多图合成与文字渲染提示词。",
+    "whenToUse": "需要面向 GPT Image 2 的明确改动范围、保留约束和可复制提示词时。",
+    "sideEffects": "仅文本，不自动生成媒体。"
+  },
+  {
+    "id": "lira-image-prompts",
+    "title": "LIRA 图片提示词",
+    "category": "image",
+    "platforms": [
+      "通用图像模型",
+      "Higgsfield Soul"
+    ],
+    "description": "用主体、场景、构图、光线、材质和颜色组织角色、场景、道具与编辑提示词。",
+    "whenToUse": "明确采用 LIRA 方法、Soul 提示词或需要通用资产与局部编辑提示词时。",
+    "sideEffects": "仅文本，不自动提交生成、不读取密钥。"
+  },
+  {
+    "id": "cinema-dna-21x9x3",
+    "title": "CINEMA DNA 连续电影分镜",
+    "category": "storyboard",
+    "platforms": [
+      "通用图像模型",
+      "通用视频模型"
+    ],
+    "description": "把剧情和资产转换为电影单帧、三联、九镜故事板及逐镜视频动作提示词。",
+    "whenToUse": "需要保持剧情、身份、道具和空间连续性的多镜故事板或分镜转视频方案时。",
+    "sideEffects": "提示词请求仅文本；图像请求会生成独立源图并外部拼版，视频生成须核验工具与授权。"
+  },
+  {
+    "id": "cinematic-style-repair",
+    "title": "电影感生图与画面修复",
+    "category": "image",
+    "platforms": [
+      "当前可用生图工具"
+    ],
+    "description": "以明确主体、可信机位、主要光源和克制色彩修复写实画面的电影感。",
+    "whenToUse": "写实画面杂乱、主体弱、光线不可信、人物僵硬或呈现 AI 海报与 CG 感时。",
+    "sideEffects": "默认直接调用生图工具；明确只要提示词、无工具或调用失败时才仅输出文本。"
+  },
+  {
+    "id": "style-replicator",
+    "title": "参考图风格复刻提示词",
+    "category": "image",
+    "platforms": [
+      "通用图像模型"
+    ],
+    "description": "从技能 references 图片提取共同镜头、构图、光色和材质语言，再结合新内容生成提示词。",
+    "whenToUse": "已有一组同风格图片并希望新画面复用其视觉语言时。",
+    "sideEffects": "读取 references 中的图片，可能运行可选图像量化代码；交付仅文本，不自动生图。"
+  },
+  {
+    "id": "cinematic-video-prompt-engineer",
+    "title": "电影化视频提示词工程师",
+    "category": "video",
+    "platforms": [
+      "Kling",
+      "Seedance",
+      "Veo",
+      "Sora",
+      "Runway",
+      "即梦",
+      "通用视频模型"
+    ],
+    "description": "先诊断剧情和情绪，再转换为包含动作、表演、摄影、声音与时长的视频提示词。",
+    "whenToUse": "从剧情梗概、人物关系、情绪节拍或短片想法制作单段及连续短片提示词时。",
+    "sideEffects": "文本规划与提示词，可附参考图提示词；未规定自动提交媒体生成。"
+  },
+  {
+    "id": "cinedance-seedance",
+    "title": "CINEDANCE 视频镜头导演",
+    "category": "video",
+    "platforms": [
+      "Seedance",
+      "Higgsfield Seedance"
+    ],
+    "description": "编写和修正首帧、走位、视线、光学、动作时序及剪辑连续性。",
+    "whenToUse": "Seedance 镜头出现空间、视线、接触动作或切镜衔接问题时。",
+    "sideEffects": "仅文本，不自动生成、不读取密钥；其他平台仅移用通用镜头原则。"
+  },
+  {
+    "id": "seedance-20",
+    "title": "Seedance 2.0 提示词与制作路由",
+    "category": "video",
+    "platforms": [
+      "Seedance 2.0",
+      "Dreamina",
+      "即梦",
+      "CapCut",
+      "豆包",
+      "Volcengine Ark",
+      "BytePlus",
+      "Runway Seedance 路由",
+      "fal",
+      "第三方 Seedance 路由"
+    ],
+    "description": "按平台、模式和项目阶段路由 Seedance 提示词、参考控制、连续片段、音频与故障诊断。",
+    "whenToUse": "需要 Seedance 2.0 专项提示词、平台事实核验、多参考控制或连续项目管理时。",
+    "sideEffects": "提示词任务以文本为主，平台问题可能联网核验；付费生成、登录与上传需独立授权，不因写提示词而自动执行。"
+  },
+  {
+    "id": "seedance-storyboard-generator",
+    "title": "Seedance 剧集与资产分镜生成器",
+    "category": "storyboard",
+    "platforms": [
+      "Seedance 2.0",
+      "GPT Image 2",
+      "Seedream",
+      "Nano Banana Pro"
+    ],
+    "description": "把故事整理为分集剧本、角色场景道具资产提示词和时间轴视频分镜。",
+    "whenToUse": "需要文、资、视、剪全流程的短剧分集蓝图与资产清单时。",
+    "sideEffects": "主要交付文本、列表和表格；正文描述生成流程，但未定义自动媒体工具调用。"
+  },
+  {
+    "id": "caomao-yu-meng-2",
+    "title": "草帽与梦 2.0 实拍视频分镜",
+    "category": "video",
+    "platforms": [
+      "通用视频模型"
+    ],
+    "description": "根据剧情、用户对标和参考资产设计真人实拍质感、自然呼吸感与现场声分镜。",
+    "whenToUse": "希望按已指定作品校准拍法，并严格维护资产职责、时长和整组连续性时。",
+    "sideEffects": "主要输出文本；用户指定对标时可能联网研究资料和片段，未规定自动生图或视频提交。"
+  },
+  {
+    "id": "koda-storyboard-image",
+    "title": "Koda 草图分镜控制板",
+    "category": "storyboard",
+    "platforms": [
+      "image_gen",
+      "Seedance"
+    ],
+    "description": "生成含画格、箭头、走位标注和导演控制条的粗草图视频预演控制板。",
+    "whenToUse": "需要可供视频生成控制的动作过程、空间走位和镜头运动草图时。",
+    "sideEffects": "分镜图请求默认直接生图；项目批量模式可运行盘点与校验脚本并写入清单、提示词和进度文件。"
+  },
+  {
+    "id": "mj-browser-image",
+    "title": "Midjourney 浏览器生图与教学",
+    "category": "execution",
+    "platforms": [
+      "Midjourney",
+      "Discord",
+      "Midjourney 官网",
+      "BrowserSkill"
+    ],
+    "description": "使用现有浏览器登录态提交 Midjourney 任务，并提供离线官方资料教学。",
+    "whenToUse": "需要实际提交生图、参考图或编辑任务，以及首次配置、结果查看与离线教学时。",
+    "sideEffects": "控制浏览器、可能上传参考图并向频道或官网提交生成；可保存提示词和提交记录。"
+  },
+  {
+    "id": "mj-browser-image-fast",
+    "title": "Midjourney 快速提交",
+    "category": "execution",
+    "platforms": [
+      "Midjourney",
+      "Discord",
+      "BrowserSkill"
+    ],
+    "description": "把完整 imagine 命令一次粘贴到已知频道并发送，缩短重复提交步骤。",
+    "whenToUse": "同一对话已确认账号、频道和参数，且无需参考图或结果核查的重复任务时。",
+    "sideEffects": "直接浏览器发送，可能消耗生成额度；默认不查 Bot 回执、不等出图、不下载、不自动重试。"
+  },
+  {
+    "id": "camera-lens-anchoring",
+    "title": "摄影机与镜头锚定知识库",
+    "category": "knowledge",
+    "platforms": [
+      "通用视频模型",
+      "Sora",
+      "Veo",
+      "Seedance",
+      "Kling"
+    ],
+    "description": "按情绪和画质目标选择摄影机、镜头、光圈与胶片等审美锚点。",
+    "whenToUse": "需要补充摄影设备风格、焦距选择或数字与胶片质感表达时。",
+    "sideEffects": "文本建议与示例；效果比较属于技能作者主张，未在本次验证。"
+  },
+  {
+    "id": "acting-performance",
+    "title": "ACTING 角色表演",
+    "category": "knowledge",
+    "platforms": [
+      "通用视频模型"
+    ],
+    "description": "把人物目标、阻碍和情绪转换为动作、聆听、反应、声音及跨镜表演档案。",
+    "whenToUse": "人物僵硬、行为缺少动机、情绪余波不足或跨镜表演不一致时。",
+    "sideEffects": "仅文本，不自动提交生成、不读取密钥。"
+  },
+  {
+    "id": "zy-cinematic-realism",
+    "title": "造梦师电影视觉与多模型提示词",
+    "category": "image",
+    "platforms": [
+      "GPT Image 2.5",
+      "GPT Image 2",
+      "Midjourney",
+      "Seedream 5.0 Pro",
+      "Nano Banana",
+      "通用图像模型"
+    ],
+    "description": "由场景事实、视觉语法和参考解析编译模型原生提示词，并支持连续性和结果修复。",
+    "whenToUse": "需要多模型同场景转换、参考图视觉语言迁移、叙事关键帧或视觉资产包时。",
+    "sideEffects": "默认按请求输出分析、视觉方案或提示词，不自动持久化项目；实际图像仅在请求或授权交付需要时处理。"
+  },
+  {
+    "id": "ai-video-storyboard",
+    "title": "剧本转 AI 视频分镜",
+    "category": "storyboard",
+    "platforms": [
+      "Sora",
+      "Kling",
+      "Veo",
+      "Runway",
+      "Pixverse",
+      "通用视频模型"
+    ],
+    "description": "把剧本转为含焦段、光圈、机位、构图、运镜、动作和限制项的分镜。",
+    "whenToUse": "已有剧本，需要分段视听转译和跨段连续性控制时。",
+    "sideEffects": "文本分镜；包含开场自检及参考图、后缀询问流程，未规定自动媒体生成。"
+  },
+  {
+    "id": "director-master",
+    "title": "山音超级导演大师",
+    "category": "storyboard",
+    "platforms": [
+      "平台中立"
+    ],
+    "description": "完成导演定调、节奏规划、剧本微调与九列分镜表交付。",
+    "whenToUse": "需要分阶段审阅的导演方案和正式分镜表文件时。",
+    "sideEffects": "逐步等待通过或修改，最终写出 xlsx；不以自动生成媒体为默认交付。"
+  },
+  {
+    "id": "剧本转漫画",
+    "title": "剧本转漫画项目流程",
+    "category": "storyboard",
+    "platforms": [
+      "GPT Image",
+      "Gemini Image",
+      "Koda",
+      "Obsidian"
+    ],
+    "description": "把已有故事材料转成漫画分页、分镜、生图提示词与持续生成项目。",
+    "whenToUse": "需要漫画成稿、批量分页和项目进度管理时。",
+    "sideEffects": "会查询本地生成方案、建立项目目录，按选择生成图片并可写回 Obsidian；有旧绝对路径依赖需适配。"
+  },
+  {
+    "id": "zxw-film-sop",
+    "title": "中文 AI 电影资产与版本管理",
+    "category": "knowledge",
+    "platforms": [
+      "平台中立"
+    ],
+    "description": "建立资产、空间地图、镜头提示词、视频版本与生成日志的追溯结构。",
+    "whenToUse": "需要统一资产标签、记录提示词到成片来源或整理电影项目时。",
+    "sideEffects": "可复制项目模板并写入登记表和日志；不替代图片或视频提示词技能。"
+  },
+  {
+    "id": "pixel-previs",
+    "title": "像素风镜头预演",
+    "category": "execution",
+    "platforms": [
+      "本地 Node.js",
+      "ffmpeg",
+      "通用视频提示词"
+    ],
+    "description": "把文字镜头或参考视频运镜转成像素风 MP4、GIF 和中英文镜头提示词。",
+    "whenToUse": "需要在正式媒体生成前观察景别、人物位置与摄影机运动效果时。",
+    "sideEffects": "运行本地渲染或视频分析脚本，写出视频、预览图和分析文件。"
+  },
+  {
+    "id": "gpt-image",
+    "title": "GPT Image CLI 生图与编辑",
+    "category": "execution",
+    "platforms": [
+      "OpenAI API",
+      "GPT Image 2",
+      "GPT Image 2.5 Flare",
+      "GPT Image 2.5 Sunburst"
+    ],
+    "description": "通过打包 CLI 和参考图库生成、编辑、局部重绘及多参考图像。",
+    "whenToUse": "需要使用本地 CLI 与已配置 OpenAI API 实际生成图片时。",
+    "sideEffects": "读取 API 密钥、调用计费 API、可能上传参考图并写出图片；须先明确模型。"
+  },
+  {
+    "id": "greatwall生图新",
+    "title": "Greatwall Gateway 生图",
+    "category": "execution",
+    "platforms": [
+      "Gateway API",
+      "gpt-image-2-高质量4k",
+      "gpt-image-2.5-exact",
+      "gpt-image-2.5-flare",
+      "gpt-image-2.5-sunburst"
+    ],
+    "description": "通过专用 Gateway 接口完成文生图、图像编辑与多图参考生成。",
+    "whenToUse": "用户明确指定新的 Gateway 生图渠道时。",
+    "sideEffects": "每次询问模型，读取专用密钥，消耗网关额度，编辑时上传图片并保存 PNG；不自动重试。"
+  },
+  {
+    "id": "superapi-jimeng-video",
+    "title": "SuperAPI 即梦视频生成",
+    "category": "execution",
+    "platforms": [
+      "SuperAPI",
+      "即梦 Seedance"
+    ],
+    "description": "为指定视频模型显示计划和美元参考价、提交任务、恢复查询并保存成片。",
+    "whenToUse": "明确使用 superapi.buzz 生成视频或查询已有任务时。",
+    "sideEffects": "写请求与任务记录，读取已授权密钥，提交计费远程任务并下载视频；生成须有相应付费授权。"
+  },
+  {
+    "id": "imagegen",
+    "title": "内置位图生成与编辑",
+    "category": "execution",
+    "platforms": [
+      "内置 image_gen",
+      "OpenAI Images API"
+    ],
+    "description": "生成或编辑照片、插画、纹理、精灵、样机和透明背景位图。",
+    "whenToUse": "用户需要实际位图资产且适合 AI 生图或编辑时。",
+    "sideEffects": "默认调用内置生图工具并保存媒体；CLI 回退需明确选择，可能读取 API 密钥和计费。"
+  },
+  {
+    "id": "shot-design-storyboard-rapid",
+    "title": "故事板快速影像化知识",
+    "category": "knowledge",
+    "platforms": [
+      "平台中立"
+    ],
+    "description": "用简笔人物、运动箭头和方块透视组织连续镜头的快速可视化方法。",
+    "whenToUse": "需要探索分镜方案、说明摄影机位置或建立粗草图表达规范时。",
+    "sideEffects": "文本方法和设计建议，未规定自动调用生图工具。"
+  }
+]

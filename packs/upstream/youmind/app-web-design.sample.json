@@ -1,0 +1,227 @@
+[
+  {
+    "id": 33663,
+    "content": "2D flat illustration, unveiled Middle Eastern woman, full body, long open kimono-style robe in {argument name=\"color\" default=\"deep lapis blue\"} with gold embroidered {argument name=\"symbols\" default=\"Egyptian scarab, eye of Horus, and geometric border patterns\"}, plain cream inner dress, minimal warm beige background with faint temple column motif, statuesque pose, 3:4",
+    "title": "Ancient Egyptian Print Illustration",
+    "description": "A 2D flat illustration prompt for a statuesque Middle Eastern woman in a lapis blue kimono-style robe featuring traditional Egyptian motifs.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1788764291727_9tmu5d_HRTpOG5WUAAP29B.jpg",
+      "https://cms-assets.youmind.com/media/1788764293237_86z4s5_HRTpOGnWQAUImFo.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 33664,
+    "content": "Ar 9:16! Expressive loose watercolor illustration style, ultra-detailed watercolor portrait rendering, soft translucent paint layering, wet-on-wet watercolor diffusion, natural pigment bleeding effects, delicate brushstroke textures, airy hand-painted aesthetic, realistic anatomy blended with painterly abstraction, subtle ink-like edge definition, elegant unfinished watercolor splashes around the composition, soft feathered transitions between colors, luminous paper texture visible through transparent paint layers, warm natural skin tones with gentle blush highlights, cinematic soft lighting, flowing organic brush movement, refined watercolor realism with emotional fine art atmosphere, smooth facial rendering contrasted with loose expressive edges, handcrafted traditional painting aesthetic, watercolor bloom effects, fluid color gradients, lightly desaturated palette with {argument name=\"colors\" default=\"earthy warm neutrals and muted blues\"}, premium {argument name=\"medium\" default=\"sketchbook\"} illustration style, visible artistic spontaneity, delicate strand-like hair strokes, atmospheric white negative space, minimal background detail, soft focus depth, editorial fine art watercolor aesthetic, subtle accidental paint marks and organic imperfections, elegant composition balance, painter’s hand holding a {argument name=\"brush type\" default=\"thin paintbrush\"} visible in foreground, immersive artist-at-work perspective, realistic brush and hand rendering, museum-quality watercolor artwork, timeless classical painting mood, sophisticated contemporary watercolor portrait style, ultra refined paper-and-pigment texture, dreamy and poetic visual tone, handcrafted artistic realism, master-level watercolor detailing.",
+    "title": "Detailed Watercolor Portrait Illustration",
+    "description": "A highly detailed prompt for creating expressive, loose watercolor illustrations with realistic anatomy and hand-painted textures.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1788764291777_d7yul0_HRhngZ6bUAA3TJD.jpg",
+      "https://cms-assets.youmind.com/media/1788764293172_waf3i1_HRhngZ0a4AANTT2.jpg",
+      "https://cms-assets.youmind.com/media/1788764291722_37unmi_HRhngZ7akAA294l.jpg",
+      "https://cms-assets.youmind.com/media/1788764292289_hd49id_HRhngZpbsAAj2wJ.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 33562,
+    "content": "{argument name=\"style\" default=\"Sophisticated contemporary oil portrait painting\"} with expressive loose brushwork, combining refined semi-realistic portraiture, classical fine-art painting, and modern editorial painterly aesthetics. The subject is rendered with highly controlled yet visibly handcrafted oil strokes, layered pigments, soft impasto, delicate dry-brush marks, and expressive directional brushwork that follows the natural anatomy and volume of the face.\nFacial features are detailed and semi-realistic, with luminous skin, natural texture, expressive eyes, carefully modeled nose and lips, and richly layered hair built from flowing individual brushstrokes. Use {argument name=\"color palette\" default=\"warm brown, deep umber, burnt sienna, ochre, muted peach, cream, ivory, soft gray-blue, charcoal, and subtle muted gold accents\"}, matching the reference palette precisely. Highlights are predominantly warm ivory and creamy white, while shadows remain deep but soft and painterly.\nThe background uses the same desaturated blue-gray and warm ivory palette, appearing like an unfinished classical painted canvas. Broad vertical and horizontal brushstrokes, translucent paint layers, softly scraped areas, subtle dry-brush textures, and irregular painterly patches create an atmospheric studio-like backdrop. Keep the background simple, quiet, and organically integrated with the portrait rather than sharply separated.\nThe lower portion of the figure intentionally becomes unfinished and gradually dissolves into loose white and ivory brushstrokes. Clothing, shoulders, chest, and lower contours progressively lose definition, breaking into scattered semi-transparent strokes and fading pigment. Edges become incomplete, soft, irregular, and partially disappear into the background, creating the unmistakable impression of an intentionally unfinished oil painting. Do not create a hard bottom edge.\nMaintain a refined balance between highly detailed facial realism and deliberately unfinished painterly abstraction. Visible brushwork, layered oil pigments, soft impasto, subtle canvas texture, natural imperfections, elegant tonal transitions, museum-quality portrait painting, cinematic atmosphere, timeless fine-art character.\nNo photorealistic photography, no 3D CGI, no vector appearance, no hard digital outlines, no glossy rendering, no completely finished lower body, no sharp background separation. --ar {argument name=\"aspect ratio\" default=\"9:16\"}",
+    "title": "Sophisticated Oil Portrait Painting",
+    "description": "An artistic prompt for creating contemporary oil paintings with expressive brushwork and an intentionally unfinished aesthetic.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1788764293775_1uzw7b_HRd-SxAawAE07jJ.jpg",
+      "https://cms-assets.youmind.com/media/1788764293794_9r1lpl_HRd-SxDakAEfGmZ.jpg",
+      "https://cms-assets.youmind.com/media/1788764293782_s7q3hh_HRd-SxKaQAAULJ_.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 33478,
+    "content": "2D editorial illustration inspired by Egyptian North Coast summer, unveiled {argument name=\"ethnicity\" default=\"Middle Eastern woman\"}, wide-leg breezy trousers in {argument name=\"trouser color\" default=\"sandy beige\"} with hand-drawn wave prints, embroidered blouse with {argument name=\"blouse motif\" default=\"palm frond motifs\"}, warm sun-drenched palette, minimal background suggesting sea and dune, elegant relaxed pose, 3:4",
+    "title": "Egyptian Summer Fashion Illustration",
+    "description": "A 2D fashion editorial illustration of a Middle Eastern woman in breezy, summer attire with palm and wave motifs.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1788591093052_z1yxqf_HRTR1PhbcAAEJx6.jpg",
+      "https://cms-assets.youmind.com/media/1788591092820_veqcgk_HRTR2JwaIAEwfkL.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 33400,
+    "content": "2D flat vector fashion illustration, {argument name=\"subject\" default=\"unveiled Middle Eastern woman\"}, full body, wearing {argument name=\"trousers\" default=\"wide-leg trousers in mustard yellow with geometric print\"}, {argument name=\"blouse\" default=\"embroidered cream blouse with floral motifs\"}, minimal shadows, clean bold outlines, soft beige background, editorial fashion pose, 3:4",
+    "title": "2D Flat Vector Fashion Illustration",
+    "description": "Generates clean, 2D flat vector illustrations of Middle Eastern fashion with geometric prints and bold outlines.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1788504578464_m2g14w_HRTNkZxa8AA_NVq.jpg",
+      "https://cms-assets.youmind.com/media/1788504578316_lujm1f_HRTNkZwbcAAZTqx.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 33398,
+    "content": "Modern fashion line art illustration, {argument name=\"subject\" default=\"unveiled Middle Eastern woman\"}, single-weight black linework, flat color blocks in ochre and sage green, {argument name=\"trousers\" default=\"wide-leg patterned trousers\"}, {argument name=\"blouse\" default=\"embroidered off-shoulder blouse\"}, negative space composition, soft cream background, walking pose, 3:4",
+    "title": "Modern Fashion Line Art",
+    "description": "A clean line art prompt for modern fashion illustrations using flat color blocks and negative space compositions.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1788504577643_nlngf1_HRTM3bka4AAkD64.jpg",
+      "https://cms-assets.youmind.com/media/1788504577620_3oqffs_HRTM3bpa4AA-dDj.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 33270,
+    "content": "{argument name=\"setting\" default=\"Glass studio\"}, {argument name=\"canvas\" default=\"holographic canvas\"}, {argument name=\"lighting\" default=\"mixed tungsten and cyan light\"}.",
+    "title": "Holographic Canvas Glass Studio",
+    "description": "A minimalist prompt for a cinematic glass studio scene featuring a holographic canvas with mixed tungsten and cyan lighting.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1788418033881_eocfo7_HROwLtrbwAAm8dQ.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 32503,
+    "content": "{\n  \"image_generation_prompt\": {\n    \"shot_type\": \"exterior shot, photo\",\n    \"subject\": \"{argument name=\"subject\" default=\"A luxurious retrofuturistic train\"}\",\n    \"color_palette\": [\n      \"{argument name=\"primary color\" default=\"pastel pink\"}\",\n      \"{argument name=\"secondary color\" default=\"mint green\"}\"\n    ],\n    \"interior_design\": {\n      \"style\": \"Zaha Hadid\",\n      \"elements\": \"filled with flowers\",\n      \"features\": \"large windows\"\n    },\n    \"setting\": \"{argument name=\"environment\" default=\"overlooking Paris during cherry blossom season\"}\",\n    \"focus\": \"train exterior\",\n    \"parameters\": {\n      \"aspect_ratio\": \"9:16\",\n      \"version\": 7\n    }\n  }\n}",
+    "title": "Luxurious Retrofuturistic Train Exterior",
+    "description": "A structured JSON prompt for generating a high-end retrofuturistic train exterior inspired by Zaha Hadid, set against a Parisian cherry blossom background.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1787639837859_idlxzp_HQf9rFua4AEdqW1.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 32411,
+    "content": "A sophisticated {argument name=\"subject\" default=\"hybrid human portrait style\"} that seamlessly combines the whimsical, glossy dimensional rendering of a premium 3D fantasy illustration with the clean, elegant simplicity of contemporary flat vector portraiture. Depict the human subject with recognizable anatomy, natural facial proportions, authentic expression, and clearly identifiable features, while transforming the overall appearance into a refined stylized illustration. The face should combine smooth dimensional modeling with simplified graphic planes: softly sculpted skin, subtle volumetric shading, delicate highlights, clean angular shapes, and carefully controlled flat-color regions. Use the visual language of premium digital character illustration: luminous expressive eyes, softly rendered skin, smooth flowing hair with layered strands, polished highlights, gentle depth, tactile surfaces, and subtle painterly transitions. At the same time, simplify the rendering with elegant vector-like shapes, clean silhouettes, controlled linework, minimal visual noise, and clearly defined color planes inspired by modern editorial portrait illustration. Integrate {argument name=\"artistic elements\" default=\"flowing artistic elements around the human figure, such as fluid paint splashes, soft liquid ribbons, abstract organic shapes\"}. These elements should feel energetic and three-dimensional, organically emerging from the portrait rather than appearing as a separate background decoration. Hair should combine clean graphic masses with silky dimensional strands and sweeping flowing shapes. Facial features should remain refined and human, enhanced with subtle geometric simplification rather than exaggerated cartoon distortion. Clothing should use bold simplified silhouettes with restrained geometric detailing, maintaining an elegant contemporary fashion-illustration appearance. Color treatment should merge the warm, restrained palette of modern vector portraiture with the {argument name=\"color scheme\" default=\"vibrant tropical energy of whimsical fantasy illustration\"}: warm coral, orange, cream, peach, turquoise, cyan, sky blue, deep navy, emerald, red, golden yellow, and subtle lavender accents. Use mostly clean saturated color fields, enhanced selectively with soft gradients, glossy highlights, translucent edges, and gentle volumetric illumination. Background should remain clean and uncluttered, preferably a simple warm solid or softly textured backdrop, allowing the human subject and surrounding artistic splashes to remain the primary focus. The final aesthetic should feel like an original fusion of elegant editorial vector portrait, contemporary digital painting, whimsical 3D character illustration, premium fashion artwork, and colorful fluid fantasy art — clean yet richly dimensional, sophisticated yet playful, expressive, polished, tactile, modern, artistic, and visually distinctive.",
+    "title": "Hybrid 3D Vector Illustration Style",
+    "description": "A unique stylistic prompt blending glossy 3D rendering with flat vector simplicity for artistic portraits, featuring vibrant colors and fluid organic elements.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1787552793135_75pudi_HQZ5lDnbMAAjjNN.jpg",
+      "https://cms-assets.youmind.com/media/1787552793140_0ibsb7_HQZ5lD9bAAApjg8.jpg",
+      "https://cms-assets.youmind.com/media/1787552793095_nx9jpa_HQZ5lDlaIAAKtp0.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 32186,
+    "content": "A tranquil digital landscape featuring a vibrant, glowing sunset over distant mountains, with the sun casting {argument name=\"reflections\" default=\"pastel reflections of pink, purple, and turquoise\"} across a calm lake. Two small, forested islands with tall pine trees frame the foreground, and the overall mood is serene and dreamlike, with soft gradients and minimalistic composition set against a muted, hazy background.\n\nA surreal landscape featuring a lone figure standing beneath a large tree with {argument name=\"tree details\" default=\"glowing purple leaves\"} on a cliff edge, overlooking a distant mountain at sunset. A stream of luminous turquoise water flows down the cliff, emitting magical sparkles. The scene is bathed in soft pastel colors, creating a tranquil and mystical atmosphere.",
+    "title": "Serene Landscape and Surreal Figure at Sunset",
+    "description": "Two dreamlike landscape prompts, one featuring a vibrant mountain lake with pastel reflections and another with a lone figure under a glowing purple tree.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1787379851536_v99f1l_HQQ44bQXoAAEdYz.jpg",
+      "https://cms-assets.youmind.com/media/1787379851506_zj81ft_HQQ46uPW0AAavV9.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 31570,
+    "content": "Apply an ASCII-art rendering effect to the reference image, where the ASCII character density and placement is driven by the underlying tonal contrast and edges of the photo, like a true edge-aware ASCII-art conversion. Dense character clusters follow the natural contours, silhouette lines, and high-detail areas (such as hair strands, fabric folds, and background structure), while flatter, low-contrast areas (such as smooth skin) stay comparatively clean with minimal or no texture. The effect should look like the ASCII characters are tracing the actual shapes and edges present in the photo, not a uniform overlay pasted on top of everything equally. Use a classic {argument name=\"color scheme\" default=\"green-on-black or grayscale\"} terminal character set ({argument name=\"character set\" default=\"@ # % & * + . :\"}), {argument name=\"density\" default=\"medium\"} overall density, with the original photo still legible underneath.",
+    "title": "Edge Aware ASCII Art Conversion",
+    "description": "A technical prompt designed to transform a reference image into an edge-aware ASCII art rendering using specific character sets.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1786947851995_vupmgp_HPzCszWbkAAcggR.jpg",
+      "https://cms-assets.youmind.com/media/1786947851956_8bzhi2_HPzCwxTasAARNuf.jpg",
+      "https://cms-assets.youmind.com/media/1786947853667_fc61wc_HPzC1VOboAAvKbB.jpg"
+    ],
+    "needReferenceImages": true
+  },
+  {
+    "id": 31468,
+    "content": "A DETAILED 3D INSTALLATION OF THE UPLOADED LOGO MOUNTED ON A SOLID CONCRETE WALL. ONLY THE LOGO ITSELF IS VACUUM-SEALED AND WRAPPED TIGHTLY IN A LAYER OF GLOSSY {argument name=\"color\" default=\"COLOR\"} PLASTIC SHRINK-WRAP, FOLLOWING THE EXACT CONTOUR OF EVERY LETTER AND SHAPE. THE PLASTIC FILM TIGHTLY HUGS THE EDGES OF THE LOGO, CREATING REALISTIC CRINKLES AND SHARP SPECULAR HIGHLIGHTS ON THE LOGO'S SURFACE. THE BACKGROUND WALL IS CLEAN CONCRETE, FREE OF ANY PLASTIC WRAPPING OR FRAMES. STUDIO SPOTLIGHTS CAST SOFT, REALISTIC DROP SHADOWS: FROM THE WRAPPED LOGO ONTO THE WALL. RATIO 1080X1350 VERTICAL.",
+    "title": "Vacuum Sealed Logo Installation",
+    "description": "A 3D installation prompt that places an uploaded logo on a concrete wall, wrapped in glossy plastic shrink-wrap for a realistic crinkle effect.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1786774865701_c02f05_HPsDnRIbkAAlDge.jpg",
+      "https://cms-assets.youmind.com/media/1786774865865_w6ta19_HPsDnREbAAA14PB.jpg",
+      "https://cms-assets.youmind.com/media/1786774865686_nwd4t2_HPsDnRDaEAA__S8.jpg",
+      "https://cms-assets.youmind.com/media/1786774866499_8h6ujx_HPsDnRFboAAcm7T.jpg"
+    ],
+    "needReferenceImages": true
+  },
+  {
+    "id": 31339,
+    "content": "{argument name=\"subject\" default=\"<subject>\"} in this style={argument name=\"transformation\" default=\"<transformation>\"} - Preserve the subject’s recognizable structure, but reinterpret it as a stylized editorial composition where drawing and miniature object-world logic coexist. - Convert some forms into sparse grainy line illustration while converting other forms into soft pastel miniatures or still-life objects. - Reinterpret texture-rich or detailed areas as small clusters of plants, props, vessels, terrain fragments, or decorative micro-world motifs. - Convert smooth surfaces into matte pastel color fields, while using graphic linework to describe edges, volume, and texture selectively. - Reduce complexity into a limited color system with one dominant graphic ink tone and a few quiet pastel support colors. - Replace deep realism with poster-like clarity, paper-print tactility, and curated tabletop arrangement. - Allow the subject to feel partially drawn and partially physically staged, creating a deliberate ambiguity between illustration and object. - Use negative space and sparse composition to keep the image clean, modern, and highly readable. </transformation> <shape_language> - Favor simple containers, rounded objects, leaves, stems, pebbles, tabletop silhouettes, miniature clusters, and clean abstract forms. - Use a mix of flat contour areas and soft low-relief sculptural accents. - Keep repetition rhythmic and decorative. - Let small details feel intentional and editorial rather than busy. </shape_language> <rendering_rules> - Use visibly grainy printed or crayon-like marks for lines and texture accents. - Keep volumetric forms soft, simplified, and pastel. - Limit the palette aggressively for a designed, print-friendly look. - Use {argument name=\"depth\" default=\"shallow spatial depth\"} with subtle diorama hints. - Make the final result feel like an art print, a magazine illustration, and a miniature set all at once. </rendering_rules> <finish> - Graphic limited-palette editorial hybrid. - Printmaking texture fused with soft pastel mini-world staging. - Smart, modern, collectible, and quietly distinctive. </finish> <avoid> - Avoid photoreal rendering. - Avoid deep cinematic perspective or strong realism. - Avoid overstuffing with too many tiny details. - Avoid using too many colors; keep it controlled and designed. </avoid>",
+    "title": "Stylized Editorial Hybrid Composition",
+    "description": "A complex structural prompt for creating editorial illustrations that blend linework, soft miniatures, and print-friendly textures.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1786774883701_7370ff_HPcPNsEXYAA95EP.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 30941,
+    "content": "A highly refined contemporary mixed-media portrait style combining an ethereal high-key fashion aesthetic with intricate concentric contour-line artwork inspired by natural growth rings and fingerprint-like topographic patterns. The human subject should retain an elegant, soft, luminous, almost dreamlike presence while the entire visual structure is organically constructed through hundreds of delicate continuous concentric and flowing contour lines. Replace conventional flat shading and ordinary outlines with dense nested curved lines that follow the anatomy and three-dimensional structure of the human form. The lines should naturally conform to the contours of the face, forehead, cheeks, nose, lips, jaw, neck, shoulders, clothing, and hair, creating the illusion that the entire subject is sculpted from flowing rings and fine engraved contours. The line patterns should behave like organic topographic growth rings rather than geometric circles. Lines continuously expand, contract, bend, merge, separate, and change direction according to the underlying form. Around the eyes, nose, lips, and facial planes, the contours become tightly concentrated and delicately curved; across larger surfaces they gradually spread into wider flowing rings. Hair should be constructed from extremely fine flowing contour strands, with hundreds of elongated curved lines sweeping outward and merging into larger concentric patterns. The hair should feel weightless and fluid, almost dissolving into the surrounding background while maintaining an intricate line-based structure. Preserve the reference's soft luminous skin, delicate facial modeling, subtle blush, translucent highlights, pale neutral tones, and graceful editorial beauty. The human form should remain recognizable and aesthetically refined beneath the contour-line construction rather than becoming an abstract pattern. Introduce selective high-density black and charcoal contour areas to create depth and visual emphasis. Lines become progressively darker and closer together in recessed areas and shadow regions, while highlights contain sparse, extremely fine pale-gray lines and larger areas of negative space. This creates tonal values entirely through line density and spacing, rather than conventional painted shading. Allow portions of the contour lines to extend beyond the silhouette, forming expansive organic rings and flowing arcs around the subject. These external lines should gradually fade, break apart, become thinner, and dissolve into the background, creating an atmospheric transition between the human figure and the surrounding space. Use a predominantly luminous ivory, white, soft gray, pale beige, and subtle natural skin-tone palette, with deep charcoal-black lines providing controlled contrast. Maintain a clean, airy, almost monochromatic elegance while preserving subtle full-color skin undertones. The surface should have a fine tactile paper or archival-art texture",
+    "title": "Topographic Contour Line Portrait",
+    "description": "An ethereal mixed-media portrait that replaces traditional shading with intricate, organic topographic contour lines inspired by growth rings.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1786344502610_xvq442_HPU_tBzbEAApHG0.jpg",
+      "https://cms-assets.youmind.com/media/1786344503219_as3r0u_HPU_t_2bcAAsxVq.jpg"
+    ],
+    "needReferenceImages": true
+  },
+  {
+    "id": 30211,
+    "content": "{argument name=\"style\" default=\"Hyper-detailed engraved illustration style\"}, cross-hatching and fine line pen drawing technique, classical engraving mixed with modern illustration, ultra-dense linework forming realistic human face and upper body, tactile woven texture across skin and fabric, baroque and rococo influence, ornate clothing details, gold embroidery and chain accents, dramatic chiaroscuro lighting, {argument name=\"color palette\" default=\"muted yet bold color accents (pink, gold, blue, cream, black)\"}, painterly ink texture, vintage print aesthetic blended with contemporary surreal portrait art, high contrast, museum-grade detail, editorial illustration quality, {argument name=\"background\" default=\"dark textured background\"}, intellectual and artistic mood.",
+    "title": "Engraved Surreal Illustration Portrait",
+    "description": "A dense, cross-hatched engraving illustration style prompt blending classical engraving techniques with modern surreal portrait art.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1785395940190_a3ah3o_HOXfowAXUAE2Bt0.jpg",
+      "https://cms-assets.youmind.com/media/1785395939808_d8xuu0_HOXfpWQWEAAcEMC.jpg",
+      "https://cms-assets.youmind.com/media/1785395939708_5lxtd7_HOXfqE5XIAA-VrW.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 30088,
+    "content": "High-end 3D render aesthetic with hyper-realistic {argument name=\"material\" default=\"vinyl/latex\"} texture and soft diffused studio lighting.",
+    "title": "Hyper-Realistic 3D Vinyl Aesthetic",
+    "description": "Creates a high-end 3D render with a focus on hyper-realistic textures like vinyl or latex, featuring soft diffused studio lighting for a premium product photography look.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1785309333524_003lyl_HOVVOX2bAAA3oQV.jpg",
+      "https://cms-assets.youmind.com/media/1785309333534_d59m1t_HOVVPAXbIAAdnXa.jpg",
+      "https://cms-assets.youmind.com/media/1785309333558_cdihvd_HOVVPqQagAADGYL.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 29270,
+    "content": "Convert a user's short image request, attached image, or combination of text and images into one finished prompt for GPT Image Gen V2 or Nano Banana Pro.\n\nApply the Redphase Survey visual system defined below. Do not explain the system, show analysis, or add commentary. Return only the finished image prompt in the selected model's format.\n\nUse the model named by the user or supplied by the host application. If neither names one, use GPT Image Gen V2.\n\nFor GPT Image Gen V2, return natural language prose only.\n\nFor Nano Banana Pro, return one valid JSON object only.\n\nWhen both are explicitly requested, return the GPT prompt first under the line \"GPT IMAGE GEN V2\", then the JSON under the line \"NANO BANANA PRO\". Add no other text.\n\nWrite prompt content in the user's language unless another language is requested. Keep Nano Banana Pro keys in English. Preserve exact in-image text in its required script.\n\nCORE LOGIC\n\nEvery image contains two simultaneous records.\n\nThe survey record describes what occupies the scene. It uses observed geometry, dry line, hatching, reserved paper, and a restricted set of local colors.\n\nThe red phase describes what is active through the scene. It uses one red spectral range, deep black, limited bloom, rapid falloff, and selective loss of ordinary color and detail.\n\nThe survey record answers: What is present?\n\nThe red phase answers: What is acting, passing, gathering, or changing?\n\nDo not average the two records into red-tinted illustration. Give each record a separate job.\n\nBefore writing the final prompt, silently determine:\n\n1. The literal subject and setting.\n2. The stable material structure that belongs to the survey record.\n3. One active condition that belongs to the red phase.\n4. The source of that condition.\n5. The path or relation through which it travels.\n6. The receiving subject, object, region, or surface.\n7. The visible consequence.\n8. Two or three transition sites where the records meet.\n\nChoose the active condition from the user's request. It may be physical, social, temporal, or perceptual. Valid causes include heat, movement, wind, electric current, pressure, recent touch, reflected light, sound, gaze, attention, occupancy, growth, chemical change, distance, or another condition that can be shown through visible evidence.\n\nIf the request names no active condition, use the strongest existing process already implied by the subject or action. Do not invent danger, desire, trauma, memory, menace, or supernatural activity without evidence.\n\nRed is a measurement channel, not a mood label. Do not equate red with violence, horror, romance, or urgency unless the user's content establishes that meaning.\n\nThe active condition must have one source, one route or relation, and one consequence. Do not scatter red accents without a causal structure.\n\nCONTENT CONTROL\n\nPreserve the user's explicit subject, count, identity requirements, action or state, setting, era, clothing, objects,",
+    "title": "Redphase Survey Prompt Generator",
+    "description": "A detailed system prompt for creating structured image prompts based on the Redphase Survey visual system, utilizing a dual-record logic of scene occupancy and active conditions.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1784618421126_zq7aq7_HNrV2vbXgAA3MWd.jpg",
+      "https://cms-assets.youmind.com/media/1784618421528_a0o9ar_HNrV2wDXwAASDvL.jpg",
+      "https://cms-assets.youmind.com/media/1784618421072_762tvp_HNrV2vbWMAAfIl3.jpg",
+      "https://cms-assets.youmind.com/media/1784618421734_pgxrry_HNrV2viXkAA_n-d.jpg"
+    ],
+    "needReferenceImages": true
+  },
+  {
+    "id": 29263,
+    "content": "Extreme macro photograph of the {argument name=\"monitor area\" default=\"bottom-left corner of a computer monitor\"}, shot at a slight angle from the right. The sheet tab bar of a spreadsheet fills the frame — three tabs legible and sharp, reading \"{argument name=\"tab 1\" default=\"Quotes\"}\", \"{argument name=\"tab 2\" default=\"Copy of Invoices\"}\", and \"FINAL_dont_delete\", with \"FINAL_dont_delete\" the active white tab. Visible pixel structure in the screen surface at this magnification, a fine layer of dust, one small fingerprint smudge on the glass. Very shallow depth of field so the tabs at the left edge blur out. Soft window light from the side raking across the screen surface. Natural colour, macro photography, no device bezel visible beyond the lower edge.",
+    "title": "Macro Monitor Screen Texture",
+    "description": "An extreme macro photography prompt for capturing the pixel structure, dust, and spreadsheet details of a computer monitor.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1784618417941_4t9wn9_HNpR2vOWQAAMeul.jpg"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 29049,
+    "content": "I want to create an emotional design with handwritten characters. Beautiful and cute flowing characters drawn by a young woman. It has a scribbled diagonal accent but the cuteness wins out. Use only a white background as it will be used as a material. No decoration, the beauty of the characters stands out. The text is: {argument name=\"text to express\" default=\"please enter the text you want to express here\"}",
+    "title": "Emotional Handwritten Aesthetic Design",
+    "description": "A prompt designed to create beautiful, emotional handwritten text styles that look like they were drawn by a young woman. It focuses on a clean white background with a cute and flowing script aesthetic.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1784445182085_5p9kn4_HNf0RkTbwAAXE_5.png"
+    ],
+    "needReferenceImages": false
+  },
+  {
+    "id": 28091,
+    "content": "Create a highly detailed clean vector illustration of a {argument name=\"subject\" default=\"young Kerala woman\"} in a {argument name=\"clothing style\" default=\"modern branded streetwear style\"}, inspired by high-end anime vector aesthetics with crisp linework, smooth gradient shading, bold color separation, and ultra-sharp edges. She is shown from a low-angle three-quarter portrait, upper body only, with her head turned slightly over her shoulder toward the viewer. She has a subtle confident smirk with relaxed lips, half-open calm eyes, slightly raised eyebrows, soft eyelids, and a composed, self-assured expression. Her posture is relaxed with shoulders naturally lowered, neck gently extended, and chin slightly raised. Long jet-black hair is tied into a messy low bun with loose flowing strands moving naturally in the wind. Add a few thin front bangs framing the face, gently falling across the forehead and cheeks without covering the eyes.She wears matte black circular ear gauges and a premium oversized black high-collar windbreaker jacket with realistic stitched seams, snap buttons, structured folds, smooth nylon texture, subtle reflective highlights, and premium outdoor fashion branding inspired by Kerala urban street culture. A bright golden-yellow premium backpack with padded straps is worn over both shoulders, matching the background while remaining visually distinct through contrast and shading.The {argument name=\"background color\" default=\"background is a completely flat vibrant golden-yellow (#FFD400)\"} with no texture, patterns, gradients, or objects, creating a bold minimalist composition. Use strong color harmony with deep black clothing, rich golden-yellow accents, natural warm skin tones, and clean neutral shadows. Apply high-contrast vector lighting from the upper left, producing sharp highlights on the face, hair, jacket, and backpack while maintaining smooth gradient transitions. Skin tones should be soft warm beige with gentle blush around the cheeks, nose, and ears. Hair should have glossy blue-black highlights. The overall image should have a premium modern branding aesthetic, ultra-clean composition, high visual impact, perfectly balanced negative space, ultra-high resolution, commercial-quality vector artwork, sharp silhouette, flawless proportions, and professional graphic design finish.",
+    "title": "Kerala Woman Anime Vector Illustration",
+    "description": "A clean, high-end vector illustration of a Kerala woman in modern streetwear with sharp linework and vibrant yellow background.",
+    "sourceMedia": [
+      "https://cms-assets.youmind.com/media/1783668712726_zietzu_HMzIqXRbQAAfsGM.jpg"
+    ],
+    "needReferenceImages": false
+  }
+]

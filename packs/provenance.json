@@ -1,0 +1,560 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "LICENSE",
+      "localPath": "licenses/image-prompt-reverse-LICENSE",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/LICENSE",
+      "sha256": "c6f576af31382e16439b1727a6bb901c2b6db1a680180056b1bc38227d697d81",
+      "bytes": 1063,
+      "upstreamGitBlob": "00bb432e927792b6da6ef5e832c7322d6884ec03"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "LICENSE",
+      "localPath": "licenses/prompt-reverse-engineer-LICENSE",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/LICENSE",
+      "sha256": "f061a69ae7c2c1e5749248894cadf1d874e885a3d72fa594dada96ab85b0ddc4",
+      "bytes": 1067,
+      "upstreamGitBlob": "7fe4b2d4b645fe413801b7483ed0861b79547bf5"
+    },
+    {
+      "sourceId": "youmind",
+      "upstreamPath": "LICENSE",
+      "localPath": "licenses/youmind-LICENSE",
+      "url": "https://raw.githubusercontent.com/YouMind-OpenLab/ai-image-prompts-skill/da91eaf81b42b0037d99641ef5acc5e622e48c67/LICENSE",
+      "sha256": "b6439b5e2296aa1951ec1dd147d61928289aa1f4c231b3ecad2b454a861e9274",
+      "bytes": 1072
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "LICENSE",
+      "localPath": "licenses/visual-cookbook-LICENSE",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/LICENSE",
+      "sha256": "dacb84e253efab4781f577f04e2fbcf457c48bdc2ed7a6e1496f5866de32e4d3",
+      "bytes": 1077,
+      "upstreamGitBlob": "a40ba6c8208af00e60d488de20641e408b3acc4b"
+    },
+    {
+      "sourceId": "promptfill",
+      "upstreamPath": "LICENSE",
+      "localPath": "licenses/promptfill-LICENSE",
+      "url": "https://raw.githubusercontent.com/4xiaxia/PromptFill/af81f702b881c797db8e3be3f98d0ee3dcba101f/LICENSE",
+      "sha256": "9228bbbdd38d0abb6ebbae1c0138a46a0910293543c10479fd81b8674567757e",
+      "bytes": 1099
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "README.md",
+      "localPath": "image-prompt-reverse/README.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/README.md",
+      "sha256": "8378bf53efffbe9ed660454467864c234a3b6c4d022ca9bbe066958a75eeb28b",
+      "bytes": 4701,
+      "upstreamGitBlob": "5a17558be7f5f83978732fb42eef4041091d354b"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "SKILL.md",
+      "localPath": "image-prompt-reverse/SKILL.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/SKILL.md",
+      "sha256": "83094006587fcba9a2bc10821b7ddb5d2ffa77e12b80c86133beb212cfe0e3f3",
+      "bytes": 10735,
+      "upstreamGitBlob": "c32d58532dacbfd94ed182b3ff85e57aee62d414"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "assets/analysis-form.md",
+      "localPath": "image-prompt-reverse/assets/analysis-form.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/assets/analysis-form.md",
+      "sha256": "4afcae7292e660adc973641a2d37128458a4f823e2a09809d09396c5f5687153",
+      "bytes": 965,
+      "upstreamGitBlob": "e91ba1a8194027e36bc3b80b1621deca79bba5ab"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "references/enhancement-vocab.md",
+      "localPath": "image-prompt-reverse/references/enhancement-vocab.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/references/enhancement-vocab.md",
+      "sha256": "6bd45e64beddae88f17ea1dc2b4678f66dd857329d8c9315ba7ea7db5c2a07c8",
+      "bytes": 5522,
+      "upstreamGitBlob": "c260145ef4f0698a6f4c9445656bd32152716020"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "references/platform-guides.md",
+      "localPath": "image-prompt-reverse/references/platform-guides.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/references/platform-guides.md",
+      "sha256": "721b449a6c05f9e021bb382bc7b64ba5db552f3604d1019d5ee27110a96f79dd",
+      "bytes": 3042,
+      "upstreamGitBlob": "4035e04f96da7d4d16eb2ec1d41e443b87a7ba01"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "references/reverse-dimensions.md",
+      "localPath": "image-prompt-reverse/references/reverse-dimensions.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/references/reverse-dimensions.md",
+      "sha256": "7880a0b6efbafdc799c4b9b35f0839dd2f72c0850520c188834c3ba314883d21",
+      "bytes": 12354,
+      "upstreamGitBlob": "2d2994fab77f65836884178d841f213177c08aa4"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "references/templates.md",
+      "localPath": "image-prompt-reverse/references/templates.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/references/templates.md",
+      "sha256": "74ee06bce30bbcaf5c8cf29f342e8bab8126b1a594c4cf3e9bfb173a7e0f7a29",
+      "bytes": 2757,
+      "upstreamGitBlob": "e114b80d84d87bcc6c58d7b25d130fbb4d8189cc"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/SKILL.md",
+      "localPath": "prompt-reverse-engineer/SKILL.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/SKILL.md",
+      "sha256": "359360df112b209062f119abe51a629d649fa540ebd1ac2ab06c94564117a519",
+      "bytes": 12962,
+      "upstreamGitBlob": "bdff642a8b204e94c4b8fcaa7531b2e4e372a627"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/examples/image_example/output.md",
+      "localPath": "prompt-reverse-engineer/assets/examples/image_example/output.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/examples/image_example/output.md",
+      "sha256": "a06b04188ec95de7286526083fa270cf38ef2c8ce2b7c7cfe861091bed0aa69f",
+      "bytes": 6313,
+      "upstreamGitBlob": "898464d48a07e6c5936f9cc2759d8da7aff11466"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/examples/story_example/input.md",
+      "localPath": "prompt-reverse-engineer/assets/examples/story_example/input.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/examples/story_example/input.md",
+      "sha256": "0259514e08d4e16a4e52a2a0ec39ab1f03a9f00be15c5cd519464d00b6cdf478",
+      "bytes": 522,
+      "upstreamGitBlob": "76929e8af28f6f23b96d6701affb9a31b18b8786"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/examples/story_example/output.md",
+      "localPath": "prompt-reverse-engineer/assets/examples/story_example/output.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/examples/story_example/output.md",
+      "sha256": "807dd93529124d1cb7a12ec084ecd590c5e8baff6c71d94e2f621b00fc8ef90d",
+      "bytes": 8053,
+      "upstreamGitBlob": "b21cfc7468b864071686bfa6a8e7be60dd0046cc"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/examples/text_example/input.md",
+      "localPath": "prompt-reverse-engineer/assets/examples/text_example/input.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/examples/text_example/input.md",
+      "sha256": "1b72acae709925884845122c55c5e75dc02cc248ffcd1ecb8f9f10788879b55e",
+      "bytes": 279,
+      "upstreamGitBlob": "8a9e9ffcecea8f5e4792ecd02ec6c775148d0b36"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/examples/text_example/output.md",
+      "localPath": "prompt-reverse-engineer/assets/examples/text_example/output.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/examples/text_example/output.md",
+      "sha256": "8afd86b4cf06715a505aafa4a231465a0bb1720bdbf3833d9a3ffafcf4ec21bc",
+      "bytes": 3554,
+      "upstreamGitBlob": "0e8c5a13f5d9e6c5df193b8fd61c0aa444c1430e"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/examples/video_example/output.md",
+      "localPath": "prompt-reverse-engineer/assets/examples/video_example/output.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/examples/video_example/output.md",
+      "sha256": "f339aaaaf7244d731dbb6911fbe95639f698e5d34b031ee21a22813d3254250a",
+      "bytes": 6879,
+      "upstreamGitBlob": "53ca5693b90a908ea18aafbb29d3617cbeba9d17"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/deepseek.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/deepseek.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/deepseek.json",
+      "sha256": "cff248bd3fc50a9eaf8903743f289905a9c68b75dcfd4b626a99ebfb6f8c0837",
+      "bytes": 3768,
+      "upstreamGitBlob": "30403fea7fd321c37546cf196906b6bbc4f58303"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/flux2.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/flux2.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/flux2.json",
+      "sha256": "bc17b32e9a79fd963fe34f61086615eca44e6bc3dc37d5125d7b25f557c3b94a",
+      "bytes": 1100,
+      "upstreamGitBlob": "56b9d149307f6cc77a709abd34683fb8562e123e"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/gpt4_claude.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/gpt4_claude.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/gpt4_claude.json",
+      "sha256": "d0f65dcb4546a7d09aebd6750f0ed5e0501912820f05587f59794f6ab90a2396",
+      "bytes": 3022,
+      "upstreamGitBlob": "6480033865d4f76de9b7712a4dd4fbafbd5943c8"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/gpt_image.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/gpt_image.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/gpt_image.json",
+      "sha256": "7beaafa8993ff5054e908e661bf4367694ea466e1f37c377e04cc3fe50f70dda",
+      "bytes": 1267,
+      "upstreamGitBlob": "d8f7bab54f3059b235c44ad5fb267e205be4fc76"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/midjourney.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/midjourney.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/midjourney.json",
+      "sha256": "bd2a5756983d926eb468ac3ef4741ad757d51246c4f300a5876ee6d1ff209833",
+      "bytes": 1293,
+      "upstreamGitBlob": "980e8f4037c1b3296ccea79e7c2d3dc6499d9714"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/nano_banana.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/nano_banana.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/nano_banana.json",
+      "sha256": "866a1e67036a16b7277754bbd7f1d773e289b8872ec4cdfbf2a1a6b6ee875e8a",
+      "bytes": 1177,
+      "upstreamGitBlob": "fcf482a3a619782510549209dc3fa2cc46cc3d24"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/runway.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/runway.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/runway.json",
+      "sha256": "4d05ca1da41e0fa32e308680146f4a7963e8002af18067a9d0c59f6a9f6f3329",
+      "bytes": 1173,
+      "upstreamGitBlob": "8378b9262017b9978f157cd3adbbc3c4db737cb1"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/score_report.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/score_report.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/score_report.json",
+      "sha256": "6b4f0e4d42573483efceffc520ac366abf863aed887a238983f4f7817025d2f7",
+      "bytes": 471,
+      "upstreamGitBlob": "02cfa6cd9df5ad6fcc822079c06c289206df6499"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/sora2.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/sora2.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/sora2.json",
+      "sha256": "450b664a6cbed58e263be57bbf443afc0b4b602f1b923d6aac76f62bc3077348",
+      "bytes": 1276,
+      "upstreamGitBlob": "8b01a197a8973c4b5b000d3681f0e2020fe45e6e"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/stable_diffusion.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/stable_diffusion.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/stable_diffusion.json",
+      "sha256": "7a8cdd1d5dea1d7c42c14b44da5b31f18b7e38e285cf4a8518217fa92e197ce8",
+      "bytes": 1414,
+      "upstreamGitBlob": "48f7ee5075a17792242a093d04e76c1da2ad7c69"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/assets/templates/veo3.json",
+      "localPath": "prompt-reverse-engineer/assets/templates/veo3.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/assets/templates/veo3.json",
+      "sha256": "ecc4a62b55f4739baba724000cebcd6909d543068c5c2d056f46585c2a0aa28c",
+      "bytes": 1073,
+      "upstreamGitBlob": "858003712f78474f31a0c85b2c4c2ae1b6441b65"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/references/image_rules.md",
+      "localPath": "prompt-reverse-engineer/references/image_rules.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/references/image_rules.md",
+      "sha256": "e984de3c697f524a7c5d3efdbc4ab93256f863bfb4c4b00ab56d460ab95c354a",
+      "bytes": 10168,
+      "upstreamGitBlob": "bd62fed5e7f880b644ddc064365618b4b282548a"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/references/model_mappings.md",
+      "localPath": "prompt-reverse-engineer/references/model_mappings.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/references/model_mappings.md",
+      "sha256": "60ab3130606f47f85fc2db68f3fb6d1c991725660f325ec89450286d2870c6ac",
+      "bytes": 12427,
+      "upstreamGitBlob": "45fe6aebb33cb73a6cefad3f10ef6a2db4aed75d"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/references/prompt_framework.md",
+      "localPath": "prompt-reverse-engineer/references/prompt_framework.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/references/prompt_framework.md",
+      "sha256": "002bb3f75bc522a0af35f004218b25a5a4d857412b9040712c1da695ee9728cf",
+      "bytes": 15390,
+      "upstreamGitBlob": "1f116f9d07a1512a0ec89541bf887d3fc40e3a39"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/references/video_rules.md",
+      "localPath": "prompt-reverse-engineer/references/video_rules.md",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/references/video_rules.md",
+      "sha256": "772ce1278f7e00498844dedcd9aa512f1a2de9d08993b94b6f86ea4f4ddef8b9",
+      "bytes": 7156,
+      "upstreamGitBlob": "af96a7d87696b3e0105b7486eb54e28a4151d288"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/scripts/_net.py",
+      "localPath": "prompt-reverse-engineer/scripts/_net.py",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/scripts/_net.py",
+      "sha256": "be0569d9f05f87557c8a91802f0d5248feca221ac9a6a124ec7db02379b03972",
+      "bytes": 5224,
+      "upstreamGitBlob": "0a505292fd13732cff4c41e3b332ee85970a4171"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/scripts/analyze_image.py",
+      "localPath": "prompt-reverse-engineer/scripts/analyze_image.py",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/scripts/analyze_image.py",
+      "sha256": "8b26367fcd339c4e43fbef1804de6c2f8d866f536cd4ac65caafa632c70dbe57",
+      "bytes": 9622,
+      "upstreamGitBlob": "c12661d4bc405b4fe663aa65acbc5b90a6566c8c"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/scripts/analyze_scenes.py",
+      "localPath": "prompt-reverse-engineer/scripts/analyze_scenes.py",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/scripts/analyze_scenes.py",
+      "sha256": "e451909dd02cc3a0d56e190b1f31fbcdebaa8fdbb259abc2f1e0938284b82285",
+      "bytes": 7093,
+      "upstreamGitBlob": "721dd2bbac4412d06a364dd3bdb14a39c8ad1722"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/scripts/analyze_text.py",
+      "localPath": "prompt-reverse-engineer/scripts/analyze_text.py",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/scripts/analyze_text.py",
+      "sha256": "6c4050bd8ba466ec0aaa616185a90635ca6f2fab67e7f963e2c362f868494997",
+      "bytes": 9772,
+      "upstreamGitBlob": "d1ce64dcd22c43943f05f95bb725bd63b8d1c7e8"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/scripts/analyze_video.py",
+      "localPath": "prompt-reverse-engineer/scripts/analyze_video.py",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/scripts/analyze_video.py",
+      "sha256": "1703f1b0fec6a2c1eff413213f555d1f816dce6f84c67c03fe7b80a08a20f1a7",
+      "bytes": 11366,
+      "upstreamGitBlob": "5cbdca9068b0c115969b602d463fded0f548ffcb"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "prompt-reverse-engineer-skill/scripts/prompt_compiler.py",
+      "localPath": "prompt-reverse-engineer/scripts/prompt_compiler.py",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/prompt-reverse-engineer-skill/scripts/prompt_compiler.py",
+      "sha256": "f3238cb3f1fdcc94ac6bb174f1760b3ed25b9146e8067abb4736191dadccdd94",
+      "bytes": 49988,
+      "upstreamGitBlob": "9e54b4e5e0a55824e23c5a0ef70a30122384c23f"
+    },
+    {
+      "sourceId": "youmind",
+      "upstreamPath": "references/manifest.json",
+      "localPath": "upstream/youmind/manifest.json",
+      "url": "https://raw.githubusercontent.com/YouMind-OpenLab/ai-image-prompts-skill/da91eaf81b42b0037d99641ef5acc5e622e48c67/references/manifest.json",
+      "sha256": "fc289f4b78115ad59f7780a1647ab6a8a90fabd9e67fab61634455bff9573a99",
+      "bytes": 1622
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/acid-burst-motion-type/style.json",
+      "localPath": "upstream/visual-cookbook/styles/acid-burst-motion-type/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/acid-burst-motion-type/style.json",
+      "sha256": "0a41769caf90003ff95f82017d8b1e1e3830f331ba46c959cc1f155a58e79e42",
+      "bytes": 10918,
+      "upstreamGitBlob": "06f9aea2b90156ec1cc22dbc8a8f92387cc764a5"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/acid-jolt-photo-collage/style.json",
+      "localPath": "upstream/visual-cookbook/styles/acid-jolt-photo-collage/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/acid-jolt-photo-collage/style.json",
+      "sha256": "50badecebc51a9820edb6c78016ba361a219e6195b4d91e3eb0ce6a5cdc9803a",
+      "bytes": 12647,
+      "upstreamGitBlob": "0ad2f3033d7a9b7e7d0ee249919f535e020603c8"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/acid-lime-3d-streetwear-type-poster-style/style.json",
+      "localPath": "upstream/visual-cookbook/styles/acid-lime-3d-streetwear-type-poster-style/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/acid-lime-3d-streetwear-type-poster-style/style.json",
+      "sha256": "9d048d91b7a591b13e94f4b1a60f93712cd75d1740837d68b576567b957559fa",
+      "bytes": 19449,
+      "upstreamGitBlob": "04101529f8ef98c9ba137c1c1e78abddeb854cbe"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/acid-parallax/style.json",
+      "localPath": "upstream/visual-cookbook/styles/acid-parallax/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/acid-parallax/style.json",
+      "sha256": "c29c5a7ce355d5b3b4b01dc695d8aef5bfbf5a69944e85fa7b8938c1211d465e",
+      "bytes": 14542,
+      "upstreamGitBlob": "3f3ad263977325a7f9991d7b50c12dbd64e8bec9"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/acid-phase-operatives/style.json",
+      "localPath": "upstream/visual-cookbook/styles/acid-phase-operatives/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/acid-phase-operatives/style.json",
+      "sha256": "5d87c4afededea28e914c443fbf7855edba8a6a6367437b1aa3048dcfacd70ef",
+      "bytes": 11933,
+      "upstreamGitBlob": "a081faf4de0cd96d8e9f9d3382cbbab45e05ffcf"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/amber-orbit-editorial/style.json",
+      "localPath": "upstream/visual-cookbook/styles/amber-orbit-editorial/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/amber-orbit-editorial/style.json",
+      "sha256": "e63f4b88dac2e61854af9da1e45ebbb626d9854e9d902ef5131edca67e6d7a4f",
+      "bytes": 16985,
+      "upstreamGitBlob": "2c1f2863282a047131f32eb0a9d66d7d34ac5b3b"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/analog-sticker-diary-portrait-poster-style/style.json",
+      "localPath": "upstream/visual-cookbook/styles/analog-sticker-diary-portrait-poster-style/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/analog-sticker-diary-portrait-poster-style/style.json",
+      "sha256": "f9ef7ee70b36cb52b31ea9058a2b9ef4ef0834ed5c9653df6907c243cd2579c3",
+      "bytes": 12541,
+      "upstreamGitBlob": "cda6e21a02512d57654c03df703d27de82f781aa"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/annotated-absence/style.json",
+      "localPath": "upstream/visual-cookbook/styles/annotated-absence/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/annotated-absence/style.json",
+      "sha256": "0635e8e823bd91f93fe66a96d3286e3e771f709beb561b8b3ee4bc3e5ecef8a4",
+      "bytes": 10386,
+      "upstreamGitBlob": "2f672a4f521a80e829f81832d02e608b71a083e4"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/backseat-transit-doodle-letter-poster-style/style.json",
+      "localPath": "upstream/visual-cookbook/styles/backseat-transit-doodle-letter-poster-style/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/backseat-transit-doodle-letter-poster-style/style.json",
+      "sha256": "e746f2e35062aad589c5e05daa15c18837d2a26e420622a69bec7e279c4aeff6",
+      "bytes": 12670,
+      "upstreamGitBlob": "229fa882e47f557690f3ea51f526afe79feb7d14"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/black-cutout-food-card-ad-style/style.json",
+      "localPath": "upstream/visual-cookbook/styles/black-cutout-food-card-ad-style/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/black-cutout-food-card-ad-style/style.json",
+      "sha256": "d792167daa3208d4af34b32bd86e9b5e9f73d78e41919e6b1f5b05d57eb572d3",
+      "bytes": 14860,
+      "upstreamGitBlob": "e581e1534df50f5bfd50a6e2a5ca6d59e027a1f6"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/blue-bubble-fisheye-action-poster-style/style.json",
+      "localPath": "upstream/visual-cookbook/styles/blue-bubble-fisheye-action-poster-style/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/blue-bubble-fisheye-action-poster-style/style.json",
+      "sha256": "6ad9225f9549f26fede001dc5209be5ae31493a3fc0ab76119e5df447cd02afa",
+      "bytes": 14023,
+      "upstreamGitBlob": "bce18da98eaa15e8ad77e548d0d0fec0782860ab"
+    },
+    {
+      "sourceId": "visual-cookbook",
+      "upstreamPath": "styles/blue-chinese-perspective-type-canyon-style/style.json",
+      "localPath": "upstream/visual-cookbook/styles/blue-chinese-perspective-type-canyon-style/style.json",
+      "url": "https://raw.githubusercontent.com/VigoZhao/AI-Visual-Prompt-Cookbook/e3f7f518c5529c50fc2e0084df00f766a72eabeb/styles/blue-chinese-perspective-type-canyon-style/style.json",
+      "sha256": "b74c67ec60ac6f5a585d7e38c01b518b32db76789d6ee517ef679a0a6dfc6143",
+      "bytes": 15033,
+      "upstreamGitBlob": "29ad0658ad96e55f1fb87c1f7eb847b053505def"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "README_en.md",
+      "localPath": "image-prompt-reverse/README_en.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/README_en.md",
+      "sha256": "538d680723b64bc83be9f140f1b0dc5f65f700c83f968fd620d761a8c4d4d005",
+      "bytes": 4972,
+      "upstreamGitBlob": "2236b20540abfdd4217da26465cd15fbe108447c"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "RELEASE_NOTES.md",
+      "localPath": "image-prompt-reverse/RELEASE_NOTES.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/RELEASE_NOTES.md",
+      "sha256": "044b5b2d6811fbb6dcabf87ba3363e0673da86a0d41e21ebff460ea301ac9477",
+      "bytes": 8666,
+      "upstreamGitBlob": "6e4b70afb7fa7d9ddf5e89dbe7aa479ab99d4e48"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "tests/NOTICE-assets.md",
+      "localPath": "image-prompt-reverse/tests/NOTICE-assets.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/tests/NOTICE-assets.md",
+      "sha256": "aa39d397e59cd41039bdcacd417cd3c982be590d46e31f627dbdf7f50bf3a843",
+      "bytes": 988,
+      "upstreamGitBlob": "efd23dba5d2b831be8bbfeb977075137c0fa823a"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "tests/README.md",
+      "localPath": "image-prompt-reverse/tests/README.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/tests/README.md",
+      "sha256": "2b7629a9dbcfd94b9c5d478f4ca8107c363a9de4f23c2cdfff1494fa49a93e6a",
+      "bytes": 4459,
+      "upstreamGitBlob": "9aae5ed9ecffabeba7e4766423c928262c9d46e1"
+    },
+    {
+      "sourceId": "image-prompt-reverse",
+      "upstreamPath": "tests/case-01-crt-sand-sky.md",
+      "localPath": "image-prompt-reverse/tests/case-01-crt-sand-sky.md",
+      "url": "https://raw.githubusercontent.com/luozhilzh/image-prompt-reverse/cfbb2d1efe01f75ef31c0c3e68da31ddfea7dd88/tests/case-01-crt-sand-sky.md",
+      "sha256": "6606940130951f56903cca4a5daef04cbeda87a26360427c37fcdea65d190115",
+      "bytes": 5606,
+      "upstreamGitBlob": "2e5d78ef94ce4d48cc6ca9dc1a2d040f445ca268"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "tools/fixtures/semantic_image.json",
+      "localPath": "prompt-reverse-engineer/tools/fixtures/semantic_image.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/tools/fixtures/semantic_image.json",
+      "sha256": "561881d51766998a6ee3215098426333515fc22d0f81dba9964713634d8c968e",
+      "bytes": 1297,
+      "upstreamGitBlob": "9847d15154443f28023a38a987c3882ae3054b9f"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "tools/fixtures/semantic_story.json",
+      "localPath": "prompt-reverse-engineer/tools/fixtures/semantic_story.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/tools/fixtures/semantic_story.json",
+      "sha256": "c2f4fc2f08cbd37a6dfb846d04efd1aefb4ba1c13128ab1ffaa1479efd927438",
+      "bytes": 4981,
+      "upstreamGitBlob": "05074fd01f78dbe48a4cdf4b09cace202b5b9649"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "tools/fixtures/semantic_text.json",
+      "localPath": "prompt-reverse-engineer/tools/fixtures/semantic_text.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/tools/fixtures/semantic_text.json",
+      "sha256": "5a4c0f9814af72a634b7fd8e264f0f06c246d0ea80da63dcb52fc5cd262f5136",
+      "bytes": 1117,
+      "upstreamGitBlob": "0dda7d49e003e9b14f3c5dd31aaba791783e1c37"
+    },
+    {
+      "sourceId": "prompt-reverse-engineer",
+      "upstreamPath": "tools/fixtures/semantic_video.json",
+      "localPath": "prompt-reverse-engineer/tools/fixtures/semantic_video.json",
+      "url": "https://raw.githubusercontent.com/niobium617/prompt-reverse-engineer-skill/cce932df4bba57f06ae88baae80d117afb85895b/tools/fixtures/semantic_video.json",
+      "sha256": "68eb944c2394afcee21fc2bd70a3e61e4c6846e555c7522181a85c93db83774d",
+      "bytes": 2025,
+      "upstreamGitBlob": "21894b98ac157b2c30a2017200ae4ba6f131a05d"
+    }
+  ]
+}

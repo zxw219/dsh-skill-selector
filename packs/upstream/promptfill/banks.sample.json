@@ -1,0 +1,1195 @@
+{
+  "banks": {
+    "clothing": {
+      "label": {
+        "cn": "人物服饰",
+        "en": "Clothing"
+      },
+      "category": "item",
+      "options": [
+        {
+          "cn": "炭灰色无袖连衣裙",
+          "en": "Charcoal grey sleeveless dress"
+        },
+        {
+          "cn": "白色丝绸衬衫",
+          "en": "White silk shirt"
+        },
+        {
+          "cn": "黑色修身西装",
+          "en": "Black slim-fit suit"
+        },
+        {
+          "cn": "战术机能风外套",
+          "en": "Tactical techwear jacket"
+        },
+        {
+          "cn": "复古碎花连衣裙",
+          "en": "Vintage floral print dress"
+        },
+        {
+          "cn": "略显成熟的“大姐姐”时尚风格",
+          "en": "Slightly mature 'onee-san' fashion style"
+        },
+        {
+          "cn": "柔和青色复古碎花连衣裙",
+          "en": "Muted teal floral dress with subtle vintage patterns"
+        }
+      ],
+      "upstreamOptionCount": 7
+    },
+    "lighting": {
+      "label": {
+        "cn": "灯光布置",
+        "en": "Lighting"
+      },
+      "category": "visual",
+      "options": [
+        {
+          "cn": "大型顶置柔光箱，轻微侧向反射光",
+          "en": "Large overhead softbox, slight side reflection"
+        },
+        {
+          "cn": "自然窗光",
+          "en": "Natural window light"
+        },
+        {
+          "cn": "伦勃朗光",
+          "en": "Rembrandt lighting"
+        },
+        {
+          "cn": "赛博朋克霓虹光",
+          "en": "Cyberpunk neon lighting"
+        },
+        {
+          "cn": "影棚硬光",
+          "en": "Studio hard light"
+        },
+        {
+          "cn": "随意的肖像摄影，带有日常快照氛围",
+          "en": "Casual portrait photography with a daily snapshot vibe"
+        },
+        {
+          "cn": "隐藏相机拍摄风格，Portra 400 胶片质感",
+          "en": "Hidden camera style, Portra 400 film grain aesthetic"
+        },
+        {
+          "cn": "阴天下的柔和自然光",
+          "en": "Soft natural light under overcast sky"
+        }
+      ],
+      "upstreamOptionCount": 8
+    },
+    "grid_pose": {
+      "label": {
+        "cn": "九宫格动作",
+        "en": "Grid Pose"
+      },
+      "category": "action",
+      "options": [
+        {
+          "cn": "前景手指虚化",
+          "en": "Out-of-focus fingers in foreground"
+        },
+        {
+          "cn": "目光锁定镜头",
+          "en": "Eyes locked on camera"
+        },
+        {
+          "cn": "单色下巴托手",
+          "en": "Monochrome hand on chin"
+        },
+        {
+          "cn": "透过模糊肩带拍摄",
+          "en": "Shooting through blurred shoulder straps"
+        },
+        {
+          "cn": "正面特写阴影",
+          "en": "Frontal close-up with shadows"
+        },
+        {
+          "cn": "斜角拍摄",
+          "en": "Angled shot"
+        },
+        {
+          "cn": "双手置于锁骨",
+          "en": "Hands on collarbones"
+        },
+        {
+          "cn": "坐姿半身侧面",
+          "en": "Seated half-body profile"
+        }
+      ],
+      "upstreamOptionCount": 23
+    },
+    "lens_param": {
+      "label": {
+        "cn": "九宫格镜头",
+        "en": "Lens Parameter"
+      },
+      "category": "visual",
+      "options": [
+        {
+          "cn": "85mm, f/1.8",
+          "en": "85mm, f/1.8"
+        },
+        {
+          "cn": "85mm, f/2.0",
+          "en": "85mm, f/2.0"
+        },
+        {
+          "cn": "50mm, f/2.2",
+          "en": "50mm, f/2.2"
+        },
+        {
+          "cn": "50mm, f/2.5",
+          "en": "50mm, f/2.5"
+        },
+        {
+          "cn": "50mm, f/3.2",
+          "en": "50mm, f/3.2"
+        },
+        {
+          "cn": "35mm, f/4.5",
+          "en": "35mm, f/4.5"
+        },
+        {
+          "cn": "85mm, f/1.9",
+          "en": "85mm, f/1.9"
+        },
+        {
+          "cn": "50mm, f/1.8",
+          "en": "50mm, f/1.8"
+        }
+      ],
+      "upstreamOptionCount": 10
+    },
+    "sticker_core": {
+      "label": {
+        "cn": "核心贴纸",
+        "en": "Sticker Core"
+      },
+      "category": "item",
+      "options": [
+        {
+          "cn": "用户穿着甜美约会装的照片",
+          "en": "Photo of user in a sweet date outfit"
+        },
+        {
+          "cn": "复古摇滚乐队T恤穿搭",
+          "en": "Vintage rock band T-shirt outfit"
+        },
+        {
+          "cn": "日系JK制服穿搭",
+          "en": "Japanese JK uniform outfit"
+        },
+        {
+          "cn": "极简职场通勤装",
+          "en": "Minimalist office commuter outfit"
+        }
+      ],
+      "upstreamOptionCount": 4
+    },
+    "fashion_deconstruct": {
+      "label": {
+        "cn": "穿搭解构",
+        "en": "Fashion Deconstruct"
+      },
+      "category": "item",
+      "options": [
+        {
+          "cn": "整齐折叠的外套和精致的高跟鞋",
+          "en": "Neatly folded coat and exquisite high heels"
+        },
+        {
+          "cn": "散落的配饰与包包",
+          "en": "Scattered accessories and bags"
+        },
+        {
+          "cn": "悬挂的衬衫与百褶裙",
+          "en": "Hanging shirt and pleated skirt"
+        },
+        {
+          "cn": "堆叠的金属配饰与皮带",
+          "en": "Stacked metal accessories and belts"
+        }
+      ],
+      "upstreamOptionCount": 4
+    },
+    "toy_companion": {
+      "label": {
+        "cn": "互动公仔",
+        "en": "Toy Companion"
+      },
+      "category": "item",
+      "options": [
+        {
+          "cn": "Labubu艺术公仔",
+          "en": "Labubu Art Toy"
+        },
+        {
+          "cn": "暴力熊积木熊",
+          "en": "Bearbrick"
+        },
+        {
+          "cn": "泡泡玛特Molly",
+          "en": "Pop Mart Molly"
+        },
+        {
+          "cn": "复古泰迪熊",
+          "en": "Vintage Teddy Bear"
+        },
+        {
+          "cn": "赛博朋克机械狗",
+          "en": "Cyberpunk Robo-Dog"
+        }
+      ],
+      "upstreamOptionCount": 5
+    },
+    "sticker_decor": {
+      "label": {
+        "cn": "装饰元素",
+        "en": "Sticker Decor"
+      },
+      "category": "item",
+      "options": [
+        {
+          "cn": "手绘爱心、闪光符号",
+          "en": "Hand-drawn hearts, sparkle symbols"
+        },
+        {
+          "cn": "星星、月亮贴纸",
+          "en": "Star and moon stickers"
+        },
+        {
+          "cn": "复古邮票与票据",
+          "en": "Vintage stamps and bills"
+        },
+        {
+          "cn": "赛博故障风Glitch元素",
+          "en": "Cyberpunk glitch elements"
+        }
+      ],
+      "upstreamOptionCount": 4
+    },
+    "character_companion": {
+      "label": {
+        "cn": "合影角色",
+        "en": "Companion"
+      },
+      "category": "character",
+      "options": [
+        {
+          "cn": "死侍 (Deadpool)",
+          "en": "Deadpool"
+        },
+        {
+          "cn": "超人 (Superman)",
+          "en": "Superman"
+        },
+        {
+          "cn": "爱因斯坦 (Einstein)",
+          "en": "Einstein"
+        },
+        {
+          "cn": "神奇女侠 (Wonder Woman)",
+          "en": "Wonder Woman"
+        },
+        {
+          "cn": "钢铁侠 (Iron Man)",
+          "en": "Iron Man"
+        },
+        {
+          "cn": "皮卡丘 (Pikachu)",
+          "en": "Pikachu"
+        },
+        {
+          "cn": "哥斯拉 (Godzilla)",
+          "en": "Godzilla"
+        },
+        {
+          "cn": "初音未来 (Hatsune Miku)",
+          "en": "Hatsune Miku"
+        }
+      ],
+      "upstreamOptionCount": 8
+    },
+    "action_pose": {
+      "label": {
+        "cn": "互动姿势",
+        "en": "Action Pose"
+      },
+      "category": "action",
+      "options": [
+        {
+          "cn": "用手指在男人脑后比划'兔耳朵'",
+          "en": "Using fingers to make 'bunny ears' behind the man's head"
+        },
+        {
+          "cn": "勾肩搭背比V字手势",
+          "en": "Arm around shoulder making V sign"
+        },
+        {
+          "cn": "互相指着对方大笑",
+          "en": "Pointing at each other and laughing"
+        },
+        {
+          "cn": "背靠背酷炫站姿",
+          "en": "Cool back-to-back standing pose"
+        }
+      ],
+      "upstreamOptionCount": 4
+    },
+    "background_scene": {
+      "label": {
+        "cn": "背景场景",
+        "en": "Background Scene"
+      },
+      "category": "location",
+      "options": [
+        {
+          "cn": "俯瞰纽约市的复仇者大厦楼顶",
+          "en": "Rooftop of Avengers Tower overlooking New York City"
+        },
+        {
+          "cn": "废弃的工业仓库",
+          "en": "Abandoned industrial warehouse"
+        },
+        {
+          "cn": "熙熙攘攘的时代广场",
+          "en": "Bustling Times Square"
+        },
+        {
+          "cn": "外太空飞船内部",
+          "en": "Inside a space-age spaceship"
+        },
+        {
+          "cn": "昏暗、平凡的房间，身后有一面素墙",
+          "en": "Dark, ordinary room with a plain wall behind the subject"
+        },
+        {
+          "cn": "昏暗舒适的后台更衣室或私密宿舍",
+          "en": "dimly lit, cozy backstage dressing room or private dorm room"
+        },
+        {
+          "cn": "盛开的郁郁葱葱的花园",
+          "en": "Lush garden in full bloom"
+        }
+      ],
+      "upstreamOptionCount": 7
+    },
+    "classic_scene": {
+      "label": {
+        "cn": "经典场景",
+        "en": "Classic Scene"
+      },
+      "category": "location",
+      "options": [
+        {
+          "cn": "黑客帝国",
+          "en": "The Matrix"
+        },
+        {
+          "cn": "千与千寻",
+          "en": "Spirited Away"
+        },
+        {
+          "cn": "疯狂动物城（Zootopia）",
+          "en": "Zootopia"
+        },
+        {
+          "cn": "生活大爆炸",
+          "en": "The Big Bang Theory"
+        },
+        {
+          "cn": "霍格沃茨魔法学院",
+          "en": "Hogwarts School of Witchcraft and Wizardry"
+        },
+        {
+          "cn": "侏罗纪公园丛林入口",
+          "en": "Jurassic Park Jungle Entrance"
+        },
+        {
+          "cn": "星球大战塔图因集市",
+          "en": "Star Wars Tatooine Market"
+        },
+        {
+          "cn": "指环王夏尔",
+          "en": "The Lord of the Rings - The Shire"
+        }
+      ],
+      "upstreamOptionCount": 12
+    },
+    "render_style": {
+      "label": {
+        "cn": "渲染风格",
+        "en": "Render Style"
+      },
+      "category": "visual",
+      "options": [
+        {
+          "cn": "Octane Render 和 Cinema 4D",
+          "en": "Octane Render and Cinema 4D"
+        },
+        {
+          "cn": "乐高积木风格",
+          "en": "LEGO Block Style"
+        },
+        {
+          "cn": "Unreal Engine 5 写实光追",
+          "en": "Unreal Engine 5 Realistic Ray Tracing"
+        },
+        {
+          "cn": "Pixar 卡通渲染",
+          "en": "Pixar Cartoon Rendering"
+        },
+        {
+          "cn": "黏土动画质感",
+          "en": "Claymation Texture"
+        },
+        {
+          "cn": "手办级实体渲染",
+          "en": "Figurine-level Physical Rendering"
+        },
+        {
+          "cn": "3D像素风格",
+          "en": "3D Pixel Art Style"
+        },
+        {
+          "cn": "手工毛线针织风格",
+          "en": "Hand-knitted Yarn Style"
+        }
+      ],
+      "upstreamOptionCount": 11
+    },
+    "position": {
+      "label": {
+        "cn": "文字位置",
+        "en": "Text Position"
+      },
+      "category": "location",
+      "options": [
+        {
+          "cn": "顶部中央",
+          "en": "Top Center"
+        },
+        {
+          "cn": "底部中央",
+          "en": "Bottom Center"
+        },
+        {
+          "cn": "左上角偏中",
+          "en": "Top Left biased center"
+        },
+        {
+          "cn": "右上角偏中",
+          "en": "Top Right biased center"
+        },
+        {
+          "cn": "画面中上方悬浮",
+          "en": "Floating in top middle"
+        }
+      ],
+      "upstreamOptionCount": 5
+    },
+    "company": {
+      "label": {
+        "cn": "公司",
+        "en": "Company"
+      },
+      "category": "location",
+      "options": [
+        {
+          "cn": "Apple",
+          "en": "Apple"
+        },
+        {
+          "cn": "任天堂（Nintendo）",
+          "en": "Nintendo"
+        },
+        {
+          "cn": "SONY",
+          "en": "SONY"
+        },
+        {
+          "cn": "宜家（IKEA）",
+          "en": "IKEA"
+        }
+      ],
+      "upstreamOptionCount": 4
+    },
+    "ratio": {
+      "label": {
+        "cn": "画幅比例",
+        "en": "Aspect Ratio"
+      },
+      "category": "visual",
+      "options": [
+        {
+          "cn": "3:4竖构图",
+          "en": "3:4 Vertical"
+        },
+        {
+          "cn": "9:16竖构图",
+          "en": "9:16 Vertical"
+        },
+        {
+          "cn": "1:1",
+          "en": "1:1 Square"
+        },
+        {
+          "cn": "4:3横构图",
+          "en": "4:3 Horizontal"
+        },
+        {
+          "cn": "16:9横构图",
+          "en": "16:9 Horizontal"
+        },
+        {
+          "cn": "圆形画幅",
+          "en": "Circular Aspect Ratio"
+        },
+        {
+          "cn": "2:3竖构图",
+          "en": "2:3 Vertical"
+        }
+      ],
+      "upstreamOptionCount": 7
+    },
+    "character_originality": {
+      "label": {
+        "cn": "人物原创性",
+        "en": "Character Originality"
+      },
+      "category": "character",
+      "options": [
+        {
+          "cn": "创作一个原创人物",
+          "en": "Create an original character"
+        },
+        {
+          "cn": "使用附图中的人物，确保结果与人物一致性",
+          "en": "Use character in attachment, ensure consistency"
+        },
+        {
+          "cn": "对知名角色再创作",
+          "en": "Re-create a well-known character"
+        }
+      ],
+      "upstreamOptionCount": 3
+    },
+    "lens_type": {
+      "label": {
+        "cn": "镜头类型",
+        "en": "Lens Type"
+      },
+      "category": "visual",
+      "options": [
+        {
+          "cn": "标准镜头",
+          "en": "Standard Lens"
+        },
+        {
+          "cn": "广角镜头",
+          "en": "Wide-angle Lens"
+        },
+        {
+          "cn": "长焦镜头",
+          "en": "Telephoto Lens"
+        },
+        {
+          "cn": "极端鱼眼镜头",
+          "en": "Extreme Fisheye Lens"
+        },
+        {
+          "cn": "移轴镜头",
+          "en": "Tilt-shift Lens"
+        },
+        {
+          "cn": "微距镜头",
+          "en": "Macro Lens"
+        }
+      ],
+      "upstreamOptionCount": 6
+    },
+    "subject": {
+      "label": {
+        "cn": "主体对象",
+        "en": "Subject"
+      },
+      "category": "character",
+      "options": [
+        {
+          "cn": "女性角色",
+          "en": "Female Character"
+        },
+        {
+          "cn": "男性角色",
+          "en": "Male Character"
+        },
+        {
+          "cn": "机甲少女",
+          "en": "Mecha Girl"
+        },
+        {
+          "cn": "怪物拟人化",
+          "en": "Monster Anthropomorphism"
+        },
+        {
+          "cn": "奇幻种族(精灵/恶魔)",
+          "en": "Fantasy Race (Elf/Demon)"
+        },
+        {
+          "cn": "女性，约20岁",
+          "en": "Female, around 20 years old"
+        },
+        {
+          "cn": "年轻韩国女团偶像",
+          "en": "Young Korean female K-pop idol"
+        }
+      ],
+      "upstreamOptionCount": 7
+    },
+    "school_uniform": {
+      "label": {
+        "cn": "校服样式",
+        "en": "School Uniform"
+      },
+      "category": "item",
+      "options": [
+        {
+          "cn": "传统水手服校服",
+          "en": "Traditional Sailor Uniform"
+        },
+        {
+          "cn": "灰色开衫和格子裙校服",
+          "en": "Grey cardigan and plaid skirt uniform"
+        },
+        {
+          "cn": "英伦风百褶裙校服",
+          "en": "British style pleated skirt uniform"
+        },
+        {
+          "cn": "日系JK制服",
+          "en": "Japanese JK Uniform"
+        },
+        {
+          "cn": "运动校服",
+          "en": "Tracksuit School Uniform"
+        },
+        {
+          "cn": "冬季大衣校服",
+          "en": "Winter coat school uniform"
+        }
+      ],
+      "upstreamOptionCount": 6
+    },
+    "urban_location": {
+      "label": {
+        "cn": "城市地点",
+        "en": "Urban Location"
+      },
+      "category": "location",
+      "options": [
+        {
+          "cn": "涩谷十字路口",
+          "en": "Shibuya Crossing"
+        },
+        {
+          "cn": "东京塔下",
+          "en": "Under Tokyo Tower"
+        },
+        {
+          "cn": "时代广场",
+          "en": "Times Square"
+        },
+        {
+          "cn": "埃菲尔铁塔旁",
+          "en": "By the Eiffel Tower"
+        },
+        {
+          "cn": "中央公园",
+          "en": "Central Park"
+        },
+        {
+          "cn": "北京王府井",
+          "en": "Beijing Wangfujing"
+        },
+        {
+          "cn": "上海外滩",
+          "en": "Shanghai Bund"
+        },
+        {
+          "cn": "香港维多利亚港",
+          "en": "Hong Kong Victoria Harbour"
+        }
+      ],
+      "upstreamOptionCount": 8
+    },
+    "dynamic_action": {
+      "label": {
+        "cn": "动态动作",
+        "en": "Dynamic Action"
+      },
+      "category": "action",
+      "options": [
+        {
+          "cn": "一只手夸张地伸向镜头前景",
+          "en": "One hand exaggeratedly reaching towards the foreground"
+        },
+        {
+          "cn": "双臂张开拥抱天空",
+          "en": "Arms open wide embracing the sky"
+        },
+        {
+          "cn": "旋转跳跃",
+          "en": "Spinning and jumping"
+        },
+        {
+          "cn": "奔跑前进",
+          "en": "Running forward"
+        },
+        {
+          "cn": "蹲下捡拾",
+          "en": "Squatting down to pick up"
+        },
+        {
+          "cn": "挥手致意",
+          "en": "Waving greeting"
+        },
+        {
+          "cn": "舞蹈姿势",
+          "en": "Dance pose"
+        },
+        {
+          "cn": "比心手势",
+          "en": "Heart gesture"
+        }
+      ],
+      "upstreamOptionCount": 8
+    },
+    "fingernail_detail": {
+      "label": {
+        "cn": "手指甲细节",
+        "en": "Fingernail Detail"
+      },
+      "category": "visual",
+      "options": [
+        {
+          "cn": "手指甲清晰可见",
+          "en": "Fingernails clearly visible"
+        },
+        {
+          "cn": "涂有鲜艳指甲油",
+          "en": "Coated with bright nail polish"
+        },
+        {
+          "cn": "自然裸色指甲",
+          "en": "Natural nude nails"
+        },
+        {
+          "cn": "装饰有钻石指甲",
+          "en": "Decorated with diamond nails"
+        },
+        {
+          "cn": "渐变色指甲",
+          "en": "Gradient nails"
+        },
+        {
+          "cn": "艺术图案指甲",
+          "en": "Artistic pattern nails"
+        }
+      ],
+      "upstreamOptionCount": 6
+    },
+    "building_cluster": {
+      "label": {
+        "cn": "建筑群",
+        "en": "Building Cluster"
+      },
+      "category": "location",
+      "options": [
+        {
+          "cn": "扭曲的涩谷109大楼和其他建筑林立",
+          "en": "Distorted Shibuya 109 building and other forest of buildings"
+        },
+        {
+          "cn": "纽约摩天大楼群",
+          "en": "New York skyscraper cluster"
+        },
+        {
+          "cn": "巴黎古典建筑",
+          "en": "Parisian classical architecture"
+        },
+        {
+          "cn": "上海现代高层建筑",
+          "en": "Shanghai modern high-rise buildings"
+        },
+        {
+          "cn": "东京传统寺庙与现代建筑混合",
+          "en": "Mix of traditional Tokyo temples and modern architecture"
+        },
+        {
+          "cn": "伦敦金融城高楼",
+          "en": "City of London high-rises"
+        }
+      ],
+      "upstreamOptionCount": 6
+    },
+    "monster_element": {
+      "label": {
+        "cn": "怪兽元素",
+        "en": "Monster Element"
+      },
+      "category": "character",
+      "options": [
+        {
+          "cn": "巨大的粉色和蓝色渐变卡通怪兽",
+          "en": "Giant pink and blue gradient cartoon monster"
+        },
+        {
+          "cn": "机械机器人怪兽",
+          "en": "Mecha robot monster"
+        },
+        {
+          "cn": "神话传说中的龙",
+          "en": "Legendary dragon"
+        },
+        {
+          "cn": "外星生物",
+          "en": "Alien creature"
+        },
+        {
+          "cn": "海洋深渊巨兽",
+          "en": "Deep sea behemoth"
+        },
+        {
+          "cn": "森林精灵",
+          "en": "Forest elf"
+        }
+      ],
+      "upstreamOptionCount": 6
+    },
+    "monster_feature": {
+      "label": {
+        "cn": "怪兽特征",
+        "en": "Monster Feature"
+      },
+      "category": "character",
+      "options": [
+        {
+          "cn": "巨大的触手和角",
+          "en": "Giant tentacles and horns"
+        },
+        {
+          "cn": "锋利的爪子和牙齿",
+          "en": "Sharp claws and teeth"
+        },
+        {
+          "cn": "多彩的翅膀",
+          "en": "Colorful wings"
+        },
+        {
+          "cn": "发光的眼睛",
+          "en": "Glowing eyes"
+        },
+        {
+          "cn": "金属外壳",
+          "en": "Metal shell"
+        },
+        {
+          "cn": "藤蔓植物",
+          "en": "Vining plants"
+        }
+      ],
+      "upstreamOptionCount": 6
+    },
+    "character_groups": {
+      "label": {
+        "cn": "人物组合",
+        "en": "Character Groups"
+      },
+      "category": "character",
+      "options": [
+        {
+          "cn": "中国古代开国皇帝",
+          "en": "Ancient Chinese Founding Emperors"
+        },
+        {
+          "cn": "漫威人物",
+          "en": "Marvel Characters"
+        },
+        {
+          "cn": "金庸古龙武侠人物",
+          "en": "Jin Yong & Gu Long Wuxia Characters"
+        },
+        {
+          "cn": "三国知名人物",
+          "en": "Famous Three Kingdoms Figures"
+        },
+        {
+          "cn": "知名军事家（拿破仑、凯撒、曹操等）",
+          "en": "Famous Military Strategists (Napoleon, Caesar, Cao Cao, etc.)"
+        },
+        {
+          "cn": "全球知名运动员",
+          "en": "World-famous Athletes"
+        },
+        {
+          "cn": "中外知名侦探（包青天、狄仁杰、福尔摩斯、柯南等）",
+          "en": "Famous Detectives (Bao Zheng, Di Renjie, Sherlock Holmes, Conan, etc.)"
+        },
+        {
+          "cn": "动漫游戏角色",
+          "en": "Anime & Game Characters"
+        }
+      ],
+      "upstreamOptionCount": 10
+    },
+    "social_media": {
+      "label": {
+        "cn": "社交媒体",
+        "en": "Social Media"
+      },
+      "category": "location",
+      "options": [
+        {
+          "cn": "微信朋友圈",
+          "en": "WeChat Moments"
+        },
+        {
+          "cn": "微博",
+          "en": "Weibo"
+        },
+        {
+          "cn": "Twitter(X)",
+          "en": "Twitter(X)"
+        },
+        {
+          "cn": "小红书",
+          "en": "Little Red Book (Xiaohongshu)"
+        },
+        {
+          "cn": "Instagram",
+          "en": "Instagram"
+        },
+        {
+          "cn": "Facebook",
+          "en": "Facebook"
+        },
+        {
+          "cn": "抖音",
+          "en": "Douyin"
+        },
+        {
+          "cn": "TikTok",
+          "en": "TikTok"
+        }
+      ],
+      "upstreamOptionCount": 8
+    },
+    "travel_location": {
+      "label": {
+        "cn": "旅游地点",
+        "en": "Travel Location"
+      },
+      "category": "location",
+      "options": [
+        {
+          "cn": "西藏拉萨布达拉宫",
+          "en": "Potala Palace, Lhasa, Tibet"
+        },
+        {
+          "cn": "湖南林中小寨",
+          "en": "Forest Village in Hunan"
+        },
+        {
+          "cn": "东北雪乡",
+          "en": "Snow Village in Northeast China"
+        },
+        {
+          "cn": "老北京胡同",
+          "en": "Old Beijing Hutongs"
+        },
+        {
+          "cn": "云南大理洱海",
+          "en": "Erhai Lake, Dali, Yunnan"
+        },
+        {
+          "cn": "新疆喀纳斯湖",
+          "en": "Kanas Lake, Xinjiang"
+        },
+        {
+          "cn": "四川九寨沟",
+          "en": "Jiuzhaigou, Sichuan"
+        },
+        {
+          "cn": "桂林漓江",
+          "en": "Li River, Guilin"
+        }
+      ],
+      "upstreamOptionCount": 12
+    },
+    "comic_scene": {
+      "label": {
+        "cn": "漫画场景",
+        "en": "Comic Scene"
+      },
+      "category": "location",
+      "options": [
+        {
+          "cn": "唯美的卧室",
+          "en": "Beautiful bedroom"
+        },
+        {
+          "cn": "繁华的街头",
+          "en": "Busy street"
+        },
+        {
+          "cn": "温馨的教室",
+          "en": "Cozy classroom"
+        },
+        {
+          "cn": "现代咖啡厅",
+          "en": "Modern cafe"
+        },
+        {
+          "cn": "公园长椅",
+          "en": "Park bench"
+        },
+        {
+          "cn": "图书馆角落",
+          "en": "Library corner"
+        },
+        {
+          "cn": "艺术工作室",
+          "en": "Art studio"
+        },
+        {
+          "cn": "屋顶天台",
+          "en": "Rooftop"
+        }
+      ],
+      "upstreamOptionCount": 10
+    },
+    "designer": {
+      "label": {
+        "cn": "设计师",
+        "en": "Designer"
+      },
+      "category": "character",
+      "options": [
+        {
+          "cn": "安东尼·高迪 (Antoni Gaudí)",
+          "en": "Antoni Gaudí"
+        },
+        {
+          "cn": "Jonathan Ive (Jony Ive)",
+          "en": "Jonathan Ive"
+        },
+        {
+          "cn": "Gio Ponti",
+          "en": "Gio Ponti"
+        },
+        {
+          "cn": "迪特·拉姆斯 (Dieter Rams)",
+          "en": "Dieter Rams"
+        },
+        {
+          "cn": "菲利普·斯塔克 (Philippe Starck)",
+          "en": "Philippe Starck"
+        },
+        {
+          "cn": "原研哉 (Kenya Hara)",
+          "en": "Kenya Hara"
+        },
+        {
+          "cn": "深泽直人 (Naoto Fukasawa)",
+          "en": "Naoto Fukasawa"
+        },
+        {
+          "cn": "扎哈·哈迪德 (Zaha Hadid)",
+          "en": "Zaha Hadid"
+        }
+      ],
+      "upstreamOptionCount": 12
+    },
+    "design_item": {
+      "label": {
+        "cn": "设计物品",
+        "en": "Design Item"
+      },
+      "category": "item",
+      "options": [
+        {
+          "cn": "无人机",
+          "en": "Drone"
+        },
+        {
+          "cn": "台球桌",
+          "en": "Pool table"
+        },
+        {
+          "cn": "拖拉机",
+          "en": "Tractor"
+        },
+        {
+          "cn": "机械键盘",
+          "en": "Mechanical keyboard"
+        },
+        {
+          "cn": "复古打字机",
+          "en": "Vintage typewriter"
+        },
+        {
+          "cn": "单反相机",
+          "en": "DSLR camera"
+        },
+        {
+          "cn": "扫地机器人",
+          "en": "Robot vacuum"
+        },
+        {
+          "cn": "咖啡机",
+          "en": "Coffee machine"
+        }
+      ],
+      "upstreamOptionCount": 19
+    },
+    "rain_shape": {
+      "label": {
+        "cn": "雨水形象",
+        "en": "Rain Shape"
+      },
+      "category": "visual",
+      "options": [
+        {
+          "cn": "芭蕾舞者",
+          "en": "Ballerina"
+        },
+        {
+          "cn": "飞舞的蝴蝶",
+          "en": "Flying butterfly"
+        },
+        {
+          "cn": "奔跑的骏马",
+          "en": "Running steed"
+        },
+        {
+          "cn": "绽放的莲花",
+          "en": "Blooming lotus"
+        },
+        {
+          "cn": "轻盈的羽毛",
+          "en": "Light feather"
+        },
+        {
+          "cn": "灵动的音符",
+          "en": "Lively musical note"
+        }
+      ],
+      "upstreamOptionCount": 6
+    }
+  },
+  "maxOptionsPerBank": 8
+}

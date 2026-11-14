@@ -1,0 +1,428 @@
+/* Native skill selector client. React is supplied by the DSH module loader. */
+window.__ModuleLoader__.load({
+  id: 'dsh-skill-selector-combo',
+  factory(require) {
+    const React = require('react');
+    const h = React.createElement;
+    const NS = 'dsh-prompt-workbench';
+    const PANEL = 'prompt-workbench';
+    const STATUSES = ['testing', 'keep', 'watch', 'retired'];
+    const en = {
+      title: 'Skill selector', subtitle: 'Describe your task, choose a skill, then add it to this conversation’s draft.',
+      recommend: 'Help me choose a skill', recommendations: 'Suggested skills', recommendationHelp: 'Matches task keywords and skill tags; this is not an effectiveness rating.', recommendationEmpty: 'No suggestions for this task. Browse the catalog or add more detail.', briefRequired: 'Describe your task first.',
+      mode: 'Usage mode', single: 'Single skill', combination: 'Combine skills', comparison: 'Comparison testing', singleHelp: 'Choose one skill for everyday use.', use: 'Use skill · add to draft', useRequired: 'Choose one available, non-retired skill and describe your task.', useHelp: 'Adds a skill invocation to your draft and saves a record for later review. Check the draft and send when ready.',
+      combinationHelp: 'Choose a primary skill and one or more supporting skills, with no selection limit. Supporting skills run in the order shown. Responsibilities are optional.', primarySkill: 'Primary skill', supportingSkills: 'Supporting skills · in order', supportingSkill: 'Supporting skill {count}', responsibility: 'Responsibility (optional, up to 1,000 characters)', responsibilityPlaceholder: 'Describe what this skill should handle…', moveUp: 'Move up', moveDown: 'Move down', remove: 'Remove', combine: 'Generate combined draft preview', combinePreviewHelp: 'Saves a combined record and shows a preview. Add it to the current draft yourself, then send when ready.', combineRequired: 'Choose at least two available, non-retired skills, select a primary skill, and describe your task.', combinedPrepared: 'Combined record saved. Review the preview, then add it to your draft when ready.', combinationPreview: 'Combined draft preview', combinationRecord: 'Combined skill record', combinationReview: 'Review the combination as a whole', combinationReviewHelp: 'This rating applies to the whole combination and does not count toward any member’s individual skill rating.', combinationMembers: 'Combination members and responsibilities', responsibilityEmpty: 'No responsibility specified', comparisonHelp: 'Select any number of skills to save independent trials for comparison.',
+      selectedSingle: '{count} / 1 selected', testingTools: 'Comparison testing', selectedSkills: 'Selected skills',
+      'category.image': 'Images', 'category.video': 'Video', 'category.storyboard': 'Storyboards', 'category.execution': 'Generation and tools', 'category.knowledge': 'Filmmaking knowledge', 'category.reverse': 'Reference analysis', 'category.writing': 'Writing', 'category.browser': 'Browser and web', 'category.documents': 'Documents', 'category.3d': '3D and previs', 'category.coding': 'Code and development', 'category.other': 'Other skills',
+      skills: 'Skills', history: 'Use and test history', originals: 'Original prompt libraries', originalsHelp: 'Search the full YouMind library in conversation. Open the other original sites when you need their browser interface.',
+      chromeOpened: 'Chrome received the request to open a new window.', openOriginal: 'Open in new Chrome window', useOriginal: 'Use full prompt library', refreshLibrary: 'Update full library', libraryRefreshed: 'Full prompt library updated.', originalReady: 'Library instructions added to this conversation’s draft. Send when ready.',
+      draftInserted: 'Added to this conversation’s draft.', draftFallback: 'The draft changed or is unavailable. The prompt was copied instead.',
+      openDraft: 'Add to current draft', draftHelp: 'Inserts at the current selection without sending. Existing draft text is preserved.',
+      connecting: 'Opening conversation…', noTarget: 'Open this workbench from a conversation.', ready: 'Connected',
+      search: 'Search skills', historySearch: 'Search saved trials', allCategories: 'All categories', allTasks: 'All tasks', allStates: 'All workbench states', favorites: 'Favorites',
+      availableOnly: 'Available only', available: 'Available', disabled: 'Disabled in DSH', unavailable: 'Unavailable',
+      testing: 'Testing', keep: 'Keep', watch: 'Watch', retired: 'Retired', favorite: 'Favorite', unfavorite: 'Remove favorite',
+      retiredHelp: 'Retired skills are hidden by default and cannot be selected here. This does not disable the skill globally or delete its original.',
+      select: 'Select', selected: 'Selected', selectedCount: '{count} selected · unlimited', clear: 'Clear selection', status: 'Workbench status',
+      task: 'What would you like to do?', taskPlaceholder: 'Describe the task, expected result and any constraints…', model: 'Target model',
+      prepare: 'Prepare saved trials', prepareHelp: 'Each selected skill creates its own saved trial. Prompts stay separate.',
+      prepareRequired: 'Select one or more available, non-retired skills (unlimited) and enter a task brief and target model.',
+      trials: 'Saved skill records', copy: 'Copy prompt', copied: 'Copied to clipboard.', clipboardError: 'Clipboard access failed. Select and copy the prompt text below.',
+      saved: 'Saved.', prepared: 'Trials saved. Review each prompt below.', refresh: 'Refresh', export: 'Export state JSON', exported: 'Export ready below.',
+      busy: 'Working…', loading: 'Loading…', empty: 'No matching items. Adjust your search or filters.', retry: 'Retry', error: 'Operation failed',
+      originalInfo: 'Original skill information', originalTitle: 'Original title', originalDescription: 'Original description', originalWhenToUse: 'Original usage guidance',
+      when: 'When to use', effects: 'Side effects', source: 'Source', provider: 'Provider', guidance: 'Curated guidance; check the skill before use.',
+      reviews: 'reviews', review: 'Review trial', rating: 'Rating', note: 'Review note', notePlaceholder: 'What worked, what failed, and what would you change?', saveReview: 'Save review',
+      noHistory: 'No saved records yet. Use a skill or prepare a comparison to start.', reviewSaved: 'Review saved.', showPrompt: 'Prompt', exportedState: 'Exported workbench state', close: 'Close',
+      unknownResponse: 'The Host returned an unexpected workbench response.', commandMissing: 'The /prompt-workbench command is unavailable in this conversation.',
+      outcome: 'Saved reviews', noReviews: 'No reviews yet.', unchanged: 'Keep current status', groups: 'Comparison and workflow guidance', conditions: 'Comparison conditions',
+      alternative: 'Alternatives', complementary: 'Complementary', dependency: 'Dependency', 'execution-channel': 'Execution channels', routing: 'Routing',
+      originalsUnavailable: 'Original library entries are unavailable. Refresh to retry.', browserError: 'The original site could not be opened.',
+    };
+    const zh = {
+      title: '技能选择器', subtitle: '写下任务，选择技能，加入当前会话草稿。',
+      recommend: '帮我挑技能', recommendations: '建议试试', recommendationHelp: '按任务关键词与技能标签匹配，用途匹配，不是效果评分。', recommendationEmpty: '暂未找到建议，可补充任务描述或直接浏览技能。', briefRequired: '请先写下要完成的任务。',
+      mode: '使用模式', single: '单独使用', combination: '组合使用', comparison: '对比测试', singleHelp: '日常选择 1 个技能使用。', use: '使用技能 · 加入草稿', useRequired: '请选择 1 个可用且未停用的技能，并填写任务。', useHelp: '将技能调用加入草稿，并保存记录供之后评价。检查后自行发送。',
+      combinationHelp: '选择 1 个主技能和多个辅助技能，数量不限。辅助技能按下方顺序处理，各自职责可选填写。', primarySkill: '主技能', supportingSkills: '辅助技能 · 按顺序处理', supportingSkill: '辅助技能 {count}', responsibility: '职责（选填，最多 1000 字符）', responsibilityPlaceholder: '填写该技能负责处理的内容…', moveUp: '上移', moveDown: '下移', remove: '去除', combine: '生成组合草稿预览', combinePreviewHelp: '仅保存组合记录并显示预览，检查后自行点击“加入当前草稿”再发送。', combineRequired: '请选择至少 2 个可用且未停用的技能，指定主技能并填写任务。', combinedPrepared: '组合记录已保存，请检查预览，自行加入当前草稿后发送。', combinationPreview: '组合草稿预览', combinationRecord: '组合使用记录', combinationReview: '组合整体评价', combinationReviewHelp: '评分针对组合整体，不计入任何成员技能的独立质量评分。', combinationMembers: '组合成员与职责', responsibilityEmpty: '未填写职责', comparisonHelp: '可选择任意数量的技能，分别保存测试供对比。',
+      selectedSingle: '已选择 {count} / 1', testingTools: '对比测试', selectedSkills: '已选技能',
+      'category.image': '图像创作', 'category.video': '视频创作', 'category.storyboard': '分镜与导演', 'category.execution': '生成与工具', 'category.knowledge': '影视知识', 'category.reverse': '参考解析', 'category.writing': '写作', 'category.browser': '浏览器与网络', 'category.documents': '文档与表格', 'category.3d': '三维与预演', 'category.coding': '代码与开发', 'category.other': '其他技能',
+      skills: '技能', history: '使用与测试历史', originals: '原版提示词库', originalsHelp: '在对话中检索 YouMind 完整提示词库；需要网站界面时，点击打开其他原版网站。',
+      chromeOpened: '已请求 Chrome 新窗口打开，未运行时会自动启动。', openOriginal: '在 Chrome 新窗口打开', useOriginal: '使用完整提示词库', refreshLibrary: '更新完整库', libraryRefreshed: '完整提示词库已更新。', originalReady: '提示词库使用说明已加入当前会话草稿，可检查后发送。',
+      draftInserted: '已加入当前会话草稿。', draftFallback: '草稿已变化或暂不可用，已改为复制提示词。',
+      openDraft: '加入当前草稿', draftHelp: '在当前光标处插入，不自动发送，并保留已有草稿。',
+      connecting: '正在打开会话…', noTarget: '请从会话中打开工作台。', ready: '已连接',
+      search: '搜索技能', historySearch: '搜索已保存测试', allCategories: '全部分类', allTasks: '全部任务', allStates: '全部工作台状态', favorites: '收藏',
+      availableOnly: '仅显示可用', available: '可用', disabled: 'DSH 中已禁用', unavailable: '不可用',
+      testing: '测试中', keep: '保留', watch: '观察', retired: '隐藏', favorite: '收藏', unfavorite: '取消收藏',
+      retiredHelp: '停用技能默认隐藏，不能在此选择；不会全局禁用技能或删除原文件。',
+      select: '选择', selected: '已选择', selectedCount: '已选择 {count} 个 · 数量无限制', clear: '清空选择', status: '工作台状态',
+      task: '这次想做什么？', taskPlaceholder: '描述任务、期望结果和限制条件…', model: '目标模型',
+      prepare: '准备并保存测试', prepareHelp: '每个技能各自生成一条已保存的测试提示词，互不混合。',
+      prepareRequired: '请选择至少 1 个可用且未停用的技能（数量无限制），并填写任务简述和目标模型。',
+      trials: '已保存的技能记录', copy: '复制提示词', copied: '已复制到剪贴板。', clipboardError: '无法访问剪贴板，请选中下方提示词手动复制。',
+      saved: '已保存。', prepared: '测试已保存，请分别检查下方提示词。', refresh: '刷新', export: '导出状态 JSON', exported: '导出结果已显示在下方。',
+      busy: '处理中…', loading: '加载中…', empty: '没有匹配项目，请调整搜索或筛选。', retry: '重试', error: '操作失败',
+      originalInfo: '查看原版简介', originalTitle: '原版标题', originalDescription: '原版简介', originalWhenToUse: '原版适用场景',
+      when: '适用场景', effects: '副作用', source: '来源', provider: '提供方', guidance: '以下为整理后的使用提示，请以技能实际说明为准。',
+      reviews: '条评价', review: '评价测试', rating: '评分', note: '评价说明', notePlaceholder: '哪些有效，哪些失败，下次要改什么？', saveReview: '保存评价',
+      noHistory: '暂无记录。使用技能或准备对比测试后，会保存在这里。', reviewSaved: '评价已保存。', showPrompt: '提示词', exportedState: '工作台状态导出', close: '关闭',
+      unknownResponse: '主机返回了无法识别的工作台响应。', commandMissing: '该会话中尚未提供 /prompt-workbench 命令。',
+      outcome: '已保存评价', noReviews: '暂无评价。', unchanged: '保留当前状态', groups: '对比与工作流指南', conditions: '对比条件',
+      alternative: '可替代项', complementary: '互补能力', dependency: '依赖关系', 'execution-channel': '执行渠道', routing: '路由能力',
+      originalsUnavailable: '暂时无法读取原版提示词库入口，请刷新重试。', browserError: '无法在 Chrome 新窗口打开。',
+    };
+    const CSS = `
+.pw-root{height:100%;min-height:0;overflow:auto;background:var(--dsw-alias-bg-base);color:var(--dsw-alias-label-primary);font-family:inherit;font-size:13px;line-height:1.6;box-sizing:border-box}.pw-root *{box-sizing:border-box}.pw-body{padding:16px 14px 32px;min-width:0}.pw-header{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}.pw-heading{margin:0;font-size:18px;line-height:1.4;font-weight:600}.pw-subtitle,.pw-muted{color:var(--dsw-alias-label-secondary)}.pw-subtitle{margin:6px 0 0}.pw-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pw-between{justify-content:space-between}.pw-field{display:flex;flex-direction:column;gap:6px;min-width:0}.pw-label{font-size:12px;color:var(--dsw-alias-label-secondary)}.pw-input,.pw-select,.pw-textarea,.pw-prompt{font:inherit;width:100%;min-width:0;border:1px solid var(--dsw-alias-border-l1);border-radius:8px;background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary);padding:8px 10px;min-height:36px}.pw-textarea{resize:vertical;min-height:100px;line-height:1.6}.pw-prompt{resize:vertical;min-height:150px;font-family:monospace;font-size:12px}.pw-root :is(button,input,select,textarea,summary):focus-visible,.pw-header-entry:focus-visible{outline:2px solid var(--dsw-alias-brand-primary);outline-offset:2px}.pw-button{font:inherit;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:6px;min-height:34px;padding:6px 10px;border:1px solid var(--dsw-alias-border-l1);border-radius:8px;background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary);white-space:normal;text-align:center}.pw-button:disabled{opacity:.45;cursor:not-allowed}.pw-primary{background:var(--dsw-alias-brand-primary);color:var(--dsw-alias-label-primary-inverted);border-color:var(--dsw-alias-brand-primary)}.pw-quiet{background:transparent}.pw-help{font-size:12px;color:var(--dsw-alias-label-secondary);margin:8px 0}.pw-tabs{display:flex;gap:4px;border-bottom:1px solid var(--dsw-alias-border-l1);margin-bottom:14px}.pw-tab{font:inherit;cursor:pointer;padding:8px 12px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--dsw-alias-label-secondary)}.pw-tab[aria-selected=true]{color:var(--dsw-alias-label-primary);border-bottom-color:var(--dsw-alias-brand-primary)}.pw-filters,.pw-grid,.pw-builder-grid,.pw-review-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}.pw-filters{margin:12px 0}.pw-card{padding:12px;border:1px solid var(--dsw-alias-border-l1);border-radius:10px;min-width:0;overflow-wrap:anywhere;background:var(--dsw-alias-bg-layer-1)}.pw-card p{margin:8px 0}.pw-card-top{display:flex;justify-content:space-between;align-items:start;gap:8px}.pw-card-title{font-size:14px;font-weight:600;margin:0;overflow-wrap:anywhere}.pw-picked{border-color:var(--dsw-alias-brand-primary)}.pw-card-foot{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pw-card-foot>.pw-select{flex:1;min-width:120px}.pw-badges{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.pw-badge{display:inline-block;font-size:11px;border:1px solid var(--dsw-alias-border-l1);border-radius:6px;padding:1px 6px;color:var(--dsw-alias-label-secondary)}.pw-available{color:var(--dsw-alias-brand-primary)}.pw-builder{margin-top:16px;padding:12px;border:1px solid var(--dsw-alias-border-l1);border-radius:10px}.pw-builder h2,.pw-section-title{font-size:15px;margin:0 0 12px}.pw-builder-grid{margin:12px 0}.pw-check{display:flex;align-items:center;gap:6px}.pw-notice{border:1px solid var(--dsw-alias-border-l1);border-radius:8px;padding:10px;margin:10px 0;overflow-wrap:anywhere}.pw-empty{padding:24px 8px;color:var(--dsw-alias-label-secondary);text-align:center}.pw-trial{margin:12px 0}.pw-trial>.pw-prompt{margin:10px 0}.pw-review{border-top:1px solid var(--dsw-alias-border-l1);padding-top:12px;margin-top:12px;display:grid;gap:10px}.pw-review-note{min-height:70px}.pw-saved-review{padding:10px 0;border-bottom:1px solid var(--dsw-alias-border-l1)}.pw-originals{margin-bottom:18px}.pw-originals>.pw-help{margin-bottom:12px}.pw-root summary{cursor:pointer}.pw-header-entry{display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:5px;border:0;border-radius:6px;color:var(--dsw-alias-label-secondary);background:transparent;min-width:28px;min-height:28px}
+`;
+    function text(value) {
+      if (value == null) return '';
+      if (typeof value === 'string') return value;
+      if (Array.isArray(value)) return value.map(text).filter(Boolean).join(' · ');
+      return typeof value === 'object' ? String(value.label || value.title || value.name || value.id || JSON.stringify(value)) : String(value);
+    }
+    function Icon({ size = 18 }) {
+      return h('svg', { viewBox: '0 0 24 24', width: size, height: size, fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true },
+        h('path', { d: 'M5 4.5h9a2 2 0 0 1 2 2V10M5 4.5a2 2 0 0 0-2 2v13h11M5 4.5v15M8 8h5M8 11h3' }),
+        h('path', { d: 'm17.5 11 .9 3.1 3.1.9-3.1.9-.9 3.1-.9-3.1-3.1-.9 3.1-.9.9-3.1ZM10 16h1M19 4v4M17 6h4' }));
+    }
+    function Field({ label, children }) { return h('label', { className: 'pw-field' }, h('span', { className: 'pw-label' }, label), children); }
+    function Button({ children, primary, quiet, ...props }) { return h('button', { type: 'button', ...props, className: 'pw-button' + (primary ? ' pw-primary' : '') + (quiet ? ' pw-quiet' : '') }, children); }
+    function Select({ label, value, onChange, options, disabled }) { return h('select', { className: 'pw-select', 'aria-label': label, value, disabled, onChange: e => onChange(e.target.value) }, options.map(option => h('option', { key: option.value, value: option.value }, option.label))); }
+    function PromptResult({ title, prompt, t, onCopy, onDraft, children }) {
+      return h('article', { className: 'pw-card pw-trial' }, h('h3', { className: 'pw-card-title' }, title),
+        h('textarea', { className: 'pw-prompt', readOnly: true, value: prompt || '', 'aria-label': t('showPrompt') }),
+        h('div', { className: 'pw-row' }, h(Button, { onClick: () => void onCopy(prompt) }, t('copy')), h(Button, { onClick: () => void onDraft(prompt) }, t('openDraft'))),
+        h('p', { className: 'pw-help' }, t('draftHelp')), children);
+    }
+    function ReviewForm({ trial, t, disabled, onSave }) {
+      const [rating, setRating] = React.useState('5');
+      const [note, setNote] = React.useState('');
+      const [status, setStatus] = React.useState('');
+      const combination = trial.kind === 'combination';
+      return h('form', { className: 'pw-review', onSubmit: e => { e.preventDefault(); onSave({ skillId: trial.skillId, trialId: trial.id, rating: Number(rating), note, ...(!combination && status ? { status } : {}) }); } },
+        h('h4', { className: 'pw-card-title' }, t(combination ? 'combinationReview' : 'review')),
+        combination && h('p', { className: 'pw-help' }, t('combinationReviewHelp')),
+        h('div', { className: 'pw-review-grid' },
+          h(Field, { label: t('rating') }, h(Select, { label: t('rating'), value: rating, onChange: setRating, disabled, options: [5, 4, 3, 2, 1].map(n => ({ value: String(n), label: '★'.repeat(n) + ' ' + n + '/5' })) })),
+          !combination && h(Field, { label: t('status') }, h(Select, { label: t('status'), value: status, onChange: setStatus, disabled, options: [{ value: '', label: t('unchanged') }, ...STATUSES.map(value => ({ value, label: t(value) }))] }))),
+        h(Field, { label: t('note') }, h('textarea', { className: 'pw-textarea pw-review-note', value: note, onChange: e => setNote(e.target.value), placeholder: t('notePlaceholder'), disabled })),
+        h('div', { className: 'pw-card-foot' }, h(Button, { type: 'submit', disabled, primary: true }, t('saveReview'))));
+    }
+    // Each body is keyed by its native Session identity. No manual target selector or new-session draft routing.
+    function Panel({ ctx, t, sessionId: target, inputActions }) {
+      const [connection, setConnection] = React.useState('idle');
+      const [connectAttempt, setConnectAttempt] = React.useState(0);
+      const [tab, setTab] = React.useState('skills');
+      const [query, setQuery] = React.useState('');
+      const [category, setCategory] = React.useState('');
+      const [taskFilter, setTaskFilter] = React.useState('');
+      const [statusFilter, setStatusFilter] = React.useState('');
+      const [availableOnly, setAvailableOnly] = React.useState(true);
+      const [mode, setMode] = React.useState('single');
+      const comparison = mode === 'comparison';
+      const combination = mode === 'combination';
+      const [primaryId, setPrimaryId] = React.useState('');
+      const [roles, setRoles] = React.useState({});
+      const [recommendations, setRecommendations] = React.useState(null);
+      const [catalog, setCatalog] = React.useState({ skills: [], groups: [], stats: {} });
+      const [originals, setOriginals] = React.useState([]);
+      const [selected, setSelected] = React.useState([]);
+      const [brief, setBrief] = React.useState('');
+      const [model, setModel] = React.useState('Midjourney');
+      const [prepared, setPrepared] = React.useState([]);
+      const [history, setHistory] = React.useState({ trials: [], reviews: [] });
+      const [exported, setExported] = React.useState('');
+      const [busy, setBusy] = React.useState('');
+      const [loading, setLoading] = React.useState(false);
+      const [notice, setNotice] = React.useState(null);
+      const retained = React.useRef(null);
+      const generation = React.useRef(0);
+      const requestSequence = React.useRef(0);
+      const activeOperation = React.useRef(false);
+      const mounted = React.useRef(true);
+      React.useEffect(() => {
+        setPrimaryId(current => selected.includes(current) ? current : selected[0] || '');
+        setRoles(current => Object.fromEntries(selected.filter(id => Object.prototype.hasOwnProperty.call(current, id)).map(id => [id, current[id]])));
+        setPrepared([]);
+      }, [selected]);
+      React.useEffect(() => { mounted.current = true; return () => { mounted.current = false; generation.current++; requestSequence.current++; }; }, []);
+      React.useEffect(() => {
+        const current = ++generation.current;
+        requestSequence.current++;
+        activeOperation.current = false;
+        if (!target) { setConnection('idle'); return undefined; }
+        let reference;
+        setConnection('loading');
+        try {
+          reference = ctx.sessions.retain(target, { source: 'controllerOperation' });
+          retained.current = reference;
+          reference.ready.then(() => { if (mounted.current && generation.current === current) setConnection('ready'); }, error => {
+            if (mounted.current && generation.current === current) { setConnection('error'); setNotice({ error: true, text: error.message || String(error) }); }
+          });
+        } catch (error) { setConnection('error'); setNotice({ error: true, text: error.message || String(error) }); }
+        return () => { generation.current++; if (retained.current === reference) retained.current = null; if (reference) reference.release(); };
+      }, [ctx, target, connectAttempt]);
+      const call = React.useCallback(async request => {
+        const reference = retained.current;
+        if (!target || !reference) throw new Error(t('noTarget'));
+        await reference.ready;
+        const response = await ctx.remote.commands.execute(target, '/prompt-workbench ' + JSON.stringify(request), []);
+        if (!response || !response.ok) throw new Error(response?.error ? response.error.message || text(response.error) : t('unknownResponse'));
+        const result = response.value?.result;
+        if (!result) throw new Error(t('commandMissing'));
+        let payload;
+        try { payload = JSON.parse(result.text || '{}'); } catch (_) { throw new Error(result.text || t('unknownResponse')); }
+        if (result.kind !== 'success' || payload.ok === false || payload.error) throw new Error(text(payload.error && (payload.error.message || payload.error)) || payload.message || result.text || t('error'));
+        return payload;
+      }, [ctx, target, t]);
+      const refresh = React.useCallback(async () => {
+        if (connection !== 'ready') return;
+        const sequence = ++requestSequence.current;
+        const current = generation.current;
+        setLoading(true);
+        try {
+          const payload = await call({ action: tab === 'skills' ? 'list' : 'history' });
+          if (!mounted.current || current !== generation.current || sequence !== requestSequence.current) return;
+          if (tab === 'skills') {
+            const skills = payload.skills || [];
+            setCatalog({ ...payload, skills });
+            setSelected(ids => {
+              const next = ids.filter(id => skills.some(skill => skill.id === id && skill.available && skill.status !== 'retired'));
+              return next.length === ids.length ? ids : next;
+            });
+            if (Array.isArray(payload.originals)) setOriginals(payload.originals);
+            else {
+              const libraries = await call({ action: 'originals' });
+              if (mounted.current && current === generation.current && sequence === requestSequence.current) setOriginals(libraries.items || []);
+            }
+          } else setHistory({ trials: payload.trials || [], reviews: payload.reviews || [] });
+        } catch (error) { if (mounted.current && current === generation.current && sequence === requestSequence.current) setNotice({ error: true, text: error.message || String(error) }); }
+        finally { if (mounted.current && current === generation.current && sequence === requestSequence.current) setLoading(false); }
+      }, [call, connection, tab]);
+      React.useEffect(() => { void refresh(); }, [refresh]);
+      async function operate(name, request, onResult, success) {
+        if (activeOperation.current) return;
+        const current = generation.current;
+        activeOperation.current = true;
+        setBusy(name); setNotice(null);
+        try {
+          const payload = await call(request);
+          if (!mounted.current || generation.current !== current) return;
+          const message = onResult ? await onResult(payload) : undefined;
+          if (mounted.current && generation.current === current) setNotice({ error: false, text: message || success || t('saved') });
+        } catch (error) { if (mounted.current && generation.current === current) setNotice({ error: true, text: error.message || String(error) }); }
+        finally { if (mounted.current && generation.current === current) { activeOperation.current = false; setBusy(''); } }
+      }
+      async function copy(prompt) {
+        try { await navigator.clipboard.writeText(prompt || ''); if (mounted.current) setNotice({ error: false, text: t('copied') }); return true; }
+        catch (_) { if (mounted.current) setNotice({ error: true, text: t('clipboardError') }); return false; }
+      }
+      function captureDraft() {
+        try { return inputActions ? { actions: inputActions, span: inputActions.captureInsertion() } : null; } catch (_) { return null; }
+      }
+      async function insertDraft(prompt, captured = captureDraft()) {
+        if (captured && captured.actions.insertText(prompt, captured.span)) {
+          captured.actions.persistDraft();
+          return t('draftInserted');
+        }
+        if (await copy(prompt)) return t('draftFallback');
+        throw new Error(t('clipboardError'));
+      }
+      async function openDraft(prompt) {
+        try { const message = await insertDraft(prompt); if (mounted.current) setNotice({ error: false, text: message }); }
+        catch (error) { if (mounted.current) setNotice({ error: true, text: error.message || String(error) }); }
+      }
+      function activateOriginal(item) {
+        if (item.kind === 'web') {
+          void operate('openWebsite', { action: 'openWebsite', id: item.id }, undefined, t('chromeOpened'));
+          return;
+        }
+        const captured = captureDraft();
+        void operate('activate', { action: 'activate', id: item.id, brief: brief.trim() }, async payload => {
+          if (typeof payload.prompt !== 'string' || !payload.prompt.trim()) throw new Error(t('unknownResponse'));
+          const message = await insertDraft(payload.prompt, captured);
+          return message === t('draftInserted') ? t('originalReady') : message;
+        });
+      }
+      function setSkillStatus(skill, status, favorite) {
+        const request = { action: 'setStatus', skillId: skill.id, status };
+        if (favorite !== undefined) request.favorite = favorite;
+        void operate('status', request, () => {
+          setCatalog(old => ({ ...old, skills: old.skills.map(row => row.id === skill.id ? { ...row, status, ...(favorite !== undefined ? { favorite } : {}) } : row) }));
+          if (status === 'retired') setSelected(ids => ids.filter(id => id !== skill.id));
+        });
+      }
+      function changeMode(value) {
+        setMode(value);
+        setPrepared([]);
+        setNotice(null);
+        if (value === 'single') setSelected(ids => ids.slice(0, 1));
+      }
+      function chooseSkill(id) {
+        setPrepared([]);
+        setSelected(ids => ids.includes(id) ? ids.filter(value => value !== id) : mode === 'single' ? [id] : [...ids, id]);
+      }
+      function moveSupportingSkill(id, direction) {
+        setPrepared([]);
+        setSelected(ids => {
+          const supporting = ids.filter(value => value !== primaryId);
+          const index = supporting.indexOf(id);
+          const next = index + direction;
+          if (index < 0 || next < 0 || next >= supporting.length) return ids;
+          const first = ids.indexOf(id);
+          const second = ids.indexOf(supporting[next]);
+          const reordered = [...ids];
+          [reordered[first], reordered[second]] = [reordered[second], reordered[first]];
+          return reordered;
+        });
+      }
+      function combineSkills() {
+        if (selected.length < 2 || !selected.includes(primaryId) || !brief.trim()) { setNotice({ error: true, text: t('combineRequired') }); return; }
+        const selectedRoles = Object.fromEntries(selected.map(id => [id, (roles[id] || '').trim().slice(0, 1000)]));
+        void operate('combine', { action: 'combine', ids: selected, primaryId, roles: selectedRoles, brief: brief.trim() }, payload => {
+          if (!payload.trial || payload.trial.kind !== 'combination' || typeof payload.prompt !== 'string' || !payload.prompt.trim()) throw new Error(t('unknownResponse'));
+          setPrepared([{ ...payload.trial, prompt: payload.prompt }]);
+          return [t('combinedPrepared'), text(payload.notice)].filter(Boolean).join(' ');
+        });
+      }
+      function recommendSkills() {
+        if (!brief.trim()) { setNotice({ error: true, text: t('briefRequired') }); return; }
+        void operate('recommend', { action: 'recommend', brief: brief.trim() }, payload => {
+          if (!Array.isArray(payload.skills)) throw new Error(t('unknownResponse'));
+          setRecommendations({ skills: payload.skills, notice: text(payload.notice) });
+          return text(payload.notice) || t('recommendationHelp');
+        });
+      }
+      function useSkill(e) {
+        e.preventDefault();
+        if (mode !== 'single') return;
+        if (selected.length !== 1 || !brief.trim()) { setNotice({ error: true, text: t('useRequired') }); return; }
+        // Capture the exact conversation draft before the Host request can change focus or finish later.
+        const captured = captureDraft();
+        void operate('use', { action: 'use', skillId: selected[0], brief: brief.trim() }, async payload => {
+          if (!payload.trial || typeof payload.prompt !== 'string' || !payload.prompt.trim()) throw new Error(t('unknownResponse'));
+          setPrepared([{ ...payload.trial, prompt: payload.prompt }]);
+          const message = await insertDraft(payload.prompt, captured);
+          return [message, text(payload.notice)].filter(Boolean).join(' ');
+        });
+      }
+      const disabled = !!busy || connection !== 'ready';
+      const categoryLabel = value => Object.prototype.hasOwnProperty.call(zh, 'category.' + value) ? t('category.' + value) : value;
+      const options = (values, first, label = value => value) => [{ value: '', label: t(first) }, ...values.map(value => ({ value, label: label(value) }))];
+      const categories = [...new Set(catalog.skills.map(skill => skill.category).filter(Boolean))];
+      const tasks = [...new Set(catalog.skills.flatMap(skill => skill.tasks || skill.taskTypes || skill.platforms || []).map(text).filter(Boolean))];
+      const search = query.trim().toLowerCase();
+      const visibleSkills = catalog.skills.filter(skill => (!search || [skill.title, skill.description, skill.whenToUse, skill.category, skill.id, skill.platforms, skill.keywords, skill.originalTitle, skill.originalDescription, skill.originalWhenToUse].map(text).join(' ').toLowerCase().includes(search)) && (!category || skill.category === category) && (!taskFilter || (skill.tasks || skill.taskTypes || skill.platforms || []).map(text).includes(taskFilter)) && (!availableOnly || skill.available) && (statusFilter === 'retired' || skill.status !== 'retired') && (!statusFilter || (statusFilter === 'favorites' ? skill.favorite : skill.status === statusFilter)));
+      const filteredTrials = history.trials.filter(trial => !search || [trial.skillTitle, trial.brief, trial.prompt, trial.model, ...(trial.members || []).flatMap(member => [member.skillId, member.title, member.role])].map(text).join(' ').toLowerCase().includes(search));
+      function saveReview(request) { void operate('feedback', { action: 'feedback', ...request }, () => { void refresh(); }, t('reviewSaved')); }
+      function renderTrial(trial, withReviews) {
+        const reviews = withReviews ? history.reviews.filter(review => review.trialId === trial.id) : [];
+        const combined = trial.kind === 'combination';
+        const title = combined ? t(withReviews ? 'combinationRecord' : 'combinationPreview') : trial.skillTitle || trial.title || trial.skillId;
+        return h(PromptResult, { key: trial.id, title, prompt: trial.prompt, t, onCopy: copy, onDraft: openDraft },
+          h('div', { className: 'pw-muted' }, [trial.model, (trial.createdAt || trial.time) ? new Date(trial.createdAt || trial.time).toLocaleString() : ''].filter(Boolean).join(' · ')),
+          combined && h('section', { className: 'pw-review', 'aria-label': t('combinationMembers') }, h('h4', { className: 'pw-card-title' }, t('combinationMembers')), (trial.members || []).map((member, index) => h('div', { className: 'pw-saved-review', key: member.skillId || index },
+            h('div', { className: 'pw-row' }, h('span', { className: 'pw-badge' }, member.isPrimary || member.skillId === trial.primaryId ? t('primarySkill') : t('supportingSkill', { count: index })), h('strong', null, member.title || member.skillId)),
+            h('p', { style: { whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' } }, member.role || t('responsibilityEmpty'))))),
+          h(ReviewForm, { trial, t, disabled, onSave: saveReview }),
+          withReviews && h('div', { className: 'pw-review' }, h('h4', { className: 'pw-card-title' }, t(combined ? 'combinationReview' : 'outcome')),
+            reviews.length ? reviews.map((review, index) => h('div', { key: review.id || index, className: 'pw-saved-review' }, h('strong', null, '★'.repeat(Math.max(1, Math.min(5, Number(review.rating) || 1))) + ' ' + review.rating + '/5'), !combined && review.status && h('span', { className: 'pw-badge' }, t(review.status)), h('p', null, review.note || '—'))) : h('p', { className: 'pw-muted' }, t('noReviews'))));
+      }
+      function renderResponsibility(id, title) {
+        return h('div', { className: 'pw-saved-review', key: id }, h('h3', { className: 'pw-card-title' }, title),
+          h('div', { className: 'pw-muted' }, catalog.skills.find(skill => skill.id === id)?.title || id),
+          h(Field, { label: t('responsibility') }, h('textarea', { className: 'pw-textarea pw-review-note', maxLength: 1000, value: roles[id] || '', placeholder: t('responsibilityPlaceholder'), disabled: !!busy, onChange: e => { const value = e.target.value.slice(0, 1000); setRoles(current => ({ ...current, [id]: value })); setPrepared([]); } })),
+          h('div', { className: 'pw-muted' }, (roles[id] || '').length + '/1000'));
+      }
+      return h('section', { className: 'pw-root', 'aria-label': t('title') }, h('style', null, CSS), h('div', { className: 'pw-body' },
+        h('header', { className: 'pw-header' }, h('div', null, h('div', { className: 'pw-row' }, h(Icon, { size: 23 }), h('h1', { className: 'pw-heading' }, t('title'))), h('p', { className: 'pw-subtitle' }, t('subtitle'))),
+          h('div', { className: 'pw-row' }, h(Button, { disabled: disabled || loading, onClick: () => void refresh() }, t('refresh')), h(Button, { disabled, onClick: () => void operate('export', { action: 'export' }, payload => { setExported(JSON.stringify(payload, null, 2)); }, t('exported')) }, t('export')))),
+        notice && h('div', { className: 'pw-notice', role: notice.error ? 'alert' : 'status' }, h('div', { className: 'pw-row pw-between' }, h('span', null, notice.text), h(Button, { quiet: true, onClick: () => setNotice(null), 'aria-label': t('close') }, '×')), notice.error && h(Button, { quiet: true, onClick: () => { if (connection === 'error') setConnectAttempt(value => value + 1); else void refresh(); }, disabled: !!busy }, t(connection === 'error' ? 'retry' : 'refresh'))),
+        h('div', { className: 'pw-tabs', role: 'tablist', 'aria-label': t('title') }, ['skills', 'history'].map(value => h('button', { key: value, type: 'button', className: 'pw-tab', role: 'tab', id: 'pw-tab-' + target + '-' + value, 'aria-selected': tab === value, 'aria-controls': 'pw-content-' + target + '-' + value, tabIndex: tab === value ? 0 : -1, onKeyDown: e => { if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return; e.preventDefault(); const next = e.key === 'Home' ? 0 : e.key === 'End' ? 1 : tab === 'skills' ? 1 : 0; setTab(['skills', 'history'][next]); e.currentTarget.parentNode.children[next].focus(); }, onClick: () => { setTab(value); setQuery(''); } }, t(value)))),
+        !target ? h('div', { className: 'pw-empty' }, t('noTarget')) : connection !== 'ready' ? h('div', { className: 'pw-empty', role: 'status' }, connection === 'loading' ? t('connecting') : t('error')) :
+        h('section', { role: 'tabpanel', id: 'pw-content-' + target + '-' + tab, 'aria-labelledby': 'pw-tab-' + target + '-' + tab, 'aria-busy': loading || !!busy },
+          busy && h('div', { className: 'pw-notice', role: 'status' }, t('busy')),
+          tab === 'skills' && h(React.Fragment, null,
+            h('form', { className: 'pw-builder', onSubmit: useSkill },
+              h(Field, { label: t('task') }, h('textarea', { className: 'pw-textarea', value: brief, onChange: e => { setBrief(e.target.value); setRecommendations(null); setPrepared([]); }, placeholder: t('taskPlaceholder'), disabled: !!busy, required: true })),
+              h('div', { className: 'pw-card-foot' }, h(Button, { disabled: disabled || !brief.trim(), onClick: recommendSkills }, t('recommend')),
+                h(Field, { label: t('mode') }, h(Select, { label: t('mode'), value: mode, disabled: !!busy, onChange: changeMode, options: ['single', 'combination', 'comparison'].map(value => ({ value, label: t(value) })) }))),
+              h('p', { className: 'pw-help' }, t(combination ? 'combinationHelp' : comparison ? 'comparisonHelp' : 'singleHelp')),
+              h('div', { className: 'pw-row pw-between' }, h('span', { className: 'pw-muted' }, t(mode === 'single' ? 'selectedSingle' : 'selectedCount', { count: selected.length })), h(Button, { quiet: true, disabled: !selected.length || !!busy, onClick: () => setSelected([]) }, t('clear'))),
+              selected.length > 0 && h('div', { className: 'pw-badges', 'aria-label': t('selectedSkills') }, selected.map(id => h('span', { className: 'pw-badge', key: id }, catalog.skills.find(skill => skill.id === id)?.title || id))),
+              combination && h('section', { 'aria-label': t('combination') },
+                selected.length > 0 && h(React.Fragment, null,
+                  h(Field, { label: t('primarySkill') }, h(Select, { label: t('primarySkill'), value: primaryId, disabled: !!busy, onChange: value => { setPrimaryId(value); setPrepared([]); }, options: selected.map(id => ({ value: id, label: catalog.skills.find(skill => skill.id === id)?.title || id })) })),
+                  selected.includes(primaryId) && renderResponsibility(primaryId, t('primarySkill')),
+                  selected.length > 1 && h('h3', { className: 'pw-card-title' }, t('supportingSkills')),
+                  selected.filter(id => id !== primaryId).map((id, index, supporting) => h('div', { key: id }, renderResponsibility(id, t('supportingSkill', { count: index + 1 })),
+                    h('div', { className: 'pw-card-foot' },
+                      h(Button, { disabled: !!busy || index === 0, onClick: () => moveSupportingSkill(id, -1), 'aria-label': t('moveUp') + ': ' + (catalog.skills.find(skill => skill.id === id)?.title || id) }, t('moveUp')),
+                      h(Button, { disabled: !!busy || index === supporting.length - 1, onClick: () => moveSupportingSkill(id, 1), 'aria-label': t('moveDown') + ': ' + (catalog.skills.find(skill => skill.id === id)?.title || id) }, t('moveDown')),
+                      h(Button, { disabled: !!busy, onClick: () => chooseSkill(id), 'aria-label': t('remove') + ': ' + (catalog.skills.find(skill => skill.id === id)?.title || id) }, t('remove')))))),
+                h('p', { className: 'pw-help' }, t('combinePreviewHelp')),
+                h(Button, { primary: true, disabled: disabled || selected.length < 2 || !selected.includes(primaryId) || !brief.trim(), onClick: combineSkills }, t('combine'))),
+              mode === 'single' && h(React.Fragment, null, h('p', { className: 'pw-help' }, t('useHelp')), h(Button, { primary: true, type: 'submit', disabled: disabled || selected.length !== 1 || !brief.trim() }, t('use')))),
+            prepared.length > 0 && h('div', { 'aria-live': 'polite' }, h('h2', { className: 'pw-section-title' }, t('trials')), prepared.map(trial => renderTrial(trial, false))),
+            recommendations && h('section', { className: 'pw-builder', 'aria-label': t('recommendations'), 'aria-live': 'polite' }, h('h2', { className: 'pw-section-title' }, t('recommendations')), h('p', { className: 'pw-help' }, recommendations.notice || t('recommendationHelp')),
+              recommendations.skills.length ? recommendations.skills.map(row => {
+                const skill = catalog.skills.find(item => item.id === row.id) || row;
+                const picked = selected.includes(row.id);
+                return h('article', { key: row.id, className: 'pw-saved-review' }, h('h3', { className: 'pw-card-title' }, row.title || skill.title || row.id), h('div', { className: 'pw-muted' }, row.id), h('p', null, text(row.reason)), h(Button, { disabled: disabled || !skill.available || skill.status === 'retired', 'aria-pressed': picked, onClick: () => chooseSkill(row.id) }, t(picked ? 'selected' : 'select')));
+              }) : h('p', { className: 'pw-muted' }, t('recommendationEmpty'))),
+            catalog.catalogComplete === false && h('p', { className: 'pw-notice', role: 'status' }, catalog.notice),
+            h('div', { className: 'pw-filters' }, h('input', { className: 'pw-input', type: 'search', value: query, onChange: e => setQuery(e.target.value), placeholder: t('search'), 'aria-label': t('search') }), h(Select, { label: t('allCategories'), value: category, onChange: setCategory, options: options(categories, 'allCategories', categoryLabel) }), h(Select, { label: t('allTasks'), value: taskFilter, onChange: setTaskFilter, options: options(tasks, 'allTasks') }), h(Select, { label: t('allStates'), value: statusFilter, onChange: setStatusFilter, options: [{ value: '', label: t('allStates') }, ...STATUSES.map(value => ({ value, label: t(value) })), { value: 'favorites', label: t('favorites') }] })),
+            h('div', { className: 'pw-row pw-between' }, h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: availableOnly, onChange: e => setAvailableOnly(e.target.checked) }), t('availableOnly')), h('span', { className: 'pw-muted' }, t(mode === 'single' ? 'selectedSingle' : 'selectedCount', { count: selected.length }))),
+            h('p', { className: 'pw-help' }, t('retiredHelp')),
+            loading ? h('div', { className: 'pw-empty', role: 'status' }, t('loading')) : visibleSkills.length ? h('div', { className: 'pw-grid' }, visibleSkills.map(skill => {
+              const picked = selected.includes(skill.id);
+              const originalFields = ['originalTitle', 'originalDescription', 'originalWhenToUse'].filter(key => text(skill[key]).trim());
+              return h('article', { key: skill.id, className: 'pw-card' + (picked ? ' pw-picked' : '') },
+                h('div', { className: 'pw-card-top' }, h('h3', { className: 'pw-card-title' }, skill.title), h(Button, { quiet: true, disabled, onClick: () => setSkillStatus(skill, skill.status || 'testing', !skill.favorite), 'aria-label': t(skill.favorite ? 'unfavorite' : 'favorite'), 'aria-pressed': !!skill.favorite }, skill.favorite ? '★' : '☆')),
+                h('div', { className: 'pw-muted' }, skill.id),
+                h('div', { className: 'pw-badges' }, h('span', { className: 'pw-badge' + (skill.available ? ' pw-available' : '') }, t(skill.available ? 'available' : skill.current?.enabled === false ? 'disabled' : 'unavailable')), skill.category && h('span', { className: 'pw-badge' }, categoryLabel(skill.category)), h('span', { className: 'pw-badge' }, t(skill.status || 'testing'))),
+                h('p', null, skill.description), skill.platforms && h('div', { className: 'pw-muted' }, text(skill.platforms)),
+                h('details', null, h('summary', null, t('when')), h('p', null, text(skill.whenToUse) || '—'), h('p', { className: 'pw-help' }, t('guidance')), skill.sideEffects && h('p', null, t('effects'), ': ', text(skill.sideEffects)), h('p', null, t('source'), ': ', text(skill.source || skill.origin)), skill.provider && h('p', null, t('provider'), ': ', text(skill.provider))),
+                originalFields.length > 0 && h('details', null, h('summary', null, t('originalInfo')), originalFields.map(key => h('p', { key }, h('strong', null, t(key), ': '), text(skill[key])))),
+                h('div', { className: 'pw-muted' }, Number(skill.averageRating) > 0 ? '★ ' + Number(skill.averageRating).toFixed(1) + ' · ' : '', (skill.reviewCount || 0) + ' ' + t('reviews')),
+                h('div', { className: 'pw-card-foot' }, h(Button, { disabled: disabled || !skill.available || skill.status === 'retired', 'aria-pressed': picked, onClick: () => chooseSkill(skill.id) }, t(picked ? 'selected' : 'select')), h(Select, { label: t('status') + ': ' + skill.title, value: skill.status || 'testing', onChange: status => setSkillStatus(skill, status), disabled, options: STATUSES.map(value => ({ value, label: t(value) })) })));
+            })) : h('div', { className: 'pw-empty' }, t('empty')),
+            (catalog.groups || []).length > 0 && h('details', { className: 'pw-builder' }, h('summary', null, t('groups')), (catalog.groups || []).map(group => h('article', { className: 'pw-saved-review', key: group.id }, h('h3', { className: 'pw-card-title' }, group.title), h('span', { className: 'pw-badge' }, t(group.relation)), h('p', null, group.description), h('p', { className: 'pw-help' }, t('conditions'), ': ', group.conditions), h('div', { className: 'pw-muted' }, (group.skillIds || []).map(id => catalog.skills.find(skill => skill.id === id)?.title || id).join(' · '))))),
+            comparison && h('section', { className: 'pw-builder', 'aria-label': t('testingTools') }, h('h2', { className: 'pw-section-title' }, t('testingTools')),
+              h('form', { onSubmit: e => { e.preventDefault(); if (!selected.length || !brief.trim() || !model.trim()) { setNotice({ error: true, text: t('prepareRequired') }); return; } void operate('prepare', { action: 'prepare', ids: selected, brief: brief.trim(), model: model.trim(), mode: 'prompt' }, payload => { setPrepared(payload.trials || []); }, t('prepared')); } },
+                selected.length > 0 && h('div', { className: 'pw-badges', 'aria-label': t('selectedSkills') }, selected.map(id => h('span', { className: 'pw-badge', key: id }, catalog.skills.find(skill => skill.id === id)?.title || id))),
+                h(Field, { label: t('model') }, h('input', { className: 'pw-input', value: model, onChange: e => setModel(e.target.value), disabled: !!busy, required: true })),
+                h('p', { className: 'pw-help' }, t('prepareHelp')), h(Button, { type: 'submit', disabled: disabled || !selected.length || !brief.trim() || !model.trim() }, t('prepare')))),
+            h('section', { className: 'pw-originals', 'aria-label': t('originals') }, h('h2', { className: 'pw-section-title' }, t('originals')), h('p', { className: 'pw-help' }, t('originalsHelp')),
+              h('div', { className: 'pw-grid' }, originals.map(item => h('article', { key: item.id, className: 'pw-card' }, h('h3', { className: 'pw-card-title' }, item.title), h('p', { className: 'pw-muted' }, item.description), h('div', { className: 'pw-card-foot' }, h(Button, { disabled, onClick: () => activateOriginal(item) }, t(item.kind === 'web' ? 'openOriginal' : 'useOriginal')), item.id === 'youmind' && h(Button, { disabled, onClick: () => void operate('refreshLibrary', { action: 'refresh' }, undefined, t('libraryRefreshed')) }, t('refreshLibrary')))))),
+              !loading && !originals.length && h('p', { className: 'pw-help' }, t('originalsUnavailable')))),
+          tab === 'history' && h(React.Fragment, null, h('input', { className: 'pw-input', type: 'search', value: query, onChange: e => setQuery(e.target.value), placeholder: t('historySearch'), 'aria-label': t('historySearch') }), loading ? h('div', { className: 'pw-empty', role: 'status' }, t('loading')) : filteredTrials.length ? filteredTrials.map(trial => renderTrial(trial, true)) : h('div', { className: 'pw-empty' }, history.trials.length ? t('empty') : t('noHistory')))),
+        exported && h('section', { className: 'pw-builder' }, h('div', { className: 'pw-row pw-between' }, h('h2', null, t('exportedState')), h(Button, { quiet: true, onClick: () => setExported('') }, t('close'))), h('textarea', { className: 'pw-prompt', readOnly: true, value: exported, 'aria-label': t('exportedState') }), h(Button, { onClick: () => void copy(exported) }, t('copy')))));
+    }
+    return {
+      inject: ['remote.commands', 'remote', 'slots', 'locale', 'sessions', 'sidebarRight', 'sidebarRightTabs'],
+      apply(ctx) {
+        ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'prompt-workbench: dictionaries');
+        const t = ctx.locale.bind(NS);
+        // The hook is UseProjection(key), supplied by the native Session scope.
+        // Timestamp and tokens suppress persisted/replayed opens, including delayed baselines.
+        const seenOpens = new Map();
+        function HeaderEntry(props) {
+          const request = props.useProjection('promptWorkbenchOpen');
+          const mountedAt = React.useRef(Date.now());
+          React.useEffect(() => {
+            if (!request || typeof request.token !== 'string' || !Number.isFinite(request.time)) return;
+            if (seenOpens.get(props.sessionId) === request.token) return;
+            seenOpens.set(props.sessionId, request.token);
+            if (request.time < mountedAt.current) return;
+            ctx.sidebarRight.openTabIn(props.sessionId, PANEL);
+          }, [props.sessionId, request]);
+          return h(React.Fragment, null, h('style', null, CSS), h('button', { type: 'button', className: 'pw-header-entry', title: t('title'), 'aria-label': t('title'), onClick: () => ctx.sidebarRight.openTabIn(props.sessionId, PANEL) }, h(Icon, { size: 17 })));
+        }
+        ctx.effect(() => ctx.sidebarRightTabs.register({ id: PANEL, kind: PANEL, title: () => t('title'), keepMounted: true, guide: [{ id: PANEL, order: 8, title: () => t('title') }] }), 'prompt-workbench: tab type');
+        ctx.slots.inject('sidebar.right.pane.tab', () => ctx.slots.register({ name: 'sidebar.right.pane.tab', key: PANEL, locale: NS }, props => h(Panel, { key: props.sessionId, ctx, t: props.t || t, sessionId: props.sessionId, inputActions: props.inputActions })));
+        ctx.slots.inject('conversation.session.header.utilities', () => ctx.slots.register({ name: 'conversation.session.header.utilities', id: PANEL, order: 8, locale: NS }, props => h(HeaderEntry, { ...props, key: props.sessionId })));
+      },
+    };
+  },
+});

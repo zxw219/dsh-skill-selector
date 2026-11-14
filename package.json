@@ -1,0 +1,47 @@
+{
+  "name": "dsh-skill-selector-combo",
+  "version": "0.4.0",
+  "private": true,
+  "dependencies": {
+    "zod": "^4.0.0"
+  },
+  "type": "module",
+  "description": "Organize, try and review prompt skills in one DSH workbench.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "logic.js",
+    "originals.js",
+    "chrome.js",
+    "full",
+    "client.js",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg",
+    "curated-skills.json",
+    "skill-localizations.json",
+    "comparison-groups.json",
+    "packs",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-commands",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-sidebar-browser"
+      ]
+    }
+  }
+}
