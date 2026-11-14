@@ -46,14 +46,15 @@ export class PromptWorkbench {
     if(!request||typeof request!=='object') throw Error('请求格式错误');
     if(signal?.aborted) throw Error('操作已取消');
     const action=request.action;
-    if(action==='setManualMode')throw Error('模式开关仅允许通过选择器中的用户操作修改');
-    if(action==='manualMode')return {manualMode:this.manualMode?.status()};
+    if(this.manualMode)await this.manualMode.ensure(agent);
+    if(['setManualMode','setAllowlist','setDefaultAllowlist'].includes(action))throw Error('权限设置仅允许通过选择器中的用户操作修改');
+    if(action==='manualMode')return {manualMode:await this.manualMode?.status(agent)};
     if(action==='open')return {ok:true,workbenchOpen:{token:randomUUID(),time:Date.now()},notice:'在当前对话右侧打开技能选择页，选择网页工具后才打开浏览器。'};
     if(action==='originals')return {items:originals};
     if(action==='openWebsite')return openOriginalInChrome(request.id);
     if(action==='activate'){
       if(request.id!=='youmind')throw Error('网页工具请从技能选择页点击进入Chrome 新窗口');
-      if(this.manualMode?.enabled()) {
+      if(this.manualMode?.enabled(agent)) {
         await this.library.sync();
         return {id:'youmind',...await this.execute({action:'use',skillId:'ai-image-prompts-skill',brief:bounded(request.brief).trim()||'请按作者原版图像提示词库流程，先询问我需要什么图片，再检索推荐并按选择改写。'},agent,signal)};
       }
@@ -64,7 +65,7 @@ export class PromptWorkbench {
     if(action==='list') {
       const all=await this.catalog(agent);
       const skills=rankSkills(all,bounded(request.query,500)).filter(s=>!request.category||request.category==='all'||s.category===request.category);
-      return {skills,originals,manualMode:this.manualMode?.status(),catalogComplete:all.complete,groups:this.groups,sources:this.packs.catalog.sources,stats:{total:all.length,available:all.filter(s=>s.available).length,reviewed:all.filter(s=>s.reviewCount).length,retired:all.filter(s=>s.status==='retired').length},notice:all.complete?'停用仅影响本工作台，DSH 全局技能开关由技能管理器控制。':'部分技能来源尚未完成发现，当前显示已发现项目；缺失项不代表已删除。可刷新重试，已发现技能可继续试用。'};
+      return {skills,originals,manualMode:await this.manualMode?.status(agent),catalogComplete:all.complete,groups:this.groups,sources:this.packs.catalog.sources,stats:{total:all.length,available:all.filter(s=>s.available).length,reviewed:all.filter(s=>s.reviewCount).length,retired:all.filter(s=>s.status==='retired').length},notice:all.complete?'停用仅影响本工作台，DSH 全局技能开关由技能管理器控制。':'部分技能来源尚未完成发现，当前显示已发现项目；缺失项不代表已删除。可刷新重试，已发现技能可继续试用。'};
     }
     if(action==='recommend') {
       const brief=bounded(request.brief,1000).trim();if(!brief)throw Error('请先说说你想做什么');
@@ -81,7 +82,7 @@ export class PromptWorkbench {
         candidate.userInvocable=definition.invocation.userInvocable;
       }
       const id=randomUUID();
-      const prompt=this.manualMode?.enabled()?`${selectionMarker(id)}\n\n本轮使用「${candidate.title}」（${skillId}），所选完整技能由选择器注入，无须调用 skill 工具。\n\n我的需求：\n${brief}\n\n仅采用已选择技能，依赖其他技能时请我补选。` : makeUsePrompt(candidate,brief);
+      const prompt=this.manualMode?.enabled(agent)?`${selectionMarker(id)}\n\n本轮使用「${candidate.title}」（${skillId}），所选完整技能由选择器注入，无须调用 skill 工具。\n\n我的需求：\n${brief}\n\n仅采用已选择技能，依赖其他技能时请我补选。` : makeUsePrompt(candidate,brief);
       const trial={id,skillId,skillTitle:candidate.title,brief,model:'按需求',prompt,time:new Date().toISOString(),sessionId:agent.id};
       await this.domain.table('trials').put(trial.id,trial);
       return {trial,prompt,notice:'已保存使用记录。填入当前对话后检查并发送；尚未执行技能或提交外部服务。'};
@@ -110,7 +111,7 @@ export class PromptWorkbench {
       const members=ordered.map(s=>({skillId:s.id,title:s.title,role:roles[s.id]||(s.id===primaryId?'负责整体方案、最终交付格式和整合结果。':'仅就本技能擅长的部分补充主任务，不另行接管完整流程。'),isPrimary:s.id===primaryId}));
       const id=randomUUID();
       const ordinary=makeCombinedPrompt(candidates,primaryId,roles,brief);
-      const prompt=this.manualMode?.enabled()?`${selectionMarker(id)}\n\n${ordinary.replace(/加载所选技能：[\s\S]*?\n\n执行方式：/,'所选完整技能由选择器注入，无须调用 skill 工具；依赖其他技能时请我补选。\n\n执行方式：')}`:ordinary;
+      const prompt=this.manualMode?.enabled(agent)?`${selectionMarker(id)}\n\n${ordinary.replace(/加载所选技能：[\s\S]*?\n\n执行方式：/,'所选完整技能由选择器注入，无须调用 skill 工具；依赖其他技能时请我补选。\n\n执行方式：')}`:ordinary;
       const trial={id,kind:'combination',primaryId,members,skillId:primaryId,skillTitle:'组合：'+ordered.map(s=>s.title).join(' + '),brief,model:'组合使用',prompt,time:new Date().toISOString(),sessionId:agent.id};
       await this.domain.table('trials').put(trial.id,trial);
       return {trial,prompt,notice:'组合草稿已保存。请先预览分工，再加入当前草稿并自行发送；尚未执行任何技能。评价记录针对组合整体，不计入单个技能的平均分。'};
@@ -164,14 +165,14 @@ export async function apply(ctx) {
   const domain=await ctx.storageDomain.open({name:'prompt_workbench',version:1,tables:{choices:{valueSchema:choiceSchema},trials:{valueSchema:trialSchema},reviews:{valueSchema:reviewSchema}}});
   ctx.effect(()=>()=>domain.close());
   const service=new PromptWorkbench(ctx,domain,curated,groups,{catalog,prompts,styles,fill},library,localizations);
-  const settings=await ctx.storageDomain.open({name:'skill_selector_policy',version:1,global:{schema:z.object({enabled:z.boolean()}),initial:{enabled:true}},tables:{}});
+  const settings=await ctx.storageDomain.open({name:'skill_selector_sessions',version:1,global:{schema:z.object({allowlist:z.array(z.string())}),initial:{allowlist:[]}},tables:{sessions:{valueSchema:z.object({enabled:z.boolean(),allowlist:z.array(z.string())})}}});
   ctx.effect(()=>()=>settings.close());
   const manualMode=new ManualSkillMode(ctx,settings,service);
   service.manualMode=manualMode;
   ctx.effect(()=>ctx.tools.guard(exec=>manualMode.guard(exec)));
   ctx.on('agent/pre-step',(payload,next)=>manualMode.enter(payload,next),{prepend:true});
   ctx.effect(()=>ctx.commands.register({name:'prompt-workbench',description:'技能选择器：按任务找技能、使用和评价',input:{hint:'JSON 操作'},handler:async({agent,rawInput,signal})=>{
-    try {const request=rawInput.trim()?JSON.parse(rawInput):{action:'list'};const value=request.action==='setManualMode'?await manualMode.set(request.enabled):await service.execute(request,agent,signal);return {kind:'success',text:JSON.stringify(value)};}
+    try {const request=rawInput.trim()?JSON.parse(rawInput):{action:'list'};const value=request.action==='setManualMode'?await manualMode.set(agent,request.enabled):request.action==='setAllowlist'?await manualMode.setAllowlist(agent,request.ids):request.action==='setDefaultAllowlist'?await manualMode.setAllowlist(agent,request.ids,true):await service.execute(request,agent,signal);return {kind:'success',text:JSON.stringify(value)};}
     catch(error){return {kind:'error',text:error.message};}
   }}));
   ctx.effect(()=>ctx.tools.register({name:'prompt_workbench',description:'技能选择器。recommend 按 brief 用途匹配并返回全部匹配技能；use 用 skillId 和 brief 创建普通使用草稿（不执行），用户发送后加载对应技能；combine 用 ids、primaryId、roles（技能 id 到职责文本）、brief 生成主辅组合草稿预览（不执行）。用户要使用MJ提示词或选择技能时先用 open 打开当前对话右侧技能选择页，选中网页技能才打开浏览器。originals 查看3个完整版入口；openWebsite 按网站 id 在 Chrome 新窗口打开原版网站；activate id=youmind 使用作者完整技能；library 搜索完整库最多3条并展示样图；refresh 强制更新。list/feedback/setStatus/history/export 管理现有技能与试用。resources/compose 仅兼容旧样本入口，不是完整版。',parameters:{type:'object',properties:{action:{type:'string',enum:['open','originals','openWebsite','activate','library','refresh','list','recommend','use','combine','feedback','setStatus','history','resources','compose','export']},query:{type:'string'},category:{type:'string'},ids:{type:'array',items:{type:'string'}},brief:{type:'string'},primaryId:{type:'string'},roles:{type:'object',additionalProperties:{type:'string',maxLength:1000}},model:{type:'string'},skillId:{type:'string'},trialId:{type:'string'},rating:{type:'integer',minimum:1,maximum:5},note:{type:'string'},status:{type:'string',enum:['testing','keep','watch','retired']},favorite:{type:'boolean'},kind:{type:'string',enum:['prompts','styles','fill']},id:{type:'string'},variables:{type:'object',additionalProperties:{type:'string'}},aspectRatio:{type:'string'}},required:['action'],additionalProperties:false},output:{schema:{},render:(_args,value)=>[{type:'text',text:JSON.stringify(value)}]},execute:async(args,exec)=>{

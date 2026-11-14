@@ -59,14 +59,18 @@ const full=await new OriginalLibrary(new URL('./',import.meta.url)).search({quer
 assert.ok(full.items.length>0&&full.items.length<=3);assert.ok(full.items.every(item=>item.content&&item.sourceMedia.length));
 // Exercise real registration schemas so combined member metadata survives storage validation.
 const {apply}=await import('./index.js');let spec;const registered=[];
-let policyState={enabled:true};
-const applyCtx={on:()=>()=>{},effect:fn=>fn(),skills:{register:()=>()=>{}},sessionProjections:{register:async()=>({dispose:async()=>{}})},storageDomain:{open:async input=>{if(input.name==='skill_selector_policy')return {global:{get:()=>policyState,set:async value=>{policyState=value;}},close:async()=>{}};spec=input;return {...domain,close:async()=>{}};}},commands:{register:def=>{registered.push(def);return ()=>{};}},tools:{guard:()=>()=>{},register:def=>{registered.push(def);return ()=>{};}}};
+let policyState={allowlist:[]};const sessionPolicies=new Map();
+const applyCtx={on:()=>()=>{},effect:fn=>fn(),skills:{register:()=>()=>{}},sessionProjections:{register:async()=>({dispose:async()=>{}})},storageDomain:{open:async input=>{if(input.name==='skill_selector_sessions')return {global:{get:()=>policyState,set:async value=>{policyState=value;}},table:()=>({get:id=>sessionPolicies.get(id),put:async(id,value)=>sessionPolicies.set(id,value),update:async(id,fn)=>sessionPolicies.set(id,fn(sessionPolicies.get(id)))}),close:async()=>{}};spec=input;return {...domain,close:async()=>{}};}},commands:{register:def=>{registered.push(def);return ()=>{};}},tools:{guard:()=>()=>{},register:def=>{registered.push(def);return ()=>{};}}};
 await apply(applyCtx);
 const command=registered.find(def=>def.name==='prompt-workbench');
 const modelTool=registered.find(def=>def.name==='prompt_workbench');
-assert.ok(!modelTool.parameters.properties.action.enum.includes('setManualMode'));
-await assert.rejects(()=>service.execute({action:'setManualMode',enabled:false},agent),/用户操作/);
-assert.equal((await command.handler({agent,rawInput:JSON.stringify({action:'setManualMode',enabled:false})})).kind,'success');assert.equal(policyState.enabled,false);
-assert.equal((await command.handler({agent,rawInput:JSON.stringify({action:'setManualMode',enabled:true})})).kind,'success');assert.equal(policyState.enabled,true);
+for(const action of ['setManualMode','setAllowlist','setDefaultAllowlist']) {
+  assert.ok(!modelTool.parameters.properties.action.enum.includes(action));
+  await assert.rejects(()=>service.execute({action,enabled:false,ids:[]},agent),/用户操作/);
+}
+assert.equal((await command.handler({agent,rawInput:JSON.stringify({action:'setManualMode',enabled:true})})).kind,'success');assert.equal(sessionPolicies.get(agent.id).enabled,true);
+assert.equal((await command.handler({agent,rawInput:JSON.stringify({action:'setAllowlist',ids:[]})})).kind,'success');
+assert.equal((await command.handler({agent,rawInput:JSON.stringify({action:'setDefaultAllowlist',ids:[]})})).kind,'success');
+assert.equal((await command.handler({agent,rawInput:JSON.stringify({action:'setManualMode',enabled:false})})).kind,'success');assert.equal(sessionPolicies.get(agent.id).enabled,false);
 assert.equal(spec.name,'prompt_workbench');assert.equal(spec.tables.trials.valueSchema.parse(combined.trial).members.length,2);assert.equal(spec.tables.trials.valueSchema.parse(used.trial).kind,undefined);assert.ok(registered.find(def=>def.name==='prompt_workbench').parameters.properties.action.enum.includes('combine'));assert.ok(!registered.find(def=>def.name==='prompt_workbench').parameters.properties.action.enum.includes('prepare'));assert.equal(spec.tables.trials.valueSchema.parse(legacy).id,legacy.id);
 console.log('PASS: combinations, member order/duties, schema persistence, review separation, validation; 41 Chinese cards; unlimited recommendations; removed comparison action; historical and ordinary ratings; 44 compatibility templates; scoped catalog; ordinary use; trusted projection; full library search.');

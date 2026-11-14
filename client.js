@@ -1,6 +1,6 @@
 /* Native skill selector client. React is supplied by the DSH module loader. */
 window.__ModuleLoader__.load({
-  id: 'dsh-skill-selector-manual-fixed',
+  id: 'dsh-skill-selector-session',
   factory(require) {
     const React = require('react');
     const h = React.createElement;
@@ -9,7 +9,8 @@ window.__ModuleLoader__.load({
     const STATUSES = ['testing', 'keep', 'watch', 'retired'];
     const en = {
       title: 'Skill selector', subtitle: 'Choose a skill for this conversation.',
-      manualMode: 'Manual skill mode', manualOn: 'On · choose before loading', manualOff: 'Off · original invocation rules', manualHelp: 'Applies to every conversation in this profile. Ordinary messages do not automatically load skills. Send a selected draft or a leading /skill-name command. Previously loaded content stays in history.', manualChanged: 'Invocation mode saved.',
+      manualMode: 'Manual skill mode · current session', manualOn: 'On · allowlist automatic, others manual', manualOff: 'Off · native invocation rules', manualHelp: 'Applies only to this session. When on, allowlisted skills may load automatically; other skills require a selected draft or a leading /skill-name command. When off, native invocation rules apply. Previously loaded content stays in history.', manualChanged: 'Session invocation mode saved.',
+      sessionAllow: 'Allow automatic loading in this session', defaultAllow: 'Allow automatic loading by default in future sessions', allowlistManage: 'Manage automatic skill allowlists', sessionAllowlist: 'Current session allowlist', defaultAllowlist: 'Default allowlist for future sessions', allowlistCount: 'Current session: {count}', defaultAllowlistCount: 'Default: {count}', allowlistEmpty: 'No skills allowed automatically.', defaultAllowlistHelp: 'Default changes apply only when a future session first resolves its policy. They never change this session. Configure default checkboxes separately.', allowlistSaved: 'Current session allowlist saved.', defaultAllowlistSaved: 'Default allowlist saved; this session is unchanged.', autoUnavailable: 'Only model-invocable native skills can be added. Pack and user-only skills require manual selection; stored entries can still be removed.', missingSkill: 'Not in the current catalog',
       allSkills: 'All skills', details: 'Details', filters: 'Filters', optionalNote: 'Add a note (optional)', more: 'More options', selectedEmpty: 'No skill selected', readyToUse: 'Ready for your task', starRating: '{count} out of 5 stars', savedReview: 'Review saved successfully.', selectionHelp: 'Choose a skill below to get started.', combinationSetup: 'Selected combination · roles and order', shortUse: 'Use · add to draft', shortCombine: 'Combination preview', shortHistory: 'History', footerSingle: 'Adds to this draft. Send when ready.', footerCombine: 'Review the preview, then add it to your draft.', backToSkills: 'Back to skill selection',
 
       recommend: 'Help me choose a skill', recommendations: 'Suggested skills', recommendationHelp: 'Matches task keywords and skill tags; this is not an effectiveness rating.', recommendationEmpty: 'No suggestions for this task. Browse the catalog or add more detail.', briefRequired: 'Describe your task first.',
@@ -41,7 +42,8 @@ window.__ModuleLoader__.load({
     };
     const zh = {
       title: '技能选择器', subtitle: '为当前会话选择合适的技能。',
-      manualMode: '手动技能模式', manualOn: '已开启 · 先选再用', manualOff: '已关闭 · 恢复原调用规则', manualHelp: '对当前配置的所有对话生效。普通消息不自动加载技能；发送选择草稿或开头独立的 /技能名 才加载。已加载内容仍留在历史中。', manualChanged: '技能调用模式已保存。',
+      manualMode: '手动技能模式 · 当前会话', manualOn: '已开启 · 白名单自动，其他手动', manualOff: '已关闭 · 使用原生调用规则', manualHelp: '仅对当前会话生效。开启时，白名单技能可自动加载，其他技能需发送选择草稿或开头独立的 /技能名。关闭时使用原生调用规则。已加载内容仍留在历史中。', manualChanged: '当前会话技能调用模式已保存。',
+      sessionAllow: '允许当前会话自动加载', defaultAllow: '默认允许未来会话自动加载', allowlistManage: '管理自动技能白名单', sessionAllowlist: '当前会话白名单', defaultAllowlist: '未来会话默认白名单', allowlistCount: '当前会话：{count}', defaultAllowlistCount: '默认：{count}', allowlistEmpty: '暂未允许任何技能自动加载。', defaultAllowlistHelp: '默认更改仅在未来会话首次解析策略时生效，绝不修改当前会话。请单独设置默认复选框。', allowlistSaved: '当前会话白名单已保存。', defaultAllowlistSaved: '默认白名单已保存，当前会话不变。', autoUnavailable: '仅可添加模型可调用的原生技能。技能包与仅用户可调用的技能需手动选择；已存条目仍可移除。', missingSkill: '当前目录中不存在',
       allSkills: '全部技能', details: '详细说明', filters: '筛选', optionalNote: '添加说明（选填）', more: '更多操作', selectedEmpty: '尚未选择技能', readyToUse: '为这次任务准备', starRating: '{count} 星，满分 5 星', savedReview: '评价已保存成功。', selectionHelp: '从下方选择一个技能开始。', combinationSetup: '已选组合 · 职责与顺序', shortUse: '使用 · 加入草稿', shortCombine: '组合预览', shortHistory: '历史', footerSingle: '加入当前草稿，检查后自行发送。', footerCombine: '先检查组合预览，再加入当前草稿。', backToSkills: '返回技能选择',
 
       recommend: '帮我挑技能', recommendations: '建议试试', recommendationHelp: '按任务关键词与技能标签匹配，用途匹配，不是效果评分。', recommendationEmpty: '暂未找到建议，可补充任务描述或直接浏览技能。', briefRequired: '请先写下要完成的任务。',
@@ -214,6 +216,11 @@ window.__ModuleLoader__.load({
         if (result.kind !== 'success' || payload.ok === false || payload.error) throw new Error(text(payload.error && (payload.error.message || payload.error)) || payload.message || result.text || t('error'));
         return payload;
       }, [ctx, target, t]);
+      function policyStatus(payload) {
+        const status = payload?.manualMode || payload;
+        if (!status || typeof status.enabled !== 'boolean' || status.scope !== 'session' || status.sessionId !== target || !Array.isArray(status.allowlist) || !Array.isArray(status.defaultAllowlist)) throw new Error(t('unknownResponse'));
+        return { ...status, allowlist: [...new Set(status.allowlist.filter(id => typeof id === 'string'))], defaultAllowlist: [...new Set(status.defaultAllowlist.filter(id => typeof id === 'string'))] };
+      }
       const refresh = React.useCallback(async () => {
         if (connection !== 'ready') return;
         const sequence = ++requestSequence.current;
@@ -236,7 +243,7 @@ window.__ModuleLoader__.load({
             }
           } else setHistory({ trials: payload.trials || [], reviews: payload.reviews || [] });
           const policy = payload.manualMode ? payload : await call({ action: 'manualMode' });
-          if (mounted.current && current === generation.current && sequence === requestSequence.current) setManualMode(policy.manualMode || null);
+          if (mounted.current && current === generation.current && sequence === requestSequence.current) setManualMode(policyStatus(policy));
         } catch (error) { if (mounted.current && current === generation.current && sequence === requestSequence.current) setNotice({ error: true, text: error.message || String(error) }); }
         finally { if (mounted.current && current === generation.current && sequence === requestSequence.current) setLoading(false); }
       }, [call, connection, tab]);
@@ -257,6 +264,19 @@ window.__ModuleLoader__.load({
           if (mounted.current && generation.current === current) { setNotice({ error: false, text: message || success || t('saved') }); return true; }
         } catch (error) { if (mounted.current && generation.current === current) setNotice({ error: true, text: error.message || String(error) }); return false; }
         finally { if (mounted.current && generation.current === current) { activeOperation.current = false; setBusy(''); } }
+      }
+      function updatePolicy(action, values, success) {
+        if (loading || !manualMode) return;
+        void operate(action, { action, ...values }, payload => {
+          setManualMode(policyStatus(payload));
+          setUsageRecords([]);
+        }, t(success));
+      }
+      function changeAllowlist(id, checked, defaults = false) {
+        if (!manualMode) return;
+        const ids = manualMode[defaults ? 'defaultAllowlist' : 'allowlist'];
+        const next = checked ? [...new Set([...ids, id])] : ids.filter(value => value !== id);
+        updatePolicy(defaults ? 'setDefaultAllowlist' : 'setAllowlist', { ids: next }, defaults ? 'defaultAllowlistSaved' : 'allowlistSaved');
       }
       async function copy(prompt) {
         try { await navigator.clipboard.writeText(prompt || ''); if (mounted.current) setNotice({ error: false, text: t('copied') }); return true; }
@@ -382,10 +402,26 @@ window.__ModuleLoader__.load({
       }
       const tabs = ['skills', 'favorites', 'history'];
       const selectedTitles = selected.map(id => catalog.skills.find(skill => skill.id === id)?.title || id);
+      function renderAllowlist(defaults = false) {
+        const ids = manualMode?.[defaults ? 'defaultAllowlist' : 'allowlist'] || [];
+        const label = t(defaults ? 'defaultAllowlist' : 'sessionAllowlist');
+        return h('section', { 'aria-label': label }, h('h3', { className: 'pw-card-title' }, label + ' · ' + ids.length),
+          ids.length ? ids.map(id => {
+            const skill = catalog.skills.find(row => row.id === id);
+            const title = skill?.title || id;
+            return h('div', { className: 'pw-saved-review', key: id }, h('div', { className: 'pw-row pw-between' },
+              h('strong', null, title), h(Button, { disabled: disabled || loading, 'aria-label': t('remove') + ': ' + title + ' · ' + label, onClick: () => changeAllowlist(id, false, defaults) }, t('remove'))),
+              h('div', { className: 'pw-detail-id pw-muted' }, id), !skill && h('p', { className: 'pw-help' }, t('missingSkill')));
+          }) : h('p', { className: 'pw-muted' }, t('allowlistEmpty')));
+      }
       function renderSkill(skill, reason) {
         const picked = selected.includes(skill.id);
         const originalFields = ['originalTitle', 'originalDescription', 'originalWhenToUse'].filter(key => text(skill[key]).trim());
         const title = skill.title || skill.id;
+        const sessionAllowed = !!manualMode?.allowlist.includes(skill.id);
+        const defaultAllowed = !!manualMode?.defaultAllowlist.includes(skill.id);
+        const autoEligible = skill.modelInvocable === true && skill.origin === 'existing';
+        const policyDisabled = disabled || loading || !manualMode;
         return h('article', { key: skill.id, className: 'pw-card' + (picked ? ' pw-picked' + (combination && skill.id === primaryId ? ' pw-role-primary' : ' pw-role-support') : '') },
           h('div', { className: 'pw-card-top' }, h('h3', { className: 'pw-card-title' }, title), h(Button, { quiet: true, className: 'pw-favorite', disabled: disabled || loading, onClick: () => setSkillStatus(skill, skill.status || 'testing', !skill.favorite), 'aria-label': t(skill.favorite ? 'unfavorite' : 'favorite') + ': ' + title, 'aria-pressed': !!skill.favorite }, skill.favorite ? '★' : '☆')),
           h('p', { className: 'pw-purpose', title: text(skill.description) }, text(skill.description) || text(skill.whenToUse) || '—'),
@@ -395,6 +431,9 @@ window.__ModuleLoader__.load({
             h('span', { className: 'pw-rating-summary' }, Number(skill.averageRating) > 0 ? '★ ' + Number(skill.averageRating).toFixed(1) + ' · ' : '', (skill.reviewCount || 0) + ' ' + t('reviews'))),
           h('details', { className: 'pw-details' }, h('summary', null, t('details')),
             h('p', { className: 'pw-detail-id pw-muted' }, skill.id),
+            h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: sessionAllowed, disabled: policyDisabled || (!sessionAllowed && !autoEligible), onChange: e => changeAllowlist(skill.id, e.target.checked) }), t('sessionAllow')),
+            h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: defaultAllowed, disabled: policyDisabled || (!defaultAllowed && !autoEligible), onChange: e => changeAllowlist(skill.id, e.target.checked, true) }), t('defaultAllow')),
+            !autoEligible && h('p', { className: 'pw-help' }, t('autoUnavailable')),
             h('div', { className: 'pw-badges' }, h('span', { className: 'pw-badge' }, t(skill.available ? 'available' : skill.current?.enabled === false ? 'disabled' : 'unavailable')), skill.category && h('span', { className: 'pw-badge' }, categoryLabel(skill.category)), h('span', { className: 'pw-badge' }, t(skill.status || 'testing'))),
             h('p', null, text(skill.description)), h('h4', { className: 'pw-card-title' }, t('when')), h('p', null, text(skill.whenToUse) || '—'),
             skill.platforms && h('p', { className: 'pw-muted' }, text(skill.platforms)), h('p', { className: 'pw-help' }, t('guidance')),
@@ -406,7 +445,11 @@ window.__ModuleLoader__.load({
       return h('section', { className: 'pw-root', 'aria-label': t('title') }, h('style', null, CSS),
         h('div', { className: 'pw-body' },
           h('header', { className: 'pw-header' }, h('div', null, h('div', { className: 'pw-row' }, h(Icon, { size: 21 }), h('h1', { className: 'pw-heading' }, t('title'))), h('p', { className: 'pw-subtitle' }, t('subtitle')))),
-          h('div', { className: 'pw-builder' }, h('div', { className: 'pw-row pw-between' }, h('strong', null, t('manualMode')), h(Button, { role: 'switch', 'aria-checked': manualMode?.enabled === true, disabled: connection !== 'ready' || loading || !!busy || !manualMode, onClick: () => void operate('manualMode', { action: 'setManualMode', enabled: !manualMode.enabled }, payload => { setManualMode(payload.manualMode); setUsageRecords([]); }, t('manualChanged')) }, manualMode ? t(manualMode.enabled ? 'manualOn' : 'manualOff') : t('loading'))), h('p', { className: 'pw-help' }, t('manualHelp'))),
+          h('div', { className: 'pw-builder' }, h('div', { className: 'pw-row pw-between' }, h('strong', null, t('manualMode')), h(Button, { role: 'switch', 'aria-checked': manualMode?.enabled === true, disabled: disabled || loading || !manualMode, onClick: () => updatePolicy('setManualMode', { enabled: !manualMode.enabled }, 'manualChanged') }, manualMode ? t(manualMode.enabled ? 'manualOn' : 'manualOff') : t('loading'))),
+            h('p', { className: 'pw-help' }, t('manualHelp')),
+            manualMode && h(React.Fragment, null,
+              h('div', { className: 'pw-badges' }, h('span', { className: 'pw-badge' }, t('allowlistCount', { count: manualMode.allowlist.length })), h('span', { className: 'pw-badge' }, t('defaultAllowlistCount', { count: manualMode.defaultAllowlist.length }))),
+              h('details', { className: 'pw-details' }, h('summary', null, t('allowlistManage')), renderAllowlist(), renderAllowlist(true), h('p', { className: 'pw-help' }, t('defaultAllowlistHelp'))))),
           notice && h('div', { className: 'pw-notice ' + (notice.error ? 'pw-notice-error' : 'pw-notice-success'), role: notice.error ? 'alert' : 'status' }, h('div', { className: 'pw-row pw-between' }, h('span', null, notice.text), h(Button, { quiet: true, onClick: () => setNotice(null), 'aria-label': t('close') }, '×')), notice.error && h(Button, { quiet: true, onClick: () => { if (connection === 'error') setConnectAttempt(value => value + 1); else void refresh(); }, disabled: !!busy }, t(connection === 'error' ? 'retry' : 'refresh'))),
           h('div', { className: 'pw-tabs', role: 'tablist', 'aria-label': t('title') }, tabs.map(value => h('button', {
             key: value, type: 'button', className: 'pw-tab', role: 'tab', disabled: !!busy, id: 'pw-tab-' + target + '-' + value, 'aria-selected': tab === value, 'aria-controls': 'pw-content-' + target + '-' + value, tabIndex: tab === value ? 0 : -1,
