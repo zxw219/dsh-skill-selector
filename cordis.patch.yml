@@ -1,3 +1,3 @@
 - insert:
     - id: prompt-workbench
-      name: dsh-skill-selector-session
+      name: dsh-skill-selector-grouped

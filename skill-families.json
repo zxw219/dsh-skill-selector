@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "families": [
+    {
+      "id": "story-toolbox",
+      "title": { "zh": "Story 小说与网文工具箱", "en": "Story Novel and Web Fiction Toolbox" },
+      "description": { "zh": "Story 总入口明确路由的小说与网文规划、写作、拆文、扫榜与配套工具。按入口清单核实专属成员，通用外部依赖保持独立，不按 story- 前缀推定归属。", "en": "Novel and web fiction planning, writing, analysis, market scanning and supporting tools explicitly routed by Story; dedicated members are verified from its routing table, while general external dependencies remain independent." },
+      "relation": "toolbox",
+      "rootIds": ["story"],
+      "memberIds": ["story-long-write", "story-short-write", "story-long-analyze", "story-short-analyze", "story-long-scan", "story-short-scan", "story-deslop", "story-review", "story-cover", "story-publish", "story-setup", "story-import"],
+      "evidence": [
+        { "skillId": "story", "path": "story/SKILL.md", "notes": "第 16–29 行需求路由表逐项指定这些专属技能；同一入口还提供 Dashboard。browser-cdp 虽被明确路由用于榜单或网页查看，但仅是通用外部依赖或路由目标，保持独立，不计入本族成员。" },
+        { "skillId": "story-import", "path": "story-import/SKILL.md", "notes": "导入流程复用 story-long-analyze / story-short-analyze，并明确兼容 story-long-write / story-short-write；与 Story 系列使用同一 source 仓库。story-design-* 和 story-consistency-monitor 未列在总入口路由表中。" }
+      ]
+    },
+    {
+      "id": "novel-writer-assistance",
+      "title": { "zh": "旧版小说写作辅助", "en": "Legacy Novel Writer Assistance" },
+      "description": { "zh": "Novel Writer 七步方法、写作前检查、设定与规范检测、连续性提醒和小说技巧的辅助分类；未证实存在统一父入口。", "en": "A category for Novel Writer guidance, preparation, setting and requirement detection, continuity reminders and fiction techniques; no common parent router was verified." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": ["novel-writer-workflow-guide", "getting-started-guide", "pre-write-checklist", "setting-detector", "requirement-detector", "story-consistency-monitor", "forgotten-elements-reminder", "fantasy-world-building", "mystery-novel-conventions", "romance-novel-conventions", "natural-dialogue-techniques", "scene-structure-techniques"],
+      "evidence": [
+        { "skillId": "novel-writer-workflow-guide", "path": "workflow-guide/SKILL.md", "notes": "name 为 novel-writer-workflow-guide；正文明确 Novel Writer 的 constitution → specify → clarify → plan → tasks → write → analyze 七步方法。它是指导技能，没有把本分类全部成员声明为子模块。" },
+        { "skillId": "getting-started-guide", "path": "getting-started/SKILL.md", "notes": "name 为 getting-started-guide，讲解同一七步方法；作为辅助成员，不提升为总入口。" },
+        { "skillId": "pre-write-checklist", "path": "pre-write-checklist/SKILL.md", "notes": "正文自述为 Novel Writer Skills v1.0 的写作前九项检查，用于 /write 前准备。" },
+        { "skillId": "setting-detector", "path": "setting-detector/SKILL.md", "notes": "正文自述 Novel Writer Skills 的知识库激活系统；映射的是 templates/knowledge-base 文档，不等于它拥有所有题材技能。" },
+        { "skillId": "story-consistency-monitor", "path": "consistency-checker/SKILL.md", "notes": "目录名与 name 不同；功能为角色、世界规则和时间线监控。未见 Story 总入口路由证据，故主组放在小说辅助分类。" },
+        { "skillId": "natural-dialogue-techniques", "path": "dialogue-techniques/SKILL.md", "notes": "name 为 natural-dialogue-techniques，内容是小说对白写作技巧；与 scene-structure、fantasy、mystery、romance 等按正文职责归为辅助分类，不据此声称共同作者或父子关系。" },
+        { "skillId": "requirement-detector", "path": "requirement-detector/SKILL.md", "notes": "加载 anti-ai-v4 等写作规范文档；分类关联不表示这些知识库文档也是可调用技能。forgotten-elements/SKILL.md 的 name 为 forgotten-elements-reminder，职责是长篇遗忘元素提醒。" }
+      ]
+    },
+    {
+      "id": "screenplay-workflow",
+      "title": { "zh": "剧本全流程", "en": "Screenplay Workflow" },
+      "description": { "zh": "由明确的工作流入口串联创作、扩写、会诊、台词精修与 AI 视频分镜；成员可独立使用。", "en": "An explicit workflow connecting screenplay development, drafting, diagnosis, dialogue refinement and AI video storyboarding; its participating skills also work independently." },
+      "relation": "workflow",
+      "rootIds": ["screenplay-workflow"],
+      "memberIds": ["screenplay-creation-v2", "screenplay-writing-v1", "screenplay-doctor-roundtable", "dialogue-specialist", "ai-video-storyboard"],
+      "evidence": [
+        { "skillId": "screenplay-workflow", "path": "剧本全流程/SKILL.md", "notes": "第 10–28 行逐项列出五个整合技能及交接职责；实际目录为中文，成员 ID 以各 SKILL.md 的 name 为准，不沿用正文里的旧安装绝对路径。" },
+        { "skillId": "screenplay-creation-v2", "path": "蔡梦熙剧本创作/SKILL.md", "notes": "name 为 screenplay-creation-v2；产出项目档案、大纲和审稿材料，供写作阶段使用。" },
+        { "skillId": "screenplay-writing-v1", "path": "蔡梦熙剧本写作/SKILL.md", "notes": "name 为 screenplay-writing-v1；从创作技能的项目档案及大纲扩写剧本。" },
+        { "skillId": "screenplay-doctor-roundtable", "path": "蔡梦熙剧本医生/SKILL.md", "notes": "name 为 screenplay-doctor-roundtable；会诊已有剧本，既可独立使用也可参与工作流。" },
+        { "skillId": "dialogue-specialist", "path": "蔡梦熙台词专家/SKILL.md", "notes": "逐句诊断角色声音、潜台词、冲突和节奏，属于剧本台词精修；没有《大师镜头 第二卷》来源证据，禁止按 dialogue- 前缀归入对话镜头知识。" },
+        { "skillId": "ai-video-storyboard", "path": "蔡梦熙视频分镜/SKILL.md", "notes": "name 为 ai-video-storyboard；负责剧本到 AI 视频分镜的视觉转译，是此工作流的明确下游。" }
+      ]
+    },
+    {
+      "id": "office-toolbox",
+      "title": { "zh": "Office 文档工具箱", "en": "Office Document Toolbox" },
+      "description": { "zh": "内置 Office 路由入口及 Word、PowerPoint、Excel 三个格式技能；PDF 检查是入口能力，不据此把独立 pdf 技能视为子模块。", "en": "The bundled Office router and its Word, PowerPoint and Excel authoring skills. PDF inspection is a router capability and does not establish ownership of the separate pdf skill." },
+      "relation": "toolbox",
+      "rootIds": ["office"],
+      "memberIds": ["office-docx", "office-pptx", "office-xlsx"],
+      "evidence": [
+        { "skillId": "office", "path": "@deepseek-ai/dsh-skill-office/assets/office/SKILL.md", "notes": "实际资源在内置包中，并非两个用户技能根目录。第 8 行明确要求为创建、读取或编辑加载 office-docx、office-pptx 或 office-xlsx。" },
+        { "skillId": "office-docx", "path": "@deepseek-ai/dsh-skill-office/assets/office-docx/SKILL.md", "notes": "name 为 office-docx，负责 Word；office-pptx/SKILL.md 与 office-xlsx/SKILL.md 分别负责演示文稿和工作簿，并共同引用 office 入口提供的操作工具。" }
+      ]
+    },
+    {
+      "id": "shanyin-screenplay-director",
+      "title": { "zh": "山音编剧与导演联动", "en": "Shanyin Screenwriting and Directing" },
+      "description": { "zh": "两个可独立调用的入口在编剧成果到导演分镜之间交接；这是工作流联动，未把其他摄影或导演知识技能认作其子模块。", "en": "Two independently callable entry points hand off screenplay results to directing and storyboards. This is a workflow association, with no inferred ownership of other film knowledge skills." },
+      "relation": "workflow",
+      "rootIds": ["shanyin-screenwriting-master", "director-master"],
+      "memberIds": [],
+      "evidence": [
+        { "skillId": "director-master", "path": "director-master/SKILL.md", "notes": "开篇声明与山音超级编剧大师联动；第 219–228 行说明继承编剧阶段的类型、红线、节奏与检查点，也可无编剧大师直接使用。自身 references 内的理论、类型库和分镜格式是资源文档，未声明 directing-*、shot-*、cinematography-* 等外部技能属于它。" },
+        { "skillId": "shanyin-screenwriting-master", "path": "shanyin-screenwriting-master/SKILL.md", "notes": "独立的编剧入口，读取自身编剧方法资源。两者作为并列入口保留交接证据，rootIds 的并列不表示彼此包含。" }
+      ]
+    },
+    {
+      "id": "cinematography-knowledge",
+      "title": { "zh": "摄影、布光与镜头器材", "en": "Cinematography, Lighting and Camera Gear" },
+      "description": { "zh": "以 Blain Brown 摄影理论为共同来源的技巧分类，并收录跨书综合的器材锚点；没有已证实的总入口。", "en": "A category of techniques sharing Blain Brown's cinematography source, with a cross-source camera and lens anchoring guide; no master router was verified." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": ["camera-lens-anchoring"],
+      "prefixes": ["cinematography-"],
+      "evidence": [
+        { "skillId": "cinematography-three-point-lighting", "path": "cinematography-three-point-lighting/SKILL.md", "notes": "cinematography-* 当前七项的 source_book 均为《电影摄影：理论与实践》Blain Brown；related_skills 说明灯光技巧组合关系，并非父入口。" },
+        { "skillId": "camera-lens-anchoring", "path": "camera-lens-anchoring/SKILL.md", "notes": "source_book 自述跨书综合：cinematography-brown、color-grading、ai-shortfilm-prompts 方法论与行业实践；关联调色、布光、msv3 和 shot-design 技巧。主组放摄影器材分类，保留跨来源证据，不伪称 Brown 原书子模块。" }
+      ]
+    },
+    {
+      "id": "shot-design-katz",
+      "title": { "zh": "镜头设计：Katz", "en": "Shot Design: Katz" },
+      "description": { "zh": "Steven D. Katz 镜头设计知识：轴线、视点、构图、对话调度和故事板；是共同来源分类。", "en": "Steven D. Katz knowledge on axes, viewpoints, composition, dialogue staging and storyboards, grouped by their shared source." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": [],
+      "prefixes": ["shot-design-"],
+      "evidence": [
+        { "skillId": "shot-design-dialogue-staging", "path": "shot-design-dialogue-staging/SKILL.md", "notes": "shot-design-* 当前八项的 source_book 均为 Steven D. Katz《电影镜头设计》（部分写全名《电影镜头设计：从构思到银幕》）；depends-on 与 composes-with 是技巧间关系。未见统一父技能。" }
+      ]
+    },
+    {
+      "id": "master-shots-volume-one",
+      "title": { "zh": "大师镜头 I：动作与摄影编舞", "en": "Master Shots I: Action and Camera Choreography" },
+      "description": { "zh": "Christopher Kenworthy《大师镜头》第一卷来源的动作、节奏与演员摄影机配合技巧。", "en": "Action, rhythm and actor-camera coordination techniques sourced from Christopher Kenworthy's first Master Shots volume." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": ["shot-camera-choreography", "shot-distract-and-scare", "shot-dual-camera-tension", "shot-equal-length-rhythm", "shot-still-vs-motion-decision", "shot-telephoto-compression"],
+      "evidence": [
+        { "skillId": "shot-camera-choreography", "path": "shot-camera-choreography/SKILL.md", "notes": "六项成员的 source_book 均为《大师镜头：低成本拍大片的100个高级技巧（第1卷）》Christopher Kenworthy。此技能虽称元框架，未声明路由总入口；精确列成员以避免 shot- 前缀吞并 Katz 的 shot-design-*。" }
+      ]
+    },
+    {
+      "id": "master-shots-volume-two",
+      "title": { "zh": "大师镜头 II：对话场面", "en": "Master Shots II: Dialogue Scenes" },
+      "description": { "zh": "《大师镜头》第二卷的对话场面拍摄、空间调度与表演技巧；不包含剧本台词专家。", "en": "Dialogue-scene filming, spatial staging and performance techniques from Master Shots volume two; screenplay dialogue specialists are outside this category." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": ["dialogue-barrier-narrative", "dialogue-busy-hands-no-eye-contact", "dialogue-camera-follow-identity", "dialogue-camera-height-stance", "dialogue-closeup-timing", "dialogue-deep-staging", "dialogue-delayed-reveal", "dialogue-distance-collapse-arc", "dialogue-focal-character-temperament", "dialogue-focal-progression", "dialogue-gaze-mapping", "dialogue-position-swap", "dialogue-task-overload", "dialogue-telephoto-claustrophobia"],
+      "evidence": [
+        { "skillId": "dialogue-barrier-narrative", "path": "dialogue-barrier-narrative/SKILL.md", "notes": "十四项精确成员的 source_book 均为《大师镜头 第二卷》Christopher Kenworthy；related_skills 是同书或跨书技巧的组合关系，没有父入口证据。" },
+        { "skillId": "dialogue-specialist", "path": "蔡梦熙台词专家/SKILL.md", "notes": "排除边界证据：该技能负责逐句台词诊断，且被 screenplay-workflow 明确整合，主组为剧本全流程。它不具有本组共同书籍来源；因此不用 dialogue- 宽前缀。natural-dialogue-techniques 则属于小说写作技巧。" }
+      ]
+    },
+    {
+      "id": "master-shots-volume-three",
+      "title": { "zh": "大师镜头 III：情绪与视觉叙事", "en": "Master Shots III: Emotion and Visual Storytelling" },
+      "description": { "zh": "《大师镜头》第三卷的焦距情感、权力距离、速度、表演和揭示技巧；无独立父入口。", "en": "Lens emotion, power distance, speed, performance and reveal techniques from Master Shots volume three, without a separate parent router." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": [],
+      "prefixes": ["msv3-"],
+      "evidence": [
+        { "skillId": "msv3-lens-emotion-mapping", "path": "msv3-lens-emotion-mapping/SKILL.md", "notes": "msv3-* 当前六项的 source_book 均为《大师镜头 第三卷》Christopher Kenworthy；composes-with 表达相互组合，不足以把任一项提升为总入口。" }
+      ]
+    },
+    {
+      "id": "directing-mackendrick",
+      "title": { "zh": "导演叙事：Mackendrick", "en": "Directing and Narrative: Mackendrick" },
+      "description": { "zh": "《电影导演大师课》的创意、因果、戏剧反讽、张力、场景取舍和观众注意力知识分类。", "en": "A shared-source category covering ideas, causality, dramatic irony, tension, scene necessity and audience attention from Mackendrick's directing lessons." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": [],
+      "prefixes": ["directing-"],
+      "evidence": [
+        { "skillId": "directing-story-framework", "path": "directing-story-framework/SKILL.md", "notes": "directing-* 当前十五项的 source_book 均为《电影导演大师课》Alexander Mackendrick；depends-on / composes-with / contrasts-with 为知识关联。director-master 是另一套自有资源的工作流，未声明拥有本组。" }
+      ]
+    },
+    {
+      "id": "sound-design-sonnenschein",
+      "title": { "zh": "声音设计：Sonnenschein", "en": "Sound Design: Sonnenschein" },
+      "description": { "zh": "声音能量、聆听、层次、声画、节奏和音乐叙事的共同来源分类。", "en": "A shared-source category for sound energy, listening, auditory hierarchy, sound-image relations, rhythm and musical storytelling." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": [],
+      "prefixes": ["sound-design-"],
+      "evidence": [
+        { "skillId": "sound-design-energy-model", "path": "sound-design-energy-model/SKILL.md", "notes": "sound-design-* 当前十三项的 source_book 均为《声音设计》David Sonnenschein；模型技能的 related_skills 连接聆听模式和声音层次，是同级关联而非子模块声明。正文引用但未安装的其他技巧不据此新增成员。" }
+      ]
+    },
+    {
+      "id": "color-grading-van-hurkman",
+      "title": { "zh": "调色：Van Hurkman", "en": "Color Grading: Van Hurkman" },
+      "description": { "zh": "《调色师手册》的技术校色、Log、肤色、镜头匹配和风格开发分类；并非某一调色工作流技能的子集。", "en": "A shared-source category for primary correction, Log, skin tone, matching and look development from the Color Correction Handbook; no single workflow skill owns the set." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": [],
+      "prefixes": ["color-grading-"],
+      "evidence": [
+        { "skillId": "color-grading-log-workflow", "path": "color-grading-log-workflow/SKILL.md", "notes": "color-grading-* 当前十一项的 source_book 均为 Alexis Van Hurkman《调色师手册》（部分注明第2版）；Log 工作流与一级校色通过 composes-with 相连，未声明总入口。" },
+        { "skillId": "camera-lens-anchoring", "path": "camera-lens-anchoring/SKILL.md", "notes": "跨书器材技能关联 Log 工作流和 Look 开发，但主组保留在摄影、布光与镜头器材；这里仅记录交叉关联。" }
+      ]
+    },
+    {
+      "id": "scene-transition-bays",
+      "title": { "zh": "场景转场：Bays", "en": "Scene Transitions: Bays" },
+      "description": { "zh": "《大师场景》的转场功能、场景对比、低潮、音乐策略、多线交汇和角色认同知识分类。", "en": "A shared-source category for transition functions, scene contrast, pauses, music strategies, converging storylines and audience allegiance from Mastering Film Transitions." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": [],
+      "prefixes": ["scene-transition-"],
+      "evidence": [
+        { "skillId": "scene-transition-four-function-diagnosis", "path": "scene-transition-four-function-diagnosis/SKILL.md", "notes": "scene-transition-* 当前九项的 source_book 为 Jeffrey Michael Bays《大师场景：顶级场景转换术》（个别简称《大师场景》）。四功能诊断是分类器方法，其 related_skills 为空，未声明其他转场技能为子模块。" }
+      ]
+    },
+    {
+      "id": "story-design-save-the-cat",
+      "title": { "zh": "故事设计：救猫咪", "en": "Story Design: Save the Cat" },
+      "description": { "zh": "Blake Snyder 的 Logline、类型、节拍、中点、主题与终幕知识分类，与 Story 网文工具箱分开归组。", "en": "Blake Snyder knowledge on loglines, genres, beats, midpoints, theme and finales, grouped separately from the Story novel toolbox." },
+      "relation": "category",
+      "rootIds": [],
+      "memberIds": [],
+      "prefixes": ["story-design-"],
+      "evidence": [
+        { "skillId": "story-design-beat-sheet", "path": "story-design-beat-sheet/SKILL.md", "notes": "story-design-* 当前八项的 source_book 均为《救猫咪》Blake Snyder，部分摘录进一步注明 Save the Cat! Strikes Back。节拍表与类型、中点、终幕通过 composes-with 连接。story 总入口没有将这些技能列入路由表，不能按 story- 前缀收为其子模块。" }
+      ]
+    }
+  ]
+}

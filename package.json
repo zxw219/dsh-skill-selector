@@ -1,6 +1,6 @@
 {
-  "name": "dsh-skill-selector-session",
-  "version": "0.7.0",
+  "name": "dsh-skill-selector-grouped",
+  "version": "0.8.0",
   "private": true,
   "dependencies": {
     "zod": "^4.0.0"
@@ -16,6 +16,8 @@
   "files": [
     "index.js",
     "logic.js",
+    "families.js",
+    "skill-families.json",
     "manual-mode.js",
     "originals.js",
     "chrome.js",

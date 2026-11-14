@@ -18,7 +18,7 @@ export function localizeSkill(skill, localizations={}) {
   return {...skill,originalTitle:skill.title,originalDescription:skill.description,originalWhenToUse:skill.whenToUse,title:card.title,description:card.description,whenToUse:card.whenToUse??card.description,keywords:card.keywords??[]};
 }
 export function skillSearchText(s) {
-  return [s.id,s.title,s.description,s.whenToUse,s.originalTitle,s.originalDescription,s.originalWhenToUse,...(s.keywords??[]),...(s.platforms??[])].filter(Boolean).join(' ').toLowerCase();
+  return [s.id,s.title,s.description,s.whenToUse,s.originalTitle,s.originalDescription,s.originalWhenToUse,...Object.values(s.familyTitle??{}),...Object.values(s.familyDescription??{}),...(s.keywords??[]),...(s.platforms??[])].filter(Boolean).join(' ').toLowerCase();
 }
 export function rankSkills(skills,query='') {
   const words=query.toLowerCase().trim().split(/\s+/).filter(Boolean);

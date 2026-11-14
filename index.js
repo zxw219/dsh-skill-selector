@@ -6,6 +6,7 @@ import { classify, composeResource, localizeSkill, makeCombinedPrompt, makeUsePr
 import { OriginalLibrary, originals, youmindFolder, projectWorkbenchOpen } from './originals.js';
 import { openOriginalInChrome } from './chrome.js';
 import { ManualSkillMode, selectionMarker } from './manual-mode.js';
+import { assignSkillFamilies } from './families.js';
 
 export const inject = ['skills', 'commands', 'tools', 'storageDomain', 'workingDirectory', 'agents', 'agentPresets', 'sessionProjections'];
 const base = new URL('./', import.meta.url);
@@ -17,7 +18,7 @@ const trialSchema = z.object({id:z.string(),skillId:z.string(),skillTitle:z.stri
 const choiceSchema = z.object({status:z.enum(['testing','keep','watch','retired']),favorite:z.boolean(),updatedAt:z.string()});
 
 export class PromptWorkbench {
-  constructor(ctx, domain, curated, groups, packs, library=new OriginalLibrary(base), localizations={}) { Object.assign(this,{ctx,domain,curated,groups,packs,library,localizations}); }
+  constructor(ctx, domain, curated, groups, packs, library=new OriginalLibrary(base), localizations={}, families=[]) { Object.assign(this,{ctx,domain,curated,groups,packs,library,localizations,families}); }
   registry(agent) { return this.ctx.agentPresets.serviceFor(agent,'skills') ?? this.ctx.skills; }
   async catalog(agent) {
     const registry=this.registry(agent), cwd=await this.ctx.workingDirectory.ensure(agent);
@@ -34,7 +35,7 @@ export class PromptWorkbench {
     for(const [id, folder, title] of [['image-prompt-reverse','image-prompt-reverse','图片反推与增强'],['prompt-reverse-engineer','prompt-reverse-engineer','多模态提示词逆向']]) {
       all.set('pack:'+id,{id:'pack:'+id,title,description:'新增资源包：独立试用原项目的方法，保留来源与参考文档。',whenToUse:id==='image-prompt-reverse'?'从参考图还原画面并探索增强方向':'将图片、文案、视频或剧本拆解为提示词',category:'reverse',platforms:['Midjourney','通用模型'],sideEffects:'工作台试用仅输出提示词。视频依赖与抽帧尚未自动执行。',origin:'new',available:true,path:fileURLToPath(new URL('packs/'+folder+'/SKILL.md',base))});
     }
-    const result=[...all.values()].map(s=>{
+    const result=assignSkillFamilies([...all.values()],this.families).map(s=>{
       const choice=this.domain.table('choices').get(s.id)??{status:'testing',favorite:false};
       const reviews=[...this.domain.table('reviews').entries()].map(([,r])=>r).filter(r=>r.skillId===s.id&&this.domain.table('trials').get(r.trialId)?.kind!=='combination');
       return {...localizeSkill(s,this.localizations),...choice,reviewCount:reviews.length,averageRating:reviews.length?Number((reviews.reduce((n,r)=>n+r.rating,0)/reviews.length).toFixed(1)):null};
@@ -65,7 +66,7 @@ export class PromptWorkbench {
     if(action==='list') {
       const all=await this.catalog(agent);
       const skills=rankSkills(all,bounded(request.query,500)).filter(s=>!request.category||request.category==='all'||s.category===request.category);
-      return {skills,originals,manualMode:await this.manualMode?.status(agent),catalogComplete:all.complete,groups:this.groups,sources:this.packs.catalog.sources,stats:{total:all.length,available:all.filter(s=>s.available).length,reviewed:all.filter(s=>s.reviewCount).length,retired:all.filter(s=>s.status==='retired').length},notice:all.complete?'停用仅影响本工作台，DSH 全局技能开关由技能管理器控制。':'部分技能来源尚未完成发现，当前显示已发现项目；缺失项不代表已删除。可刷新重试，已发现技能可继续试用。'};
+      return {skills,originals,families:this.families,manualMode:await this.manualMode?.status(agent),catalogComplete:all.complete,groups:this.groups,sources:this.packs.catalog.sources,stats:{total:all.length,available:all.filter(s=>s.available).length,reviewed:all.filter(s=>s.reviewCount).length,retired:all.filter(s=>s.status==='retired').length},notice:all.complete?'停用仅影响本工作台，DSH 全局技能开关由技能管理器控制。':'部分技能来源尚未完成发现，当前显示已发现项目；缺失项不代表已删除。可刷新重试，已发现技能可继续试用。'};
     }
     if(action==='recommend') {
       const brief=bounded(request.brief,1000).trim();if(!brief)throw Error('请先说说你想做什么');
@@ -152,7 +153,7 @@ export class PromptWorkbench {
 }
 
 export async function apply(ctx) {
-  const [curated,groups,catalog,prompts,styles,fill,localizations]=await Promise.all(['curated-skills.json','comparison-groups.json','packs/catalog.json','packs/prompts.json','packs/styles.json','packs/fill-templates.json','skill-localizations.json'].map(json));
+  const [curated,groups,catalog,prompts,styles,fill,localizations,familyData]=await Promise.all(['curated-skills.json','comparison-groups.json','packs/catalog.json','packs/prompts.json','packs/styles.json','packs/fill-templates.json','skill-localizations.json','skill-families.json'].map(json));
   const library=new OriginalLibrary(base);
   const skillPath=fileURLToPath(new URL(youmindFolder+'SKILL.md',base));
   const upstreamContent=await readFile(skillPath,'utf8');
@@ -164,7 +165,7 @@ export async function apply(ctx) {
   ctx.effect(()=>()=>projection.dispose());
   const domain=await ctx.storageDomain.open({name:'prompt_workbench',version:1,tables:{choices:{valueSchema:choiceSchema},trials:{valueSchema:trialSchema},reviews:{valueSchema:reviewSchema}}});
   ctx.effect(()=>()=>domain.close());
-  const service=new PromptWorkbench(ctx,domain,curated,groups,{catalog,prompts,styles,fill},library,localizations);
+  const service=new PromptWorkbench(ctx,domain,curated,groups,{catalog,prompts,styles,fill},library,localizations,familyData.families);
   const settings=await ctx.storageDomain.open({name:'skill_selector_sessions',version:1,global:{schema:z.object({allowlist:z.array(z.string())}),initial:{allowlist:[]}},tables:{sessions:{valueSchema:z.object({enabled:z.boolean(),allowlist:z.array(z.string())})}}});
   ctx.effect(()=>()=>settings.close());
   const manualMode=new ManualSkillMode(ctx,settings,service);

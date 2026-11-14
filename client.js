@@ -1,6 +1,6 @@
 /* Native skill selector client. React is supplied by the DSH module loader. */
 window.__ModuleLoader__.load({
-  id: 'dsh-skill-selector-session',
+  id: 'dsh-skill-selector-grouped',
   factory(require) {
     const React = require('react');
     const h = React.createElement;
@@ -17,6 +17,7 @@ window.__ModuleLoader__.load({
       mode: 'Usage mode', single: 'Single skill', combination: 'Combine skills', singleHelp: 'Choose one skill for everyday use.', use: 'Use skill · add to draft', useRequired: 'Choose one available, non-retired skill and describe your task.', useHelp: 'Adds a skill invocation to your draft and saves a record for later review. Check the draft and send when ready.',
       combinationHelp: 'Choose a primary skill and one or more supporting skills, with no selection limit. Supporting skills run in the order shown. Responsibilities are optional.', primarySkill: 'Primary skill', supportingSkills: 'Supporting skills · in order', supportingSkill: 'Supporting skill {count}', responsibility: 'Responsibility (optional, up to 1,000 characters)', responsibilityPlaceholder: 'Describe what this skill should handle…', moveUp: 'Move up', moveDown: 'Move down', remove: 'Remove', combine: 'Generate combined draft preview', combinePreviewHelp: 'Saves a combined record and shows a preview. Add it to the current draft yourself, then send when ready.', combineRequired: 'Choose at least two available, non-retired skills, select a primary skill, and describe your task.', combinedSaved: 'Combined record saved. Review the preview, then add it to your draft when ready.', combinationPreview: 'Combined draft preview', combinationRecord: 'Combined skill record', combinationReview: 'Review the combination as a whole', combinationReviewHelp: 'This rating applies to the whole combination and does not count toward any member’s individual skill rating.', combinationMembers: 'Combination members and responsibilities', responsibilityEmpty: 'No responsibility specified',
       selectedSingle: '{count} / 1 selected', selectedSkills: 'Selected skills',
+      familyLanguage: 'en', family: 'Group', familyVisible: '{count} visible skills', familySelected: '{count} selected', familyEntry: 'Main entry', familyWorkflowEntry: 'Workflow entry', 'family.toolbox': 'Toolbox', 'family.workflow': 'Workflow', 'family.category': 'Category',
       'category.image': 'Images', 'category.video': 'Video', 'category.storyboard': 'Storyboards', 'category.execution': 'Generation and tools', 'category.knowledge': 'Filmmaking knowledge', 'category.reverse': 'Reference analysis', 'category.writing': 'Writing', 'category.browser': 'Browser and web', 'category.documents': 'Documents', 'category.3d': '3D and previs', 'category.coding': 'Code and development', 'category.other': 'Other skills',
       skills: 'Skills', history: 'Use and review history', originals: 'Original prompt libraries', originalsHelp: 'Search the full YouMind library in conversation. Open the other original sites when you need their browser interface.',
       chromeOpened: 'Chrome received the request to open a new window.', openOriginal: 'Open in new Chrome window', useOriginal: 'Use full prompt library', refreshLibrary: 'Update full library', libraryRefreshed: 'Full prompt library updated.', originalReady: 'Library instructions added to this conversation’s draft. Send when ready.',
@@ -50,6 +51,7 @@ window.__ModuleLoader__.load({
       mode: '使用模式', single: '单独使用', combination: '组合使用', singleHelp: '日常选择 1 个技能使用。', use: '使用技能 · 加入草稿', useRequired: '请选择 1 个可用且未停用的技能，并填写任务。', useHelp: '将技能调用加入草稿，并保存记录供之后评价。检查后自行发送。',
       combinationHelp: '选择 1 个主技能和多个辅助技能，数量不限。辅助技能按下方顺序处理，各自职责可选填写。', primarySkill: '主技能', supportingSkills: '辅助技能 · 按顺序处理', supportingSkill: '辅助技能 {count}', responsibility: '职责（选填，最多 1000 字符）', responsibilityPlaceholder: '填写该技能负责处理的内容…', moveUp: '上移', moveDown: '下移', remove: '去除', combine: '生成组合草稿预览', combinePreviewHelp: '仅保存组合记录并显示预览，检查后自行点击“加入当前草稿”再发送。', combineRequired: '请选择至少 2 个可用且未停用的技能，指定主技能并填写任务。', combinedSaved: '组合记录已保存，请检查预览，自行加入当前草稿后发送。', combinationPreview: '组合草稿预览', combinationRecord: '组合使用记录', combinationReview: '组合整体评价', combinationReviewHelp: '评分针对组合整体，不计入任何成员技能的独立质量评分。', combinationMembers: '组合成员与职责', responsibilityEmpty: '未填写职责',
       selectedSingle: '已选择 {count} / 1', selectedSkills: '已选技能',
+      familyLanguage: 'zh', family: '所属分组', familyVisible: '{count} 个可见技能', familySelected: '已选 {count} 个', familyEntry: '总入口', familyWorkflowEntry: '工作流入口', 'family.toolbox': '工具箱', 'family.workflow': '工作流', 'family.category': '分类',
       'category.image': '图像创作', 'category.video': '视频创作', 'category.storyboard': '分镜与导演', 'category.execution': '生成与工具', 'category.knowledge': '影视知识', 'category.reverse': '参考解析', 'category.writing': '写作', 'category.browser': '浏览器与网络', 'category.documents': '文档与表格', 'category.3d': '三维与预演', 'category.coding': '代码与开发', 'category.other': '其他技能',
       skills: '技能', history: '使用与评价历史', originals: '原版提示词库', originalsHelp: '在对话中检索 YouMind 完整提示词库；需要网站界面时，点击打开其他原版网站。',
       chromeOpened: '已请求 Chrome 新窗口打开，未运行时会自动启动。', openOriginal: '在 Chrome 新窗口打开', useOriginal: '使用完整提示词库', refreshLibrary: '更新完整库', libraryRefreshed: '完整提示词库已更新。', originalReady: '提示词库使用说明已加入当前会话草稿，可检查后发送。',
@@ -98,6 +100,7 @@ window.__ModuleLoader__.load({
 .pw-review-success{color:var(--pw-green)}
 .pw-actionbar{border-top-color:color-mix(in srgb,var(--pw-blue) 45%,var(--dsw-alias-border-l1));background:color-mix(in srgb,var(--pw-blue) 3%,var(--dsw-alias-bg-base))}
 @container(max-width:300px){.pw-body{padding:12px 10px 16px}.pw-filter-grid{grid-template-columns:minmax(0,1fr)}.pw-actionbar{padding:10px}.pw-actions{flex-direction:column}.pw-card{padding:10px}.pw-card-foot{align-items:stretch}.pw-card-foot>.pw-select{width:100%}}
+.pw-catalog{display:flex;flex-direction:column;gap:12px;min-width:0}.pw-family{min-width:0;border:1px solid var(--pw-edge);border-radius:10px;background:var(--dsw-alias-bg-layer-1);overflow:hidden}.pw-family-heading{margin:0;font:inherit}.pw-family-toggle{width:100%;min-height:48px;display:flex;align-items:center;gap:10px;padding:12px;text-align:left;font:inherit;border:0;background:transparent;color:var(--dsw-alias-label-primary);cursor:pointer}.pw-family-toggle:hover{background:var(--pw-soft-blue)}.pw-family-toggle:focus-visible{outline-offset:-3px}.pw-family-summary{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}.pw-family-title{font-size:14px;font-weight:600;overflow-wrap:anywhere}.pw-family-counts{display:flex;gap:10px;flex-wrap:wrap;color:var(--dsw-alias-label-secondary);font-size:12px}.pw-family-content{padding:0 12px 12px}.pw-family-description{margin:0 0 10px;color:var(--dsw-alias-label-secondary);overflow-wrap:anywhere}.pw-family-attribution{margin:8px 0;color:var(--dsw-alias-label-secondary);font-size:12px;overflow-wrap:anywhere}.pw-family-entry{color:var(--dsw-alias-brand-primary)}
 @media(prefers-reduced-motion:reduce){.pw-root *{transition:none!important;scroll-behavior:auto!important}}
 `;
     function text(value) {
@@ -156,6 +159,9 @@ window.__ModuleLoader__.load({
       const [connectAttempt, setConnectAttempt] = React.useState(0);
       const [tab, setTab] = React.useState('skills');
       const [query, setQuery] = React.useState('');
+      const [expandedFamilies, setExpandedFamilies] = React.useState({});
+      // Search expansion is temporary; clearing or changing the query restores normal accordion state.
+      const [searchFamilies, setSearchFamilies] = React.useState({ query: '', expanded: {} });
       const [category, setCategory] = React.useState('');
       const [taskFilter, setTaskFilter] = React.useState('');
       const [statusFilter, setStatusFilter] = React.useState('');
@@ -378,7 +384,58 @@ window.__ModuleLoader__.load({
       const categories = [...new Set(catalog.skills.map(skill => skill.category).filter(Boolean))];
       const tasks = [...new Set(catalog.skills.flatMap(skill => skill.tasks || skill.taskTypes || skill.platforms || []).map(text).filter(Boolean))];
       const search = query.trim().toLowerCase();
-      const visibleSkills = catalog.skills.filter(skill => (tab !== 'favorites' || skill.favorite) && (!search || [skill.title, skill.description, skill.whenToUse, skill.category, skill.id, skill.platforms, skill.keywords, skill.originalTitle, skill.originalDescription, skill.originalWhenToUse].map(text).join(' ').toLowerCase().includes(search)) && (!category || skill.category === category) && (!taskFilter || (skill.tasks || skill.taskTypes || skill.platforms || []).map(text).includes(taskFilter)) && (!availableOnly || skill.available) && (statusFilter === 'retired' || skill.status !== 'retired') && (!statusFilter || (statusFilter === 'favorites' ? skill.favorite : skill.status === statusFilter)));
+      const families = Array.isArray(catalog.families) ? catalog.families : [];
+      const familyById = new Map(families.map(family => [family.id, family]));
+      const localized = value => typeof value === 'object' && value !== null && !Array.isArray(value) ? text(value[t('familyLanguage')] || value.en || value.zh) : text(value);
+      const searchable = value => typeof value === 'object' && value !== null ? Object.values(value).map(searchable).join(' ') : text(value);
+      function skillFamily(skill) {
+        if (!skill.familyId) return null;
+        return familyById.get(skill.familyId) || { id: skill.familyId, title: skill.familyTitle || skill.familyId, description: skill.familyDescription, relation: skill.familyRelation, rootIds: [] };
+      }
+      function isFamilyEntry(skill, family) {
+        return family && family.relation !== 'category' && (skill.familyRoot === true || (family.rootIds || []).includes(skill.id));
+      }
+      const visibleSkills = catalog.skills.filter(skill => {
+        const family = skillFamily(skill);
+        return (tab !== 'favorites' || skill.favorite) && (!search || [skill.title, skill.description, skill.whenToUse, skill.category, skill.id, skill.platforms, skill.keywords, skill.originalTitle, skill.originalDescription, skill.originalWhenToUse, skill.familyTitle, skill.familyDescription, family?.title, family?.description].map(searchable).join(' ').toLowerCase().includes(search)) && (!category || skill.category === category) && (!taskFilter || (skill.tasks || skill.taskTypes || skill.platforms || []).map(text).includes(taskFilter)) && (!availableOnly || skill.available) && (statusFilter === 'retired' || skill.status !== 'retired') && (!statusFilter || (statusFilter === 'favorites' ? skill.favorite : skill.status === statusFilter));
+      });
+      function changeQuery(value) {
+        setQuery(value);
+        setSearchFamilies({ query: '', expanded: {} });
+      }
+      // Membership follows the Host's single primary familyId; memberIds and prefixes never duplicate cards.
+      function renderCatalog() {
+        const groups = new Map();
+        const entries = [];
+        for (const skill of visibleSkills) {
+          const family = skillFamily(skill);
+          if (!family) { entries.push({ skill }); continue; }
+          if (!groups.has(family.id)) {
+            const group = { family, skills: [] };
+            groups.set(family.id, group);
+            entries.push(group);
+          }
+          groups.get(family.id).skills.push(skill);
+        }
+        return h('div', { className: 'pw-catalog' }, entries.map(entry => {
+          if (entry.skill) return renderSkill(entry.skill);
+          const { family, skills } = entry;
+          const expanded = search ? searchFamilies.query === search ? searchFamilies.expanded[family.id] !== false : true : expandedFamilies[family.id] === true;
+          const contentId = 'pw-family-' + encodeURIComponent(target) + '-' + encodeURIComponent(family.id);
+          const selectedCount = catalog.skills.filter(skill => skill.familyId === family.id && selected.includes(skill.id)).length;
+          const ordered = [...skills].sort((a, b) => Number(isFamilyEntry(b, family)) - Number(isFamilyEntry(a, family)));
+          return h('section', { className: 'pw-family', key: 'family:' + family.id },
+            h('h2', { className: 'pw-family-heading' }, h('button', { type: 'button', className: 'pw-family-toggle', 'aria-expanded': expanded, 'aria-controls': contentId, onClick: () => {
+              if (search) setSearchFamilies(current => ({ query: search, expanded: { ...(current.query === search ? current.expanded : {}), [family.id]: !expanded } }));
+              else setExpandedFamilies(current => ({ ...current, [family.id]: !expanded }));
+            } }, h('span', { 'aria-hidden': true }, expanded ? '▾' : '▸'), h('span', { className: 'pw-family-summary' },
+              h('span', { className: 'pw-row' }, h('span', { className: 'pw-family-title' }, localized(family.title) || family.id), ['toolbox', 'workflow', 'category'].includes(family.relation) && h('span', { className: 'pw-badge' }, t('family.' + family.relation))),
+              h('span', { className: 'pw-family-counts' }, h('span', null, t('familyVisible', { count: skills.length })), h('span', null, t('familySelected', { count: selectedCount })))))),
+            h('div', { id: contentId, hidden: !expanded, className: 'pw-family-content' }, expanded && h(React.Fragment, null,
+              localized(family.description) && h('p', { className: 'pw-family-description' }, localized(family.description)),
+              h('div', { className: 'pw-grid' }, ordered.map(skill => renderSkill(skill))))));
+        }));
+      }
       const filteredTrials = history.trials.filter(trial => !search || [trial.skillTitle, trial.brief, trial.prompt, trial.model, ...(trial.members || []).flatMap(member => [member.skillId, member.title, member.role])].map(text).join(' ').toLowerCase().includes(search));
       function saveReview(request) { return operate('feedback', { action: 'feedback', ...request }, () => { void refresh(); }, t('reviewSaved')); }
       function renderTrial(trial, withReviews) {
@@ -418,12 +475,15 @@ window.__ModuleLoader__.load({
         const picked = selected.includes(skill.id);
         const originalFields = ['originalTitle', 'originalDescription', 'originalWhenToUse'].filter(key => text(skill[key]).trim());
         const title = skill.title || skill.id;
+        const family = skillFamily(skill);
+        const familyEntry = isFamilyEntry(skill, family);
         const sessionAllowed = !!manualMode?.allowlist.includes(skill.id);
         const defaultAllowed = !!manualMode?.defaultAllowlist.includes(skill.id);
         const autoEligible = skill.modelInvocable === true && skill.origin === 'existing';
         const policyDisabled = disabled || loading || !manualMode;
         return h('article', { key: skill.id, className: 'pw-card' + (picked ? ' pw-picked' + (combination && skill.id === primaryId ? ' pw-role-primary' : ' pw-role-support') : '') },
           h('div', { className: 'pw-card-top' }, h('h3', { className: 'pw-card-title' }, title), h(Button, { quiet: true, className: 'pw-favorite', disabled: disabled || loading, onClick: () => setSkillStatus(skill, skill.status || 'testing', !skill.favorite), 'aria-label': t(skill.favorite ? 'unfavorite' : 'favorite') + ': ' + title, 'aria-pressed': !!skill.favorite }, skill.favorite ? '★' : '☆')),
+          family && h('div', { className: 'pw-family-attribution' }, t('family') + ': ' + (localized(family.title) || family.id), familyEntry && h('span', { className: 'pw-badge pw-family-entry' }, t(family.relation === 'workflow' ? 'familyWorkflowEntry' : 'familyEntry'))),
           h('p', { className: 'pw-purpose', title: text(skill.description) }, text(skill.description) || text(skill.whenToUse) || '—'),
           reason && h('p', { className: 'pw-help' }, text(reason)),
           h('div', { className: 'pw-card-foot' },
@@ -457,8 +517,8 @@ window.__ModuleLoader__.load({
               if (activeOperation.current || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
               e.preventDefault();
               const next = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : (tabs.indexOf(tab) + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
-              setTab(tabs[next]); setQuery(''); e.currentTarget.parentNode.children[next].focus();
-            }, onClick: () => { if (activeOperation.current) return; setTab(value); setQuery(''); },
+              setTab(tabs[next]); changeQuery(''); e.currentTarget.parentNode.children[next].focus();
+            }, onClick: () => { if (activeOperation.current) return; setTab(value); changeQuery(''); },
           }, t(value === 'skills' ? 'allSkills' : value === 'history' ? 'shortHistory' : value)))),
           !target ? h('div', { className: 'pw-empty' }, t('noTarget')) : connection !== 'ready' ? h('div', { className: 'pw-empty', role: 'status' }, connection === 'loading' ? t('connecting') : t('error')) :
           h('section', { role: 'tabpanel', id: 'pw-content-' + target + '-' + tab, 'aria-labelledby': 'pw-tab-' + target + '-' + tab, 'aria-busy': loading || !!busy },
@@ -481,15 +541,15 @@ window.__ModuleLoader__.load({
               recommendations && h('section', { className: 'pw-builder', 'aria-label': t('recommendations'), 'aria-live': 'polite' }, h('h2', { className: 'pw-section-title' }, t('recommendations')), h('p', { className: 'pw-help' }, recommendations.notice || t('recommendationHelp')),
                 recommendations.skills.length ? h('div', { className: 'pw-grid' }, recommendations.skills.map(row => renderSkill(catalog.skills.find(item => item.id === row.id) || row, row.reason))) : h('p', { className: 'pw-muted' }, t('recommendationEmpty'))),
               catalog.catalogComplete === false && h('p', { className: 'pw-notice', role: 'status' }, catalog.notice),
-              h('div', { className: 'pw-filters' }, h('input', { className: 'pw-input', type: 'search', value: query, onChange: e => setQuery(e.target.value), placeholder: t('search'), 'aria-label': t('search') }),
+              h('div', { className: 'pw-filters' }, h('input', { className: 'pw-input', type: 'search', value: query, onChange: e => changeQuery(e.target.value), placeholder: t('search'), 'aria-label': t('search') }),
                 h('details', null, h('summary', null, t('filters') + (category || taskFilter || statusFilter || !availableOnly ? ' ·' : '')),
                   h('div', { className: 'pw-filter-grid' }, h(Select, { label: t('allCategories'), value: category, onChange: setCategory, options: options(categories, 'allCategories', categoryLabel) }), h(Select, { label: t('allTasks'), value: taskFilter, onChange: setTaskFilter, options: options(tasks, 'allTasks') }), h(Select, { label: t('allStates'), value: statusFilter, onChange: setStatusFilter, options: [{ value: '', label: t('allStates') }, ...STATUSES.map(value => ({ value, label: t(value) }))] })),
                   h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: availableOnly, onChange: e => setAvailableOnly(e.target.checked) }), t('availableOnly')))),
-              loading && !catalog.skills.length ? h('div', { className: 'pw-empty', role: 'status' }, t('loading')) : visibleSkills.length ? h('div', { className: 'pw-grid' }, visibleSkills.map(skill => renderSkill(skill))) : h('div', { className: 'pw-empty' }, t('empty')),
+              loading && !catalog.skills.length ? h('div', { className: 'pw-empty', role: 'status' }, t('loading')) : visibleSkills.length ? renderCatalog() : h('div', { className: 'pw-empty' }, t('empty')),
               h('details', { className: 'pw-originals' }, h('summary', null, t('originals')), h('p', { className: 'pw-help' }, t('originalsHelp')),
                 h('div', { className: 'pw-grid' }, originals.map(item => h('article', { key: item.id, className: 'pw-card' }, h('h3', { className: 'pw-card-title' }, item.title), h('p', { className: 'pw-muted' }, item.description), h('div', { className: 'pw-card-foot' }, h(Button, { disabled, onClick: () => activateOriginal(item) }, t(item.kind === 'web' ? 'openOriginal' : 'useOriginal')), item.id === 'youmind' && h(Button, { quiet: true, disabled, onClick: () => void operate('refreshLibrary', { action: 'refresh' }, undefined, t('libraryRefreshed')) }, t('refreshLibrary')))))),
                 !loading && !originals.length && h('p', { className: 'pw-help' }, t('originalsUnavailable')))),
-            tab === 'history' && h(React.Fragment, null, h('input', { className: 'pw-input', type: 'search', value: query, onChange: e => setQuery(e.target.value), placeholder: t('historySearch'), 'aria-label': t('historySearch') }), loading && !history.trials.length ? h('div', { className: 'pw-empty', role: 'status' }, t('loading')) : filteredTrials.length ? filteredTrials.map(trial => renderTrial(trial, true)) : h('div', { className: 'pw-empty' }, history.trials.length ? t('empty') : t('noHistory')))),
+            tab === 'history' && h(React.Fragment, null, h('input', { className: 'pw-input', type: 'search', value: query, onChange: e => changeQuery(e.target.value), placeholder: t('historySearch'), 'aria-label': t('historySearch') }), loading && !history.trials.length ? h('div', { className: 'pw-empty', role: 'status' }, t('loading')) : filteredTrials.length ? filteredTrials.map(trial => renderTrial(trial, true)) : h('div', { className: 'pw-empty' }, history.trials.length ? t('empty') : t('noHistory')))),
           h('details', { className: 'pw-toolbar' }, h('summary', null, t('more')), h('div', { className: 'pw-row' }, h(Button, { quiet: true, disabled: disabled || loading, onClick: () => void refresh() }, t('refresh')), h(Button, { quiet: true, disabled, onClick: () => void operate('export', { action: 'export' }, payload => { setExported(JSON.stringify(payload, null, 2)); }, t('exported')) }, t('export')))),
           exported && h('section', { className: 'pw-builder' }, h('div', { className: 'pw-row pw-between' }, h('h2', { className: 'pw-section-title' }, t('exportedState')), h(Button, { quiet: true, onClick: () => setExported('') }, t('close'))), h('textarea', { className: 'pw-prompt', readOnly: true, value: exported, 'aria-label': t('exportedState') }), h(Button, { onClick: () => void copy(exported) }, t('copy')))),
         target && connection === 'ready' && tab !== 'history' && h('footer', { className: 'pw-actionbar', 'aria-label': t('selectedSkills') },

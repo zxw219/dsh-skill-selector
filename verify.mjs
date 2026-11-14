@@ -1,9 +1,30 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {PromptWorkbench} from './index.js';
+import {assignSkillFamilies} from './families.js';
 import {composeResource,makeUsePrompt,recommendSkills,classify,localizeSkill,rankSkills} from './logic.js';
 const json=async p=>JSON.parse(await fs.readFile(new URL(p,import.meta.url),'utf8'));
 const curated=await json('./curated-skills.json'),groups=await json('./comparison-groups.json');
+const {families}=await json('./skill-families.json');
+assert.equal(new Set(families.map(f=>f.id)).size,families.length);
+const explicitOwners=new Map();
+for(const family of families) {
+  assert.ok(['toolbox','workflow','category'].includes(family.relation));
+  assert.ok(family.title.zh&&family.title.en&&family.evidence.length);
+  for(const id of new Set([...(family.rootIds||[]),...(family.memberIds||[])])) {
+    assert.ok(!explicitOwners.has(id),'Duplicate family membership: '+id);explicitOwners.set(id,family.id);
+  }
+}
+const familyFixture=[{id:'story',title:'Story',available:true,userInvocable:true},{id:'story-short-write',title:'Short writing',available:true},{id:'office-xlsx',title:'Excel',available:true},{id:'dialogue-specialist',title:'Dialogue writing',available:true},{id:'future-independent',title:'New',available:true}];
+const familyAssigned=assignSkillFamilies(familyFixture,families);
+assert.equal(familyAssigned.find(s=>s.id==='story').familyRoot,true);
+assert.equal(familyAssigned.find(s=>s.id==='story-short-write').familyId,familyAssigned.find(s=>s.id==='story').familyId);
+assert.ok(familyAssigned.find(s=>s.id==='office-xlsx').familyId);
+assert.equal(familyAssigned.find(s=>s.id==='future-independent').familyId,undefined);
+assert.equal(familyFixture[0].familyId,undefined);
+assert.deepEqual(familyAssigned.map(s=>[s.id,s.available,s.userInvocable]),familyFixture.map(s=>[s.id,s.available,s.userInvocable]));
+assert.ok(rankSkills(familyAssigned,'小说').some(s=>s.id==='story-short-write'));
+assert.ok(!familyAssigned.find(s=>s.id==='dialogue-specialist').familyId?.includes('staging'));
 const packs={catalog:await json('./packs/catalog.json'),prompts:await json('./packs/prompts.json'),styles:await json('./packs/styles.json'),fill:await json('./packs/fill-templates.json')};
 for(const resource of [...packs.prompts,...packs.styles,...packs.fill]) {const result=composeResource(resource,{model:'Midjourney',aspectRatio:'16:9'});assert.deepEqual(result.missingVariables,[],resource.id);assert.ok(result.prompt.endsWith('--ar 16:9'));assert.ok(!result.prompt.includes('[object Object]'));}
 const localizations=await json('./skill-localizations.json');assert.equal(Object.keys(localizations).length,41);
@@ -16,8 +37,8 @@ const skill={name:'gptimage2-prompt-assistant',description:'image prompt',invoca
 const userOnly={name:'custom-user-only',description:'custom writing workflow',invocation:{modelInvocable:false,userInvocable:true},source:'runtime',provider:'fixture'};
 const registry={snapshot:async options=>{assert.equal(options.scope,agent);return {complete:false,skills:[skill,userOnly]};},get:async(name,options)=>{assert.equal(options.scope,agent);return loadable?(name===userOnly.name?userOnly:skill):undefined;}};
 const ctx={agentPresets:{serviceFor:()=>registry},workingDirectory:{ensure:async input=>{assert.equal(input,agent);return process.cwd();}}};
-const service=new PromptWorkbench(ctx,domain,curated,groups,packs);const agent={id:'verification',ctx:{},session:{}};
-const listing=await service.execute({action:'list'},agent);assert.equal(listing.catalogComplete,false);assert.ok(listing.skills.find(s=>s.id===skill.name).available);
+const service=new PromptWorkbench(ctx,domain,curated,groups,packs,undefined,{},families);const agent={id:'verification',ctx:{},session:{}};
+const listing=await service.execute({action:'list'},agent);assert.equal(listing.catalogComplete,false);assert.equal(listing.families,families);assert.ok(listing.skills.find(s=>s.id===skill.name).available);
 const used=await service.execute({action:'use',skillId:skill.name,brief:'Create the requested image'},agent);assert.ok(used.prompt.startsWith('/'+skill.name));assert.ok(!used.prompt.includes('本次只输出提示词'));assert.ok(used.trial.id);
 assert.ok(listing.skills.find(s=>s.id===userOnly.name).available);
 assert.ok((await service.execute({action:'use',skillId:userOnly.name,brief:'Write a story'},agent)).prompt.startsWith('/'+userOnly.name));
