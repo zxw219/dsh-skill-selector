@@ -1,6 +1,6 @@
 {
-  "name": "dsh-skill-selector-combo",
-  "version": "0.4.0",
+  "name": "dsh-skill-selector-ratings",
+  "version": "0.4.1",
   "private": true,
   "dependencies": {
     "zod": "^4.0.0"

@@ -29,7 +29,7 @@ assert.ok(makeUsePrompt({id:'model-only',title:'Model only'},'task').includes('s
 assert.deepEqual(recommendSkills([{id:'image',title:'图片',description:'image',available:true,status:'retired'}],'图片'),[]);
 const manyRegistry={snapshot:async()=>({complete:true,skills:many.map(s=>({name:s.id,description:'声音',invocation:{modelInvocable:true,userInvocable:true},source:'runtime',provider:'fixture'}))}),get:async()=>({invocation:{modelInvocable:true,userInvocable:true}})};
 const manyService=new PromptWorkbench({...ctx,agentPresets:{serviceFor:()=>manyRegistry}},domain,[],[],packs,undefined,localizations);
-assert.equal((await manyService.execute({action:'prepare',ids:many.map(s=>s.id),brief:'声音设计对比'},agent)).trials.length,7);
+await assert.rejects(()=>manyService.execute({action:'prepare',ids:many.map(s=>s.id),brief:'removed'},agent),/未知操作/);
 const combined=await service.execute({action:'combine',ids:[skill.name,userOnly.name],primaryId:userOnly.name,roles:{[skill.name]:'只负责画面表达'},brief:'共同任务，仅输出文本'},agent);
 assert.equal(combined.trial.kind,'combination');assert.equal(combined.trial.skillId,userOnly.name);assert.deepEqual(combined.trial.members.map(m=>m.skillId),[userOnly.name,skill.name]);assert.ok(combined.prompt.includes('只负责画面表达'));assert.ok(combined.prompt.includes('/'+skill.name));assert.ok(combined.prompt.includes('/'+userOnly.name));
 await service.execute({action:'feedback',skillId:userOnly.name,trialId:combined.trial.id,rating:2,note:'组合整体'},agent);
@@ -39,14 +39,14 @@ await assert.rejects(()=>service.execute({action:'combine',ids:[skill.name],prim
 await assert.rejects(()=>service.execute({action:'combine',ids:[skill.name,userOnly.name],primaryId:'absent',brief:'task'},agent),/主技能/);
 await assert.rejects(()=>service.execute({action:'combine',ids:[skill.name,userOnly.name],primaryId:skill.name,brief:'task',roles:{absent:'test'}},agent),/分工/);
 assert.equal((await manyService.execute({action:'combine',ids:many.map(s=>s.id),primaryId:many[3].id,brief:'整合声音'},agent)).trial.members.length,7);
-const prepared=await service.execute({action:'prepare',ids:[skill.name],brief:'A rainy street portrait'},agent);assert.equal(prepared.trials.length,1);
-await service.execute({action:'feedback',skillId:skill.name,trialId:prepared.trials[0].id,rating:4,note:'verification',status:'watch'},agent);
-assert.equal((await service.execute({action:'history'},agent)).reviews.length,2);
-loadable=false;await assert.rejects(()=>service.execute({action:'use',skillId:skill.name,brief:'test'},agent),/无法加载/);await assert.rejects(()=>service.execute({action:'prepare',ids:[skill.name],brief:'test'},agent),/无法加载/);
+const legacy={id:'legacy-comparison',skillId:skill.name,skillTitle:'Old comparison record',brief:'Historical task',model:'Midjourney',prompt:'Historical draft',time:'2026-01-01T00:00:00.000Z',sessionId:agent.id};await domain.table('trials').put(legacy.id,legacy);
+await service.execute({action:'feedback',skillId:skill.name,trialId:legacy.id,rating:4,note:'verification',status:'watch'},agent);
+await service.execute({action:'feedback',skillId:skill.name,trialId:used.trial.id,rating:5,note:'ordinary use remains rateable'},agent);assert.equal((await service.execute({action:'history'},agent)).reviews.length,3);assert.equal((await service.execute({action:'history'},agent)).trials.find(t=>t.id===legacy.id).prompt,legacy.prompt);
+loadable=false;await assert.rejects(()=>service.execute({action:'use',skillId:skill.name,brief:'test'},agent),/无法加载/);
 await assert.rejects(()=>service.execute({action:'combine',ids:[skill.name,userOnly.name],primaryId:skill.name,brief:'task'},agent),/无法加载/);
 await service.execute({action:'setStatus',skillId:skill.name,status:'retired'},agent);
 await assert.rejects(()=>service.execute({action:'combine',ids:[skill.name,userOnly.name],primaryId:skill.name,brief:'task'},agent),/隐藏/);
-await assert.rejects(()=>service.execute({action:'prepare',ids:[skill.name],brief:'test'},agent),/停用/);
+await assert.rejects(()=>service.execute({action:'use',skillId:skill.name,brief:'test'},agent),/隐藏/);
 const {OriginalLibrary,projectWorkbenchOpen}=await import('./originals.js');
 let state={token:'',time:0,pending:[]};
 const marker={token:'check',time:Date.now()};
@@ -61,5 +61,5 @@ assert.ok(full.items.length>0&&full.items.length<=3);assert.ok(full.items.every(
 const {apply}=await import('./index.js');let spec;const registered=[];
 const applyCtx={effect:fn=>fn(),skills:{register:()=>()=>{}},sessionProjections:{register:async()=>({dispose:async()=>{}})},storageDomain:{open:async input=>{spec=input;return {...domain,close:async()=>{}};}},commands:{register:def=>{registered.push(def);return ()=>{};}},tools:{register:def=>{registered.push(def);return ()=>{};}}};
 await apply(applyCtx);
-assert.equal(spec.name,'prompt_workbench');assert.equal(spec.tables.trials.valueSchema.parse(combined.trial).members.length,2);assert.equal(spec.tables.trials.valueSchema.parse(used.trial).kind,undefined);assert.ok(registered.find(def=>def.name==='prompt_workbench').parameters.properties.action.enum.includes('combine'));
-console.log('PASS: combinations, member order/duties, schema persistence, review separation, validation; 41 Chinese cards; unlimited recommendations/comparison; 44 compatibility templates; scoped catalog; ordinary use; trusted projection; full library search.');
+assert.equal(spec.name,'prompt_workbench');assert.equal(spec.tables.trials.valueSchema.parse(combined.trial).members.length,2);assert.equal(spec.tables.trials.valueSchema.parse(used.trial).kind,undefined);assert.ok(registered.find(def=>def.name==='prompt_workbench').parameters.properties.action.enum.includes('combine'));assert.ok(!registered.find(def=>def.name==='prompt_workbench').parameters.properties.action.enum.includes('prepare'));assert.equal(spec.tables.trials.valueSchema.parse(legacy).id,legacy.id);
+console.log('PASS: combinations, member order/duties, schema persistence, review separation, validation; 41 Chinese cards; unlimited recommendations; removed comparison action; historical and ordinary ratings; 44 compatibility templates; scoped catalog; ordinary use; trusted projection; full library search.');

@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { randomUUID } from 'node:crypto';
 import { z } from 'zod';
-import { classify, composeResource, localizeSkill, makeCombinedPrompt, makeTrialPrompt, makeUsePrompt, recommendSkills, rankSkills } from './logic.js';
+import { classify, composeResource, localizeSkill, makeCombinedPrompt, makeUsePrompt, recommendSkills, rankSkills } from './logic.js';
 import { OriginalLibrary, originals, youmindFolder, projectWorkbenchOpen } from './originals.js';
 import { openOriginalInChrome } from './chrome.js';
 
@@ -105,22 +105,6 @@ export class PromptWorkbench {
       await this.domain.table('trials').put(trial.id,trial);
       return {trial,prompt,notice:'组合草稿已保存。请先预览分工，再加入当前草稿并自行发送；尚未执行任何技能。评价记录针对组合整体，不计入单个技能的平均分。'};
     }
-    if(action==='prepare') {
-      const ids=[...new Set(Array.isArray(request.ids)?request.ids:[])];
-      if(ids.length<1) throw Error('请至少选择一个技能');
-      const brief=bounded(request.brief);if(!brief.trim())throw Error('请填写测试需求');
-      const model=bounded(request.model,100)||'Midjourney';
-      const catalog=await this.catalog(agent), candidates=ids.map(id=>catalog.find(s=>s.id===id));
-      if(candidates.some(s=>!s?.available))throw Error('所选技能未启用或已不可用，请在技能管理器启用后刷新');
-      if(candidates.some(s=>s.status==='retired'))throw Error('所选技能已在工作台停用，请先改为测试中再试用');
-      for(const s of candidates.filter(s=>s.origin==='existing')) {
-        const definition=await this.registry(agent).get(s.id,{cwd:await this.ctx.workingDirectory.ensure(agent,signal),scope:agent,signal});
-        if(!definition||!(definition.invocation.modelInvocable||definition.invocation.userInvocable))throw Error('该技能当前无法加载，请刷新目录后重试：'+s.id);
-      }
-      const trials=candidates.map(s=>({id:randomUUID(),skillId:s.id,skillTitle:s.title,brief,model,time:new Date().toISOString(),sessionId:agent.id,prompt:makeTrialPrompt(s,brief,model)}));
-      for(const trial of trials)await this.domain.table('trials').put(trial.id,trial);
-      return {trials,notice:'每个技能已保存独立试用记录，可填入当前对话草稿或复制。需要严格比较时请分别在配置相同的新对话试用。未自动发送或消耗生图额度。'};
-    }
     if(action==='setStatus'||action==='feedback') {
       const skillId=bounded(request.skillId,200);
       const savedTrial=action==='feedback'&&request.trialId?this.domain.table('trials').get(bounded(request.trialId,100)):undefined;
@@ -162,7 +146,7 @@ export async function apply(ctx) {
   const skillPath=fileURLToPath(new URL(youmindFolder+'SKILL.md',base));
   const upstreamContent=await readFile(skillPath,'utf8');
   ctx.effect(()=>ctx.skills.register({name:'ai-image-prompts-skill',description:'作者原版完整图像提示词推荐库，包含全部分类及样图。按原版先推荐最多3条模板、选中后改写；使用前检查更新。',path:skillPath,source:'runtime',resourceBase:{kind:'directory',path:fileURLToPath(new URL(youmindFolder,base))},content:upstreamContent}));
-  ctx.effect(()=>ctx.skills.register({name:'mj-prompt-workbench',description:'用户要打开技能选择器、找适合的技能、使用MJ提示词或打开工作台时，调用 prompt_workbench action=open 展示当前对话右侧技能选择页。选中网页工具才打开Chrome。',source:'runtime',content:'用户要求打开技能选择器、选择技能或打开提示词工作台时，调用 prompt_workbench({action:"open"})。按任务找技能可用 recommend，brief 为需求。普通使用用 use，skillId 和 brief 必填。组合使用用 combine，ids 至少两个，primaryId 为其中主技能，roles 按技能 id 填职责，brief 为共同需求；只生成预览草稿，不自动执行。返回启动草稿，不等于已执行技能。用户发送草稿后按指定技能执行。比较时用 prepare；feedback 记录主观评价，retired 仅隐藏工作台技能。只有用户选中网页工具后才打开Chrome。用户明确指名技能并要求直接完成时，加载该技能执行，无须再选。'}));
+  ctx.effect(()=>ctx.skills.register({name:'mj-prompt-workbench',description:'用户要打开技能选择器、找适合的技能、使用MJ提示词或打开工作台时，调用 prompt_workbench action=open 展示当前对话右侧技能选择页。选中网页工具才打开Chrome。',source:'runtime',content:'用户要求打开技能选择器、选择技能或打开提示词工作台时，调用 prompt_workbench({action:"open"})。按任务找技能可用 recommend，brief 为需求。普通使用用 use，skillId 和 brief 必填。组合使用用 combine，ids 至少两个，primaryId 为其中主技能，roles 按技能 id 填职责，brief 为共同需求；只生成预览草稿，不自动执行。返回启动草稿，不等于已执行技能。用户发送草稿后按指定技能执行。需要比较时由用户自行分支对话；feedback 记录主观评价，retired 仅隐藏工作台技能。只有用户选中网页工具后才打开Chrome。用户明确指名技能并要求直接完成时，加载该技能执行，无须再选。'}));
   const openSchema=z.object({token:z.string(),time:z.number()});
   const openState=openSchema.extend({pending:z.array(z.string())});
   const projection=await ctx.sessionProjections.register({key:'promptWorkbenchOpen',stateSchema:openState,init:()=>({token:'',time:0,pending:[]}),apply:projectWorkbenchOpen,wire:{viewSchema:openSchema,view:({token,time})=>({token,time})},stateVersion:1});
@@ -170,11 +154,11 @@ export async function apply(ctx) {
   const domain=await ctx.storageDomain.open({name:'prompt_workbench',version:1,tables:{choices:{valueSchema:choiceSchema},trials:{valueSchema:trialSchema},reviews:{valueSchema:reviewSchema}}});
   ctx.effect(()=>()=>domain.close());
   const service=new PromptWorkbench(ctx,domain,curated,groups,{catalog,prompts,styles,fill},library,localizations);
-  ctx.effect(()=>ctx.commands.register({name:'prompt-workbench',description:'技能选择器：按任务找技能、使用、对比和评价',input:{hint:'JSON 操作'},handler:async({agent,rawInput,signal})=>{
+  ctx.effect(()=>ctx.commands.register({name:'prompt-workbench',description:'技能选择器：按任务找技能、使用和评价',input:{hint:'JSON 操作'},handler:async({agent,rawInput,signal})=>{
     try {const request=rawInput.trim()?JSON.parse(rawInput):{action:'list'};return {kind:'success',text:JSON.stringify(await service.execute(request,agent,signal))};}
     catch(error){return {kind:'error',text:error.message};}
   }}));
-  ctx.effect(()=>ctx.tools.register({name:'prompt_workbench',description:'技能选择器。recommend 按 brief 用途匹配并返回全部匹配技能；use 用 skillId 和 brief 创建普通使用草稿（不执行），用户发送后加载对应技能；combine 用 ids、primaryId、roles（技能 id 到职责文本）、brief 生成主辅组合草稿预览（不执行）；prepare 专供对比。用户要使用MJ提示词或选择技能时先用 open 打开当前对话右侧技能选择页，选中网页技能才打开浏览器。originals 查看3个完整版入口；openWebsite 按网站 id 在 Chrome 新窗口打开原版网站；activate id=youmind 使用作者完整技能；library 搜索完整库最多3条并展示样图；refresh 强制更新。list/prepare/feedback/setStatus/history/export 管理现有技能与试用。resources/compose 仅兼容旧样本入口，不是完整版。',parameters:{type:'object',properties:{action:{type:'string',enum:['open','originals','openWebsite','activate','library','refresh','list','recommend','use','combine','prepare','feedback','setStatus','history','resources','compose','export']},query:{type:'string'},category:{type:'string'},ids:{type:'array',items:{type:'string'}},brief:{type:'string'},primaryId:{type:'string'},roles:{type:'object',additionalProperties:{type:'string',maxLength:1000}},model:{type:'string'},skillId:{type:'string'},trialId:{type:'string'},rating:{type:'integer',minimum:1,maximum:5},note:{type:'string'},status:{type:'string',enum:['testing','keep','watch','retired']},favorite:{type:'boolean'},kind:{type:'string',enum:['prompts','styles','fill']},id:{type:'string'},variables:{type:'object',additionalProperties:{type:'string'}},aspectRatio:{type:'string'}},required:['action'],additionalProperties:false},output:{schema:{},render:(_args,value)=>[{type:'text',text:JSON.stringify(value)}]},execute:async(args,exec)=>{
+  ctx.effect(()=>ctx.tools.register({name:'prompt_workbench',description:'技能选择器。recommend 按 brief 用途匹配并返回全部匹配技能；use 用 skillId 和 brief 创建普通使用草稿（不执行），用户发送后加载对应技能；combine 用 ids、primaryId、roles（技能 id 到职责文本）、brief 生成主辅组合草稿预览（不执行）。用户要使用MJ提示词或选择技能时先用 open 打开当前对话右侧技能选择页，选中网页技能才打开浏览器。originals 查看3个完整版入口；openWebsite 按网站 id 在 Chrome 新窗口打开原版网站；activate id=youmind 使用作者完整技能；library 搜索完整库最多3条并展示样图；refresh 强制更新。list/feedback/setStatus/history/export 管理现有技能与试用。resources/compose 仅兼容旧样本入口，不是完整版。',parameters:{type:'object',properties:{action:{type:'string',enum:['open','originals','openWebsite','activate','library','refresh','list','recommend','use','combine','feedback','setStatus','history','resources','compose','export']},query:{type:'string'},category:{type:'string'},ids:{type:'array',items:{type:'string'}},brief:{type:'string'},primaryId:{type:'string'},roles:{type:'object',additionalProperties:{type:'string',maxLength:1000}},model:{type:'string'},skillId:{type:'string'},trialId:{type:'string'},rating:{type:'integer',minimum:1,maximum:5},note:{type:'string'},status:{type:'string',enum:['testing','keep','watch','retired']},favorite:{type:'boolean'},kind:{type:'string',enum:['prompts','styles','fill']},id:{type:'string'},variables:{type:'object',additionalProperties:{type:'string'}},aspectRatio:{type:'string'}},required:['action'],additionalProperties:false},output:{schema:{},render:(_args,value)=>[{type:'text',text:JSON.stringify(value)}]},execute:async(args,exec)=>{
     const agent=exec.agent&&ctx.agents.get(exec.agent.id);if(!agent)throw Error('需要有效的当前会话');return JSON.parse(JSON.stringify(await service.execute(args,agent,exec.signal)));
   }}));
 }

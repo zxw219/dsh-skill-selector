@@ -51,13 +51,6 @@ export function recommendSkills(skills,brief) {
     return {s,score:matches.length*10+exact.length*3+(s.favorite?2:0)+(s.status==='keep'?1:0),matches,exact};
   }).filter(x=>x.matches.length||x.exact.length).sort((a,b)=>b.score-a.score||a.s.id.localeCompare(b.s.id)).map(x=>({...x.s,reason:'用途匹配：'+[...x.matches.map(g=>g.find(w=>q.includes(w))),...x.exact].filter((v,i,a)=>a.indexOf(v)===i).slice(0,4).join('、')}));
 }
-export function makeTrialPrompt(skill,brief,model) {
-  const load=skill.id.startsWith('pack:')
-    ?`请使用文件读取工具完整读取以下技能入口，并根据其相对路径按需阅读参考文档：\n${skill.path}\n其中的平台命令与本机无关时，采用当前 DSH 可用工具；不要运行上游安装脚本。`
-    :skill.userInvocable?`/${skill.id}\n按该技能的方法完成下述任务。`:`请调用 skill 工具加载技能「${skill.id}」，按该技能的方法完成下述任务。如果本对话中不可用，明确报告，不能假称已加载。`;
-  if(!['image','video','storyboard','reverse','execution','knowledge'].includes(skill.category))return `${load}\n\n技能对比试用：${skill.title}\n相同测试需求：\n${brief}\n\n本次先交付可检查的文本结果、方案或文件草稿；需要修改现有文件、提交网站或付费生成时，先说明拟执行的步骤，等待我明确要求。缺少素材时说明，不编造执行结果。注明实际采用的技能，便于评价。`;
-  return `提示词工作台 · 独立试用\n技能：${skill.title}（${skill.id}）\n目标模型：${model}\n\n本次只输出提示词与必要说明；不要生成图像、视频，不要提交到浏览器或付费服务，不要保存其他项目文件。需要图片或视频参考时，请等我在本对话添加素材；不要猜测未提供的参考内容。\n\n${load}\n\n测试需求：\n${brief}\n\n请交付：可直接使用的完整提示词、关键取舍、缺少的输入或限制。目标平台参数不确定时明确标注，不编造参考图 URL、seed、sref 或模型版本。保持我提供的主体、剧情和保留项。完成后请注明实际使用的技能名称，便于我回到工作台评分。`;
-}
 const stringValue=v=>typeof v==='string'?v:typeof v?.en==='string'?v.en:typeof v?.cn==='string'?v.cn:'';
 export function composeResource(resource,request={}) {
   const values={};
