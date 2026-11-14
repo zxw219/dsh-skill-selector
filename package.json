@@ -1,6 +1,6 @@
 {
-  "name": "dsh-skill-selector-ratings",
-  "version": "0.5.2",
+  "name": "dsh-skill-selector-manual",
+  "version": "0.6.0",
   "private": true,
   "dependencies": {
     "zod": "^4.0.0"
@@ -16,6 +16,7 @@
   "files": [
     "index.js",
     "logic.js",
+    "manual-mode.js",
     "originals.js",
     "chrome.js",
     "full",

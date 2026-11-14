@@ -1,6 +1,6 @@
 /* Native skill selector client. React is supplied by the DSH module loader. */
 window.__ModuleLoader__.load({
-  id: 'dsh-skill-selector-ratings',
+  id: 'dsh-skill-selector-manual',
   factory(require) {
     const React = require('react');
     const h = React.createElement;
@@ -9,6 +9,7 @@ window.__ModuleLoader__.load({
     const STATUSES = ['testing', 'keep', 'watch', 'retired'];
     const en = {
       title: 'Skill selector', subtitle: 'Choose a skill for this conversation.',
+      manualMode: 'Manual skill mode', manualOn: 'On · choose before loading', manualOff: 'Off · original invocation rules', manualHelp: 'Applies to every conversation in this profile. Ordinary messages do not automatically load skills. Send a selected draft or a leading /skill-name command. Previously loaded content stays in history.', manualChanged: 'Invocation mode saved.',
       allSkills: 'All skills', details: 'Details', filters: 'Filters', optionalNote: 'Add a note (optional)', more: 'More options', selectedEmpty: 'No skill selected', readyToUse: 'Ready for your task', starRating: '{count} out of 5 stars', savedReview: 'Review saved successfully.', selectionHelp: 'Choose a skill below to get started.', combinationSetup: 'Selected combination · roles and order', shortUse: 'Use · add to draft', shortCombine: 'Combination preview', shortHistory: 'History', footerSingle: 'Adds to this draft. Send when ready.', footerCombine: 'Review the preview, then add it to your draft.', backToSkills: 'Back to skill selection',
 
       recommend: 'Help me choose a skill', recommendations: 'Suggested skills', recommendationHelp: 'Matches task keywords and skill tags; this is not an effectiveness rating.', recommendationEmpty: 'No suggestions for this task. Browse the catalog or add more detail.', briefRequired: 'Describe your task first.',
@@ -40,6 +41,7 @@ window.__ModuleLoader__.load({
     };
     const zh = {
       title: '技能选择器', subtitle: '为当前会话选择合适的技能。',
+      manualMode: '手动技能模式', manualOn: '已开启 · 先选再用', manualOff: '已关闭 · 恢复原调用规则', manualHelp: '对当前配置的所有对话生效。普通消息不自动加载技能；发送选择草稿或开头独立的 /技能名 才加载。已加载内容仍留在历史中。', manualChanged: '技能调用模式已保存。',
       allSkills: '全部技能', details: '详细说明', filters: '筛选', optionalNote: '添加说明（选填）', more: '更多操作', selectedEmpty: '尚未选择技能', readyToUse: '为这次任务准备', starRating: '{count} 星，满分 5 星', savedReview: '评价已保存成功。', selectionHelp: '从下方选择一个技能开始。', combinationSetup: '已选组合 · 职责与顺序', shortUse: '使用 · 加入草稿', shortCombine: '组合预览', shortHistory: '历史', footerSingle: '加入当前草稿，检查后自行发送。', footerCombine: '先检查组合预览，再加入当前草稿。', backToSkills: '返回技能选择',
 
       recommend: '帮我挑技能', recommendations: '建议试试', recommendationHelp: '按任务关键词与技能标签匹配，用途匹配，不是效果评分。', recommendationEmpty: '暂未找到建议，可补充任务描述或直接浏览技能。', briefRequired: '请先写下要完成的任务。',
@@ -163,6 +165,7 @@ window.__ModuleLoader__.load({
       const [recommendations, setRecommendations] = React.useState(null);
       const [catalog, setCatalog] = React.useState({ skills: [], stats: {} });
       const [originals, setOriginals] = React.useState([]);
+      const [manualMode, setManualMode] = React.useState(null);
       const [selected, setSelected] = React.useState([]);
       const [brief, setBrief] = React.useState('');
       const [usageRecords, setUsageRecords] = React.useState([]);
@@ -232,6 +235,8 @@ window.__ModuleLoader__.load({
               if (mounted.current && current === generation.current && sequence === requestSequence.current) setOriginals(libraries.items || []);
             }
           } else setHistory({ trials: payload.trials || [], reviews: payload.reviews || [] });
+          const policy = payload.manualMode ? payload : await call({ action: 'manualMode' });
+          if (mounted.current && current === generation.current && sequence === requestSequence.current) setManualMode(policy.manualMode || null);
         } catch (error) { if (mounted.current && current === generation.current && sequence === requestSequence.current) setNotice({ error: true, text: error.message || String(error) }); }
         finally { if (mounted.current && current === generation.current && sequence === requestSequence.current) setLoading(false); }
       }, [call, connection, tab]);
@@ -401,6 +406,7 @@ window.__ModuleLoader__.load({
       return h('section', { className: 'pw-root', 'aria-label': t('title') }, h('style', null, CSS),
         h('div', { className: 'pw-body' },
           h('header', { className: 'pw-header' }, h('div', null, h('div', { className: 'pw-row' }, h(Icon, { size: 21 }), h('h1', { className: 'pw-heading' }, t('title'))), h('p', { className: 'pw-subtitle' }, t('subtitle')))),
+          h('div', { className: 'pw-builder' }, h('div', { className: 'pw-row pw-between' }, h('strong', null, t('manualMode')), h(Button, { role: 'switch', 'aria-checked': manualMode?.enabled === true, disabled: connection !== 'ready' || loading || !!busy || !manualMode, onClick: () => void operate('manualMode', { action: 'setManualMode', enabled: !manualMode.enabled }, payload => { setManualMode(payload.manualMode); setUsageRecords([]); }, t('manualChanged')) }, manualMode ? t(manualMode.enabled ? 'manualOn' : 'manualOff') : t('loading'))), h('p', { className: 'pw-help' }, t('manualHelp'))),
           notice && h('div', { className: 'pw-notice ' + (notice.error ? 'pw-notice-error' : 'pw-notice-success'), role: notice.error ? 'alert' : 'status' }, h('div', { className: 'pw-row pw-between' }, h('span', null, notice.text), h(Button, { quiet: true, onClick: () => setNotice(null), 'aria-label': t('close') }, '×')), notice.error && h(Button, { quiet: true, onClick: () => { if (connection === 'error') setConnectAttempt(value => value + 1); else void refresh(); }, disabled: !!busy }, t(connection === 'error' ? 'retry' : 'refresh'))),
           h('div', { className: 'pw-tabs', role: 'tablist', 'aria-label': t('title') }, tabs.map(value => h('button', {
             key: value, type: 'button', className: 'pw-tab', role: 'tab', disabled: !!busy, id: 'pw-tab-' + target + '-' + value, 'aria-selected': tab === value, 'aria-controls': 'pw-content-' + target + '-' + value, tabIndex: tab === value ? 0 : -1,
