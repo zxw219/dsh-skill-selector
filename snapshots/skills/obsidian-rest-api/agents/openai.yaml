@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian REST API"
+  short_description: "通过 Local REST API 安全连接和检查 Obsidian"
+  default_prompt: "使用 $obsidian-rest-api 只通过 Local REST API 插件检查当前 Obsidian 库；不要配置 MCP，不要修改笔记，并隐藏 API Key。"

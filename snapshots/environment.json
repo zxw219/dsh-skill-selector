@@ -1,8 +1,20 @@
 {
-  "schema": "dsh-environment-snapshot@1",
-  "generatedAt": "2026-11-15T07:02:59.560Z",
+  "schema": "dsh-environment-snapshot@2",
+  "generatedAt": "2026-11-15T07:19:28.338Z",
   "machine": "ZXW",
   "dshProfile": "desktop",
+  "restore": {
+    "script": "restore.mjs",
+    "usage": "node restore.mjs --target C:/Users/<you>/.dsh/skills",
+    "sources": {
+      "geegl/directorskills": {
+        "url": "https://github.com/geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "layout": "output/books/<book>/<skill>",
+        "note": "90 个影视知识技能，MIT"
+      }
+    }
+  },
   "plugins": {
     "enabled": [
       "@deepseek-ai/dsh-base",
@@ -68,720 +80,1378 @@
     }
   ],
   "skillCount": 119,
+  "githubSkills": 90,
+  "bundledSkills": 29,
   "skills": [
     {
       "dir": "acting-performance",
       "name": "acting-performance",
       "description": "编写或修正 AI 视频角色表演、动作反应、潜台词和角色表演档案；适用于人物僵硬、行为缺乏动机、跨镜头表演不一致，或明确调用 ACTING。聚焦表演层，不接管整段剧本和镜头格式。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/acting-performance"
+      }
     },
     {
       "dir": "blender-mcp-previs",
       "name": "blender-mcp-previs",
       "description": "Blender MCP预演工具：通过Blender MCP连接Blender 5.1及以上版本，创建、编辑、检查、渲染或导出白模与动作预演场景。用于AI视频镜头规划、空间验证和动作预可视化。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/blender-mcp-previs"
+      }
     },
     {
       "dir": "blender-whitebox-action-previs",
       "name": "blender-whitebox-action-previs",
       "description": "Blender白模动作预演工具：利用动捕、绑定动画或现成动画模型快速搭建干净的白模动作预演，检查站位、距离、碰撞、节奏和镜头。用于动作场面的三维预可视化。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/blender-whitebox-action-previs"
+      }
     },
     {
       "dir": "browser-cdp",
       "name": "browser-cdp",
       "description": "Use this skill when you need to control a Chrome browser via CDP (Chrome DevTools Protocol) to reuse existing login sessions. Covers: launching Chrome in debug mode, opening URLs, waiting for page load, evaluating JavaScript, taking snapshots, and extracting auth tokens. Trigger phrases: browser aut",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/browser-cdp"
+      }
     },
     {
       "dir": "camera-lens-anchoring",
       "name": "camera-lens-anchoring",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/camera-reference/camera-lens-anchoring"
+      }
     },
     {
       "dir": "caomao-yu-meng-2",
       "name": "caomao-yu-meng-2",
       "description": "根据剧情、用户指定的对标作品及参考资产，研究并设计真人实拍质感的分镜与视频提示词。在情绪总控前写明对标状态，以对标校准镜头语言，同时默认保留自然拍摄呼吸感，极稳或明确固定时例外。保留资产职责、长焦极浅景深、空间连续性、现场声及避免幕后实体误入画的工作规范。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/caomao-yu-meng-2"
+      }
     },
     {
       "dir": "cinedance-seedance",
       "name": "cinedance-seedance",
       "description": "为 Seedance 或 Higgsfield Seedance 编写和修正镜头提示词，处理首帧、空间走位、视线、光学、动作时序和剪辑连续性；明确调用 CINEDANCE 时也适用。其他平台只移用通用镜头原则，不照搬平台语法。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinedance-seedance"
+      }
     },
     {
       "dir": "cinema-dna-21x9x3",
       "name": "cinema-dna-21x9x3",
       "description": "将故事或人物、场景资产转译为电影感单帧、三联或九镜分镜，并按需为每镜编写可执行的视频动作、运镜与剪辑提示词。用于电影静帧、连续故事板、资产空间还原、分镜转视频提示词；用户只要提示词时不自动生成媒体。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinema-dna-21x9x3"
+      }
     },
     {
       "dir": "cinematic-style-repair",
       "name": "cinematic-style-repair",
       "description": "默认直接调用生图工具生成克制、主次清晰的写实电影感画面；适用于电影感生图、画面修复、提示词修复，以及画面杂乱、主体不突出、缺少主次、光线不可信、色彩太花、人物僵硬、像 AI 海报或 CG 的问题。只保留电影感和修复能力，不处理参考图风格复刻、动漫、电商产品图和导演模式字段模板。仅当用户明确要求写提示词、只要 prompt、不要出图、优化提示词，或生图工具失败时，才输出提示词。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-style-repair"
+      }
     },
     {
       "dir": "cinematic-video-prompt-engineer",
       "name": "cinematic-video-prompt-engineer",
       "description": "Use when the user provides a plot summary, scene idea, character relationship, emotional beat, or short video concept and wants a cinematic AI video prompt. First diagnose the story, then rewrite it into a model-ready prompt for Kling, Seedance, Veo, Sora, Runway, Jimeng, or general AI video models.",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-video-prompt-engineer"
+      }
     },
     {
       "dir": "cinematography-180-degree-rule",
       "name": "cinematography-180-degree-rule",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/cinematography-brown/cinematography-180-degree-rule"
+      }
     },
     {
       "dir": "cinematography-back-lighting",
       "name": "cinematography-back-lighting",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/cinematography-brown/cinematography-back-lighting"
+      }
     },
     {
       "dir": "cinematography-hard-soft-light",
       "name": "cinematography-hard-soft-light",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/cinematography-brown/cinematography-hard-soft-light"
+      }
     },
     {
       "dir": "cinematography-light-direction-mood",
       "name": "cinematography-light-direction-mood",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/cinematography-brown/cinematography-light-direction-mood"
+      }
     },
     {
       "dir": "cinematography-master-scene",
       "name": "cinematography-master-scene",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/cinematography-brown/cinematography-master-scene"
+      }
     },
     {
       "dir": "cinematography-three-point-lighting",
       "name": "cinematography-three-point-lighting",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/cinematography-brown/cinematography-three-point-lighting"
+      }
     },
     {
       "dir": "cinematography-zone-system",
       "name": "cinematography-zone-system",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/cinematography-brown/cinematography-zone-system"
+      }
     },
     {
       "dir": "color-grading-color-temperature",
       "name": "color-grading-color-temperature",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-color-temperature"
+      }
     },
     {
       "dir": "color-grading-contrast-before-color",
       "name": "color-grading-contrast-before-color",
       "description": "调色应先调整对比度再调整色彩，因为色彩平衡控件的影调分区依赖于亮度通道。改变对比度会改变各影调区的范围，从而影响色彩调整效果。",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-contrast-before-color"
+      }
     },
     {
       "dir": "color-grading-contrast-saturation",
       "name": "color-grading-contrast-saturation",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-contrast-saturation"
+      }
     },
     {
       "dir": "color-grading-filter-nonlinear",
       "name": "color-grading-filter-nonlinear",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-filter-nonlinear"
+      }
     },
     {
       "dir": "color-grading-log-workflow",
       "name": "color-grading-log-workflow",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-log-workflow"
+      }
     },
     {
       "dir": "color-grading-look-development",
       "name": "color-grading-look-development",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-look-development"
+      }
     },
     {
       "dir": "color-grading-memory-colors",
       "name": "color-grading-memory-colors",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-memory-colors"
+      }
     },
     {
       "dir": "color-grading-overexposure-recovery",
       "name": "color-grading-overexposure-recovery",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-overexposure-recovery"
+      }
     },
     {
       "dir": "color-grading-primary-workflow",
       "name": "color-grading-primary-workflow",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-primary-workflow"
+      }
     },
     {
       "dir": "color-grading-shot-matching",
       "name": "color-grading-shot-matching",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-shot-matching"
+      }
     },
     {
       "dir": "color-grading-skin-tone-vectorscope",
       "name": "color-grading-skin-tone-vectorscope",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/color-grading/color-grading-skin-tone-vectorscope"
+      }
     },
     {
       "dir": "dialogue-barrier-narrative",
       "name": "dialogue-barrier-narrative",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-barrier-narrative"
+      }
     },
     {
       "dir": "dialogue-busy-hands-no-eye-contact",
       "name": "dialogue-busy-hands-no-eye-contact",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-busy-hands-no-eye-contact"
+      }
     },
     {
       "dir": "dialogue-camera-follow-identity",
       "name": "dialogue-camera-follow-identity",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-camera-follow-identity"
+      }
     },
     {
       "dir": "dialogue-camera-height-stance",
       "name": "dialogue-camera-height-stance",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-camera-height-stance"
+      }
     },
     {
       "dir": "dialogue-closeup-timing",
       "name": "dialogue-closeup-timing",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-closeup-timing"
+      }
     },
     {
       "dir": "dialogue-deep-staging",
       "name": "dialogue-deep-staging",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-deep-staging"
+      }
     },
     {
       "dir": "dialogue-delayed-reveal",
       "name": "dialogue-delayed-reveal",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-delayed-reveal"
+      }
     },
     {
       "dir": "dialogue-distance-collapse-arc",
       "name": "dialogue-distance-collapse-arc",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-distance-collapse-arc"
+      }
     },
     {
       "dir": "dialogue-focal-character-temperament",
       "name": "dialogue-focal-character-temperament",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-focal-character-temperament"
+      }
     },
     {
       "dir": "dialogue-focal-progression",
       "name": "dialogue-focal-progression",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-focal-progression"
+      }
     },
     {
       "dir": "dialogue-gaze-mapping",
       "name": "dialogue-gaze-mapping",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-gaze-mapping"
+      }
     },
     {
       "dir": "dialogue-position-swap",
       "name": "dialogue-position-swap",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-position-swap"
+      }
     },
     {
       "dir": "dialogue-task-overload",
       "name": "dialogue-task-overload",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-task-overload"
+      }
     },
     {
       "dir": "dialogue-telephoto-claustrophobia",
       "name": "dialogue-telephoto-claustrophobia",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v2/dialogue-telephoto-claustrophobia"
+      }
     },
     {
       "dir": "directing-activity-vs-action",
       "name": "directing-activity-vs-action",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-activity-vs-action"
+      }
     },
     {
       "dir": "directing-ambiguity-diagnosis",
       "name": "directing-ambiguity-diagnosis",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-ambiguity-diagnosis"
+      }
     },
     {
       "dir": "directing-coincidence-trouble",
       "name": "directing-coincidence-trouble",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-coincidence-trouble"
+      }
     },
     {
       "dir": "directing-contrast-emphasis",
       "name": "directing-contrast-emphasis",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-contrast-emphasis"
+      }
     },
     {
       "dir": "directing-credible-impossible",
       "name": "directing-credible-impossible",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-credible-impossible"
+      }
     },
     {
       "dir": "directing-dramatic-irony",
       "name": "directing-dramatic-irony",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-dramatic-irony"
+      }
     },
     {
       "dir": "directing-end-before-begin",
       "name": "directing-end-before-begin",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-end-before-begin"
+      }
     },
     {
       "dir": "directing-idea-generation",
       "name": "directing-idea-generation",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-idea-generation"
+      }
     },
     {
       "dir": "directing-invisible-witness",
       "name": "directing-invisible-witness",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-invisible-witness"
+      }
     },
     {
       "dir": "directing-odets-rewrite",
       "name": "directing-odets-rewrite",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-odets-rewrite"
+      }
     },
     {
       "dir": "directing-protagonist-endangered",
       "name": "directing-protagonist-endangered",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-protagonist-endangered"
+      }
     },
     {
       "dir": "directing-reaction-over-action",
       "name": "directing-reaction-over-action",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-reaction-over-action"
+      }
     },
     {
       "dir": "directing-scene-necessity",
       "name": "directing-scene-necessity",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-scene-necessity"
+      }
     },
     {
       "dir": "directing-story-framework",
       "name": "directing-story-framework",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-story-framework"
+      }
     },
     {
       "dir": "directing-tension-formula",
       "name": "directing-tension-formula",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/directing-masterclass/directing-tension-formula"
+      }
     },
     {
       "dir": "film-knowledge",
       "name": "film-knowledge",
       "description": "影视知识库总入口。覆盖摄影布光、镜头设计、大师镜头、导演叙事、声音设计、调色、场景转场共 90 个专题技能。当用户问到布光、灯光、机位、焦段、景深、构图、轴线、景别、镜头调度、分镜、对话场面、声音、音效、配乐、调色、色温、肤色、转场、节奏、场面张力、摄影语言时，先加载本技能定位板块，再进入对应专题技能，不要凭印象直接回答。",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/film-knowledge"
+      }
     },
     {
       "dir": "gpt-image",
       "name": "gpt-image",
       "description": "Generate or edit images with GPT Image 2 or 2.5 through the packaged CLI and Reference Gallery. Use for image requests including imprecise 'GPT 2.5' model names, posters, typography, reference edits, and inpainting; resolve the model choice before generation.",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/gpt-image"
+      }
     },
     {
       "dir": "gptimage2-prompt-assistant",
       "name": "gptimage2-prompt-assistant",
       "description": "Write, rewrite, diagnose, and improve prompts for GPT Image 2 / gpt-image-2 image generation and editing. Use when the user asks for image prompt help, text-to-image prompts, image-to-image prompts, multi-image compositing, style transfer, character consistency, product mockups, virtual try-on, imag",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/gptimage2-prompt-assistant"
+      }
     },
     {
       "dir": "greatwall生图新",
       "name": "greatwall生图新",
       "description": "使用独立的 greatwall生图新技能，通过 Gateway API 文生图、图生图、修改图片或多图参考生成；每次生成前先按需求选择模式，意图不清时询问，并展示四个指定模型的名称与简介让用户选择。用户说“greatwall生图新”“用新的 Gateway 生图技能”或明确调用本技能时使用。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/greatwall生图新"
+      }
     },
     {
       "dir": "hackernews-frontpage",
       "name": "hackernews-frontpage",
       "description": "获取 Hacker News 首页热门新闻，列出标题、链接、分数和评论数；用户想看 HN 热门、科技新闻或 Hacker News 首页时使用。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/hackernews-frontpage"
+      }
     },
     {
       "dir": "koda-storyboard-image-skill-20260608-021514",
       "name": "koda-storyboard-image",
       "description": "Run Koda/@aimikoda-style storyboard-to-video and previs workflows. Use when Codex should split a shot into an annotated rough-sketch storyboard control sheet, create static or low-action continuity boards, prepare storyboard-to-video controls, generate Seedance handoff prompts, or batch storyboard s",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/koda-storyboard-image-skill-20260608-021514"
+      }
     },
     {
       "dir": "lira-image-prompts",
       "name": "lira-image-prompts",
       "description": "为 AI 图像生成与编辑编写、诊断和优化生产级提示词，覆盖角色、场景、道具和局部修复工作流。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/lira-image-prompts"
+      }
     },
     {
       "dir": "mj-browser-image",
       "name": "mj-browser-image",
       "description": "通过腾讯 BrowserSkill 操控已登录的 Chrome，优先在 Discord 按宿主要求生图。每个对话首次集中补齐参数，之后沿用；无需二次确认，提交成功即告知，按指令查看结果。也可离线查询 Midjourney 官方文档，并附带本地官方截图教授手动操作，不联网搜索。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/mj-browser-image"
+      }
     },
     {
       "dir": "mj-browser-image-fast",
       "name": "mj-browser-image-fast",
       "description": "MJ 快速提交版。一次调用把整串 /imagine 粘进 Discord 空输入框并回车，不做候选菜单、不做二次确认、不查结果，只回一行结论。用于已知频道和参数的高频重复提交；首次配置、需要参考图、需要离线教学或需要看结果时用完整版 mj-browser-image。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/mj-browser-image-fast"
+      }
     },
     {
       "dir": "msv3-body-performance",
       "name": "msv3-body-performance",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v3/msv3-body-performance"
+      }
     },
     {
       "dir": "msv3-lens-emotion-mapping",
       "name": "msv3-lens-emotion-mapping",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v3/msv3-lens-emotion-mapping"
+      }
     },
     {
       "dir": "msv3-power-distance",
       "name": "msv3-power-distance",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v3/msv3-power-distance"
+      }
     },
     {
       "dir": "msv3-speed-conveyance",
       "name": "msv3-speed-conveyance",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v3/msv3-speed-conveyance"
+      }
     },
     {
       "dir": "msv3-symbolic-staging",
       "name": "msv3-symbolic-staging",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v3/msv3-symbolic-staging"
+      }
     },
     {
       "dir": "msv3-unexpected-reveal",
       "name": "msv3-unexpected-reveal",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v3/msv3-unexpected-reveal"
+      }
     },
     {
       "dir": "obsidian-rest-api",
       "name": "obsidian-rest-api",
       "description": "使用 Obsidian Local REST API 插件连接、验证和排查本地 Obsidian 库。用于检查插件安装与启用状态、自动读取 HTTPS 或 HTTP 端口、验证 API Key、检测本地 API 是否可访问，以及在用户明确授权后通过 API 读取或修改笔记。只使用 Local REST API，不配置或排查 Codex MCP。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/obsidian-rest-api"
+      }
     },
     {
       "dir": "pdf",
       "name": "pdf",
       "description": "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction.",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/pdf"
+      }
     },
     {
       "dir": "pixel-previs",
       "name": "pixel-previs",
       "description": "像素风镜头预演（previs）生成器。用户用文字描述想要的分镜、运镜或一段镜头序列时，或者丢来一段视频想拉片复刻它的分镜运镜时使用。输出统一风格的像素预演视频（MP4/GIF）和每个镜头的中英文提示词，可直接作为 AI 视频生成的运镜参考。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/pixel-previs"
+      }
     },
     {
       "dir": "playwright",
       "name": "playwright",
       "description": "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script.",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/playwright"
+      }
     },
     {
       "dir": "scene-transition-binary-opposition",
       "name": "scene-transition-binary-opposition",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/scene-transitions/scene-transition-binary-opposition"
+      }
     },
     {
       "dir": "scene-transition-caboose-diagnosis",
       "name": "scene-transition-caboose-diagnosis",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/scene-transitions/scene-transition-caboose-diagnosis"
+      }
     },
     {
       "dir": "scene-transition-four-function-diagnosis",
       "name": "scene-transition-four-function-diagnosis",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/scene-transitions/scene-transition-four-function-diagnosis"
+      }
     },
     {
       "dir": "scene-transition-low-point-no-plot",
       "name": "scene-transition-low-point-no-plot",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/scene-transitions/scene-transition-low-point-no-plot"
+      }
     },
     {
       "dir": "scene-transition-loyalty-transfer",
       "name": "scene-transition-loyalty-transfer",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/scene-transitions/scene-transition-loyalty-transfer"
+      }
     },
     {
       "dir": "scene-transition-music-quadrant",
       "name": "scene-transition-music-quadrant",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/scene-transitions/scene-transition-music-quadrant"
+      }
     },
     {
       "dir": "scene-transition-seamless-pause",
       "name": "scene-transition-seamless-pause",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/scene-transitions/scene-transition-seamless-pause"
+      }
     },
     {
       "dir": "scene-transition-synch-node",
       "name": "scene-transition-synch-node",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/scene-transitions/scene-transition-synch-node"
+      }
     },
     {
       "dir": "scene-transition-weather-contrast",
       "name": "scene-transition-weather-contrast",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/scene-transitions/scene-transition-weather-contrast"
+      }
     },
     {
       "dir": "seedance-20",
       "name": "seedance-20",
       "description": "This skill should be used when creating, improving, or troubleshooting Seedance 2.0 video on any surface - Dreamina, Jimeng, CapCut, Doubao, Volcengine/Ark, BytePlus, Runway's Seedance route, fal, or third-party provider/router surfaces such as EvoLink, OpenRouter, Kie.ai, PiAPI, LaoZhang, Runware, ",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-20"
+      }
     },
     {
       "dir": "seedance-storyboard-generator",
       "name": "seedance-storyboard-generator",
       "description": "专业的Seedance 2.0平台AI视频脚本和分镜生成器。当用户要求：(1) 将文章/故事转换为视频脚本，(2) 生成Seedance 2.0分镜提示词，(3) 规划多集AI视频系列，(4) 为GPT-Image-2、Seedream、Nano Banana Pro等图像模型创建角色/场景/道具生成提示词时使用。输入可以是完整的小说、文章或简短的故事大纲。输出包括标准脚本格式的完整剧本（△镜头描述+对白+OS/VO+闪回+字幕）、剧集分解、资产生成提示词和Seedance 2.0格式的分镜脚本。支持\"文-资-视-剪\"工作流，包含剧本创作、资产构建、视频生成、分镜优化和声音设计全流程。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-storyboard-generator"
+      }
     },
     {
       "dir": "shot-camera-choreography",
       "name": "shot-camera-choreography",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v1/shot-camera-choreography"
+      }
     },
     {
       "dir": "shot-design-angle-context",
       "name": "shot-design-angle-context",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/shot-design/shot-design-angle-context"
+      }
     },
     {
       "dir": "shot-design-axis-of-action",
       "name": "shot-design-axis-of-action",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/shot-design/shot-design-axis-of-action"
+      }
     },
     {
       "dir": "shot-design-continuity-composition",
       "name": "shot-design-continuity-composition",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/shot-design/shot-design-continuity-composition"
+      }
     },
     {
       "dir": "shot-design-dialogue-staging",
       "name": "shot-design-dialogue-staging",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/shot-design/shot-design-dialogue-staging"
+      }
     },
     {
       "dir": "shot-design-dramatic-range",
       "name": "shot-design-dramatic-range",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/shot-design/shot-design-dramatic-range"
+      }
     },
     {
       "dir": "shot-design-pov-spectrum",
       "name": "shot-design-pov-spectrum",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/shot-design/shot-design-pov-spectrum"
+      }
     },
     {
       "dir": "shot-design-sightline-cut",
       "name": "shot-design-sightline-cut",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/shot-design/shot-design-sightline-cut"
+      }
     },
     {
       "dir": "shot-design-storyboard-rapid",
       "name": "shot-design-storyboard-rapid",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/shot-design/shot-design-storyboard-rapid"
+      }
     },
     {
       "dir": "shot-distract-and-scare",
       "name": "shot-distract-and-scare",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v1/shot-distract-and-scare"
+      }
     },
     {
       "dir": "shot-dual-camera-tension",
       "name": "shot-dual-camera-tension",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v1/shot-dual-camera-tension"
+      }
     },
     {
       "dir": "shot-equal-length-rhythm",
       "name": "shot-equal-length-rhythm",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v1/shot-equal-length-rhythm"
+      }
     },
     {
       "dir": "shot-still-vs-motion-decision",
       "name": "shot-still-vs-motion-decision",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v1/shot-still-vs-motion-decision"
+      }
     },
     {
       "dir": "shot-telephoto-compression",
       "name": "shot-telephoto-compression",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/master-shots-v1/shot-telephoto-compression"
+      }
     },
     {
       "dir": "sound-design-auditory-hierarchy",
       "name": "sound-design-auditory-hierarchy",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-auditory-hierarchy"
+      }
     },
     {
       "dir": "sound-design-consistency",
       "name": "sound-design-consistency",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-consistency"
+      }
     },
     {
       "dir": "sound-design-contrast-drama",
       "name": "sound-design-contrast-drama",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-contrast-drama"
+      }
     },
     {
       "dir": "sound-design-diegetic-taxonomy",
       "name": "sound-design-diegetic-taxonomy",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-diegetic-taxonomy"
+      }
     },
     {
       "dir": "sound-design-energy-model",
       "name": "sound-design-energy-model",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-energy-model"
+      }
     },
     {
       "dir": "sound-design-entrainment",
       "name": "sound-design-entrainment",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-entrainment"
+      }
     },
     {
       "dir": "sound-design-expectation",
       "name": "sound-design-expectation",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-expectation"
+      }
     },
     {
       "dir": "sound-design-less-is-more",
       "name": "sound-design-less-is-more",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-less-is-more"
+      }
     },
     {
       "dir": "sound-design-listening-modes",
       "name": "sound-design-listening-modes",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-listening-modes"
+      }
     },
     {
       "dir": "sound-design-music-story-parallel",
       "name": "sound-design-music-story-parallel",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-music-story-parallel"
+      }
     },
     {
       "dir": "sound-design-size-control",
       "name": "sound-design-size-control",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-size-control"
+      }
     },
     {
       "dir": "sound-design-sonata-drama",
       "name": "sound-design-sonata-drama",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-sonata-drama"
+      }
     },
     {
       "dir": "sound-design-sync-illusion",
       "name": "sound-design-sync-illusion",
       "description": "",
-      "group": "film-knowledge"
+      "group": "film-knowledge",
+      "source": {
+        "type": "github",
+        "repo": "geegl/directorskills",
+        "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
+        "path": "output/books/sound-design/sound-design-sync-illusion"
+      }
     },
     {
       "dir": "style-replicator",
       "name": "style-replicator",
       "description": "当用户想根据参考图复刻某种视觉风格、生成图像提示词时使用本技能。用户把若干张同一风格的参考图放进本技能的 references 文件夹,再输入一句简单的画面需求(如\"一个红衣女子走向城墙\"\"赛博朋克街道\"\"一只奔跑的狼\"),本技能会先逐张查看 references 里的图、提炼它们共有的视觉风格(镜头/主体/环境构图/光线/色彩/质感/氛围),再结合用户的需求,输出一条既能复刻该参考风格、又满足用户具体内容要求的完整自然语言提示词(语言跟随用户输入,默认中文,关键避免项已内化进提示词)。触发词包括:\"参考图\"\"复刻风格\"\"这个风格\"\"按 references 生成提示词\"\"根据参考图写提示词\"",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/style-replicator"
+      }
     },
     {
       "dir": "toonflow",
       "name": "toonflow",
       "description": "通过 Toonflow MCP 操作工作区、实时画布、节点、文档和媒体生成，以及管理插件、技能和模型。当用户希望控制正在运行的 Toonflow 或修改其中的内容与配置时使用。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/toonflow"
+      }
     },
     {
       "dir": "zxw-film-sop",
       "name": "zxw-film-sop",
       "description": "为中文 AI 电影项目建立和维护资产、场景、视频生成、版本记录与后期交付结构；适用于整理角色图、地点图、道具图、视频提示词、镜头版本和生成日志，不负责替代具体图片或视频提示词技能。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/zxw-film-sop"
+      }
     },
     {
       "dir": "zy-cinematic-realism",
       "name": "zy-cinematic-realism",
       "description": "Develop supplied scripts, short stories, or synopses into scene understanding, director-facing art concepts, and motivated narrative keyframes; compile scene ideas, visual references, or existing prompts into model-native image prompts when requested. Use for story visual development, cinematic crea",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/zy-cinematic-realism"
+      }
     },
     {
       "dir": "剧本转漫画",
       "name": "剧本转漫画",
       "description": "将小说、剧本、分集大纲或 Obsidian 项目改编为漫画/国漫分镜与成稿流程。适用于“剧本转漫画”“小说转漫画”“国漫漫画版”“继续漫画生成”“按本地图片方法出图”等任务。使用时必须先查询本机可用的图片生成方法，再询问用户选择哪套出图方式，以及是否提供新的 API key、Base URL、模型名称。",
-      "group": null
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/剧本转漫画"
+      }
     }
   ]
 }

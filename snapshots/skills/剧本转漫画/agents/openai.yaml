@@ -1,0 +1,3 @@
+display_name: 剧本转漫画
+short_description: 把小说或剧本拆成漫画分集、分镜、提示词并按本地出图方案生成。
+default_prompt: 用剧本转漫画技能处理这个项目。请先检查本地可用图片生成方法，再问我使用哪套出图方式，以及是否提供新的 API key、Base URL、模型名称。

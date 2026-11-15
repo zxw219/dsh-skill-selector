@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Whitebox Action Previs"
+  short_description: "Build clean Blender whitebox action previews."
+  default_prompt: "Use $blender-whitebox-action-previs to produce a clean whitebox Blender action preview."

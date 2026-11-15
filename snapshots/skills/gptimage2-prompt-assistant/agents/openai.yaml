@@ -1,0 +1,4 @@
+interface:
+  display_name: "gptimage2提示词助手"
+  short_description: "为 GPT Image 2 编写可控的文生图、图生图和多图编辑提示词。"
+  default_prompt: "帮我把这个图片生成需求改写成适合 gpt-image-2 的高质量提示词。"

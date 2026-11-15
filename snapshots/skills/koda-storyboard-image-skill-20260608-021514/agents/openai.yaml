@@ -1,0 +1,6 @@
+interface:
+  display_name: "Koda Storyboard Image"
+  short_description: "Annotated Koda storyboard sheets, scene packets, and safer project batches."
+  default_prompt: "Use $koda-storyboard-image. For one clear shot or prepared scene, use Light Mode to generate an annotated rough-sketch storyboard control sheet with image_gen. For multi-scene requests or mixed script/shotlist/asset folders, run Project Batch Preflight first with prepare_project_batch.py to create scene_manifest.json, continuity_bible.md, scene_packets, prompt_plan.jsonl, batch_progress.json, and optional inventory files from one scan. Fill packets and continuity locks, then run validate_project_batch.py --mark-ready before image generation. In Batch Mode, generate ready sheets back-to-back: after reading a dispatch prompt, the next tool call must be the real image-generation route, never shell/status/no-op commands. After each returned savedPath, checkpoint batch_progress.json or remember that sheet as complete before selecting the next sheet. Do not generate directly from an unprocessed or unvalidated mixed folder, and do not downgrade to prompt-only unless requested or an actual image_gen call fails."
+policy:
+  allow_implicit_invocation: true

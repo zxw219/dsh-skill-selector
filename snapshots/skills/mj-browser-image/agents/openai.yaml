@@ -1,0 +1,3 @@
+interface:
+  display_name: "MJ 浏览器生图助手"
+  short_description: "每个对话首次补齐参数，提交即告知；也支持离线查文档和官方截图教学"

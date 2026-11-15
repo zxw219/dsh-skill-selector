@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender MCP Previs"
+  short_description: "Control Blender MCP for whitebox previs scenes."
+  default_prompt: "Use $blender-mcp-previs to connect Blender and build a whitebox previs scene."

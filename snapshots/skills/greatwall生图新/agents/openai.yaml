@@ -1,0 +1,4 @@
+interface:
+  display_name: "greatwall生图新"
+  short_description: "先判断文生图或图生图，不明确时提问，每次列出四个模型简介供选择"
+  default_prompt: "使用 $greatwall生图新 生成或修改图片，请先判断文生图或图生图，不明确时向我提问，再列出四个模型名称与简介让我选择。"
