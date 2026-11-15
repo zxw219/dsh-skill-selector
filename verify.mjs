@@ -15,20 +15,19 @@ for(const family of families) {
     assert.ok(!explicitOwners.has(id),'Duplicate family membership: '+id);explicitOwners.set(id,family.id);
   }
 }
-const familyFixture=[{id:'film-knowledge',title:'Film knowledge',available:true,userInvocable:true},{id:'cinematography-180-degree-rule',title:'180 degree rule',available:true},{id:'sound-design-entrainment',title:'Entrainment',available:true},{id:'pre-write-checklist',title:'Pre-write checklist',available:true},{id:'future-independent',title:'New',available:true}];
+const familyFixture=[{id:'film-knowledge',title:'Film knowledge',available:true,userInvocable:true},{id:'cinematography-180-degree-rule',title:'180 degree rule',available:true},{id:'sound-design-entrainment',title:'Entrainment',available:true},{id:'pdf',title:'PDF',available:true},{id:'future-independent',title:'New',available:true}];
 const familyAssigned=assignSkillFamilies(familyFixture,families);
 assert.equal(familyAssigned.find(s=>s.id==='film-knowledge').familyRoot,true);
 assert.equal(familyAssigned.find(s=>s.id==='cinematography-180-degree-rule').familyId,'film-knowledge');
 assert.equal(familyAssigned.find(s=>s.id==='sound-design-entrainment').familyId,'film-knowledge');
-assert.equal(familyAssigned.find(s=>s.id==='pre-write-checklist').familyId,'novel-writer-assistance');
+assert.equal(familyAssigned.find(s=>s.id==='pdf').familyId,undefined);
 assert.equal(familyAssigned.find(s=>s.id==='future-independent').familyId,undefined);
 assert.equal(familyFixture[0].familyId,undefined);
 assert.deepEqual(familyAssigned.map(s=>[s.id,s.available,s.userInvocable]),familyFixture.map(s=>[s.id,s.available,s.userInvocable]));
 assert.ok(rankSkills(familyAssigned,'entrainment').some(s=>s.id==='sound-design-entrainment'));
-assert.ok(!familyAssigned.find(s=>s.id==='pre-write-checklist').familyId?.includes('film'));
 const packs={catalog:await json('./packs/catalog.json'),prompts:await json('./packs/prompts.json'),styles:await json('./packs/styles.json'),fill:await json('./packs/fill-templates.json')};
 for(const resource of [...packs.prompts,...packs.styles,...packs.fill]) {const result=composeResource(resource,{model:'Midjourney',aspectRatio:'16:9'});assert.deepEqual(result.missingVariables,[],resource.id);assert.ok(result.prompt.endsWith('--ar 16:9'));assert.ok(!result.prompt.includes('[object Object]'));}
-const localizations=await json('./skill-localizations.json');assert.equal(Object.keys(localizations).length,41);
+const localizations=await json('./skill-localizations.json');assert.equal(Object.keys(localizations).length,30);
 const english={id:'sound-design-auditory-hierarchy',title:'sound-design-auditory-hierarchy',description:'Three-level auditory hierarchy',whenToUse:'Layer film sound',available:true};
 const localized=localizeSkill(english,localizations);assert.ok(localized.title.includes('声音'));assert.equal(localized.originalDescription,english.description);assert.deepEqual(rankSkills([localized],'声音'),[localized]);assert.deepEqual(rankSkills([localized],'auditory'),[localized]);assert.ok(recommendSkills([localized],'声音').length);
 const many=Array.from({length:7},(_,i)=>({...localized,id:'sound-'+i}));assert.equal(recommendSkills(many,'声音').length,7);
@@ -95,4 +94,4 @@ assert.equal((await command.handler({agent,rawInput:JSON.stringify({action:'setA
 assert.equal((await command.handler({agent,rawInput:JSON.stringify({action:'setDefaultAllowlist',ids:[]})})).kind,'success');
 assert.equal((await command.handler({agent,rawInput:JSON.stringify({action:'setManualMode',enabled:false})})).kind,'success');assert.equal(sessionPolicies.get(agent.id).enabled,false);
 assert.equal(spec.name,'prompt_workbench');assert.equal(spec.tables.trials.valueSchema.parse(combined.trial).members.length,2);assert.equal(spec.tables.trials.valueSchema.parse(used.trial).kind,undefined);assert.ok(registered.find(def=>def.name==='prompt_workbench').parameters.properties.action.enum.includes('combine'));assert.ok(!registered.find(def=>def.name==='prompt_workbench').parameters.properties.action.enum.includes('prepare'));assert.equal(spec.tables.trials.valueSchema.parse(legacy).id,legacy.id);
-console.log('PASS: combinations, member order/duties, schema persistence, review separation, validation; 41 Chinese cards; unlimited recommendations; removed comparison action; historical and ordinary ratings; 44 compatibility templates; scoped catalog; ordinary use; trusted projection; full library search.');
+console.log('PASS: combinations, member order/duties, schema persistence, review separation, validation; 30 Chinese cards; unlimited recommendations; removed comparison action; historical and ordinary ratings; 44 compatibility templates; scoped catalog; ordinary use; trusted projection; full library search.');
