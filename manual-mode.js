@@ -14,6 +14,10 @@ export class ManualSkillMode {
     Object.assign(this,{ctx,settings,service});
     this.published = new WeakMap();
     this.initializing = new Map();
+    // Skills the user picked in this conversation (selection draft markers or leading /skill lines).
+    // Guards consult this so a deliberate choice is usable without editing the persistent allowlist.
+    this.granted = new Map();
+    this.warned = new Map();
   }
   sessionId(agent) {
     if (!agent || typeof agent.id !== 'string' || !agent.id) throw Error('需要有效的当前对话');
@@ -25,7 +29,9 @@ export class ManualSkillMode {
     if (existing) return existing;
     if (!this.initializing.has(id)) {
       // Snapshot defaults once. Future default edits never rewrite existing conversations.
-      const initial = {enabled:true,allowlist:[...this.settings.global.get().allowlist]};
+      // Default off: a fresh conversation must not start by blocking skills the user has not
+      // allowlisted yet. Turning it on stays available from the panel for opt-in restriction.
+      const initial = {enabled:false,allowlist:[...this.settings.global.get().allowlist]};
       const pending = table.put(id,initial).then(()=>initial).finally(()=>this.initializing.delete(id));
       this.initializing.set(id,pending);
     }
@@ -34,7 +40,7 @@ export class ManualSkillMode {
   enabled(agent) { return this.settings.table('sessions').get(this.sessionId(agent))?.enabled ?? false; }
   async status(agent) {
     const policy = await this.ensure(agent);
-    return {...policy,allowlist:[...policy.allowlist],scope:'session',sessionId:agent.id,defaultAllowlist:[...this.settings.global.get().allowlist],notice:'开关和自动调用名单仅影响当前对话。新对话默认开启手动模式，并在首次使用策略时复制默认白名单；修改默认名单不覆盖已有对话。关闭时恢复原生规则，历史技能内容不清除。'};
+    return {...policy,allowlist:[...policy.allowlist],scope:'session',sessionId:agent.id,defaultAllowlist:[...this.settings.global.get().allowlist],notice:'开关和自动调用名单仅影响当前对话。新对话默认关闭手动模式，技能按原生规则调用；开启后才按白名单自动加载，白名单外仍可直接发送 /技能名 或选择草稿。关闭时恢复原生规则，历史技能内容不清除。'};
   }
   async set(agent, enabled) {
     if (typeof enabled !== 'boolean') throw Error('手动模式必须为布尔值');
@@ -68,6 +74,7 @@ export class ManualSkillMode {
     let args = exec.arguments;
     if (typeof args === 'string') { try { args = JSON.parse(args); } catch { args = undefined; } }
     if (policy.allowlist.includes(args?.name)) return;
+    if (this.granted.get(agent.id)?.has(args?.name)) return;
     return {reason:'此技能不在当前对话的自动调用白名单中，请从选择器选择并发送使用草稿，或直接发送 /技能名。',info:{name:'ManualSkillMode',code:'MANUAL_SKILL_REQUIRED'}};
   }
   previous(agent) {
@@ -101,7 +108,7 @@ export class ManualSkillMode {
     if (decision.kind === 'reject') return decision;
     const policy = this.settings.table('sessions').get(agent.id);
     const previous = this.previous(agent);
-    const permitted = new Set(policy.allowlist), selected = [];
+    const permitted = new Set(policy.allowlist), selected = [], stale = [];
     for (const message of payload.messages.filter(m=>m.role === 'user' && m.source?.kind === 'user')) {
       const body = textOf(message);
       for (const line of body.trimStart().split(/\r?\n/)) {
@@ -112,9 +119,18 @@ export class ManualSkillMode {
       const marker = MARKER.exec(body);
       if (!marker) continue;
       const trial = this.service.domain.table('trials').get(marker[1]);
-      if (!trial || trial.sessionId !== agent.id || !body.trimStart().startsWith(selectionMarker(trial.id)) || !body.includes(trial.prompt)) continue;
+      // The marker is a 36-char UUID bound to exactly one trial row, so it cannot be guessed.
+      // Proof of a deliberate choice = marker anchored at message start + same session + real
+      // draft body after it. Requiring the whole draft verbatim (trial.prompt) used to void the
+      // grant as soon as the user edited a single word, which read as "the skill never loaded".
+      const after = body.trimStart().startsWith(marker[0]) ? body.trimStart().slice(marker[0].length).trim() : '';
+      if (!trial || trial.sessionId !== agent.id || !after) {
+        if (after) stale.push(marker[1]);
+        continue;
+      }
       for (const id of idsOf(trial)) { permitted.add(id); selected.push(id); }
     }
+    this.granted.set(agent.id, permitted);
     const messages = policy.enabled ? decision.messages.filter(m=>m.source?.kind !== 'skill-catalog' && (m.source?.kind !== 'skill-invocation' || permitted.has(m.source.name))) : [...decision.messages];
     const present = new Set(messages.filter(m=>m.source?.kind === 'skill-invocation').map(m=>m.source.name));
     const cwd = selected.length ? await this.ctx.workingDirectory.ensure(agent,signal) : undefined;
@@ -142,12 +158,22 @@ export class ManualSkillMode {
       this.published.set(agent,{enabled:false,key:'off'});
       return !previous?.enabled && !selected.length ? decision : {...decision,messages};
     }
-    const catalog = await this.catalog(agent,signal,policy.allowlist);
+    const catalog = await this.catalog(agent,signal,[...new Set([...policy.allowlist,...selected])]);
     const key = JSON.stringify({allowlist:policy.allowlist,entries:catalog.entries,complete:catalog.complete});
     if (!previous?.enabled || previous.key !== key) {
       messages.push(this.catalogMessage(catalog,true));
       messages.push(injection('当前对话手动技能模式已开启。允许自动调用的技能 ID：'+(policy.allowlist.join('、')||'无')+'。白名单外仅用户直接发送独立 /技能名 或完整选择草稿时加载；不得通过读取其他技能入口、命令行或委托代理绕过限制，涉及额外技能请用户补选。已加载历史不会清除。本对话设置不影响其他对话，其他旧目录和旧说明不再代表当前许可。',{kind:'skill-selector-policy',enabled:true,policyKey:key}));
       this.published.set(agent,{enabled:true,key});
+    }
+    if (stale.length) {
+      const seen = this.warned.get(agent.id) ?? new Set();
+      this.warned.set(agent.id,seen);
+      const fresh = [...new Set(stale)].filter(id=>!seen.has(id));
+      if (fresh.length) {
+        fresh.forEach(id=>seen.add(id));
+        const other = stale.filter(id=>!this.service.domain.table('trials').get(id));
+        messages.push(injection('有 '+fresh.length+' 份技能选择草稿没有生效，因此本轮没有加载对应技能。原因：'+(other.length?'选择记录已失效，请重新从选择器生成草稿':'草稿属于其他对话，请在本对话重新生成使用草稿')+'。',{kind:'skill-selector-notice',stale:fresh.length}));
+      }
     }
     return {...decision,messages};
   }

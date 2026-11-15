@@ -24,8 +24,8 @@ window.__ModuleLoader__.load({
       draftInserted: 'Added to this conversation’s draft.', draftFallback: 'The draft changed or is unavailable. The prompt was copied instead.',
       openDraft: 'Add to current draft', draftHelp: 'Inserts at the current selection without sending. Existing draft text is preserved.',
       connecting: 'Opening conversation…', noTarget: 'Open this workbench from a conversation.', ready: 'Connected',
-      search: 'Search skills', historySearch: 'Search use records', allCategories: 'All categories', allTasks: 'All tasks', allStates: 'All workbench states', favorites: 'Favorites',
-      availableOnly: 'Available only', available: 'Available', disabled: 'Disabled in DSH', unavailable: 'Unavailable',
+      search: 'Search skills', searchMulti: 'Search skills (space separates words)', historySearch: 'Search use records', allCategories: 'All categories', allTasks: 'All tasks', allStates: 'All workbench states', favorites: 'Favorites',
+      availableOnly: 'Available only', onlyAllowlisted: 'Allowlisted only', clearFilters: 'Clear filters', inAllowlist: 'allowlisted', available: 'Available', disabled: 'Disabled in DSH', unavailable: 'Unavailable',
       testing: 'Testing', keep: 'Keep', watch: 'Watch', retired: 'Retired', favorite: 'Favorite', unfavorite: 'Remove favorite',
       retiredHelp: 'Retired skills are hidden by default and cannot be selected here. This does not disable the skill globally or delete its original.',
       select: 'Select', selected: 'Selected', selectedCount: '{count} selected · unlimited', clear: 'Clear selection', status: 'Workbench status',
@@ -58,8 +58,8 @@ window.__ModuleLoader__.load({
       draftInserted: '已加入当前会话草稿。', draftFallback: '草稿已变化或暂不可用，已改为复制提示词。',
       openDraft: '加入当前草稿', draftHelp: '在当前光标处插入，不自动发送，并保留已有草稿。',
       connecting: '正在打开会话…', noTarget: '请从会话中打开工作台。', ready: '已连接',
-      search: '搜索技能', historySearch: '搜索使用记录', allCategories: '全部分类', allTasks: '全部任务', allStates: '全部工作台状态', favorites: '收藏',
-      availableOnly: '仅显示可用', available: '可用', disabled: 'DSH 中已禁用', unavailable: '不可用',
+      search: '搜索技能', searchMulti: '搜索技能（空格分词，多个词同时命中）', historySearch: '搜索使用记录', allCategories: '全部分类', allTasks: '全部任务', allStates: '全部工作台状态', favorites: '收藏',
+      availableOnly: '仅显示可用', onlyAllowlisted: '只看白名单', clearFilters: '清除筛选', inAllowlist: '白名单内', available: '可用', disabled: 'DSH 中已禁用', unavailable: '不可用',
       testing: '测试中', keep: '保留', watch: '观察', retired: '隐藏', favorite: '收藏', unfavorite: '取消收藏',
       retiredHelp: '停用技能默认隐藏，不能在此选择；不会全局禁用技能或删除原文件。',
       select: '选择', selected: '已选择', selectedCount: '已选择 {count} 个 · 数量无限制', clear: '清空选择', status: '工作台状态',
@@ -76,7 +76,7 @@ window.__ModuleLoader__.load({
       originalsUnavailable: '暂时无法读取原版提示词库入口，请刷新重试。', browserError: '无法在 Chrome 新窗口打开。',
     };
     const CSS = `
-.pw-root{height:100%;min-height:0;min-width:0;display:flex;flex-direction:column;overflow:hidden;background:var(--dsw-alias-bg-base);color:var(--dsw-alias-label-primary);font:inherit;font-size:13px;line-height:1.55;container-type:inline-size}.pw-root *{box-sizing:border-box}.pw-body{flex:1;min-height:0;min-width:0;overflow:auto;overscroll-behavior:contain;padding:16px 14px 20px;scroll-padding-block:12px}.pw-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:18px}.pw-heading{margin:0;font-size:17px;line-height:1.4;font-weight:600}.pw-subtitle,.pw-muted{color:var(--dsw-alias-label-secondary);overflow-wrap:anywhere}.pw-subtitle{margin:4px 0 0;font-size:12px}.pw-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pw-between{justify-content:space-between}.pw-field{display:flex;flex-direction:column;gap:6px;min-width:0}.pw-label{font-size:12px;color:var(--dsw-alias-label-secondary)}.pw-input,.pw-select,.pw-textarea,.pw-prompt{font:inherit;width:100%;min-width:0;border:1px solid var(--dsw-alias-border-l1);border-radius:8px;background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary);padding:8px 10px;min-height:36px}.pw-textarea{resize:vertical;min-height:82px;line-height:1.55}.pw-prompt{resize:vertical;min-height:150px;font-family:monospace;font-size:12px}.pw-root :is(button,input,select,textarea,summary):focus-visible,.pw-header-entry:focus-visible{outline:2px solid var(--dsw-alias-brand-primary);outline-offset:2px}.pw-button{font:inherit;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:6px;min-height:34px;padding:6px 10px;border:1px solid var(--dsw-alias-border-l1);border-radius:7px;background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary);white-space:normal;text-align:center;transition:background-color 140ms ease,border-color 140ms ease,opacity 140ms ease}.pw-button:not(:disabled):hover,.pw-tab:hover{background:var(--dsw-alias-bg-layer-1)}.pw-button:disabled{opacity:.45;cursor:not-allowed}.pw-primary,.pw-primary:not(:disabled):hover{background:var(--dsw-alias-brand-primary);color:var(--dsw-alias-label-primary-inverted);border-color:var(--dsw-alias-brand-primary)}.pw-quiet{background:transparent;border-color:transparent}.pw-help{font-size:12px;color:var(--dsw-alias-label-secondary);margin:8px 0;overflow-wrap:anywhere}.pw-tabs{display:flex;gap:4px;border-bottom:1px solid var(--dsw-alias-border-l1);margin-bottom:16px}.pw-tab{font:inherit;flex:1;min-width:0;min-height:38px;padding:8px 4px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--dsw-alias-label-secondary);cursor:pointer;transition:color 140ms ease,border-color 140ms ease}.pw-tab:disabled{opacity:.55;cursor:wait}.pw-tab[aria-selected=true]{color:var(--dsw-alias-label-primary);border-bottom-color:var(--dsw-alias-brand-primary);font-weight:600}.pw-builder{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}.pw-segmented{display:flex;gap:3px;padding:3px;border:1px solid var(--dsw-alias-border-l1);border-radius:9px;background:var(--dsw-alias-bg-layer-1)}.pw-segmented .pw-button{flex:1;min-width:0;background:transparent;border-color:transparent}.pw-segmented .pw-button[aria-pressed=true]{background:var(--dsw-alias-bg-base);border-color:var(--dsw-alias-border-l1);font-weight:600}.pw-filters{display:grid;grid-template-columns:1fr;gap:8px;margin:10px 0}.pw-filter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}.pw-check{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--dsw-alias-label-secondary)}.pw-check input{accent-color:var(--dsw-alias-brand-primary)}.pw-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-top:12px}.pw-card{min-width:0;padding:12px;border:1px solid var(--dsw-alias-border-l1);border-radius:10px;background:var(--dsw-alias-bg-layer-1);transition:border-color 150ms ease,background-color 150ms ease}.pw-card.pw-picked{border-color:var(--dsw-alias-brand-primary)}.pw-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.pw-card-title{margin:0;font-size:13px;line-height:1.5;font-weight:600;overflow-wrap:anywhere}.pw-card-top>.pw-card-title{padding-top:4px}.pw-card p{margin:8px 0;overflow-wrap:anywhere}.pw-purpose{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:var(--dsw-alias-label-secondary)}.pw-rating-summary{font-size:12px;color:var(--dsw-alias-label-secondary)}.pw-card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:10px}.pw-card-foot>.pw-select{width:auto;max-width:100%}.pw-badges{display:flex;gap:5px;flex-wrap:wrap}.pw-badge{display:inline-flex;align-items:center;padding:2px 6px;border:1px solid var(--dsw-alias-border-l1);border-radius:5px;font-size:11px;color:var(--dsw-alias-label-secondary);overflow-wrap:anywhere}.pw-available{color:var(--dsw-alias-label-primary)}.pw-root details{min-width:0}.pw-root summary{cursor:pointer;color:var(--dsw-alias-label-secondary);font-size:12px;min-height:30px;padding:5px 0;overflow-wrap:anywhere}.pw-root details[open]>summary{color:var(--dsw-alias-label-primary)}.pw-details{margin-top:8px;border-top:1px solid var(--dsw-alias-border-l1);padding-top:3px}.pw-details .pw-field{margin:10px 0}.pw-detail-id{font-family:monospace;font-size:11px;overflow-wrap:anywhere}.pw-section-title{font-size:13px;font-weight:600;margin:0 0 8px}.pw-review{border-top:1px solid var(--dsw-alias-border-l1);margin-top:12px;padding-top:12px;display:flex;flex-direction:column;gap:10px}.pw-review-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}.pw-review-note{min-height:70px}.pw-stars{display:flex;gap:3px;flex-wrap:wrap}.pw-star{font-size:21px;line-height:1;min-width:34px;padding:6px}.pw-star[aria-pressed=true]{border-color:var(--dsw-alias-brand-primary);color:var(--dsw-alias-brand-primary)}.pw-saved-review{padding:10px;border:1px solid var(--dsw-alias-border-l1);border-radius:8px;margin-top:8px;overflow-wrap:anywhere}.pw-saved-review .pw-field{margin-top:8px}.pw-trial{margin:12px 0}.pw-trial>.pw-row{margin-top:8px}.pw-notice{border:1px solid var(--dsw-alias-border-l1);border-radius:8px;padding:10px;margin:0 0 12px;background:var(--dsw-alias-bg-layer-1);overflow-wrap:anywhere}.pw-review-success{font-size:12px;color:var(--dsw-alias-label-primary);margin:0}.pw-empty{padding:24px 10px;text-align:center;color:var(--dsw-alias-label-secondary)}.pw-originals{border-top:1px solid var(--dsw-alias-border-l1);margin-top:20px;padding-top:12px}.pw-originals>summary{font-weight:600;font-size:13px}.pw-toolbar{margin-top:12px;border-top:1px solid var(--dsw-alias-border-l1);padding-top:8px}.pw-actionbar{flex:none;min-width:0;max-height:45%;overflow:auto;position:sticky;bottom:0;padding:10px 14px 12px;background:var(--dsw-alias-bg-base);border-top:1px solid var(--dsw-alias-border-l1);display:flex;flex-direction:column;gap:8px}.pw-selection-summary{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.pw-selection-summary strong{font-size:12px;font-weight:600;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.pw-selection-summary .pw-muted{font-size:11px}.pw-actionbar .pw-help{margin:0}.pw-actions{display:flex;gap:6px;flex-wrap:wrap}.pw-actions>.pw-button{flex:1;min-width:0}.pw-header-entry{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;padding:4px;border:0;border-radius:6px;background:transparent;color:var(--dsw-alias-label-secondary);cursor:pointer}.pw-header-entry:hover{background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary)}
+.pw-root{height:100%;min-height:0;min-width:0;display:flex;flex-direction:column;overflow:hidden;background:var(--dsw-alias-bg-base);color:var(--dsw-alias-label-primary);font:inherit;font-size:13px;line-height:1.55;container-type:inline-size}.pw-root *{box-sizing:border-box}.pw-body{flex:1;min-height:0;min-width:0;overflow:auto;overscroll-behavior:contain;padding:16px 14px 20px;scroll-padding-block:12px}.pw-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:18px}.pw-heading{margin:0;font-size:17px;line-height:1.4;font-weight:600}.pw-subtitle,.pw-muted{color:var(--dsw-alias-label-secondary);overflow-wrap:anywhere}.pw-subtitle{margin:4px 0 0;font-size:12px}.pw-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pw-between{justify-content:space-between}.pw-field{display:flex;flex-direction:column;gap:6px;min-width:0}.pw-label{font-size:12px;color:var(--dsw-alias-label-secondary)}.pw-input,.pw-select,.pw-textarea,.pw-prompt{font:inherit;width:100%;min-width:0;border:1px solid var(--dsw-alias-border-l1);border-radius:8px;background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary);padding:8px 10px;min-height:36px}.pw-textarea{resize:vertical;min-height:82px;line-height:1.55}.pw-prompt{resize:vertical;min-height:150px;font-family:monospace;font-size:12px}.pw-root :is(button,input,select,textarea,summary):focus-visible,.pw-header-entry:focus-visible{outline:2px solid var(--dsw-alias-brand-primary);outline-offset:2px}.pw-button{font:inherit;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:6px;min-height:34px;padding:6px 10px;border:1px solid var(--dsw-alias-border-l1);border-radius:7px;background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary);white-space:normal;text-align:center;transition:background-color 140ms ease,border-color 140ms ease,opacity 140ms ease}.pw-button:not(:disabled):hover,.pw-tab:hover{background:var(--dsw-alias-bg-layer-1)}.pw-button:disabled{opacity:.45;cursor:not-allowed}.pw-primary,.pw-primary:not(:disabled):hover{background:var(--dsw-alias-brand-primary);color:var(--dsw-alias-label-primary-inverted);border-color:var(--dsw-alias-brand-primary)}.pw-quiet{background:transparent;border-color:transparent}.pw-help{font-size:12px;color:var(--dsw-alias-label-secondary);margin:8px 0;overflow-wrap:anywhere}.pw-tabs{display:flex;gap:4px;border-bottom:1px solid var(--dsw-alias-border-l1);margin-bottom:16px}.pw-tab{font:inherit;flex:1;min-width:0;min-height:38px;padding:8px 4px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--dsw-alias-label-secondary);cursor:pointer;transition:color 140ms ease,border-color 140ms ease}.pw-tab:disabled{opacity:.55;cursor:wait}.pw-tab[aria-selected=true]{color:var(--dsw-alias-label-primary);border-bottom-color:var(--dsw-alias-brand-primary);font-weight:600}.pw-builder{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}.pw-segmented{display:flex;gap:3px;padding:3px;border:1px solid var(--dsw-alias-border-l1);border-radius:9px;background:var(--dsw-alias-bg-layer-1)}.pw-segmented .pw-button{flex:1;min-width:0;background:transparent;border-color:transparent}.pw-segmented .pw-button[aria-pressed=true]{background:var(--dsw-alias-bg-base);border-color:var(--dsw-alias-border-l1);font-weight:600}.pw-filters{display:grid;grid-template-columns:1fr;gap:8px;margin:10px 0}.pw-filter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}.pw-check{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--dsw-alias-label-secondary)}.pw-check input{accent-color:var(--dsw-alias-brand-primary)}.pw-chip-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}.pw-chip{font:inherit;font-size:11px;line-height:1.4;padding:3px 8px;border-radius:11px;border:1px solid var(--dsw-alias-border-l1);background:transparent;color:var(--dsw-alias-label-secondary);cursor:pointer;transition:background-color 140ms ease,color 140ms ease,border-color 140ms ease}.pw-chip:not(:disabled):hover{background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary)}.pw-chip[aria-pressed=true]{background:var(--dsw-alias-brand-primary);border-color:var(--dsw-alias-brand-primary);color:var(--dsw-alias-label-primary-inverted)}.pw-mark{background:color-mix(in srgb,var(--dsw-alias-brand-primary) 24%,transparent);color:inherit;border-radius:3px;padding:0 1px}.pw-allow-badge{border-color:var(--dsw-alias-brand-primary);color:var(--dsw-alias-brand-primary)}.pw-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-top:12px}.pw-card{min-width:0;padding:12px;border:1px solid var(--dsw-alias-border-l1);border-radius:10px;background:var(--dsw-alias-bg-layer-1);transition:border-color 150ms ease,background-color 150ms ease}.pw-card.pw-picked{border-color:var(--dsw-alias-brand-primary)}.pw-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.pw-card-title{margin:0;font-size:13px;line-height:1.5;font-weight:600;overflow-wrap:anywhere}.pw-card-top>.pw-card-title{padding-top:4px}.pw-card p{margin:8px 0;overflow-wrap:anywhere}.pw-purpose{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:var(--dsw-alias-label-secondary)}.pw-rating-summary{font-size:12px;color:var(--dsw-alias-label-secondary)}.pw-card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:10px}.pw-card-foot>.pw-select{width:auto;max-width:100%}.pw-badges{display:flex;gap:5px;flex-wrap:wrap}.pw-badge{display:inline-flex;align-items:center;padding:2px 6px;border:1px solid var(--dsw-alias-border-l1);border-radius:5px;font-size:11px;color:var(--dsw-alias-label-secondary);overflow-wrap:anywhere}.pw-available{color:var(--dsw-alias-label-primary)}.pw-root details{min-width:0}.pw-root summary{cursor:pointer;color:var(--dsw-alias-label-secondary);font-size:12px;min-height:30px;padding:5px 0;overflow-wrap:anywhere}.pw-root details[open]>summary{color:var(--dsw-alias-label-primary)}.pw-details{margin-top:8px;border-top:1px solid var(--dsw-alias-border-l1);padding-top:3px}.pw-details .pw-field{margin:10px 0}.pw-detail-id{font-family:monospace;font-size:11px;overflow-wrap:anywhere}.pw-section-title{font-size:13px;font-weight:600;margin:0 0 8px}.pw-review{border-top:1px solid var(--dsw-alias-border-l1);margin-top:12px;padding-top:12px;display:flex;flex-direction:column;gap:10px}.pw-review-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}.pw-review-note{min-height:70px}.pw-stars{display:flex;gap:3px;flex-wrap:wrap}.pw-star{font-size:21px;line-height:1;min-width:34px;padding:6px}.pw-star[aria-pressed=true]{border-color:var(--dsw-alias-brand-primary);color:var(--dsw-alias-brand-primary)}.pw-saved-review{padding:10px;border:1px solid var(--dsw-alias-border-l1);border-radius:8px;margin-top:8px;overflow-wrap:anywhere}.pw-saved-review .pw-field{margin-top:8px}.pw-trial{margin:12px 0}.pw-trial>.pw-row{margin-top:8px}.pw-notice{border:1px solid var(--dsw-alias-border-l1);border-radius:8px;padding:10px;margin:0 0 12px;background:var(--dsw-alias-bg-layer-1);overflow-wrap:anywhere}.pw-review-success{font-size:12px;color:var(--dsw-alias-label-primary);margin:0}.pw-empty{padding:24px 10px;text-align:center;color:var(--dsw-alias-label-secondary)}.pw-originals{border-top:1px solid var(--dsw-alias-border-l1);margin-top:20px;padding-top:12px}.pw-originals>summary{font-weight:600;font-size:13px}.pw-toolbar{margin-top:12px;border-top:1px solid var(--dsw-alias-border-l1);padding-top:8px}.pw-actionbar{flex:none;min-width:0;max-height:45%;overflow:auto;position:sticky;bottom:0;padding:10px 14px 12px;background:var(--dsw-alias-bg-base);border-top:1px solid var(--dsw-alias-border-l1);display:flex;flex-direction:column;gap:8px}.pw-selection-summary{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.pw-selection-summary strong{font-size:12px;font-weight:600;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.pw-selection-summary .pw-muted{font-size:11px}.pw-actionbar .pw-help{margin:0}.pw-actions{display:flex;gap:6px;flex-wrap:wrap}.pw-actions>.pw-button{flex:1;min-width:0}.pw-header-entry{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;padding:4px;border:0;border-radius:6px;background:transparent;color:var(--dsw-alias-label-secondary);cursor:pointer}.pw-header-entry:hover{background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary)}
 /* Theme-derived accents distinguish selection, roles and feedback in both themes. */
 .pw-root{--pw-blue:var(--dsw-alias-brand-primary);--pw-purple:color-mix(in oklch,var(--dsw-alias-brand-primary) 65%,var(--dsw-alias-state-error-primary));--pw-gold:var(--dsw-alias-state-warn-primary);--pw-green:var(--dsw-alias-state-success-primary);--pw-red:var(--dsw-alias-state-error-primary);--pw-edge:color-mix(in srgb,var(--pw-blue) 22%,var(--dsw-alias-border-l1));--pw-soft-blue:color-mix(in srgb,var(--pw-blue) 7%,var(--dsw-alias-bg-layer-1))}
 .pw-card{border-color:var(--pw-edge)}
@@ -159,13 +159,19 @@ window.__ModuleLoader__.load({
       const [connectAttempt, setConnectAttempt] = React.useState(0);
       const [tab, setTab] = React.useState('skills');
       const [query, setQuery] = React.useState('');
-      const [expandedFamilies, setExpandedFamilies] = React.useState({});
+      const familyStateKey = NS + ':family-expanded';
+      const readFamilyState = () => {
+        try { const raw = JSON.parse(window.localStorage.getItem(familyStateKey) || '{}'); return raw && typeof raw === 'object' && !Array.isArray(raw) ? raw : {}; }
+        catch (_) { return {}; }
+      };
+      const [expandedFamilies, setExpandedFamilies] = React.useState(readFamilyState);
       // Search expansion is temporary; clearing or changing the query restores normal accordion state.
       const [searchFamilies, setSearchFamilies] = React.useState({ query: '', expanded: {} });
-      const [category, setCategory] = React.useState('');
+      const [categoryFilter, setCategoryFilter] = React.useState([]);
       const [taskFilter, setTaskFilter] = React.useState('');
       const [statusFilter, setStatusFilter] = React.useState('');
       const [availableOnly, setAvailableOnly] = React.useState(true);
+      const [allowlistOnly, setAllowlistOnly] = React.useState(false);
       const [mode, setMode] = React.useState('single');
       const combination = mode === 'combination';
       const [primaryId, setPrimaryId] = React.useState('');
@@ -384,6 +390,8 @@ window.__ModuleLoader__.load({
       const categories = [...new Set(catalog.skills.map(skill => skill.category).filter(Boolean))];
       const tasks = [...new Set(catalog.skills.flatMap(skill => skill.tasks || skill.taskTypes || skill.platforms || []).map(text).filter(Boolean))];
       const search = query.trim().toLowerCase();
+      // Multi-word queries are AND-ed, so "图片 提示词" no longer needs to appear verbatim.
+      const searchTerms = search ? [...new Set(search.split(/\s+/).filter(Boolean))] : [];
       const families = Array.isArray(catalog.families) ? catalog.families : [];
       const familyById = new Map(families.map(family => [family.id, family]));
       const localized = value => typeof value === 'object' && value !== null && !Array.isArray(value) ? text(value[t('familyLanguage')] || value.en || value.zh) : text(value);
@@ -395,39 +403,84 @@ window.__ModuleLoader__.load({
       function isFamilyEntry(skill, family) {
         return family && family.relation !== 'category' && (skill.familyRoot === true || (family.rootIds || []).includes(skill.id));
       }
+      const searchIndex = new Map();
+      function searchTextOf(skill) {
+        if (!searchIndex.has(skill.id)) {
+          const family = skillFamily(skill);
+          searchIndex.set(skill.id, [skill.title, skill.description, skill.whenToUse, skill.category, skill.id, skill.platforms, skill.keywords, skill.originalTitle, skill.originalDescription, skill.originalWhenToUse, skill.familyTitle, skill.familyDescription, family?.title, family?.description].map(searchable).join(' ').toLowerCase());
+        }
+        return searchIndex.get(skill.id);
+      }
+      // Relevance: a title hit outranks an id/keyword/category/description hit.
+      function scoreSkill(skill) {
+        if (!searchTerms.length) return 0;
+        let score = 0;
+        const title = text(skill.title || skill.id).toLowerCase();
+        const id = text(skill.id).toLowerCase();
+        const keywords = text(skill.keywords).toLowerCase();
+        const category = text(skill.category).toLowerCase();
+        const description = text(skill.description).toLowerCase();
+        for (const term of searchTerms) {
+          if (title === term) score += 100;
+          else if (title.startsWith(term)) score += 60;
+          else if (title.includes(term)) score += 40;
+          if (id.includes(term)) score += 15;
+          if (keywords.includes(term)) score += 12;
+          if (category.includes(term)) score += 8;
+          if (description.includes(term)) score += 4;
+        }
+        return score;
+      }
+      const highlightPattern = searchTerms.length ? new RegExp('(' + searchTerms.map(term => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi') : null;
+      function highlight(value) {
+        const raw = text(value);
+        if (!highlightPattern || !raw) return raw;
+        return raw.split(highlightPattern).map((part, index) => index % 2 ? h('mark', { key: index, className: 'pw-mark' }, part) : part);
+      }
+      const allowlisted = id => !!manualMode?.allowlist.includes(id);
       const visibleSkills = catalog.skills.filter(skill => {
         const family = skillFamily(skill);
-        return (tab !== 'favorites' || skill.favorite) && (!search || [skill.title, skill.description, skill.whenToUse, skill.category, skill.id, skill.platforms, skill.keywords, skill.originalTitle, skill.originalDescription, skill.originalWhenToUse, skill.familyTitle, skill.familyDescription, family?.title, family?.description].map(searchable).join(' ').toLowerCase().includes(search)) && (!category || skill.category === category) && (!taskFilter || (skill.tasks || skill.taskTypes || skill.platforms || []).map(text).includes(taskFilter)) && (!availableOnly || skill.available) && (statusFilter === 'retired' || skill.status !== 'retired') && (!statusFilter || (statusFilter === 'favorites' ? skill.favorite : skill.status === statusFilter));
-      });
+        return (tab !== 'favorites' || skill.favorite) && (!searchTerms.length || searchTerms.every(term => searchTextOf(skill).includes(term))) && (!categoryFilter.length || categoryFilter.includes(skill.category)) && (!taskFilter || (skill.tasks || skill.taskTypes || skill.platforms || []).map(text).includes(taskFilter)) && (!availableOnly || skill.available) && (!allowlistOnly || allowlisted(skill.id)) && (statusFilter === 'retired' || skill.status !== 'retired') && (!statusFilter || (statusFilter === 'favorites' ? skill.favorite : skill.status === statusFilter));
+      }).map(skill => ({ skill, score: scoreSkill(skill) })).sort((a, b) => b.score - a.score).map(row => row.skill);
       function changeQuery(value) {
         setQuery(value);
         setSearchFamilies({ query: '', expanded: {} });
       }
       // Membership follows the Host's single primary familyId; memberIds and prefixes never duplicate cards.
+      function toggleFamilyPersisted(id, expanded) {
+        const next = { ...expandedFamilies, [id]: !expanded };
+        setExpandedFamilies(next);
+        try { window.localStorage.setItem(familyStateKey, JSON.stringify(next)); } catch (_) { /* storage unavailable */ }
+      }
       function renderCatalog() {
         const groups = new Map();
         const entries = [];
         for (const skill of visibleSkills) {
           const family = skillFamily(skill);
-          if (!family) { entries.push({ skill }); continue; }
+          const score = scoreSkill(skill);
+          if (!family) { entries.push({ skill, score }); continue; }
           if (!groups.has(family.id)) {
-            const group = { family, skills: [] };
+            const group = { family, skills: [], score: 0 };
             groups.set(family.id, group);
             entries.push(group);
           }
-          groups.get(family.id).skills.push(skill);
+          const group = groups.get(family.id);
+          group.skills.push(skill);
+          group.score = Math.max(group.score, score);
         }
+        // While searching, the best-matching group floats to the top.
+        if (searchTerms.length) entries.sort((a, b) => (b.score || 0) - (a.score || 0));
         return h('div', { className: 'pw-catalog' }, entries.map(entry => {
           if (entry.skill) return renderSkill(entry.skill);
           const { family, skills } = entry;
           const expanded = search ? searchFamilies.query === search ? searchFamilies.expanded[family.id] !== false : true : expandedFamilies[family.id] === true;
           const contentId = 'pw-family-' + encodeURIComponent(target) + '-' + encodeURIComponent(family.id);
           const selectedCount = catalog.skills.filter(skill => skill.familyId === family.id && selected.includes(skill.id)).length;
-          const ordered = [...skills].sort((a, b) => Number(isFamilyEntry(b, family)) - Number(isFamilyEntry(a, family)));
+          const ordered = searchTerms.length ? [...skills].sort((a, b) => scoreSkill(b) - scoreSkill(a)) : [...skills].sort((a, b) => Number(isFamilyEntry(b, family)) - Number(isFamilyEntry(a, family)));
           return h('section', { className: 'pw-family', key: 'family:' + family.id },
             h('h2', { className: 'pw-family-heading' }, h('button', { type: 'button', className: 'pw-family-toggle', 'aria-expanded': expanded, 'aria-controls': contentId, onClick: () => {
               if (search) setSearchFamilies(current => ({ query: search, expanded: { ...(current.query === search ? current.expanded : {}), [family.id]: !expanded } }));
-              else setExpandedFamilies(current => ({ ...current, [family.id]: !expanded }));
+              else toggleFamilyPersisted(family.id, expanded);
             } }, h('span', { 'aria-hidden': true }, expanded ? '▾' : '▸'), h('span', { className: 'pw-family-summary' },
               h('span', { className: 'pw-row' }, h('span', { className: 'pw-family-title' }, localized(family.title) || family.id), ['toolbox', 'workflow', 'category'].includes(family.relation) && h('span', { className: 'pw-badge' }, t('family.' + family.relation))),
               h('span', { className: 'pw-family-counts' }, h('span', null, t('familyVisible', { count: skills.length })), h('span', null, t('familySelected', { count: selectedCount })))))),
@@ -482,13 +535,13 @@ window.__ModuleLoader__.load({
         const autoEligible = skill.modelInvocable === true && skill.origin === 'existing';
         const policyDisabled = disabled || loading || !manualMode;
         return h('article', { key: skill.id, className: 'pw-card' + (picked ? ' pw-picked' + (combination && skill.id === primaryId ? ' pw-role-primary' : ' pw-role-support') : '') },
-          h('div', { className: 'pw-card-top' }, h('h3', { className: 'pw-card-title' }, title), h(Button, { quiet: true, className: 'pw-favorite', disabled: disabled || loading, onClick: () => setSkillStatus(skill, skill.status || 'testing', !skill.favorite), 'aria-label': t(skill.favorite ? 'unfavorite' : 'favorite') + ': ' + title, 'aria-pressed': !!skill.favorite }, skill.favorite ? '★' : '☆')),
+          h('div', { className: 'pw-card-top' }, h('h3', { className: 'pw-card-title' }, highlight(title)), h(Button, { quiet: true, className: 'pw-favorite', disabled: disabled || loading, onClick: () => setSkillStatus(skill, skill.status || 'testing', !skill.favorite), 'aria-label': t(skill.favorite ? 'unfavorite' : 'favorite') + ': ' + title, 'aria-pressed': !!skill.favorite }, skill.favorite ? '★' : '☆')),
           family && h('div', { className: 'pw-family-attribution' }, t('family') + ': ' + (localized(family.title) || family.id), familyEntry && h('span', { className: 'pw-badge pw-family-entry' }, t(family.relation === 'workflow' ? 'familyWorkflowEntry' : 'familyEntry'))),
-          h('p', { className: 'pw-purpose', title: text(skill.description) }, text(skill.description) || text(skill.whenToUse) || '—'),
+          h('p', { className: 'pw-purpose', title: text(skill.description) }, highlight(text(skill.description) || text(skill.whenToUse) || '—')),
           reason && h('p', { className: 'pw-help' }, text(reason)),
           h('div', { className: 'pw-card-foot' },
             h(Button, { className: 'pw-select-button', disabled: disabled || !skill.available || skill.status === 'retired', 'aria-label': t(picked ? 'selected' : 'select') + ': ' + title, 'aria-pressed': picked, onClick: () => chooseSkill(skill.id) }, picked ? '✓ ' + t('selected') : '+ ' + t('select')),
-            h('span', { className: 'pw-rating-summary' }, Number(skill.averageRating) > 0 ? '★ ' + Number(skill.averageRating).toFixed(1) + ' · ' : '', (skill.reviewCount || 0) + ' ' + t('reviews'))),
+            h('span', { className: 'pw-badges' }, sessionAllowed && h('span', { className: 'pw-badge pw-allow-badge' }, t('inAllowlist')), h('span', { className: 'pw-rating-summary' }, Number(skill.averageRating) > 0 ? '★ ' + Number(skill.averageRating).toFixed(1) + ' · ' : '', (skill.reviewCount || 0) + ' ' + t('reviews')))),
           h('details', { className: 'pw-details' }, h('summary', null, t('details')),
             h('p', { className: 'pw-detail-id pw-muted' }, skill.id),
             h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: sessionAllowed, disabled: policyDisabled || (!sessionAllowed && !autoEligible), onChange: e => changeAllowlist(skill.id, e.target.checked) }), t('sessionAllow')),
@@ -541,11 +594,15 @@ window.__ModuleLoader__.load({
               recommendations && h('section', { className: 'pw-builder', 'aria-label': t('recommendations'), 'aria-live': 'polite' }, h('h2', { className: 'pw-section-title' }, t('recommendations')), h('p', { className: 'pw-help' }, recommendations.notice || t('recommendationHelp')),
                 recommendations.skills.length ? h('div', { className: 'pw-grid' }, recommendations.skills.map(row => renderSkill(catalog.skills.find(item => item.id === row.id) || row, row.reason))) : h('p', { className: 'pw-muted' }, t('recommendationEmpty'))),
               catalog.catalogComplete === false && h('p', { className: 'pw-notice', role: 'status' }, catalog.notice),
-              h('div', { className: 'pw-filters' }, h('input', { className: 'pw-input', type: 'search', value: query, onChange: e => changeQuery(e.target.value), placeholder: t('search'), 'aria-label': t('search') }),
-                h('details', null, h('summary', null, t('filters') + (category || taskFilter || statusFilter || !availableOnly ? ' ·' : '')),
-                  h('div', { className: 'pw-filter-grid' }, h(Select, { label: t('allCategories'), value: category, onChange: setCategory, options: options(categories, 'allCategories', categoryLabel) }), h(Select, { label: t('allTasks'), value: taskFilter, onChange: setTaskFilter, options: options(tasks, 'allTasks') }), h(Select, { label: t('allStates'), value: statusFilter, onChange: setStatusFilter, options: [{ value: '', label: t('allStates') }, ...STATUSES.map(value => ({ value, label: t(value) }))] })),
-                  h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: availableOnly, onChange: e => setAvailableOnly(e.target.checked) }), t('availableOnly')))),
-              loading && !catalog.skills.length ? h('div', { className: 'pw-empty', role: 'status' }, t('loading')) : visibleSkills.length ? renderCatalog() : h('div', { className: 'pw-empty' }, t('empty')),
+              h('div', { className: 'pw-filters' }, h('input', { className: 'pw-input', type: 'search', value: query, onChange: e => changeQuery(e.target.value), placeholder: t('searchMulti'), 'aria-label': t('search') }),
+                h('div', { className: 'pw-filter-grid' }, h(Select, { label: t('allTasks'), value: taskFilter, onChange: setTaskFilter, options: options(tasks, 'allTasks') }), h(Select, { label: t('allStates'), value: statusFilter, onChange: setStatusFilter, options: [{ value: '', label: t('allStates') }, ...STATUSES.map(value => ({ value, label: t(value) }))] })),
+                categories.length > 0 && h('div', { className: 'pw-chip-row', role: 'group', 'aria-label': t('allCategories') },
+                  h('button', { type: 'button', className: 'pw-chip', 'aria-pressed': !categoryFilter.length, onClick: () => setCategoryFilter([]) }, t('allCategories')),
+                  categories.map(value => h('button', { key: value, type: 'button', className: 'pw-chip', 'aria-pressed': categoryFilter.includes(value), onClick: () => setCategoryFilter(current => current.includes(value) ? current.filter(item => item !== value) : [...current, value]) }, categoryLabel(value)))),
+                h('div', { className: 'pw-row' },
+                  h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: availableOnly, onChange: e => setAvailableOnly(e.target.checked) }), t('availableOnly')),
+                  h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: allowlistOnly, onChange: e => setAllowlistOnly(e.target.checked) }), t('onlyAllowlisted')),
+                  (categoryFilter.length > 0 || taskFilter || statusFilter || !availableOnly || allowlistOnly) && h(Button, { quiet: true, onClick: () => { setCategoryFilter([]); setTaskFilter(''); setStatusFilter(''); setAvailableOnly(true); setAllowlistOnly(false); } }, t('clearFilters')))),              loading && !catalog.skills.length ? h('div', { className: 'pw-empty', role: 'status' }, t('loading')) : visibleSkills.length ? renderCatalog() : h('div', { className: 'pw-empty' }, t('empty')),
               h('details', { className: 'pw-originals' }, h('summary', null, t('originals')), h('p', { className: 'pw-help' }, t('originalsHelp')),
                 h('div', { className: 'pw-grid' }, originals.map(item => h('article', { key: item.id, className: 'pw-card' }, h('h3', { className: 'pw-card-title' }, item.title), h('p', { className: 'pw-muted' }, item.description), h('div', { className: 'pw-card-foot' }, h(Button, { disabled, onClick: () => activateOriginal(item) }, t(item.kind === 'web' ? 'openOriginal' : 'useOriginal')), item.id === 'youmind' && h(Button, { quiet: true, disabled, onClick: () => void operate('refreshLibrary', { action: 'refresh' }, undefined, t('libraryRefreshed')) }, t('refreshLibrary')))))),
                 !loading && !originals.length && h('p', { className: 'pw-help' }, t('originalsUnavailable')))),
