@@ -105,15 +105,7 @@
         "sound-design-music-story-parallel",
         "sound-design-size-control",
         "sound-design-sonata-drama",
-        "sound-design-sync-illusion",
-        "story-design-beat-sheet",
-        "story-design-five-step-finale",
-        "story-design-genres",
-        "story-design-logline",
-        "story-design-midpoint",
-        "story-design-save-the-cat",
-        "story-design-shard-of-glass",
-        "story-design-theme-b-story"
+        "sound-design-sync-illusion"
       ],
       "evidence": [
         {
@@ -155,11 +147,6 @@
           "skillId": "scene-transition-synch-node",
           "path": "scene-transition-synch-node/SKILL.md",
           "note": "source_book: 《大师场景》Jeffrey Michael Bays"
-        },
-        {
-          "skillId": "story-design-beat-sheet",
-          "path": "story-design-beat-sheet/SKILL.md",
-          "note": "source_book: 《救猫咪》Blake Snyder"
         }
       ]
     }
