@@ -131,18 +131,6 @@
     "sideEffects": "主要输出文本；用户指定对标时可能联网研究资料和片段，未规定自动生图或视频提交。"
   },
   {
-    "id": "koda-storyboard-image",
-    "title": "Koda 草图分镜控制板",
-    "category": "storyboard",
-    "platforms": [
-      "image_gen",
-      "Seedance"
-    ],
-    "description": "生成含画格、箭头、走位标注和导演控制条的粗草图视频预演控制板。",
-    "whenToUse": "需要可供视频生成控制的动作过程、空间走位和镜头运动草图时。",
-    "sideEffects": "分镜图请求默认直接生图；项目批量模式可运行盘点与校验脚本并写入清单、提示词和进度文件。"
-  },
-  {
     "id": "mj-browser-image",
     "title": "Midjourney 浏览器生图与教学",
     "category": "execution",
@@ -212,33 +200,6 @@
     "sideEffects": "默认按请求输出分析、视觉方案或提示词，不自动持久化项目；实际图像仅在请求或授权交付需要时处理。"
   },
   {
-    "id": "ai-video-storyboard",
-    "title": "剧本转 AI 视频分镜",
-    "category": "storyboard",
-    "platforms": [
-      "Sora",
-      "Kling",
-      "Veo",
-      "Runway",
-      "Pixverse",
-      "通用视频模型"
-    ],
-    "description": "把剧本转为含焦段、光圈、机位、构图、运镜、动作和限制项的分镜。",
-    "whenToUse": "已有剧本，需要分段视听转译和跨段连续性控制时。",
-    "sideEffects": "文本分镜；包含开场自检及参考图、后缀询问流程，未规定自动媒体生成。"
-  },
-  {
-    "id": "director-master",
-    "title": "山音超级导演大师",
-    "category": "storyboard",
-    "platforms": [
-      "平台中立"
-    ],
-    "description": "完成导演定调、节奏规划、剧本微调与九列分镜表交付。",
-    "whenToUse": "需要分阶段审阅的导演方案和正式分镜表文件时。",
-    "sideEffects": "逐步等待通过或修改，最终写出 xlsx；不以自动生成媒体为默认交付。"
-  },
-  {
     "id": "剧本转漫画",
     "title": "剧本转漫画项目流程",
     "category": "storyboard",
@@ -304,30 +265,6 @@
     "description": "通过专用 Gateway 接口完成文生图、图像编辑与多图参考生成。",
     "whenToUse": "用户明确指定新的 Gateway 生图渠道时。",
     "sideEffects": "每次询问模型，读取专用密钥，消耗网关额度，编辑时上传图片并保存 PNG；不自动重试。"
-  },
-  {
-    "id": "superapi-jimeng-video",
-    "title": "SuperAPI 即梦视频生成",
-    "category": "execution",
-    "platforms": [
-      "SuperAPI",
-      "即梦 Seedance"
-    ],
-    "description": "为指定视频模型显示计划和美元参考价、提交任务、恢复查询并保存成片。",
-    "whenToUse": "明确使用 superapi.buzz 生成视频或查询已有任务时。",
-    "sideEffects": "写请求与任务记录，读取已授权密钥，提交计费远程任务并下载视频；生成须有相应付费授权。"
-  },
-  {
-    "id": "imagegen",
-    "title": "内置位图生成与编辑",
-    "category": "execution",
-    "platforms": [
-      "内置 image_gen",
-      "OpenAI Images API"
-    ],
-    "description": "生成或编辑照片、插画、纹理、精灵、样机和透明背景位图。",
-    "whenToUse": "用户需要实际位图资产且适合 AI 生图或编辑时。",
-    "sideEffects": "默认调用内置生图工具并保存媒体；CLI 回退需明确选择，可能读取 API 密钥和计费。"
   },
   {
     "id": "shot-design-storyboard-rapid",

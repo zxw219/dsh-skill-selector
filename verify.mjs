@@ -15,16 +15,17 @@ for(const family of families) {
     assert.ok(!explicitOwners.has(id),'Duplicate family membership: '+id);explicitOwners.set(id,family.id);
   }
 }
-const familyFixture=[{id:'story',title:'Story',available:true,userInvocable:true},{id:'story-short-write',title:'Short writing',available:true},{id:'office-xlsx',title:'Excel',available:true},{id:'dialogue-specialist',title:'Dialogue writing',available:true},{id:'future-independent',title:'New',available:true}];
+const familyFixture=[{id:'film-knowledge',title:'Film knowledge',available:true,userInvocable:true},{id:'cinematography-180-degree-rule',title:'180 degree rule',available:true},{id:'sound-design-entrainment',title:'Entrainment',available:true},{id:'pre-write-checklist',title:'Pre-write checklist',available:true},{id:'future-independent',title:'New',available:true}];
 const familyAssigned=assignSkillFamilies(familyFixture,families);
-assert.equal(familyAssigned.find(s=>s.id==='story').familyRoot,true);
-assert.equal(familyAssigned.find(s=>s.id==='story-short-write').familyId,familyAssigned.find(s=>s.id==='story').familyId);
-assert.ok(familyAssigned.find(s=>s.id==='office-xlsx').familyId);
+assert.equal(familyAssigned.find(s=>s.id==='film-knowledge').familyRoot,true);
+assert.equal(familyAssigned.find(s=>s.id==='cinematography-180-degree-rule').familyId,'film-knowledge');
+assert.equal(familyAssigned.find(s=>s.id==='sound-design-entrainment').familyId,'film-knowledge');
+assert.equal(familyAssigned.find(s=>s.id==='pre-write-checklist').familyId,'novel-writer-assistance');
 assert.equal(familyAssigned.find(s=>s.id==='future-independent').familyId,undefined);
 assert.equal(familyFixture[0].familyId,undefined);
 assert.deepEqual(familyAssigned.map(s=>[s.id,s.available,s.userInvocable]),familyFixture.map(s=>[s.id,s.available,s.userInvocable]));
-assert.ok(rankSkills(familyAssigned,'小说').some(s=>s.id==='story-short-write'));
-assert.ok(!familyAssigned.find(s=>s.id==='dialogue-specialist').familyId?.includes('staging'));
+assert.ok(rankSkills(familyAssigned,'entrainment').some(s=>s.id==='sound-design-entrainment'));
+assert.ok(!familyAssigned.find(s=>s.id==='pre-write-checklist').familyId?.includes('film'));
 const packs={catalog:await json('./packs/catalog.json'),prompts:await json('./packs/prompts.json'),styles:await json('./packs/styles.json'),fill:await json('./packs/fill-templates.json')};
 for(const resource of [...packs.prompts,...packs.styles,...packs.fill]) {const result=composeResource(resource,{model:'Midjourney',aspectRatio:'16:9'});assert.deepEqual(result.missingVariables,[],resource.id);assert.ok(result.prompt.endsWith('--ar 16:9'));assert.ok(!result.prompt.includes('[object Object]'));}
 const localizations=await json('./skill-localizations.json');assert.equal(Object.keys(localizations).length,41);

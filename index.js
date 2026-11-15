@@ -25,7 +25,9 @@ export class PromptWorkbench {
     const snapshot=await registry.snapshot({cwd,scope:agent});
     // A failed provider may leave other providers' valid entries usable.
     // Keep the completeness flag visible; never promote missing entries to available.
-    const live=snapshot.skills;
+    // Host-bundled skills and the Codex .system set stay out of the picker: it lists only what
+    // the user created or installed, plus whatever plugins deliberately register at runtime.
+    const live=snapshot.skills.filter(s=>s.source!=='bundled'&&!/(^|[\\/])\.system([\\/]|$)/.test(s.path??''));
     const byId=new Map(live.map(s=>[s.name,s]));
     const all=new Map(this.curated.map(s=>{const active=byId.get(s.id);return [s.id,{...s,description:active?.description??s.description,whenToUse:active?.whenToUse??s.whenToUse,path:active?.path,source:active?.source,provider:active?.provider,userInvocable:active?.invocation.userInvocable===true,modelInvocable:active?.invocation.modelInvocable===true,origin:'existing',available:!!active&&(active.invocation.modelInvocable||active.invocation.userInvocable)}];}));
     for(const s of live) {
