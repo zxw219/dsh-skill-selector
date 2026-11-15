@@ -176,25 +176,67 @@
       "relation": "category",
       "rootIds": [],
       "memberIds": [
+        "novel-writer-workflow-guide",
+        "getting-started-guide",
         "pre-write-checklist",
         "setting-detector",
-        "requirement-detector"
+        "requirement-detector",
+        "story-consistency-monitor",
+        "forgotten-elements-reminder",
+        "fantasy-world-building",
+        "mystery-novel-conventions",
+        "romance-novel-conventions",
+        "natural-dialogue-techniques",
+        "scene-structure-techniques"
       ],
       "evidence": [
         {
+          "skillId": "novel-writer-workflow-guide",
+          "path": "workflow-guide/SKILL.md"
+        },
+        {
+          "skillId": "getting-started-guide",
+          "path": "getting-started/SKILL.md"
+        },
+        {
           "skillId": "pre-write-checklist",
-          "path": "pre-write-checklist/SKILL.md",
-          "notes": "正文自述为 Novel Writer Skills v1.0 的写作前九项检查，用于 /write 前准备。"
+          "path": "pre-write-checklist/SKILL.md"
         },
         {
           "skillId": "setting-detector",
-          "path": "setting-detector/SKILL.md",
-          "notes": "正文自述 Novel Writer Skills 的知识库激活系统；映射的是 templates/knowledge-base 文档，不等于它拥有所有题材技能。"
+          "path": "setting-detector/SKILL.md"
         },
         {
           "skillId": "requirement-detector",
-          "path": "requirement-detector/SKILL.md",
-          "notes": "加载 anti-ai-v4 等写作规范文档；分类关联不表示这些知识库文档也是可调用技能。forgotten-elements/SKILL.md 的 name 为 forgotten-elements-reminder，职责是长篇遗忘元素提醒。"
+          "path": "requirement-detector/SKILL.md"
+        },
+        {
+          "skillId": "story-consistency-monitor",
+          "path": "consistency-checker/SKILL.md"
+        },
+        {
+          "skillId": "forgotten-elements-reminder",
+          "path": "forgotten-elements/SKILL.md"
+        },
+        {
+          "skillId": "fantasy-world-building",
+          "path": "fantasy/SKILL.md"
+        },
+        {
+          "skillId": "mystery-novel-conventions",
+          "path": "mystery/SKILL.md"
+        },
+        {
+          "skillId": "romance-novel-conventions",
+          "path": "romance/SKILL.md"
+        },
+        {
+          "skillId": "natural-dialogue-techniques",
+          "path": "dialogue-techniques/SKILL.md"
+        },
+        {
+          "skillId": "scene-structure-techniques",
+          "path": "scene-structure/SKILL.md"
         }
       ]
     }
