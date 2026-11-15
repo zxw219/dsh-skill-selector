@@ -40,8 +40,8 @@ const comboId=randomUUID(),comboPrompt=selectionMarker(comboId)+'\n\n组合';tri
 await assert.rejects(()=>mode.setAllowlist(a,['user-only']),/不能自动/);await assert.rejects(()=>mode.setAllowlist(a,['pack:test']),/不能自动/);await assert.rejects(()=>mode.setAllowlist(a,['missing']),/不能自动/);
 // Stored missing IDs are preserved on unrelated edits and can always be removed.
 sessions.get(a.id).allowlist.push('missing');await mode.setAllowlist(a,['automatic','missing']);await mode.setAllowlist(a,['automatic']);
-await mode.setAllowlist(a,[]);result=await enter(a,[],[catalog]);assert.equal(result.messages.find(m=>m.source?.kind==='skill-catalog').source.entries.length,0);
-await mode.set(a,false);result=await enter(a);assert.deepEqual(result.messages.find(m=>m.source?.kind==='skill-catalog').source.entries.map(s=>s.name),['automatic','other']);assert.equal(result.messages.at(-1).source.enabled,false);
+await mode.setAllowlist(a,[]);result=await enter(a,[],[catalog]);assert.deepEqual(result.messages.find(m=>m.source?.kind==='skill-catalog').source.entries.map(s=>s.name).sort(),['automatic','other'],'An empty allowlist no longer blanks the catalog; the guard still filters invocations');
+await mode.set(a,false);result=await enter(a,[msg('继续')]);assert.deepEqual(result.messages.find(m=>m.source?.kind==='skill-catalog').source.entries.map(s=>s.name),['automatic','other']);assert.equal(result.messages.at(-1).source.enabled,false);
 result=await enter(a,[msg(prompt)]);assert.ok(result.messages.some(m=>m.source?.name==='model-only'),'An explicit saved draft still loads after switching off');
 const original={kind:'enter',messages:[catalog]};assert.equal(await mode.enter({agent:a,messages:[]},async()=>original),original);
 // Old global policy in visible history is explicitly revoked; fresh B remains native.

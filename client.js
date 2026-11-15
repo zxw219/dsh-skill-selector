@@ -25,7 +25,7 @@ window.__ModuleLoader__.load({
       openDraft: 'Add to current draft', draftHelp: 'Inserts at the current selection without sending. Existing draft text is preserved.',
       connecting: 'Opening conversation…', noTarget: 'Open this workbench from a conversation.', ready: 'Connected',
       search: 'Search skills', searchMulti: 'Search skills (space separates words)', historySearch: 'Search use records', allCategories: 'All categories', allTasks: 'All tasks', allStates: 'All workbench states', favorites: 'Favorites',
-      availableOnly: 'Available only', onlyAllowlisted: 'Allowlisted only', clearFilters: 'Clear filters', inAllowlist: 'allowlisted', available: 'Available', disabled: 'Disabled in DSH', unavailable: 'Unavailable',
+      availableOnly: 'Available only', onlyAllowlisted: 'Allowlisted only', showChildren: 'Show sub-skills', clearFilters: 'Clear filters', inAllowlist: 'allowlisted', available: 'Available', disabled: 'Disabled in DSH', unavailable: 'Unavailable',
       testing: 'Testing', keep: 'Keep', watch: 'Watch', retired: 'Retired', favorite: 'Favorite', unfavorite: 'Remove favorite',
       retiredHelp: 'Retired skills are hidden by default and cannot be selected here. This does not disable the skill globally or delete its original.',
       select: 'Select', selected: 'Selected', selectedCount: '{count} selected · unlimited', clear: 'Clear selection', status: 'Workbench status',
@@ -59,7 +59,7 @@ window.__ModuleLoader__.load({
       openDraft: '加入当前草稿', draftHelp: '在当前光标处插入，不自动发送，并保留已有草稿。',
       connecting: '正在打开会话…', noTarget: '请从会话中打开工作台。', ready: '已连接',
       search: '搜索技能', searchMulti: '搜索技能（空格分词，多个词同时命中）', historySearch: '搜索使用记录', allCategories: '全部分类', allTasks: '全部任务', allStates: '全部工作台状态', favorites: '收藏',
-      availableOnly: '仅显示可用', onlyAllowlisted: '只看白名单', clearFilters: '清除筛选', inAllowlist: '白名单内', available: '可用', disabled: 'DSH 中已禁用', unavailable: '不可用',
+      availableOnly: '仅显示可用', onlyAllowlisted: '只看白名单', showChildren: '显示子技能', clearFilters: '清除筛选', inAllowlist: '白名单内', available: '可用', disabled: 'DSH 中已禁用', unavailable: '不可用',
       testing: '测试中', keep: '保留', watch: '观察', retired: '隐藏', favorite: '收藏', unfavorite: '取消收藏',
       retiredHelp: '停用技能默认隐藏，不能在此选择；不会全局禁用技能或删除原文件。',
       select: '选择', selected: '已选择', selectedCount: '已选择 {count} 个 · 数量无限制', clear: '清空选择', status: '工作台状态',
@@ -172,6 +172,8 @@ window.__ModuleLoader__.load({
       const [statusFilter, setStatusFilter] = React.useState('');
       const [availableOnly, setAvailableOnly] = React.useState(true);
       const [allowlistOnly, setAllowlistOnly] = React.useState(false);
+      // Children stay folded behind their family root until the user explicitly asks to see them.
+      const [showChildren, setShowChildren] = React.useState(false);
       const [mode, setMode] = React.useState('single');
       const combination = mode === 'combination';
       const [primaryId, setPrimaryId] = React.useState('');
@@ -429,6 +431,8 @@ window.__ModuleLoader__.load({
           if (category.includes(term)) score += 8;
           if (description.includes(term)) score += 4;
         }
+        // A family root outranks its own children when the text match is comparable.
+        if (isFamilyEntry(skill, skillFamily(skill))) score += 30;
         return score;
       }
       const highlightPattern = searchTerms.length ? new RegExp('(' + searchTerms.map(term => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi') : null;
@@ -438,9 +442,18 @@ window.__ModuleLoader__.load({
         return raw.split(highlightPattern).map((part, index) => index % 2 ? h('mark', { key: index, className: 'pw-mark' }, part) : part);
       }
       const allowlisted = id => !!manualMode?.allowlist.includes(id);
+      const childrenIds = new Set();
+      for (const family of families) {
+        const roots = family.rootIds || [];
+        if (!roots.length) continue;
+        for (const id of family.memberIds || []) if (!roots.includes(id)) childrenIds.add(id);
+      }
+      // Children are hidden by default so a family shows up as one entry; searching reveals them
+      // (ranked below the root), and the toggle reveals them permanently.
+      const allowChildren = showChildren || searchTerms.length > 0;
       const visibleSkills = catalog.skills.filter(skill => {
         const family = skillFamily(skill);
-        return (tab !== 'favorites' || skill.favorite) && (!searchTerms.length || searchTerms.every(term => searchTextOf(skill).includes(term))) && (!categoryFilter.length || categoryFilter.includes(skill.category)) && (!taskFilter || (skill.tasks || skill.taskTypes || skill.platforms || []).map(text).includes(taskFilter)) && (!availableOnly || skill.available) && (!allowlistOnly || allowlisted(skill.id)) && (statusFilter === 'retired' || skill.status !== 'retired') && (!statusFilter || (statusFilter === 'favorites' ? skill.favorite : skill.status === statusFilter));
+        return (tab !== 'favorites' || skill.favorite) && (allowChildren || !childrenIds.has(skill.id)) && (!searchTerms.length || searchTerms.every(term => searchTextOf(skill).includes(term))) && (!categoryFilter.length || categoryFilter.includes(skill.category)) && (!taskFilter || (skill.tasks || skill.taskTypes || skill.platforms || []).map(text).includes(taskFilter)) && (!availableOnly || skill.available) && (!allowlistOnly || allowlisted(skill.id)) && (statusFilter === 'retired' || skill.status !== 'retired') && (!statusFilter || (statusFilter === 'favorites' ? skill.favorite : skill.status === statusFilter));
       }).map(skill => ({ skill, score: scoreSkill(skill) })).sort((a, b) => b.score - a.score).map(row => row.skill);
       function changeQuery(value) {
         setQuery(value);
@@ -602,7 +615,8 @@ window.__ModuleLoader__.load({
                 h('div', { className: 'pw-row' },
                   h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: availableOnly, onChange: e => setAvailableOnly(e.target.checked) }), t('availableOnly')),
                   h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: allowlistOnly, onChange: e => setAllowlistOnly(e.target.checked) }), t('onlyAllowlisted')),
-                  (categoryFilter.length > 0 || taskFilter || statusFilter || !availableOnly || allowlistOnly) && h(Button, { quiet: true, onClick: () => { setCategoryFilter([]); setTaskFilter(''); setStatusFilter(''); setAvailableOnly(true); setAllowlistOnly(false); } }, t('clearFilters')))),              loading && !catalog.skills.length ? h('div', { className: 'pw-empty', role: 'status' }, t('loading')) : visibleSkills.length ? renderCatalog() : h('div', { className: 'pw-empty' }, t('empty')),
+                  h('label', { className: 'pw-check' }, h('input', { type: 'checkbox', checked: showChildren, onChange: e => setShowChildren(e.target.checked) }), t('showChildren')),
+                  (categoryFilter.length > 0 || taskFilter || statusFilter || !availableOnly || allowlistOnly || showChildren) && h(Button, { quiet: true, onClick: () => { setCategoryFilter([]); setTaskFilter(''); setStatusFilter(''); setAvailableOnly(true); setAllowlistOnly(false); setShowChildren(false); } }, t('clearFilters')))),              loading && !catalog.skills.length ? h('div', { className: 'pw-empty', role: 'status' }, t('loading')) : visibleSkills.length ? renderCatalog() : h('div', { className: 'pw-empty' }, t('empty')),
               h('details', { className: 'pw-originals' }, h('summary', null, t('originals')), h('p', { className: 'pw-help' }, t('originalsHelp')),
                 h('div', { className: 'pw-grid' }, originals.map(item => h('article', { key: item.id, className: 'pw-card' }, h('h3', { className: 'pw-card-title' }, item.title), h('p', { className: 'pw-muted' }, item.description), h('div', { className: 'pw-card-foot' }, h(Button, { disabled, onClick: () => activateOriginal(item) }, t(item.kind === 'web' ? 'openOriginal' : 'useOriginal')), item.id === 'youmind' && h(Button, { quiet: true, disabled, onClick: () => void operate('refreshLibrary', { action: 'refresh' }, undefined, t('libraryRefreshed')) }, t('refreshLibrary')))))),
                 !loading && !originals.length && h('p', { className: 'pw-help' }, t('originalsUnavailable')))),

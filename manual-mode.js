@@ -95,11 +95,19 @@ export class ManualSkillMode {
     const snapshot = this.ctx.tools.get('skill',agent)
       ? await this.service.registry(agent).snapshot({cwd:await this.ctx.workingDirectory.ensure(agent,signal),scope:agent,signal})
       : {skills:[],complete:true};
-    const allowed = allowlist && new Set(allowlist);
-    return {entries:snapshot.skills.filter(s=>s.invocation.modelInvocable && (!allowed || allowed.has(s.name))).map(s=>({name:s.name,description:s.description})),complete:snapshot.complete};
+    const allowed = allowlist && allowlist.length ? new Set(allowlist) : null;
+    // Family children stay out of the model-facing catalog: the family root carries the entry and
+    // its routing table names the children. Loading the root unlocks them for this turn.
+    const children = new Set();
+    for (const family of this.service.families ?? []) {
+      const roots = family.rootIds ?? [];
+      if (!roots.length) continue;
+      for (const id of family.memberIds ?? []) if (!roots.includes(id)) children.add(id);
+    }
+    return {entries:snapshot.skills.filter(s=>s.invocation.modelInvocable && (!allowed || allowed.has(s.name)) && !children.has(s.name)).map(s=>({name:s.name,description:s.description})),complete:snapshot.complete};
   }
   catalogMessage({entries,complete}, restricted) {
-    return injection('<available_skills>\n'+entries.map(s=>'- `'+s.name+'`: '+escape(s.description)).join('\n')+'\n</available_skills>\n'+(restricted?'当前目录仅包含本对话允许自动调用的技能；名单外技能需用户手动选择。':'当前目录替换此前的限制目录，恢复宿主原生调用规则。')+(!complete?' 技能发现尚未完整，仅显示已确认项目。':''),{kind:'skill-catalog',form:'catalog',entries,update:true,...(!complete?{incomplete:true}:{})});
+    return injection('<available_skills>\n'+entries.map(s=>'- `'+s.name+'`: '+escape(s.description)).join('\n')+'\n</available_skills>\n'+(restricted?'当前目录仅包含本对话允许自动调用的技能与本轮已选技能；名单外技能需用户手动选择。':'技能目录已按总入口合并：同一组只列总技能，子技能由总技能内自己的路由表带入；需要子技能时先加载它所属的总技能，不要凭名字直接猜。')+(!complete?' 技能发现尚未完整，仅显示已确认项目。':''),{kind:'skill-catalog',form:'catalog',entries,update:true,...(!complete?{incomplete:true}:{})});
   }
   async enter(payload, next) {
     const {agent,signal} = payload;
@@ -130,6 +138,12 @@ export class ManualSkillMode {
       }
       for (const id of idsOf(trial)) { permitted.add(id); selected.push(id); }
     }
+    // Picking a family root unlocks its children: the root's routing table is only useful if the
+    // skills it points at can actually be loaded afterwards.
+    for (const id of [...permitted]) {
+      const family = (this.service.families ?? []).find(f => (f.rootIds ?? []).includes(id));
+      if (family) for (const child of family.memberIds ?? []) permitted.add(child);
+    }
     this.granted.set(agent.id, permitted);
     const messages = policy.enabled ? decision.messages.filter(m=>m.source?.kind !== 'skill-catalog' && (m.source?.kind !== 'skill-invocation' || permitted.has(m.source.name))) : [...decision.messages];
     const present = new Set(messages.filter(m=>m.source?.kind === 'skill-invocation').map(m=>m.source.name));
@@ -151,12 +165,18 @@ export class ManualSkillMode {
       messages.push(injection(`<skill_content name="${id}">\n${resourceBase?'<skill_resources>\n'+JSON.stringify(resourceBase)+'\n相对参考资源从上述位置读取。\n</skill_resources>\n':''}<skill_instructions>\n${content}\n</skill_instructions>\n</skill_content>`,{kind:'skill-invocation',name:id,form:'instructions'}));
     }
     if (!policy.enabled) {
-      if (previous?.enabled) {
-        if (!messages.some(m=>m.source?.kind === 'skill-catalog')) messages.push(this.catalogMessage(await this.catalog(agent,signal),false));
-        messages.push(injection('当前对话手动技能模式已关闭。此前手动限制和自动调用白名单限制已撤销，恢复本对话的宿主原生技能调用规则；不影响其他对话。',{kind:'skill-selector-policy',enabled:false,policyKey:'off'}));
+      // No user message and nothing to revoke: leave the turn untouched.
+      if (!payload.messages.length && !previous?.enabled) return decision;
+      // Manual mode off still collapses the catalog: a family shows up as its root only, so the
+      // model walks in through the routing table instead of picking a child by name.
+      const catalog = await this.catalog(agent,signal,null);
+      const key = JSON.stringify({enabled:false,entries:catalog.entries,complete:catalog.complete});
+      if (!previous || previous.key !== key) {
+        messages.push(this.catalogMessage(catalog,false));
+        messages.push(injection('当前对话手动技能模式已关闭，技能按宿主原生规则调用，不存在白名单限制。技能目录已按总入口合并：同一组只列总技能，子技能由总技能自己的路由表带入；需要某个子技能时先加载它所属的总技能。',{kind:'skill-selector-policy',enabled:false,policyKey:key}));
+        this.published.set(agent,{enabled:false,key});
       }
-      this.published.set(agent,{enabled:false,key:'off'});
-      return !previous?.enabled && !selected.length ? decision : {...decision,messages};
+      return {...decision,messages};
     }
     const catalog = await this.catalog(agent,signal,[...new Set([...policy.allowlist,...selected])]);
     const key = JSON.stringify({allowlist:policy.allowlist,entries:catalog.entries,complete:catalog.complete});
