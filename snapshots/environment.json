@@ -1,6 +1,6 @@
 {
   "schema": "dsh-environment-snapshot@2",
-  "generatedAt": "2026-11-15T07:19:28.338Z",
+  "generatedAt": "2026-11-16T15:50:38.333Z",
   "machine": "ZXW",
   "dshProfile": "desktop",
   "restore": {
@@ -126,7 +126,7 @@
     {
       "dir": "camera-lens-anchoring",
       "name": "camera-lens-anchoring",
-      "description": "",
+      "description": "当用户需要为特定情绪/风格/场景选择专业影视摄影机+镜头组合、或需要在AI视频prompt中添加具体摄影机锚点时调用。 核心 trigger：用户提到\"用什么摄影机\"、\"什么镜头\"、\"电影感\"、\"摄影机型号\"、\"镜头选择\"、\"画质风格\"、\"胶片感\"、\"数字感\"。 不适用于：纯剪辑问题（用 shot-design）、纯调色问题（用 color-grading）、纯叙事问题（用 directing）。",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -188,7 +188,7 @@
     {
       "dir": "cinematography-180-degree-rule",
       "name": "cinematography-180-degree-rule",
-      "description": "",
+      "description": "用户提到180度法则、轴线、画面方向、分割线、摄影机放哪边",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -200,7 +200,7 @@
     {
       "dir": "cinematography-back-lighting",
       "name": "cinematography-back-lighting",
-      "description": "",
+      "description": "用户提到从后场打光、叠光、光源光、台灯/窗户照亮演员、真实光源不够亮",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -212,7 +212,7 @@
     {
       "dir": "cinematography-hard-soft-light",
       "name": "cinematography-hard-soft-light",
-      "description": "",
+      "description": "用户提到硬光、软光、柔光、阴影清晰/模糊、光源大小",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -224,7 +224,7 @@
     {
       "dir": "cinematography-light-direction-mood",
       "name": "cinematography-light-direction-mood",
-      "description": "",
+      "description": "用户提到灯光方向、侧光、背光、主光位置、想要戏剧性/神秘感",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -236,7 +236,7 @@
     {
       "dir": "cinematography-master-scene",
       "name": "cinematography-master-scene",
-      "description": "",
+      "description": "用户提到主场景法、先拍什么、镜头顺序、覆盖策略、备选镜头",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -248,7 +248,7 @@
     {
       "dir": "cinematography-three-point-lighting",
       "name": "cinematography-three-point-lighting",
-      "description": "",
+      "description": "用户提到布光、灯光设置、三点照明、灯光比、主光/补光/背光",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -260,7 +260,7 @@
     {
       "dir": "cinematography-zone-system",
       "name": "cinematography-zone-system",
-      "description": "",
+      "description": "用户提到分区曝光、定位、第V区、中灰18%、我想让这个物体看起来更亮/更暗",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -272,7 +272,7 @@
     {
       "dir": "color-grading-color-temperature",
       "name": "color-grading-color-temperature",
-      "description": "",
+      "description": "用户提到色温、偏色、冷暖、混合光源",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -296,7 +296,7 @@
     {
       "dir": "color-grading-contrast-saturation",
       "name": "color-grading-contrast-saturation",
-      "description": "",
+      "description": "用户提到对比度调完颜色变了、饱和度、RGB处理",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -308,7 +308,7 @@
     {
       "dir": "color-grading-filter-nonlinear",
       "name": "color-grading-filter-nonlinear",
-      "description": "",
+      "description": "用户提到滤镜效果、模拟光学、数字滤镜",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -320,7 +320,7 @@
     {
       "dir": "color-grading-log-workflow",
       "name": "color-grading-log-workflow",
-      "description": "",
+      "description": "当用户处理Log编码素材（RED/ARRI/Sony RAW等）时调用。核心流程：先在Log状态下用Offset做整体调整，再用Shadow/Midtone/Highlight做影调分区，套用LUT正常化后做精细调整。Log状态适合大刀阔斧，正常化后适合精雕细琢。",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -332,7 +332,7 @@
     {
       "dir": "color-grading-look-development",
       "name": "color-grading-look-development",
-      "description": "",
+      "description": "当用户需要为影片建立创意色彩风格（Look）时调用。流程：评估素材→建立一级校色基础→用二级调色分区→叠加风格化处理。核心原则：技术校色与风格化处理分离，便于后期修改。",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -344,7 +344,7 @@
     {
       "dir": "color-grading-memory-colors",
       "name": "color-grading-memory-colors",
-      "description": "",
+      "description": "当用户需要校准画面色彩准确性、诊断'肤色不对'、或理解观众对色彩的心理预期时调用。核心 trigger：用户提到'肤色不对'、'天空颜色'、'色彩记忆'、'画面看起来不自然'。不适用于：用户讨论创意风格（用 look-development）。",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -356,7 +356,7 @@
     {
       "dir": "color-grading-overexposure-recovery",
       "name": "color-grading-overexposure-recovery",
-      "description": "",
+      "description": "最后一搏",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -368,7 +368,7 @@
     {
       "dir": "color-grading-primary-workflow",
       "name": "color-grading-primary-workflow",
-      "description": "",
+      "description": "当用户需要对视频/影片进行一级校色时调用。核心工作流：先调对比度（Lift/Gamma/Gain）建立良好的黑位和白位，再调色彩平衡校正偏色，最后微调饱和度。三个步骤有强交互性需迭代调整。",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -380,7 +380,7 @@
     {
       "dir": "color-grading-shot-matching",
       "name": "color-grading-shot-matching",
-      "description": "",
+      "description": "当用户需要让同一场景内的多个镜头看起来一致时调用。工作流：评估差异→匹配对比度→匹配色彩→匹配饱和度→排查异常→迭代。核心原则：知道何时停止，避免眼睛适应性导致失去客观性。",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -392,7 +392,7 @@
     {
       "dir": "color-grading-skin-tone-vectorscope",
       "name": "color-grading-skin-tone-vectorscope",
-      "description": "",
+      "description": "所有人种的肤色在矢量示波器上都落在围绕I-bar的狭窄楔形范围内。RGB分量示波器上肤色总是红色通道最强。调色师应利用这一物理事实作为色彩平衡的基准点。",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -404,7 +404,7 @@
     {
       "dir": "dialogue-barrier-narrative",
       "name": "dialogue-barrier-narrative",
-      "description": "",
+      "description": "障碍物、物理隔离、隔窗对峙、隔墙对话、隔栏杆、争吵到和好",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -416,7 +416,7 @@
     {
       "dir": "dialogue-busy-hands-no-eye-contact",
       "name": "dialogue-busy-hands-no-eye-contact",
-      "description": "",
+      "description": "(1)演员对话时互相盯着对方眼睛不放；(2)表演感觉舞台化或不真实；(3)导演不知道如何让对话场景看起来自然",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -428,7 +428,7 @@
     {
       "dir": "dialogue-camera-follow-identity",
       "name": "dialogue-camera-follow-identity",
-      "description": "",
+      "description": "当追逐/追赶/跟随场景中\"摄影机该跟谁\"的判断不确定时调用此 skill。核心 trigger：(1) 追逐场景不知道该跟随追的人还是被追的人；(2) 想让观众认同某个特定角色；(3) 一个人追着另一个人说话的张力场景。不适用于：全知视角的纪录片拍摄、需要同时展示双方的体育转播、客观记录式的监控风格镜头。",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -440,7 +440,7 @@
     {
       "dir": "dialogue-camera-height-stance",
       "name": "dialogue-camera-height-stance",
-      "description": "",
+      "description": "摄影机高度、观众立场、仰拍俯拍、每个对话场景、摄影机放多高",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -452,7 +452,7 @@
     {
       "dir": "dialogue-closeup-timing",
       "name": "dialogue-closeup-timing",
-      "description": "",
+      "description": "(1) 对话场景切太多特写让观众错过表情变化；(2) 不确定特写是否够资格切入；(3) 需要从全景/中景突然跳到特写制造冲击力",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -464,7 +464,7 @@
     {
       "dir": "dialogue-deep-staging",
       "name": "dialogue-deep-staging",
-      "description": "",
+      "description": "深布景、三层空间、前景/中景/背景、摄影机靠墙、小空间、看起来不挤",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -476,7 +476,7 @@
     {
       "dir": "dialogue-delayed-reveal",
       "name": "dialogue-delayed-reveal",
-      "description": "",
+      "description": "延迟揭示、角色出场、悬念、背影、沉默、关键台词、群戏",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -488,7 +488,7 @@
     {
       "dir": "dialogue-distance-collapse-arc",
       "name": "dialogue-distance-collapse-arc",
-      "description": "",
+      "description": "(1) 角色情绪崩溃后需要自然过渡回日常；(2) 想用摄影机推近表达情感深入；(3) 需要在一镜到底中实现微妙的象征性空间变化",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -500,7 +500,7 @@
     {
       "dir": "dialogue-focal-character-temperament",
       "name": "dialogue-focal-character-temperament",
-      "description": "",
+      "description": "(1)同一个角色在不同场景需要显得更友好或更可怕；(2)不确定用什么焦距拍某个角色；(3)需要通过视觉手段区分好人和坏人",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -512,7 +512,7 @@
     {
       "dir": "dialogue-focal-progression",
       "name": "dialogue-focal-progression",
-      "description": "",
+      "description": "焦距变化、走近、缩近距离",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -524,7 +524,7 @@
     {
       "dir": "dialogue-gaze-mapping",
       "name": "dialogue-gaze-mapping",
-      "description": "",
+      "description": "(1) 三人以上群戏需要交代空间关系；(2) 不能或不想用全景/建立镜头；(3) 多人对话场景中角色位置混乱",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -536,7 +536,7 @@
     {
       "dir": "dialogue-position-swap",
       "name": "dialogue-position-swap",
-      "description": "",
+      "description": "位置交换、权力转移、主导地位",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -548,7 +548,7 @@
     {
       "dir": "dialogue-task-overload",
       "name": "dialogue-task-overload",
-      "description": "",
+      "description": "任务过载、本能表演、演员反对、洗碗/泡咖啡/摆道具",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -560,7 +560,7 @@
     {
       "dir": "dialogue-telephoto-claustrophobia",
       "name": "dialogue-telephoto-claustrophobia",
-      "description": "",
+      "description": "(1)角色听到无法承受的消息；(2)需要让观众直视角色的眼睛；(3)需要制造窒息感/幽闭感",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -572,7 +572,7 @@
     {
       "dir": "directing-activity-vs-action",
       "name": "directing-activity-vs-action",
-      "description": "",
+      "description": "用户问这段有用吗、这个场景要不要删、为什么这段看起来很无聊、闪回该不该用、日常场景怎么写才有戏剧性",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -584,7 +584,7 @@
     {
       "dir": "directing-ambiguity-diagnosis",
       "name": "directing-ambiguity-diagnosis",
-      "description": "",
+      "description": "模糊/多义/开放性、这里是不是太模糊了、观众能理解吗、要不要解释得更清楚、开放式结局",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -596,7 +596,7 @@
     {
       "dir": "directing-coincidence-trouble",
       "name": "directing-coincidence-trouble",
-      "description": "",
+      "description": "巧合、这个巧合太假了、怎么让转折不显得突兀、运气成分太重、天降神兵",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -608,7 +608,7 @@
     {
       "dir": "directing-contrast-emphasis",
       "name": "directing-contrast-emphasis",
-      "description": "",
+      "description": "(1) 元素太多不知道该突出什么；(2) 本能反应是把重要的东西放大而非把不重要的东西缩小；(3) 场景中所有元素的视觉/叙事权重平均，缺乏层次",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -620,7 +620,7 @@
     {
       "dir": "directing-credible-impossible",
       "name": "directing-credible-impossible",
-      "description": "",
+      "description": "可信、这个设定合理吗、观众会信吗、太假了、逻辑不通",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -632,7 +632,7 @@
     {
       "dir": "directing-dramatic-irony",
       "name": "directing-dramatic-irony",
-      "description": "",
+      "description": "用户提到戏剧反讽、信息差、观众知道但角色不知道、怎么制造紧张感、悬念和惊喜的区别、希区柯克炸弹比喻",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -644,7 +644,7 @@
     {
       "dir": "directing-end-before-begin",
       "name": "directing-end-before-begin",
-      "description": "",
+      "description": "我不知道从哪里开始写、开头写了很多版都不对、故事写到一半不知道怎么收、结构散了、结局总觉得不对",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -656,7 +656,7 @@
     {
       "dir": "directing-idea-generation",
       "name": "directing-idea-generation",
-      "description": "",
+      "description": "用户说想不到点子、灵感枯竭、怎么才能有创意、不知道写什么、卡住了",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -668,7 +668,7 @@
     {
       "dir": "directing-invisible-witness",
       "name": "directing-invisible-witness",
-      "description": "",
+      "description": "用户问摄影机应该放在哪、该用什么景别、观众应该认同谁、怎么引导观众注意力、为什么这个镜头用特写、怎么决定拍谁",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -680,7 +680,7 @@
     {
       "dir": "directing-odets-rewrite",
       "name": "directing-odets-rewrite",
-      "description": "",
+      "description": "(1) 两个角色在对话但感觉像聊天而非交锋；(2) 场景中信息是平铺直叙地交代而非在冲突中释放；(3) 需要将二人对话升级为多人互动以增加密度",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -692,7 +692,7 @@
     {
       "dir": "directing-protagonist-endangered",
       "name": "directing-protagonist-endangered",
-      "description": "",
+      "description": "(1) 故事/场景中有多个重要角色，无法确定谁是主角；(2) 主角的存在感薄弱、观众不关心其命运；(3) 冲突感觉不够紧但不知道为什么",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -704,7 +704,7 @@
     {
       "dir": "directing-reaction-over-action",
       "name": "directing-reaction-over-action",
-      "description": "",
+      "description": "(1) 场景中发生了重大事件但观众反应平淡；(2) 拍摄/剪辑时不确定该聚焦于事件本身还是事件的后果；(3) 需要让体育直播、采访、纪录片等非虚构内容更有电影感",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -716,7 +716,7 @@
     {
       "dir": "directing-scene-necessity",
       "name": "directing-scene-necessity",
-      "description": "",
+      "description": "这段要不要删、是不是多余、怎么精简、场景很松散、结构拖沓",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -728,7 +728,7 @@
     {
       "dir": "directing-story-framework",
       "name": "directing-story-framework",
-      "description": "",
+      "description": "用户提到写故事、故事结构、叙事框架、不知道怎么开头/结尾、支线怎么设计",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -740,7 +740,7 @@
     {
       "dir": "directing-tension-formula",
       "name": "directing-tension-formula",
-      "description": "",
+      "description": "(1) 不确定场景为何无聊；(2) 需要诊断张力断层——某段内容只有期待没有不确定（乏味的等待），或只有不确定没有期待（令人困惑的混乱）；(3) 设计中国套盒式嵌套悬念——在解决旧问题的同时制造新问题",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -842,7 +842,7 @@
     {
       "dir": "msv3-body-performance",
       "name": "msv3-body-performance",
-      "description": "",
+      "description": "肢体表演, 特写, 全景",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -854,7 +854,7 @@
     {
       "dir": "msv3-lens-emotion-mapping",
       "name": "msv3-lens-emotion-mapping",
-      "description": "",
+      "description": "焦距选择, 镜头情感, 长焦广角",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -866,7 +866,7 @@
     {
       "dir": "msv3-power-distance",
       "name": "msv3-power-distance",
-      "description": "",
+      "description": "权力, 距离, 谁更有力量",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -878,7 +878,7 @@
     {
       "dir": "msv3-speed-conveyance",
       "name": "msv3-speed-conveyance",
-      "description": "",
+      "description": "速度感, 紧迫感, 追逐",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -890,7 +890,7 @@
     {
       "dir": "msv3-symbolic-staging",
       "name": "msv3-symbolic-staging",
-      "description": "",
+      "description": "象征性, 镜头叙事, 权力关系",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -902,7 +902,7 @@
     {
       "dir": "msv3-unexpected-reveal",
       "name": "msv3-unexpected-reveal",
-      "description": "",
+      "description": "揭示, 意外, 悬念",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -954,7 +954,7 @@
     {
       "dir": "scene-transition-binary-opposition",
       "name": "scene-transition-binary-opposition",
-      "description": "",
+      "description": "用户提到场景对比、二元对立、场所选择、场景并置、对比产生张力",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -966,7 +966,7 @@
     {
       "dir": "scene-transition-caboose-diagnosis",
       "name": "scene-transition-caboose-diagnosis",
-      "description": "",
+      "description": "用户提到场景多余、要不要删、节奏拖沓、末节场景",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -978,7 +978,7 @@
     {
       "dir": "scene-transition-four-function-diagnosis",
       "name": "scene-transition-four-function-diagnosis",
-      "description": "",
+      "description": "用户在问这个场景转换应该怎么做、场景之间怎么衔接、转场应该是什么风格、过场动画该用什么形式",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -990,7 +990,7 @@
     {
       "dir": "scene-transition-low-point-no-plot",
       "name": "scene-transition-low-point-no-plot",
-      "description": "",
+      "description": "用户提到场景太紧张、观众需要休息、低潮、节奏太快、审美疲劳",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1002,7 +1002,7 @@
     {
       "dir": "scene-transition-loyalty-transfer",
       "name": "scene-transition-loyalty-transfer",
-      "description": "",
+      "description": "用户提到观众认同谁、角色转换、忠诚转移、配角戏份",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1014,7 +1014,7 @@
     {
       "dir": "scene-transition-music-quadrant",
       "name": "scene-transition-music-quadrant",
-      "description": "",
+      "description": "用户提到场景转换用什么音乐、静默还是配乐、音乐怎么过渡、转换的音频策略",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1026,7 +1026,7 @@
     {
       "dir": "scene-transition-seamless-pause",
       "name": "scene-transition-seamless-pause",
-      "description": "",
+      "description": "用户提到没有间歇、观众不知道在休息、无缝过渡、欺骗观众",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1038,7 +1038,7 @@
     {
       "dir": "scene-transition-synch-node",
       "name": "scene-transition-synch-node",
-      "description": "",
+      "description": "用户提到多线叙事、故事线怎么交汇、同步节点、多情节连接",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1050,7 +1050,7 @@
     {
       "dir": "scene-transition-weather-contrast",
       "name": "scene-transition-weather-contrast",
-      "description": "",
+      "description": "用户提到天气、场景天气、天气配合情绪、天气对比",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1082,7 +1082,7 @@
     {
       "dir": "shot-camera-choreography",
       "name": "shot-camera-choreography",
-      "description": "",
+      "description": "用户提到演员怎么走位、摄影机怎么配合、镜头设计、运动路线、演员和摄影机同时动",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1094,7 +1094,7 @@
     {
       "dir": "shot-design-angle-context",
       "name": "shot-design-angle-context",
-      "description": "",
+      "description": "用户提到摄影角度、仰拍俯拍、低角度怎么用、画面感觉不对",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1106,7 +1106,7 @@
     {
       "dir": "shot-design-axis-of-action",
       "name": "shot-design-axis-of-action",
-      "description": "",
+      "description": "用户提到轴线、180度规则、跳轴、摄影机放哪边、空间连续性、银幕方向",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1118,7 +1118,7 @@
     {
       "dir": "shot-design-continuity-composition",
       "name": "shot-design-continuity-composition",
-      "description": "",
+      "description": "用户提到构图、画面不对、特写怎么构图、剪辑节奏",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1130,7 +1130,7 @@
     {
       "dir": "shot-design-dialogue-staging",
       "name": "shot-design-dialogue-staging",
-      "description": "",
+      "description": "用户提到对话场景、对话怎么拍、两人/三人/多人对话、调度、staging",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1142,7 +1142,7 @@
     {
       "dir": "shot-design-dramatic-range",
       "name": "shot-design-dramatic-range",
-      "description": "",
+      "description": "用户提到纵深调度、摄影机在动作范围内外、前景中景后景、景深、空间分隔",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1154,7 +1154,7 @@
     {
       "dir": "shot-design-pov-spectrum",
       "name": "shot-design-pov-spectrum",
-      "description": "",
+      "description": "用户提到视点、POV、观众认同、主观镜头、叙事视角、观众代入感",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1166,7 +1166,7 @@
     {
       "dir": "shot-design-sightline-cut",
       "name": "shot-design-sightline-cut",
-      "description": "",
+      "description": "用户提到视线方向、怎么切镜头、空间关系、主观镜头",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1178,7 +1178,7 @@
     {
       "dir": "shot-design-storyboard-rapid",
       "name": "shot-design-storyboard-rapid",
-      "description": "",
+      "description": "用户提到画分镜、故事板、怎么把剧本变成镜头、快速可视化",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1190,7 +1190,7 @@
     {
       "dir": "shot-distract-and-scare",
       "name": "shot-distract-and-scare",
-      "description": "",
+      "description": "用户提到吓人、惊吓、分散注意力、出其不意、打破预期、怎么让观众没想到",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1202,7 +1202,7 @@
     {
       "dir": "shot-dual-camera-tension",
       "name": "shot-dual-camera-tension",
-      "description": "",
+      "description": "用户提到两台摄影机、双机位、不同运动状态、手持vs推车、力量对比、谁占上风",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1214,7 +1214,7 @@
     {
       "dir": "shot-equal-length-rhythm",
       "name": "shot-equal-length-rhythm",
-      "description": "",
+      "description": "用户提到等长镜头、节奏控制、平行剪辑、安全感、打破节奏、镜头长度一致",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1226,7 +1226,7 @@
     {
       "dir": "shot-still-vs-motion-decision",
       "name": "shot-still-vs-motion-decision",
-      "description": "",
+      "description": "用户提到角色做决定、下定决心、转折点、静止和运动的对比、背景运动、决定的瞬间",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1238,7 +1238,7 @@
     {
       "dir": "shot-telephoto-compression",
       "name": "shot-telephoto-compression",
-      "description": "",
+      "description": "用户提到借位打斗、让距离看起来更近、长焦压缩、假打怎么拍、追踪者显得更近",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1250,7 +1250,7 @@
     {
       "dir": "sound-design-auditory-hierarchy",
       "name": "sound-design-auditory-hierarchy",
-      "description": "",
+      "description": "Three-level auditory hierarchy: foreground (conscious), midground (aware), background (subconscious). Manages audience attention through conscious layering of sound elements.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1262,7 +1262,7 @@
     {
       "dir": "sound-design-consistency",
       "name": "sound-design-consistency",
-      "description": "",
+      "description": "Once a sound-image association is established, it must remain consistent throughout the film. Inconsistent sounds break audience trust and immersion.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1274,7 +1274,7 @@
     {
       "dir": "sound-design-contrast-drama",
       "name": "sound-design-contrast-drama",
-      "description": "",
+      "description": "Drama comes from contrast, not absolute values. Loud-soft, fast-slow, full-empty contrasts create tension. Constant loudness causes auditory fatigue.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1286,7 +1286,7 @@
     {
       "dir": "sound-design-diegetic-taxonomy",
       "name": "sound-design-diegetic-taxonomy",
-      "description": "",
+      "description": "Sound-image relationship taxonomy: on-screen, off-screen, non-diegetic, acousmatic. Classifies any film sound by its relationship to the story world.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1298,7 +1298,7 @@
     {
       "dir": "sound-design-energy-model",
       "name": "sound-design-energy-model",
-      "description": "",
+      "description": "Four-layer sound energy transformation model for film: physical, emotional, intellectual, ethical. Maps how sound travels from source to audience across technical, dramatic, aesthetic, and spiritual dimensions.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1310,7 +1310,7 @@
     {
       "dir": "sound-design-entrainment",
       "name": "sound-design-entrainment",
-      "description": "",
+      "description": "Human physiological rhythms (heartbeat, breathing, brainwaves) synchronize with external sound rhythms. Sound designers can use this to guide audience states.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1322,7 +1322,7 @@
     {
       "dir": "sound-design-expectation",
       "name": "sound-design-expectation",
-      "description": "",
+      "description": "Sound's emotional power comes from building and violating expectations. Surprise requires prior setup; too-accurate prediction causes boredom.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1334,7 +1334,7 @@
     {
       "dir": "sound-design-less-is-more",
       "name": "sound-design-less-is-more",
-      "description": "",
+      "description": "Use minimum sound elements for maximum impact. Let audience fill in gaps mentally. Counter-intuitive: removing sounds often increases emotional engagement.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1346,7 +1346,7 @@
     {
       "dir": "sound-design-listening-modes",
       "name": "sound-design-listening-modes",
-      "description": "",
+      "description": "Four listening modes (reduced, causal, semantic, referential) for understanding how audiences perceive and interpret sounds. Enables conscious mode-switching for effective sound design.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1358,7 +1358,7 @@
     {
       "dir": "sound-design-music-story-parallel",
       "name": "sound-design-music-story-parallel",
-      "description": "",
+      "description": "Music-story parallel structure: melody=character, harmony=setting, dissonance=conflict, rhythm=tempo. Maps musical elements to narrative elements for integrated sound design.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1370,7 +1370,7 @@
     {
       "dir": "sound-design-size-control",
       "name": "sound-design-size-control",
-      "description": "",
+      "description": "Perceived size of sound sources can be controlled by changing playback speed. Slower = larger, faster = smaller. Combine with original speed for realism.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1382,7 +1382,7 @@
     {
       "dir": "sound-design-sonata-drama",
       "name": "sound-design-sonata-drama",
-      "description": "",
+      "description": "Sonata form maps to dramatic structure: exposition (setup) → development (conflict) → recapitulation (resolution). Mirrors Hero's Journey and three-act structure.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1394,7 +1394,7 @@
     {
       "dir": "sound-design-sync-illusion",
       "name": "sound-design-sync-illusion",
-      "description": "",
+      "description": "Audiences believe any sound synchronized with image IS the image's sound. Real sounds often have poor dramatic effect; substitute sources work better.",
       "group": "film-knowledge",
       "source": {
         "type": "github",
