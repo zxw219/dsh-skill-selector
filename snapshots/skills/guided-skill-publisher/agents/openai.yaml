@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill 发布与自检助手 / Guided Publisher"
+  short_description: "引导发布与问题诊断 / Guided publishing and package audit"
+  default_prompt: "使用 $guided-skill-publisher 引导我自检、修复、打包并发布一个 Skill；在上传和正式提交前分别确认。"

@@ -1,0 +1,44 @@
+{
+  "scope": "Text timeline and absolute event numeric checks only; no template, sound, geometry or media validation.",
+  "results": {
+    "A": {
+      "status": "TEXT_CHECK_PASS",
+      "semantic_review": "REQUIRED",
+      "video_validation": "NOT_RUN",
+      "profile": "basic",
+      "timeline_validation": "RUN",
+      "template_validation": "NOT_RUN",
+      "dialogue_validation": "NOT_RUN",
+      "sound_validation": "NOT_RUN",
+      "event_time_validation": "ABSOLUTE_NUMERIC_ONLY",
+      "geometry_scope": "NOT_RUN",
+      "findings": []
+    },
+    "B": {
+      "status": "TEXT_CHECK_PASS",
+      "semantic_review": "REQUIRED",
+      "video_validation": "NOT_RUN",
+      "profile": "basic",
+      "timeline_validation": "RUN",
+      "template_validation": "NOT_RUN",
+      "dialogue_validation": "NOT_RUN",
+      "sound_validation": "NOT_RUN",
+      "event_time_validation": "ABSOLUTE_NUMERIC_ONLY",
+      "geometry_scope": "NOT_RUN",
+      "findings": []
+    },
+    "D": {
+      "status": "TEXT_CHECK_PASS",
+      "semantic_review": "REQUIRED",
+      "video_validation": "NOT_RUN",
+      "profile": "basic",
+      "timeline_validation": "RUN",
+      "template_validation": "NOT_RUN",
+      "dialogue_validation": "NOT_RUN",
+      "sound_validation": "NOT_RUN",
+      "event_time_validation": "ABSOLUTE_NUMERIC_ONLY",
+      "geometry_scope": "NOT_RUN",
+      "findings": []
+    }
+  }
+}

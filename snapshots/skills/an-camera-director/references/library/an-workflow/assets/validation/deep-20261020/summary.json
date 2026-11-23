@@ -1,0 +1,71 @@
+{
+  "baseline_source_files": 412,
+  "program_finding_classes": 9,
+  "regression_tests": 61,
+  "regressions_passed": true,
+  "independent_semantic_samples": 7,
+  "sample_scope": {
+    "baseline": [
+      "a1",
+      "a2",
+      "b1",
+      "b2",
+      "b3"
+    ],
+    "additional": [
+      "c1",
+      "d1"
+    ]
+  },
+  "blind_review_files": [
+    "blind-review-01-03.md",
+    "blind-review-04-05.md",
+    "blind-review-06.md",
+    "blind-review-07.md"
+  ],
+  "d1_format_errors": 0,
+  "d1_format_review_items": [
+    {
+      "code": "SILENCE_REVIEW",
+      "severity": "review",
+      "line": 14,
+      "message": "静音契约下出现额外sound内容；核对是否包含实际声音"
+    },
+    {
+      "code": "SILENCE_REVIEW",
+      "severity": "review",
+      "line": 18,
+      "message": "静音契约下出现额外sound内容；核对是否包含实际声音"
+    },
+    {
+      "code": "CONTEXT_REVIEW",
+      "severity": "review",
+      "line": 6,
+      "message": "结合主体、因果、否定范围和时段复核: 全程固定"
+    }
+  ],
+  "format_author_review": "Silence inheritance and explicitly fixed camera confirmed against task; no words or sound added.",
+  "independent_code_review": [
+    "code-audit.md",
+    "code-recheck.md",
+    "code-recheck-v2.md",
+    "code-root-recheck.md"
+  ],
+  "tested_scripts": {
+    "check_prompt.py": "18f7510c5b7b2ca5aaea1ec59154f1bd8489098f9e51d987a12fe5b8e2b2248a",
+    "moke_mcp.py": "30d9138879416c09be257ea12af11193aa5a708e43260a62f0f2b05565be0fc6",
+    "sync_bundle.py": "17a583d8ec5a928a88b29d35233d0ea2c13b3cd77cd6cdaf56057cdc201f31a8",
+    "test_audit_regressions.py": "cf7fd2b5a9f13f2a5ad1c3d63a15609764194c954aa267d5e332165ce9e21b62",
+    "test_bundle_portability.py": "6729ba8dc8c1ad3960b85332d953428fabae4eb1754dc840c30485eccd8e19db",
+    "test_deep_regressions.py": "d7508925e0e1b25f1720f236fd34b98358c106ea34488a49aadd21ebe335147f",
+    "test_prompt_contracts.py": "4d87f11d4cc8772ea783f021f417621f2ead93b844d520c2b20fd55f1e9d77ff",
+    "test_spatial_geometry.py": "6e7e179a94d65e392c9aa378485e183cc2073df10302936b9cc26bb44c44527a"
+  },
+  "media_generation": "NOT_RUN",
+  "video_normal_speed_review": "NOT_RUN",
+  "limitations": [
+    "Small task sample, no controlled old/new quality comparison.",
+    "Markdown scanner is a local-dependency subset, not a complete renderer.",
+    "No general YAML parser installed; native entry validation only."
+  ]
+}

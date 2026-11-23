@@ -1,0 +1,46 @@
+{
+  "collection": "{{book-slug}}",
+  "skills_catalog": [
+    {
+      "name": "{{new-or-existing-skill}}",
+      "description": "{{live description}}"
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "new-owner-01",
+      "type": "new_skill_should_own",
+      "prompt": "{{prompt}}",
+      "expected_primary_owner": "{{new-skill}}",
+      "expected_route": ["{{new-skill}}", "{{existing-handoff}}"]
+    },
+    {
+      "id": "existing-owner-lure-01",
+      "type": "existing_skill_should_own",
+      "prompt": "{{prompt}}",
+      "expected_primary_owner": "{{existing-skill}}",
+      "expected_route": ["{{existing-skill}}"]
+    },
+    {
+      "id": "composed-route-01",
+      "type": "ordered_composition",
+      "prompt": "{{prompt}}",
+      "expected_primary_owner": "{{owner}}",
+      "expected_route": ["{{upstream}}", "{{owner}}", "{{downstream}}"]
+    },
+    {
+      "id": "low-risk-skip-01",
+      "type": "low_risk_skip",
+      "prompt": "{{prompt}}",
+      "forbidden_skills": ["{{project-level-skill}}"],
+      "expected_primary_owner": "{{simple-existing-owner}}",
+      "expected_route": ["{{simple-existing-owner}}"]
+    }
+  ],
+  "output_schema": {
+    "id": "string",
+    "primary_owner": "skill name or none",
+    "route": ["0-3 ordered skill names"],
+    "reason": "one sentence grounded in control surface and handoff"
+  }
+}

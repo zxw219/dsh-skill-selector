@@ -1,0 +1,31 @@
+{
+  "name": "image-swiss-poster",
+  "version": "1.1.1",
+  "updated_at": "2026-09-28",
+  "status": "active",
+  "maturity_tier": "production",
+  "lifecycle_stage": "production",
+  "review_cadence": "on-change",
+  "target_platforms": [
+    "generic",
+    "agent-skills-compatible",
+    "vscode"
+  ],
+  "target_models": [
+    "GPT Image 2",
+    "GPT Image 2.5 (Flare / Sunburst)"
+  ],
+  "output_contract": "完整、可直接复制的生图提示词（不截断、不省略、不用占位符）",
+  "factory_components": [
+    "references",
+    "examples"
+  ],
+  "release_gates": [
+    "source_backup",
+    "anchor_assertions",
+    "sample_image_integrity",
+    "visual_verification",
+    "trigger_eval",
+    "validate_skill"
+  ]
+}

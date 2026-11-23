@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "output": "C:\\Users\\宋\\Documents\\ChatGPT\\异物\\剧情提示词优化_20261024\\package-check",
+  "archive": "C:\\Users\\宋\\Documents\\ChatGPT\\异物\\剧情提示词优化_20261024\\package-check.zip",
+  "source_files_verified": 503,
+  "distribution_and_zip_files_verified": 5185,
+  "archive_crc_verified": true,
+  "archive_sha256": "b99547a97fd4362ddb8bf05c2448b3f012c295176c833b7f9e688aeb625e13b1",
+  "creative_sources_unchanged_since_forward_test": true,
+  "standard_skill_validator": {
+    "an-workflow": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-scene-direction": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-action-design": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-performance-direction": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-composition-design": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-camera-path": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-vfx-design": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-impact-frame": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-sound-timing": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-continuity-assets": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-prompt-compilation": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-quality-review": {
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    "an-seedance-25": {
+      "passed": true,
+      "message": "Skill is valid!"
+    }
+  },
+  "package_validation": {
+    "passed": true,
+    "functional_skills": 12,
+    "original_skills": 11,
+    "self_contained_module_links": 19811,
+    "all_skill_links": 21430,
+    "section_anchors_validated": true,
+    "portable_checker_entrypoints": 12,
+    "individual_archives_verified": 13,
+    "scope": "File/entry/reference/section-anchor/ZIP validation; no model behavior or generated media test."
+  },
+  "scope": "Actual source/distribution/archive bytes, metadata and frozen creative source identity; no generated media validation."
+}

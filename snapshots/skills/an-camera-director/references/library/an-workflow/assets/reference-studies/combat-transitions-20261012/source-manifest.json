@@ -1,0 +1,18 @@
+{
+  "date_shanghai": "2026-10-12",
+  "sources": [
+    {
+      "original_path": "D:\\素材\\工作流全部skill\\新\\兵器技法资料库_修仙高级剑招专项.md",
+      "archive": "an-workflow/assets/reference-studies/combat-transitions-20261012/supplied-sword-techniques.md",
+      "sha256": "2d5649f74c5b1621dca03b3d8ea16a2d1b0e4142486746d27709e06de14727af",
+      "bytes": 18500
+    },
+    {
+      "original_path": "D:\\素材\\工作流全部skill\\新\\AI分镜转场Skill_独立完整版 (1).txt",
+      "archive": "an-workflow/assets/reference-studies/combat-transitions-20261012/supplied-transitions.txt",
+      "sha256": "1c02a1f1f6de88b4a31278d73a6df25d0b2e86f61b5c1ffe70462eca35cc8041",
+      "bytes": 25702
+    }
+  ],
+  "interpretation": "Reference data, not current user instructions; no media generation performed."
+}

@@ -1,0 +1,7 @@
+﻿interface:
+  display_name: "RPG Workflow Dashboard"
+  short_description: "可视化多线程工作流与通关结算看板"
+  brand_color: "#55D6FF"
+  default_prompt: "Use $rpg-workflow-dashboard to set up a visual multi-thread workflow board with an RPG-style progress map and completion screen."
+policy:
+  allow_implicit_invocation: true

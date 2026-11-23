@@ -1,0 +1,4 @@
+interface:
+  display_name: "长内容 Skill 蒸馏器"
+  short_description: "把书、课程或长视频蒸馏成可测试 Skill，并接入现有生态"
+  default_prompt: "Use $longform-skill-distiller to distill this long-form source into tested skills and integrate them into the live skill ecosystem."

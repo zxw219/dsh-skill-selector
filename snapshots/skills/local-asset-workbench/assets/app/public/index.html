@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>生成资产工作台</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">创</div>
+      <div>
+        <h1>生成资产工作台</h1>
+        <p>项目素材与生成归档</p>
+      </div>
+    </div>
+
+    <div id="sidebarLayout" class="sidebar-layout">
+      <details class="sidebar-module collapsible-section" data-section-id="projects" open>
+        <summary class="section-summary">
+          <span class="sidebar-module-grip" draggable="true" title="拖动调整模块顺序">⠿</span>
+          <span class="section-title">项目</span>
+          <span class="section-note">项目可拖动</span>
+        </summary>
+        <div class="sidebar-module-body">
+          <div id="projectList" class="case-list project-folder-list"></div>
+          <details class="add-project">
+            <summary>添加项目</summary>
+            <input id="projectNameInput" type="text" placeholder="项目名，如 15秒微短剧系列">
+            <input id="projectPathInput" type="text" placeholder="C:\项目\项目文件夹">
+            <input id="projectScanRootsInput" type="text" value="." placeholder="扫描目录，逗号分隔；. 表示项目根目录">
+            <button id="addProjectButton">添加并监听</button>
+          </details>
+        </div>
+      </details>
+
+      <details class="sidebar-module collapsible-section" data-section-id="directory" open>
+        <summary class="section-summary">
+          <span class="sidebar-module-grip" draggable="true" title="拖动调整模块顺序">⠿</span>
+          <span class="section-title">项目目录</span>
+        </summary>
+        <div id="caseList" class="case-list case-folder-list sidebar-module-body"></div>
+      </details>
+
+      <details class="sidebar-module collapsible-section" data-section-id="views">
+        <summary class="section-summary">
+          <span class="sidebar-module-grip" draggable="true" title="拖动调整模块顺序">⠿</span>
+          <span class="section-title">资产视图</span>
+        </summary>
+        <div class="filter-list sidebar-module-body" id="categoryFilters">
+          <button data-category="videoResult">视频结果</button>
+          <button data-category="generatedAsset">生成资产</button>
+          <button data-category="reference">输入参考</button>
+          <button data-category="reverse">视频反推/抽帧</button>
+          <button data-category="audio">音频资产</button>
+          <button data-category="" class="active">全部资产</button>
+        </div>
+      </details>
+
+      <details class="sidebar-module collapsible-section" data-section-id="status">
+        <summary class="section-summary">
+          <span class="sidebar-module-grip" draggable="true" title="拖动调整模块顺序">⠿</span>
+          <span class="section-title">状态筛选</span>
+        </summary>
+        <div class="filter-list sidebar-module-body" id="statusFilters">
+          <button data-status="" class="active">全部</button>
+          <button data-status="可用">可用</button>
+          <button data-status="局部可用">局部可用</button>
+          <button data-status="参考可用">参考可用</button>
+          <button data-status="暂存">暂存</button>
+          <button data-status="丢弃">丢弃</button>
+          <button data-status="待用户判断">待判断</button>
+        </div>
+      </details>
+
+      <details class="sidebar-module collapsible-section" data-section-id="types">
+        <summary class="section-summary">
+          <span class="sidebar-module-grip" draggable="true" title="拖动调整模块顺序">⠿</span>
+          <span class="section-title">类型筛选</span>
+        </summary>
+        <div class="filter-list sidebar-module-body" id="typeFilters">
+          <button data-type="" class="active">全部类型</button>
+          <button data-type="video">视频</button>
+          <button data-type="image">图片</button>
+          <button data-type="audio">音频</button>
+          <button data-type="contact">接触表</button>
+          <button data-type="frame">抽帧</button>
+        </div>
+      </details>
+
+      <details class="sidebar-module collapsible-section" data-section-id="settings">
+        <summary class="section-summary">
+          <span class="sidebar-module-grip" draggable="true" title="拖动调整模块顺序">⠿</span>
+          <span class="section-title">工作台设置</span>
+        </summary>
+        <div class="refresh-box sidebar-module-body">
+          <label><input id="workflowEnabled" type="checkbox" checked> 生产任务启用</label>
+          <label><input id="autoRefresh" type="checkbox" checked> 空闲时自动刷新</label>
+          <label><input id="compactReverse" type="checkbox" checked> 反推精简显示</label>
+          <button id="refreshButton">刷新</button>
+          <p id="refreshStatus">等待加载</p>
+        </div>
+      </details>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h2 id="caseTitle">资产看板</h2>
+        <p id="assetCount">0 个资产</p>
+      </div>
+      <div class="toolbar">
+        <button id="generationButton" class="generation-open">生成任务</button>
+        <button id="automationButton" class="automation-open">下载收件箱</button>
+        <input id="searchInput" type="search" placeholder="搜索文件名、版本、路径、备注">
+        <select id="sortSelect">
+          <option value="newest">最新</option>
+          <option value="oldest">最早</option>
+          <option value="name">文件名</option>
+          <option value="size">大小</option>
+        </select>
+      </div>
+    </header>
+
+    <section id="assetGrid" class="asset-grid"></section>
+  </main>
+
+  <aside class="inspector">
+    <div class="inspector-head">
+      <h2 id="detailName">未选择资产</h2>
+      <div class="inspector-actions">
+        <button id="quickMoveAsset" type="button" title="移动素材（快捷键 M）" hidden>移动</button>
+        <button id="closeDetail" type="button" title="清空选择">×</button>
+      </div>
+    </div>
+    <div id="detailPreview" class="detail-preview"></div>
+    <div id="detailBody" class="detail-body muted">选择一个资产查看详情</div>
+  </aside>
+
+  <dialog id="moveAssetDialog" class="automation-dialog move-asset-dialog">
+    <form method="dialog" class="dialog-head">
+      <div>
+        <h2>移动素材</h2>
+        <p>选择新的项目和文件夹；提示词、元数据与用户判断会一起移动。</p>
+      </div>
+      <button value="cancel" class="dialog-close" aria-label="关闭">×</button>
+    </form>
+    <div class="automation-content">
+      <section class="automation-section">
+        <div id="moveAssetSummary" class="move-asset-summary"></div>
+        <div class="form-grid">
+          <label>目标项目
+            <select id="moveTargetProject"></select>
+          </label>
+          <label>目标文件夹
+            <select id="moveTargetFolder"></select>
+          </label>
+          <label class="wide">自定义文件夹（可选，填写后优先）
+            <input id="moveCustomFolder" type="text" placeholder="例如 第一集\参考\图片">
+          </label>
+          <label class="wide">文件名
+            <input id="moveTargetName" type="text">
+          </label>
+        </div>
+        <div class="automation-actions">
+          <button id="confirmMoveAsset" type="button" class="primary">移动到这里</button>
+          <button id="cancelMoveAsset" type="button">取消</button>
+        </div>
+        <p id="moveAssetMessage" class="move-asset-message">快捷键：选中素材后按 M。</p>
+      </section>
+    </div>
+  </dialog>
+
+  <dialog id="generationDialog" class="automation-dialog generation-dialog">
+    <form method="dialog" class="dialog-head">
+      <div>
+        <h2>生成任务</h2>
+        <p>先登记项目和提示词；结果出现后自动改名归档，并在旁边保存同名提示词与元数据。</p>
+      </div>
+      <button value="cancel" class="dialog-close" aria-label="关闭">×</button>
+    </form>
+
+    <div class="automation-content generation-content">
+      <section class="automation-section">
+        <div class="section-title">
+          <div>
+            <h3>登记本次生成</h3>
+            <p>Codex 生图会直接收取本地结果；TapNow 可在下载前点“等待下一个结果”。</p>
+          </div>
+        </div>
+        <div class="form-grid generation-form-grid">
+          <label>归属项目
+            <select id="generationProject"></select>
+          </label>
+          <label>常用项目位置
+            <select id="generationProfile"></select>
+          </label>
+          <label>资产类型
+            <select id="generationKind">
+              <option value="image">图片</option>
+              <option value="video">视频</option>
+            </select>
+          </label>
+          <label>生成工具
+            <select id="generationGenerator">
+              <option value="codex-image">Codex 生图</option>
+              <option value="tapnow">TapNow</option>
+              <option value="other">其他</option>
+            </select>
+          </label>
+          <label>集数
+            <input id="generationEpisode" type="text" placeholder="例如 第三集">
+          </label>
+          <label>场景 / 段落
+            <input id="generationScene" type="text" placeholder="例如 千灯梦京">
+          </label>
+          <label>镜头号
+            <input id="generationShot" type="text" placeholder="例如 09 或 S09">
+          </label>
+          <label>用途
+            <input id="generationRole" type="text" placeholder="关键帧、首帧、视频成片……">
+          </label>
+          <label>版本
+            <input id="generationVersion" type="number" min="1" value="1">
+          </label>
+          <label>模型（可选）
+            <input id="generationModel" type="text" placeholder="例如 gpt-image / Seedance">
+          </label>
+          <label class="wide">最终存放位置（项目内，可留空自动安排）
+            <input id="generationDestination" type="text" placeholder="例如 第三集\生成视频\场景A">
+          </label>
+          <label class="wide">最终文件名（不含扩展名，可留空自动命名）
+            <input id="generationNameStem" type="text" placeholder="例如 千灯梦京_09_梦城远景_v003">
+          </label>
+          <label class="wide">本次提示词
+            <textarea id="generationPrompt" placeholder="写入本次实际使用的完整提示词"></textarea>
+          </label>
+          <label class="wide">负向提示词 / 稳定性约束（可选）
+            <textarea id="generationNegative" placeholder="角色、材质、构图、连续性等不能漂移的要求"></textarea>
+          </label>
+        </div>
+        <div class="automation-actions">
+          <button id="createGenerationTicket" type="button" class="primary">只登记任务</button>
+          <button id="createAndArmGeneration" type="button">登记并等待下一个下载</button>
+        </div>
+      </section>
+
+      <section class="automation-section result-section">
+        <div class="section-title">
+          <div>
+            <h3>最近任务</h3>
+            <p id="generationSummary">正在读取</p>
+          </div>
+          <button id="refreshGenerationTickets" type="button">刷新</button>
+        </div>
+        <div id="generationTickets" class="generation-tickets">尚无生成任务。</div>
+      </section>
+    </div>
+  </dialog>
+
+  <dialog id="automationDialog" class="automation-dialog">
+    <form method="dialog" class="dialog-head">
+      <div>
+        <h2>下载收件箱</h2>
+        <p>下载完成后自动复制进项目；清理只处理已验证归档成功的原文件。</p>
+      </div>
+      <button value="cancel" class="dialog-close" aria-label="关闭">×</button>
+    </form>
+
+    <div class="automation-content">
+      <section class="automation-section">
+        <div class="section-title">
+          <div>
+            <h3>自动归档</h3>
+            <p>先完整复制并核对内容；可以选择核对成功后从下载文件夹移走原件。</p>
+          </div>
+          <label class="toggle-line"><input id="inboxEnabled" type="checkbox"> 自动运行</label>
+        </div>
+
+        <div class="form-grid">
+          <label class="wide active-project-field">当前下载项目
+            <select id="activeProfile"></select>
+            <small>通用文件名会进入当前项目；带明确关键词的文件仍会按规则自动识别。</small>
+          </label>
+          <label class="toggle-line wide"><input id="moveAfterArchive" type="checkbox"> 归档校验成功后，从下载文件夹移走原件</label>
+          <label class="wide">下载文件夹
+            <input id="inboxSourcePath" type="text" placeholder="C:\Users\你\Downloads">
+          </label>
+          <label class="legacy-route-field">目标项目
+            <select id="inboxProject"></select>
+          </label>
+          <label>检测间隔（秒）
+            <input id="inboxPollSeconds" type="number" min="5" value="15">
+          </label>
+          <label class="wide legacy-route-field">项目内基础目录
+            <div class="inline-field">
+              <input id="inboxBasePath" type="text" placeholder="例如 02-cases/当前案例；留空则从项目根目录开始">
+              <button id="useCurrentCase" type="button">使用当前案例</button>
+            </div>
+          </label>
+          <label class="legacy-route-field">图片归档到
+            <input id="routeImage" type="text" value="assets/inbox/images">
+          </label>
+          <label class="legacy-route-field">视频归档到
+            <input id="routeVideo" type="text" value="assets/inbox/videos">
+          </label>
+          <label class="legacy-route-field">音频归档到
+            <input id="routeAudio" type="text" value="assets/inbox/audio">
+          </label>
+          <label class="legacy-route-field">其他文件归档到
+            <input id="routeOther" type="text" placeholder="留空表示忽略">
+          </label>
+        </div>
+        <div class="automation-actions">
+          <button id="saveAutomation" type="button" class="primary">保存设置</button>
+          <button id="previewOrganizer" type="button">预览归档</button>
+          <button id="runOrganizer" type="button">立即归档</button>
+        </div>
+      </section>
+
+      <section class="automation-section danger-section">
+        <div class="section-title">
+          <div>
+            <h3>定期清理下载文件夹</h3>
+            <p>第一阶段移入隐藏隔离区；只有单独开启后，隔离期满才永久清空。</p>
+          </div>
+          <label class="toggle-line"><input id="cleanupEnabled" type="checkbox"> 定期执行</label>
+        </div>
+
+        <div class="safety-note">安全范围固定为：已由本工具归档、项目副本仍存在、完整内容核对一致的文件。文件夹和未登记文件永远不动。</div>
+        <div class="form-grid">
+          <label>归档后保留（天）
+            <input id="retentionDays" type="number" min="1" value="30">
+          </label>
+          <label>清理间隔（小时）
+            <input id="cleanupIntervalHours" type="number" min="1" value="24">
+          </label>
+          <label class="wide">隔离区
+            <input id="quarantinePath" type="text">
+          </label>
+          <label class="toggle-line wide"><input id="cleanupDryRun" type="checkbox" checked> 只预演，不实际移动文件</label>
+          <label class="toggle-line wide"><input id="purgeEnabled" type="checkbox"> 隔离 <input id="quarantineDays" class="inline-number" type="number" min="1" value="14"> 天后永久清空</label>
+        </div>
+        <div class="automation-actions">
+          <button id="previewCleanup" type="button">预览清理</button>
+          <button id="runCleanup" type="button" class="danger-button">执行本轮</button>
+        </div>
+      </section>
+
+      <section class="automation-section result-section">
+        <div class="section-title">
+          <div>
+            <h3>本次结果</h3>
+            <p id="automationSummary">尚未运行</p>
+          </div>
+        </div>
+        <div id="automationResult" class="automation-result">打开后可先点“预览归档”或“预览清理”。</div>
+      </section>
+    </div>
+  </dialog>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

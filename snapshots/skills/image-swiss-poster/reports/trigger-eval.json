@@ -1,0 +1,286 @@
+{
+  "ok": true,
+  "threshold": 0.34,
+  "description_concepts": [
+    "character_poster",
+    "swiss_style",
+    "typographic_layout"
+  ],
+  "missing_description_concepts": [],
+  "summary": {
+    "total": 22,
+    "passed": 22,
+    "false_positive": 0,
+    "false_negative": 0,
+    "pass_rate": 1.0
+  },
+  "failures": [],
+  "results": {
+    "should_trigger": [
+      {
+        "prompt": "用瑞士风格给我做一张墨鸦的角色海报，竖版",
+        "family": "core",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "character_poster",
+          "swiss_style"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "要国际主义风格那种竖版角色海报的提示词，完整一条给我",
+        "family": "swiss-alias",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "character_poster",
+          "swiss_style"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "做张超大标题字、带坐标编号的那种杂志封面感角色海报",
+        "family": "typographic",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "character_poster",
+          "typographic_layout"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "把这个角色改成 Editorial 大字海报的提示词",
+        "family": "editorial",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "character_poster",
+          "typographic_layout"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "这张角色图能不能做成瑞士风海报？给我提示词",
+        "family": "from-image",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "character_poster",
+          "swiss_style"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "给我一条 GPT Image 2.5 用的瑞士风角色海报提示词",
+        "family": "model-specific",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "character_poster",
+          "swiss_style"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "角色海报，非对称网格、大面积留白那种，竖版",
+        "family": "grid",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "character_poster",
+          "typographic_layout"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "帮我写一条夜巡人的瑞士主义海报提示词，强调色只要一个",
+        "family": "named-character",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "character_poster",
+          "swiss_style"
+        ],
+        "negative_pattern": null
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "prompt": "帮我做一张电影剧照感的海报，要有大片氛围和光影张力",
+        "family": "cinematic-poster",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.333,
+        "matched_concepts": [
+          "character_poster"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "设计一个角色的三视图设定表，要正面侧面背面",
+        "family": "character-sheet",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.333,
+        "matched_concepts": [
+          "character_poster"
+        ],
+        "negative_pattern": "三视图"
+      },
+      {
+        "prompt": "出一套品牌视觉规范，包含配色、字体和使用场景",
+        "family": "brandkit",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "品牌视觉"
+      },
+      {
+        "prompt": "画一张日漫手绘大色块风格的人设图",
+        "family": "handdrawn-anime",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "帮我做一份 30 页的 AIGC 课程 PPT",
+        "family": "deck",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "ppt"
+      },
+      {
+        "prompt": "做条海报动效视频，要 6 秒",
+        "family": "video",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.333,
+        "matched_concepts": [
+          "character_poster"
+        ],
+        "negative_pattern": "视频"
+      },
+      {
+        "prompt": "帮我把这张照片做个人像精修的修图提示词",
+        "family": "image-edit",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "修图"
+      },
+      {
+        "prompt": "今天天气怎么样",
+        "family": "unrelated",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "天气"
+      }
+    ],
+    "near_neighbor": [
+      {
+        "prompt": "帮我做一张电影剧照感的人物主视觉海报",
+        "family": "cinematic-poster-designer",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.333,
+        "matched_concepts": [
+          "character_poster"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "出一套品牌配色和字体规范，我要做系列海报",
+        "family": "brandkit",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.333,
+        "matched_concepts": [
+          "character_poster"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "把这张海报上的英文标题翻译成中文",
+        "family": "text-replace",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.333,
+        "matched_concepts": [
+          "character_poster"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "帮我把这个 skill 安装到技能库",
+        "family": "install",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "安装到技能库"
+      },
+      {
+        "prompt": "给我一份角色设定表，含身高体重性格",
+        "family": "character-cast",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.333,
+        "matched_concepts": [
+          "character_poster"
+        ],
+        "negative_pattern": "设定表"
+      },
+      {
+        "prompt": "帮我把这个海报模板套进 PPT 封面",
+        "family": "deck",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.333,
+        "matched_concepts": [
+          "character_poster"
+        ],
+        "negative_pattern": "ppt"
+      }
+    ]
+  }
+}

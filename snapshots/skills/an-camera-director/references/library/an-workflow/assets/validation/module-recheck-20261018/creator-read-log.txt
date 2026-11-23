@@ -1,0 +1,61 @@
+功能技能前向文本试用读取日志
+执行日期：2026-10-18
+执行对象：T01、T02、T03、T04；按 trial-spec.json 顺序逐案完成，各案只写一次首次完整产出，未覆盖或多轮追改。
+
+共同任务输入
+- C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/trial-spec.json
+  实际读取全文。工具输出未截断（exec_command 原始1096 tokens）。四案均使用本文件各自 request。
+- 最初仅用 Test-Path 检查 tested-bundle/package-manifest.json 是否存在，未读取其内容，三次结果均 False。
+- 收到父任务更正后改为仅等 forward-bundle/ready.json；三次 False，第四次 True。随后才读取技能。
+
+额外读取与截断偏差（透明记录）
+- C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/forward-bundle/ready.json
+  ready.json 出现后，误将此文件与 T01 的 SKILL.md 放在同一次 Get-Content 命令中读取。该文件是大型构建清单，输出包含模块来源路径、哈希、构建说明与 review-spec.md 的文件名/哈希；没有读取 review-spec.md 正文。此次 exec_command 报原始68414 tokens并发生截断，外层 functions.exec 输出亦显示截断。未继续展开清单或读取清单所列维护记录、旧稿、审阅标准、其他测试结论或作者说明文件。
+  T01 SKILL.md 在该次输出尾部可见，随后已单独完整重读，见下。
+
+T01
+实际读取：
+1. 共同 trial-spec.json 的 T01 request。
+2. C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/forward-bundle/skills/an-camera-path/SKILL.md
+   初次与 ready.json 合读的工具输出截断；随后单独全文重读，未截断（2675 tokens）。
+3. C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/forward-bundle/skills/an-camera-path/references/library/cinematic-camera-design/references/camera-execution.md
+   读取全文，未截断（7155 tokens）。未读取其维护追溯链接或练习文件。
+产出：C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/evidence/T01.txt
+写入方式：CreateNew，首次写入成功。随后仅查询文件路径和长度；未读取或覆盖产出正文。
+
+T02
+实际读取：
+1. 共同 trial-spec.json 的 T02 request。
+2. C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/forward-bundle/skills/an-vfx-design/SKILL.md
+   读取全文，未截断（1938 tokens）。
+3. C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/forward-bundle/skills/an-vfx-design/references/library/an-workflow/references/vfx-finishing.md
+   读取全文，未截断（5966 tokens）。
+4. C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/forward-bundle/skills/an-vfx-design/references/library/an-workflow/references/particle-spell-design.md
+   读取全文，未截断（4903 tokens）。未打开其网页来源或其他参考链接。
+产出：C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/evidence/T02.txt
+写入方式：CreateNew，首次写入成功。随后仅查询文件路径和长度；未读取或覆盖产出正文。
+
+T03
+实际读取：
+1. 共同 trial-spec.json 的 T03 request。
+2. C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/forward-bundle/skills/an-sound-timing/SKILL.md
+   读取全文，未截断（1602 tokens）。
+3. C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/forward-bundle/skills/an-sound-timing/references/library/an-workflow/references/production-controls.md
+   读取全文，未截断（3967 tokens）。未打开其其他参考链接。
+产出：C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/evidence/T03.txt
+写入方式：CreateNew，首次写入成功。随后仅查询文件路径和长度；未读取或覆盖产出正文。
+
+T04
+实际读取：
+1. 共同 trial-spec.json 的 T04 request。
+2. C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/forward-bundle/skills/an-quality-review/SKILL.md
+   读取全文，未截断（3332 tokens）。仅用本页核心规则完成指定局部检查，未打开扩展参考或检查脚本。
+产出：C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-recheck-20261018/evidence/T04.txt
+写入方式：CreateNew，首次写入成功。随后仅查询文件路径和长度；未读取或覆盖产出正文。
+
+范围与无法完成项
+- 四案文字任务均已完成；未作维护成功与否的判断。
+- 只使用上述被测包入口及各案包内局部链接参考；未读取已安装其他版本。
+- 未联网、上传、调用媒体生成或付费工具、安装软件；未修改技能源文件。
+- 未进行视频生成、音轨试听、预演、渲染或成片验证。本任务只要求文字，因此这些不列为已完成验证。
+- 存在上述 ready.json 额外读取及截断偏差，不能将本次读取过程描述为完全没有偏差；未因此改写、覆盖或补交首次产出。

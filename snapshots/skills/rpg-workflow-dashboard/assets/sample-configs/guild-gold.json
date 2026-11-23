@@ -1,0 +1,23 @@
+﻿{
+  "meta": {
+    "theme": {
+      "bg0": "#150d08",
+      "bg1": "#2b1a10",
+      "panel": "#26190e",
+      "line": "#8a6234",
+      "cream": "#fff0c2",
+      "muted": "#c9a978",
+      "cyan": "#ffd166",
+      "green": "#b9f07a",
+      "amber": "#f6b44b",
+      "violet": "#e1b7ff"
+    },
+    "labels": {
+      "mapTitle": "公会路线",
+      "partyTitle": "冒险小队",
+      "narrationTitle": "书记官记录",
+      "clearRibbon": "QUEST CLEAR",
+      "clearKicker": "公会委托 · 完成结算"
+    }
+  }
+}

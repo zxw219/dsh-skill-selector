@@ -1,0 +1,5 @@
+txtai==9.11.0
+transformers==5.13.0
+torch==2.13.0
+faiss-cpu==1.14.3
+numpy==2.5.1

@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-24",
+  "scope": "Independent cold text creation and anonymous review; no generated media",
+  "baseline_tasks": [
+    "A",
+    "B"
+  ],
+  "candidate_tasks": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "anonymous_mapping": {
+    "A-M.txt": "candidate-A.txt",
+    "A-X.txt": "baseline-A.txt",
+    "B-N.txt": "baseline-B.txt",
+    "B-Y.txt": "candidate-B.txt",
+    "C-Z.txt": "candidate-C.txt",
+    "D-W.txt": "candidate-D.txt"
+  },
+  "review_hard_contradictions": 0,
+  "review_confirmed_missing_conditions": 0,
+  "timing_risks": [
+    {
+      "artifact": "candidate-A.txt",
+      "interval": "17.5-25",
+      "status": "requires actual staging/timing"
+    },
+    {
+      "artifact": "baseline-A.txt",
+      "interval": "8-14",
+      "status": "requires actual staging/timing"
+    },
+    {
+      "artifact": "baseline-B.txt",
+      "interval": "27-30",
+      "status": "requires actual staging/timing"
+    },
+    {
+      "artifact": "candidate-B.txt",
+      "interval": "20-28",
+      "status": "requires actual staging/timing"
+    }
+  ],
+  "overall_superiority_established": false,
+  "C_and_D_meet_text_task": true,
+  "media_generation": false,
+  "normal_speed_playback_or_voice_readthrough": false,
+  "creative_source_manifest": "candidate-v1-sha256.json",
+  "raw_outputs_sha256": {
+    "candidate-A.txt": "f4bffee31823b446440a59f6448f29e0e083eb50fae8e568baa5d5e5f557cd44",
+    "baseline-A.txt": "40b5aac13e30e1f19fe05577d5aa7e15802aabe983b9197f86d3783b0e3444c6",
+    "baseline-B.txt": "58f3e8115a755d3fd1ebc168f5dbfbc497ed669c5767c2b6a018308bc77c9b9a",
+    "candidate-B.txt": "d419ee0be6e7fac3e6fc27a49ee1f5a616cdf2d51cddc34b841a02f19acdd67c",
+    "candidate-C.txt": "25d5501e60ec5d3b9ab8fbd32e3de378f5e9e9543b2ac1e7e6ae7f9b996e89e0",
+    "candidate-D.txt": "7e754745fbaaea3a72fd0475d069d6750f5275ff28c7452db9cafc91c2664c45"
+  },
+  "review_sha256": "6f4ed6d49835f42ecb9f50f3645c8c6c76a46d03e7d692900cc7152d2e75bff7"
+}

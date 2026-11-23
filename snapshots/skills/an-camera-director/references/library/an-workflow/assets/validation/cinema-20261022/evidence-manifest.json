@@ -1,0 +1,33 @@
+{
+  "date_shanghai": "2026-10-22",
+  "input_archive_sha256": "ecea892caaa94e22fde6c36e0aa5e0268abc728ea5516b0a27b9679b8f0b6412",
+  "method": "Two separate authors used the same task with baseline and updated skills; a third author used a fixed-camera transfer task. A separate reviewer saw anonymous outputs and original tasks, without version mapping or source edits.",
+  "limits": "One output per condition. The baseline was frozen. The updated author read the installed source during maintenance; subsequent edits concerned one-take boundary guidance and historical annotations. Not a statistically controlled or generated-media experiment.",
+  "files": {
+    "input-audit.json": "b45eb6efd6ce63a754e33053a4b2bb5dc3ccd0617e21180ad296c302b2483102",
+    "review-brief.md": "a61791b7ecbb58b2b52285613c67bb4c9132fbf93cec52d4242e16cd33faefd5",
+    "baseline-output.md": "a825efd074c5064440a52bb02e386f6e81d169f25ca9250083c9eb19ced2dbb2",
+    "updated-output.md": "55520ed9346bd1c83508a4d2605e369b605a98c3cf8abba3a0e6d04cf32bb609",
+    "transfer-output.md": "60c60140afd578e9fc5a886bc58557f4dc192699a238ed57adcfa4faf87213a9",
+    "anonymous-a.md": "a825efd074c5064440a52bb02e386f6e81d169f25ca9250083c9eb19ced2dbb2",
+    "anonymous-b.md": "55520ed9346bd1c83508a4d2605e369b605a98c3cf8abba3a0e6d04cf32bb609",
+    "anonymous-c.md": "60c60140afd578e9fc5a886bc58557f4dc192699a238ed57adcfa4faf87213a9",
+    "review-mapping.json": "1ed3135f0b90ae4d76f6134fb83a9e26f601cedc92939ac8813345adf45ff20c",
+    "independent-review.md": "82b65aa006f259e32c5497fa34b8b8b15a5f243587f7577e714ce0b169f28a58",
+    "routing-and-headers.json": "420b95870122e43af97070831c2c8292315ec4a3922d8af7ccf30269cb69102c",
+    "trial-output-hashes.json": "687b1f2b9488df9d24f5df32fe054aef4db04de72ff9cd8535bbd55f0bf23952",
+    "quick-validation.json": "309dd01c6a8ffa59ca381b6d89733160293e597216850bd3a158d0924add09b3",
+    "final-transfer-task.md": "9f4b726e9a9da45a77868bda39cc0da12f698eb994d72da31334223244d411a7",
+    "final-transfer-output.md": "eca76d5a0fd5d4fc57545eaada35b9190730df65bf5eba367db88875f2f836e4",
+    "final-transfer-author-review.md": "67d7397730c202117ff4a31ffe057dfd9f3670c7fb9af9794d82689696b8440f"
+  },
+  "no_video_generation": true,
+  "no_normal_speed_video_review": true,
+  "quick_validate": "All four edited skills passed the actual skill-creator quick_validate.validate_skill function. PyYAML 6.0.3 was loaded from an isolated task-local QA dependency directory; no global Python packages were changed.",
+  "post_review_transfer": {
+    "task": "final-transfer-task.md",
+    "output": "final-transfer-output.md",
+    "review": "final-transfer-author-review.md",
+    "review_kind": "Workflow author semantic review, not another independent blind review"
+  }
+}

@@ -17,6 +17,7 @@ window.__ModuleLoader__.load({
       mode: 'Usage mode', single: 'Single skill', combination: 'Combine skills', singleHelp: 'Choose one skill for everyday use.', use: 'Use skill · add to draft', useRequired: 'Choose one available, non-retired skill and describe your task.', useHelp: 'Adds a skill invocation to your draft and saves a record for later review. Check the draft and send when ready.',
       combinationHelp: 'Choose a primary skill and one or more supporting skills, with no selection limit. Supporting skills run in the order shown. Responsibilities are optional.', primarySkill: 'Primary skill', supportingSkills: 'Supporting skills · in order', supportingSkill: 'Supporting skill {count}', responsibility: 'Responsibility (optional, up to 1,000 characters)', responsibilityPlaceholder: 'Describe what this skill should handle…', moveUp: 'Move up', moveDown: 'Move down', remove: 'Remove', combine: 'Generate combined draft preview', combinePreviewHelp: 'Saves a combined record and shows a preview. Add it to the current draft yourself, then send when ready.', combineRequired: 'Choose at least two available, non-retired skills, select a primary skill, and describe your task.', combinedSaved: 'Combined record saved. Review the preview, then add it to your draft when ready.', combinationPreview: 'Combined draft preview', combinationRecord: 'Combined skill record', combinationReview: 'Review the combination as a whole', combinationReviewHelp: 'This rating applies to the whole combination and does not count toward any member’s individual skill rating.', combinationMembers: 'Combination members and responsibilities', responsibilityEmpty: 'No responsibility specified',
       selectedSingle: '{count} / 1 selected', selectedSkills: 'Selected skills',
+      portableDraft: 'External agent mode · reference skill path', portableDraftHint: 'The draft only references the skill folder on this machine so another agent can read it itself. Works for agents with local filesystem access (Codex, Claude Code, Cursor, another DSH session); a browser-only ChatGPT cannot read local paths.',
       familyLanguage: 'en', family: 'Group', familyVisible: '{count} visible skills', familySelected: '{count} selected', familyEntry: 'Main entry', familyWorkflowEntry: 'Workflow entry', 'family.toolbox': 'Toolbox', 'family.workflow': 'Workflow', 'family.category': 'Category',
       'category.image': 'Images', 'category.video': 'Video', 'category.storyboard': 'Storyboards', 'category.execution': 'Generation and tools', 'category.knowledge': 'Filmmaking knowledge', 'category.reverse': 'Reference analysis', 'category.writing': 'Writing', 'category.browser': 'Browser and web', 'category.documents': 'Documents', 'category.3d': '3D and previs', 'category.coding': 'Code and development', 'category.other': 'Other skills',
       skills: 'Skills', history: 'Use and review history', originals: 'Original prompt libraries', originalsHelp: 'Search the full YouMind library in conversation. Open the other original sites when you need their browser interface.',
@@ -46,6 +47,7 @@ window.__ModuleLoader__.load({
       manualMode: '手动技能模式 · 当前会话', manualOn: '已开启 · 白名单自动，其他手动', manualOff: '已关闭 · 使用原生调用规则', manualHelp: '仅对当前会话生效。开启时，白名单技能可自动加载，其他技能需发送选择草稿或开头独立的 /技能名。关闭时使用原生调用规则。已加载内容仍留在历史中。', manualChanged: '当前会话技能调用模式已保存。',
       sessionAllow: '允许当前会话自动加载', defaultAllow: '默认允许未来会话自动加载', allowlistManage: '管理自动技能白名单', sessionAllowlist: '当前会话白名单', defaultAllowlist: '未来会话默认白名单', allowlistCount: '当前会话：{count}', defaultAllowlistCount: '默认：{count}', allowlistEmpty: '暂未允许任何技能自动加载。', defaultAllowlistHelp: '默认更改仅在未来会话首次解析策略时生效，绝不修改当前会话。请单独设置默认复选框。', allowlistSaved: '当前会话白名单已保存。', defaultAllowlistSaved: '默认白名单已保存，当前会话不变。', autoUnavailable: '仅可添加模型可调用的原生技能。技能包与仅用户可调用的技能需手动选择；已存条目仍可移除。', missingSkill: '当前目录中不存在',
       allSkills: '全部技能', details: '详细说明', filters: '筛选', optionalNote: '添加说明（选填）', more: '更多操作', selectedEmpty: '尚未选择技能', readyToUse: '为这次任务准备', starRating: '{count} 星，满分 5 星', savedReview: '评价已保存成功。', selectionHelp: '从下方选择一个技能开始。', combinationSetup: '已选组合 · 职责与顺序', shortUse: '使用 · 加入草稿', shortCombine: '组合预览', shortHistory: '历史', footerSingle: '加入当前草稿，检查后自行发送。', footerCombine: '先检查组合预览，再加入当前草稿。', backToSkills: '返回技能选择',
+      portableDraft: '外部智能体模式 · 草稿只给技能路径', portableDraftHint: '勾选后，草稿只写入技能在本机的路径和参考文件清单，由对方自己读取正文。适用于能访问本机文件的智能体（Codex、Claude Code、Cursor、另一个 DSH 会话）；纯网页版 ChatGPT 读不到本地路径。',
 
       recommend: '帮我挑技能', recommendations: '建议试试', recommendationHelp: '按任务关键词与技能标签匹配，用途匹配，不是效果评分。', recommendationEmpty: '暂未找到建议，可补充任务描述或直接浏览技能。', briefRequired: '请先写下要完成的任务。',
       mode: '使用模式', single: '单独使用', combination: '组合使用', singleHelp: '日常选择 1 个技能使用。', use: '使用技能 · 加入草稿', useRequired: '请选择 1 个可用且未停用的技能，并填写任务。', useHelp: '将技能调用加入草稿，并保存记录供之后评价。检查后自行发送。',
@@ -165,6 +167,17 @@ window.__ModuleLoader__.load({
         catch (_) { return {}; }
       };
       const [expandedFamilies, setExpandedFamilies] = React.useState(readFamilyState);
+      const portableKey = NS + ':portable-draft';
+      const [portable, setPortable] = React.useState(() => {
+        try { return window.localStorage.getItem(portableKey) === '1'; } catch (_) { return false; }
+      });
+      const togglePortable = () => {
+        setPortable(value => {
+          const next = !value;
+          try { window.localStorage.setItem(portableKey, next ? '1' : '0'); } catch (_) { /* storage unavailable */ }
+          return next;
+        });
+      };
       // Search expansion is temporary; clearing or changing the query restores normal accordion state.
       const [searchFamilies, setSearchFamilies] = React.useState({ query: '', expanded: {} });
       const [categoryFilter, setCategoryFilter] = React.useState([]);
@@ -359,7 +372,7 @@ window.__ModuleLoader__.load({
       function combineSkills() {
         if (selected.length < 2 || !selected.includes(primaryId) || !brief.trim()) { setNotice({ error: true, text: t('combineRequired') }); return; }
         const selectedRoles = Object.fromEntries(selected.map(id => [id, (roles[id] || '').trim().slice(0, 1000)]));
-        void operate('combine', { action: 'combine', ids: selected, primaryId, roles: selectedRoles, brief: brief.trim() }, payload => {
+        void operate('combine', { action: 'combine', ids: selected, primaryId, roles: selectedRoles, brief: brief.trim(), portable }, payload => {
           if (!payload.trial || payload.trial.kind !== 'combination' || typeof payload.prompt !== 'string' || !payload.prompt.trim()) throw new Error(t('unknownResponse'));
           setUsageRecords([{ ...payload.trial, prompt: payload.prompt }]);
           return [t('combinedSaved'), text(payload.notice)].filter(Boolean).join(' ');
@@ -379,7 +392,7 @@ window.__ModuleLoader__.load({
         if (selected.length !== 1 || !brief.trim()) { setNotice({ error: true, text: t('useRequired') }); return; }
         // Capture the exact conversation draft before the Host request can change focus or finish later.
         const captured = captureDraft();
-        void operate('use', { action: 'use', skillId: selected[0], brief: brief.trim() }, async payload => {
+        void operate('use', { action: 'use', skillId: selected[0], brief: brief.trim(), portable }, async payload => {
           if (!payload.trial || typeof payload.prompt !== 'string' || !payload.prompt.trim()) throw new Error(t('unknownResponse'));
           setUsageRecords([{ ...payload.trial, prompt: payload.prompt }]);
           const message = await insertDraft(payload.prompt, captured);
@@ -626,6 +639,9 @@ window.__ModuleLoader__.load({
         target && connection === 'ready' && tab !== 'history' && h('footer', { className: 'pw-actionbar', 'aria-label': t('selectedSkills') },
           h('div', { className: 'pw-row pw-between' }, h('div', { className: 'pw-selection-summary' }, h('strong', { title: selectedTitles.join(' · ') }, selected.length ? selectedTitles.join(' · ') : t('selectedEmpty')), h('span', { className: 'pw-muted' }, t(combination ? 'selectedCount' : 'selectedSingle', { count: selected.length }))), h(Button, { quiet: true, disabled: !selected.length || !!busy, onClick: () => setSelected([]) }, t('clear'))),
           h('div', { className: 'pw-segmented', role: 'group', 'aria-label': t('mode') }, ['single', 'combination'].map(value => h(Button, { key: value, disabled: !!busy, 'aria-pressed': mode === value, onClick: () => changeMode(value) }, t(value)))),
+          h('label', { className: 'pw-row pw-portable', title: t('portableDraftHint') },
+            h('input', { type: 'checkbox', checked: portable, disabled: !!busy, onChange: togglePortable }),
+            h('span', { className: 'pw-muted' }, t('portableDraft'))),
           h('div', { className: 'pw-actions' }, combination ? h(Button, { primary: true, disabled: disabled || selected.length < 2 || !selected.includes(primaryId) || !brief.trim(), onClick: combineSkills }, t('shortCombine')) : h(Button, { primary: true, disabled: disabled || selected.length !== 1 || !brief.trim(), onClick: useSkill }, t('shortUse'))),
           h('p', { className: 'pw-help' }, t(!selected.length ? 'selectionHelp' : !brief.trim() ? 'briefRequired' : combination ? 'footerCombine' : 'footerSingle'))));
     }

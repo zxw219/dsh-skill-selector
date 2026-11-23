@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "retrieved_utc": "2026-07-16T15:30:00Z",
+  "policy": "Bundle only assets whose source page states CC0. Retain source page, direct download URL, and source archive hash when available.",
+  "sources": [
+    {
+      "id": "kenney-impact",
+      "title": "Impact Sounds 1.0",
+      "creator": "Kenney",
+      "source_page": "https://kenney.nl/assets/impact-sounds",
+      "download_url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "archive_sha256": "029D734AF1582474EDF3A694D1B0CEBC97C1C152F2F39FA34D4C2BAFC5DE77F8"
+    },
+    {
+      "id": "kenney-interface",
+      "title": "Interface Sounds 1.0",
+      "creator": "Kenney",
+      "source_page": "https://kenney.nl/assets/interface-sounds",
+      "download_url": "https://kenney.nl/media/pages/assets/interface-sounds/fa43c1dd4d-1677589452/kenney_interface-sounds.zip",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "archive_sha256": "F2193D072726D6758A5F7871B2DCC54DCCE0D5C35C6F0A62F92549B327C81232"
+    },
+    {
+      "id": "kenney-digital",
+      "title": "Digital Audio 1.0",
+      "creator": "Kenney",
+      "source_page": "https://kenney.nl/assets/digital-audio",
+      "download_url": "https://kenney.nl/media/pages/assets/digital-audio/216eac4753-1677590265/kenney_digital-audio.zip",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "archive_sha256": "24E6CE28B76A6D8C89CFF4D331E0965FF5C3DE8A73C612028E9D363CC64E4F06"
+    },
+    {
+      "id": "kenney-rpg",
+      "title": "RPG Audio 1.0",
+      "creator": "Kenney",
+      "source_page": "https://kenney.nl/assets/rpg-audio",
+      "download_url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "archive_sha256": "6DBEAF8544DA958D8F2ADCB4A4A4B76C1ADE34A05F8AB9EDCCD327DA7375F38B"
+    },
+    {
+      "id": "oga-swishes",
+      "title": "Swishes Sound Pack",
+      "creator": "artisticdude",
+      "source_page": "https://opengameart.org/content/swishes-sound-pack",
+      "download_url": "https://opengameart.org/sites/default/files/swishes.zip",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "archive_sha256": "7980215241B739A787DCF26F660CE510BB237900968789395A86911619795693"
+    },
+    {
+      "id": "oga-air-whoosh",
+      "title": "Air whoosh",
+      "creator": "pyranostudios",
+      "source_page": "https://opengameart.org/content/air-whoosh",
+      "download_url": "https://opengameart.org/sites/default/files/whoosh2_0.wav",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "archive_sha256": "D3FBFF5BB78B289AF16B2DFA29083F07EF83B0CBAFF4514C48DFDA16D082B468"
+    },
+    {
+      "id": "oga-wind",
+      "title": "Wind",
+      "creator": "IgnasD",
+      "source_page": "https://opengameart.org/content/wind",
+      "download_url": "https://opengameart.org/sites/default/files/wind.zip",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "archive_sha256": "8F6185F6EB836A5C35C492E8DABD276E507BA3E4DCA0E7D551D04C689D0C0D63"
+    }
+  ]
+}

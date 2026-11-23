@@ -1,0 +1,15 @@
+interface:
+  display_name: "冲击帧导演"
+  short_description: "冲击帧提示词工程：三口径、力学四式、极端透视、空气有质量感、笔触模块与双值配色"
+  default_prompt: "Use $image-impact-frame to design and compile an impact-frame image prompt with a force architecture, extreme perspective, air with mass, and a two-value palette."
+
+compatibility:
+  adapter_targets:
+    - generic
+    - agent-skills-compatible
+  model_neutral: true
+  target_models_verified:
+    - "Midjourney V8.2"
+
+policy:
+  allow_implicit_invocation: true

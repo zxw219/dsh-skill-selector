@@ -1,0 +1,55 @@
+{
+  "algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "reference-lut-generator/SKILL.md",
+      "bytes": 7358,
+      "sha256": "ffa31dedb5125a2470ba5250c8fd5ac1807472455960e4a8a303c3f6ae9326f4"
+    },
+    {
+      "path": "reference-lut-generator/agents/openai.yaml",
+      "bytes": 404,
+      "sha256": "1b8bfba65a21975ae0faa55bec621f221b6fcf27051caf8ba71cd498810c041b"
+    },
+    {
+      "path": "reference-lut-generator/scripts/grade_engine.py",
+      "bytes": 21297,
+      "sha256": "06f51b9685c03d88ac520729a7eed4c1fd8e9514f07cf2fff06a699c52b45e0e"
+    },
+    {
+      "path": "reference-lut-generator/scripts/media_tools.py",
+      "bytes": 27752,
+      "sha256": "6e73cad78e813bcb72ddeb2dacba9ac6c952effb8ca7f25ab69de3ed1548fd25"
+    },
+    {
+      "path": "reference-lut-generator/references/workflow.md",
+      "bytes": 4780,
+      "sha256": "b9239e5be608f5a32824d00511da00aeb9dda3c8715f92b24c00aae5499d9ecf"
+    },
+    {
+      "path": "reference-lut-generator/references/delivery.md",
+      "bytes": 3397,
+      "sha256": "73d77f9634366290f9b4abbdfb374d4a32921438c48efc1a5902fedadff88392"
+    },
+    {
+      "path": "reference-lut-generator/references/recipe-schema.md",
+      "bytes": 7044,
+      "sha256": "2fd1f87c993b6fb86c12021e55f2acaea640f3f788f17f40e2f058bfdb15d9f6"
+    },
+    {
+      "path": "reference-lut-generator/references/media-tools.md",
+      "bytes": 6919,
+      "sha256": "94cd88034c60f96c069b8a19ddf8796f7822327dd67eec5395aeeefeb1965f33"
+    },
+    {
+      "path": "reference-lut-generator/references/neutral-recipe.json",
+      "bytes": 563,
+      "sha256": "ef88808dcfadc34ea083ceff86b06b9e4334c59e515aec3392e2a3d311600d85"
+    },
+    {
+      "path": "reference-lut-generator/references/chunye-example.json",
+      "bytes": 1139,
+      "sha256": "60b819bc24c74533ac7dadab876990289d74f168d5022e33b1bba13970059a30"
+    }
+  ]
+}

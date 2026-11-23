@@ -1,0 +1,6 @@
+interface:
+  display_name: "Source Evidence Auditor｜信源证据审计器"
+  short_description: "Claim–evidence audit｜结论与信源证据链审计"
+  default_prompt: "Use $source-evidence-auditor to audit the evidence behind my claims and produce a repair plan."
+policy:
+  allow_implicit_invocation: true

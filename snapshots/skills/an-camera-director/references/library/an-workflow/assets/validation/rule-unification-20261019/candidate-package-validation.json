@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "functional_skills": 12,
+  "original_skills": 11,
+  "self_contained_module_links": 17181,
+  "all_skill_links": 18569,
+  "section_anchors_validated": true,
+  "portable_checker_entrypoints": 12,
+  "individual_archives_verified": 13,
+  "scope": "File/entry/reference/section-anchor/ZIP validation; no model behavior or generated media test."
+}

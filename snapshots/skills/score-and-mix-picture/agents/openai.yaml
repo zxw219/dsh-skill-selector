@@ -1,0 +1,4 @@
+interface:
+  display_name: "成片配乐、音效与自动混音"
+  short_description: "识别成片节奏，设计配乐与音效并完成自动剪辑、混音和音轨交付"
+  default_prompt: "使用 $score-and-mix-picture 分析这支成片，设计配乐与音效，并在我回传音乐后完成对画剪辑和完整混音。"

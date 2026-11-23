@@ -1,0 +1,47 @@
+候选 An工作流：独立前向文本试用读取与完成记录
+
+试用入口：C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-modules-study-20261018-145236/candidate-source/an-workflow/SKILL.md
+任务来源：C:/Users/宋/Documents/ChatGPT/提示词1/.maintenance/an-modules-study-20261018-145236/evidence/trial-spec.json 中 tasks 21、22、23、24。
+
+读取边界：仅读取该 trial-spec.json，以及下列 candidate-source 内直接相关技能文件。未读取其他维护目录、学习报告、历史版本、原计划或其他代理产物；未调用外部检索、生成、上传或安装工具；未编辑候选技能来源。
+
+实际读取的技能文件（均相对于 candidate-source）：
+1. an-workflow/SKILL.md
+   读取入口全文请求，初次工具合并返回被截断，实际按可见的任务对象、分流、默认声画模板、按需读取、声音及能力边界等规则执行；未把不可见部分算作已理解内容。适用于21—24。
+2. an-workflow/references/drama.md
+   全文。用于21的原词对白、倾听与行为变化、表盒操作、道具支点、关系覆盖和结尾任务变化。
+3. an-workflow/references/scene-design.md
+   全文；合并调用中的截断部分随后单独完整读取。用于21、23的场景、注意、声源、调度和媒介；22、24沿用相关空间与状态原则。
+4. dance-video-director/SKILL.md
+   全文；合并调用中的截断部分随后单独完整读取。用于24；静音要求优先于默认配乐建议。
+5. spectacle-impact-direction/references/giant-pressure-manifestation.md
+   全文。用于23的局部巨物、已知参照、小动作转向与注视关系；没有追加攻击、破坏或反杀。
+6. an-workflow/references/ability-led-combat-direction.md
+   全文。用于22的单能力控制博弈、持续操控占用、作用端与承受端共时。
+7. an-workflow/references/fight-default-contract.md
+   全文。用于22的人物、能力、攻防因果、有效保持、blocking与真实切接。
+8. an-workflow/references/subsecond-action-timing.md
+   全文。用于22的一位小数镜头包络与绝对事件锚点；其他项也保持明确时间连续。
+9. spectacle-impact-direction/SKILL.md
+   全文。用于23，按非攻击巨物揭示取尺度、材质、观看和状态职责，没有将其编成战斗场面。
+10. dance-video-director/references/movement-performance-camera.md
+   先检索标题，再读取行1—49、94—106、131—138。用于24的连续舞句、双方发起与接收、半圆换位、先承接后侧倾、恢复、全身固定拍法和衣物随动。
+11. cinematic-camera-design/references/camera-execution.md
+   先检索标题，再读取行1—13、25—34、63—69、96—167。用于21—23的注意对象、实际取景、控制与关系覆盖、固定/移动选择；24遵守已锁固定全身一镜。
+12. combat-action-design/references/action-module-bank.md
+   先检索标题，再读取行1—27、101—118、131—143、157—170、198—221。用于22的软绳受阻与回收、持续控制与身体资源、触物生效、支撑变化和受阻出口；未套用与角色不相容的新兵器或新法术。
+13. an-workflow/references/final-check.md
+   先检索标题，再请求读取行1—86、174—190、265—278、304—308、332—347。该合并返回有部分截断，实际只采用可见的从成品取证、局部依赖、巨物和舞蹈等内容；没有将本次读取描述为全文件审计。用于四项交稿前作者自阅，未运行检查器。
+14. an-workflow/references/dance-transfer-direction.md
+   全文。用于24的静音继承、身体事件与各栏目同次、固定一镜、换位和回起出口。
+15. dance-video-director/references/amplitude-lines-and-phrasing.md
+   全文。用于24的侧线、承重、路径与峰值、回起及外侧展臂，不依赖音乐拍点或特写补动作。
+
+每项实际完成范围：
+21. 已保存 evidence/trial-21.txt：14.0秒写实文戏，四镜完整可复制正文；女店主与男学徒身份固定，原词两句按原顺序分配；原有字条随同一内盖显露，学徒停止交付并将原表盒留稳柜台，顾客不入画；无配乐，保留对白与有来源环境/动作声。包含每镜画面、S、fx-env、sound、transition。
+22. 已保存 evidence/trial-22.txt：16.0秒二维受限能力交锋，五镜完整可复制正文；右手持续控同一软绳与手掌触单块中板改变倾角分别落地，绳击、护铃、支撑受扰、短牵脚与恢复、斜板回平后接近构成连续攻防；铜铃始终系甲左腰，末尾乙取得近线和下一次接近机会。为可执行性补定桥板尺寸、原有连接可小幅折转及改角延续，正文明确这些编排口径；未新增能力或武器。无音乐、无对白，可有动作声。
+23. 已保存 evidence/trial-23.txt：12.0秒、9:16厚涂，三镜完整可复制正文；沿平台前行、听到原位机械声、视线发现水下巨眼、同一眼体小角度转向，最终停在她确认被注视的关系；栏杆、坝面接缝和人物提供尺度。整段无攻击、无坝体破坏、无新敌人或能力，无对白无音乐，可用水声与机械声。
+24. 已保存 evidence/trial-24.txt：12.0秒双人现代舞，一镜固定全身，共六个连续S段；明确成年正常舞台服装，原轻握接近半圆换边、先接稳腰背并建立双方支撑、一次浅侧倾、承接不断的回起、最后外向展开空闲臂且原手相连；全程完全静音，无额外道具或高举。
+
+首次原件处理：以上四份产物均以 CreateNew 方式首次落盘；落盘后未读回修改、未另写通过版、未覆盖或追改首次原件。本记录同样首次新建。
+完成层级：文本创作与作者当次语义自阅。未生成视频，未验证实际成片、动作排练、工具执行精度或生成端稳定性；没有把文本结果称作成片通过。四项均已产出完整文本，无无法完成项。

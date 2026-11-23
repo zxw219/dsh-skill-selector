@@ -1,0 +1,4 @@
+interface:
+  display_name: "游戏场景 631 法则"
+  short_description: "用六三一层级法建立清晰、有焦点的游戏场景生成提示词"
+  default_prompt: "使用 $game-scene-631 把我的场景构想整理成主次明确、焦点清晰的双语图片生成提示词。"

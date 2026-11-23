@@ -1,0 +1,23 @@
+﻿{
+  "meta": {
+    "theme": {
+      "bg0": "#050b07",
+      "bg1": "#0c1c12",
+      "panel": "#102818",
+      "line": "#2d6a3f",
+      "cream": "#d7ffe2",
+      "muted": "#89ad93",
+      "cyan": "#62ff9a",
+      "green": "#8cffb5",
+      "amber": "#e4ff7a",
+      "violet": "#78d7ff"
+    },
+    "labels": {
+      "mapTitle": "作战地图",
+      "partyTitle": "执行小队",
+      "narrationTitle": "控制台旁白",
+      "clearRibbon": "DEPLOY CLEAR",
+      "clearKicker": "工程工作流 · 完成结算"
+    }
+  }
+}

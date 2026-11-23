@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence-Driven Self Iteration"
+  short_description: "Audit recent work and improve verified weaknesses"
+  default_prompt: "Use $evidence-driven-self-iteration to review recent evidence, detect recurring weaknesses, research relevant updates, and make only safe validated improvements."

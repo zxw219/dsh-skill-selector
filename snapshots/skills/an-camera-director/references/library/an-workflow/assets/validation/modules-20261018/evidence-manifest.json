@@ -1,0 +1,29 @@
+{
+  "artifacts": {
+    "creator-read-log.txt": "b5fea68f21b8fcfa5d738ef8858dc9e9f7180d110c91b82ffbc6ecf9f260370e",
+    "outcome.json": "3ec9018963996d395017402f9f5c904b4855810fb32eb43ca44821a4280397fe",
+    "review-A-revised-2.md": "92df297c7ce6221ffa7a5bc14088bace912da2756175ff945e25707d386be414",
+    "review-A-revised.md": "74f006cdce40755ef4c078e078120b017e6d5f7ce6181d8a5745450823b3e121",
+    "review-A.md": "fac751a2407bca62a02c7bc6495656a3c36cc32d6efd361210e88e5424b5588f",
+    "review-B.md": "7b744769cb51de58bbb8fcb99acd704cb8a696883dfdfecef01342b38b75373e",
+    "review-C.md": "5248bf74723d9ec9b466b7a44fcaad4bafc036be0b7635d21cc24f63636ac9d0",
+    "review-D.md": "1479d46032f854f9d7aeca75c74ff3944b4a7568cef60f13c4cb5b039c2c5b5e",
+    "review-spec.md": "e292706c383c7182aacf78019a4eb3eea41b49e2f121f4ab1ee9e3554f54d159",
+    "skill-validation.json": "906b567416bd0ef8281fea4ca83bc1aa60462c1e5d9837b3498d710bd85ef8a7",
+    "spec-hashes.json": "ae7d375356f3220efce3fe3b3f36c082d2da481d54a71c3f202e92f711096bf0",
+    "tested-sources.json": "eb88547e8e5eb323ad9b3f2b3689aeb52ebb9d97b24355bfe0ce60463c693a97",
+    "trial-21-revised-2.txt": "b1ebafcfbf5db03459aac6eaa9f0f3e1ed8043f45fef5e775154b6e8b661ed67",
+    "trial-21-revised-2.txt.check.json": "d20615dde7c5d0827be5760df6d2fd56c3b78f3d92dd5e1f948693f17fac1398",
+    "trial-21-revised.txt": "3a034ad5ac1d0d8ca0a03e09b3cb4ba11bfe103b3de3d14dbe3831945ffc8542",
+    "trial-21.txt": "ec26d51dbef2eb0f225e26f3477d020a24513306225c762ddc8bca92c567a50a",
+    "trial-21.txt.check.json": "d20615dde7c5d0827be5760df6d2fd56c3b78f3d92dd5e1f948693f17fac1398",
+    "trial-22.txt": "31062da4237280c6925785f84a0ef9113181976b422731dcb6887ab161fda19e",
+    "trial-22.txt.check.json": "167b7405850bc15942049dd9549773d9e984f218bdec18d9a92f5ea3f6db877b",
+    "trial-23.txt": "76216289bf57251b26068f1e181a005df391574c7bea4d2c64055d3b2178322b",
+    "trial-23.txt.check.json": "95c891798e06a999ff7dec7ca1e465d2bf9eca422375d0e267f4a6d014de92af",
+    "trial-24.txt": "3dca9edceecd92d937bab73870d14d0512ae46405a519f23130e1d8407dd0c28",
+    "trial-24.txt.check.json": "75228269cb8eaebc0a0894caeb287885094a6dbc2e1210a8972d908374e701b9",
+    "trial-spec.json": "f948b8985a28a44064e87759c4b36e0d2209957293e6d8d3838aa2e035421bc6"
+  },
+  "scope": "Independent text-only first outputs and separate targeted revisions; no generated media, playback or audio listening test."
+}

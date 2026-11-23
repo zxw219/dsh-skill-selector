@@ -1,4 +1,5 @@
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { randomUUID } from 'node:crypto';
 import { z } from 'zod';
@@ -45,6 +46,46 @@ export class PromptWorkbench {
     Object.defineProperty(result,'complete',{value:snapshot.complete});
     return result;
   }
+  // 外部智能体模式：草稿只给出技能在本机的路径，由对方自己读取正文。
+  async referenceList(skill) {
+    if (!skill?.path) return [];
+    const out = [];
+    const walk = async (dir, prefix = '') => {
+      let entries = [];
+      try { entries = await readdir(dir, { withFileTypes: true }); } catch { return; }
+      for (const entry of entries) {
+        if (entry.name.startsWith('.')) continue;
+        const rel = prefix ? prefix + '/' + entry.name : entry.name;
+        if (entry.isDirectory()) { if (out.length < 40) await walk(join(dir, entry.name), rel); }
+        else if (entry.name !== 'SKILL.md' && /\.(md|json|ya?ml|txt|csv)$/i.test(entry.name)) out.push(rel);
+      }
+    };
+    await walk(dirname(skill.path));
+    return out.slice(0, 40);
+  }
+  async portablePrompt(skills, primaryId, roles, brief) {
+    const lines = ['请按下面给出的技能定义执行任务。这些技能存放在本机磁盘上，先读取文件，再按其中规则执行；不要凭印象改写技能内容。', ''];
+    let index = 0;
+    for (const skill of skills) {
+      index += 1;
+      const isPrimary = primaryId === skill.id;
+      const role = roles?.[skill.id] || (isPrimary ? '负责整体方案、最终交付格式和整合结果' : '仅补充自己擅长的部分，不接管完整流程');
+      const refs = await this.referenceList(skill);
+      const dir = skill.path ? dirname(skill.path) : '';
+      lines.push(`${index}. 【${isPrimary ? '主技能' : '辅助技能'}】${skill.title}（${skill.id}）`);
+      lines.push(`   职责：${role}`);
+      lines.push(`   技能入口：${skill.path || '（路径缺失）'}`);
+      if (refs.length) {
+        lines.push(`   参考文件目录：${dir}`);
+        lines.push(`   参考文件：${refs.join(', ')}`);
+      }
+      lines.push('');
+    }
+    lines.push('读取要求：先完整读取每个“技能入口”文件；其中引用到的 references 文件按需读取，不要跳过规则部分。', '',
+      '我的需求：', brief, '',
+      '执行要求：只使用上面列出的技能，缺少素材时先说明，不要编造。');
+    return lines.join('\n');
+  }
   async execute(request,agent,signal) {
     if(!request||typeof request!=='object') throw Error('请求格式错误');
     if(signal?.aborted) throw Error('操作已取消');
@@ -85,7 +126,9 @@ export class PromptWorkbench {
         candidate.userInvocable=definition.invocation.userInvocable;
       }
       const id=randomUUID();
-      const prompt=this.manualMode?.enabled(agent)?`${selectionMarker(id)}\n\n本轮使用「${candidate.title}」（${skillId}），所选完整技能由选择器注入，无须调用 skill 工具。\n\n我的需求：\n${brief}\n\n仅采用已选择技能，依赖其他技能时请我补选。` : makeUsePrompt(candidate,brief);
+      const prompt=request.portable===true
+        ? await this.portablePrompt([candidate],skillId,{},brief)
+        : this.manualMode?.enabled(agent)?`${selectionMarker(id)}\n\n本轮使用「${candidate.title}」（${skillId}），所选完整技能由选择器注入，无须调用 skill 工具。\n\n我的需求：\n${brief}\n\n仅采用已选择技能，依赖其他技能时请我补选。` : makeUsePrompt(candidate,brief);
       const trial={id,skillId,skillTitle:candidate.title,brief,model:'按需求',prompt,time:new Date().toISOString(),sessionId:agent.id};
       await this.domain.table('trials').put(trial.id,trial);
       return {trial,prompt,notice:'已保存使用记录。填入当前对话后检查并发送；尚未执行技能或提交外部服务。'};
@@ -114,7 +157,10 @@ export class PromptWorkbench {
       const members=ordered.map(s=>({skillId:s.id,title:s.title,role:roles[s.id]||(s.id===primaryId?'负责整体方案、最终交付格式和整合结果。':'仅就本技能擅长的部分补充主任务，不另行接管完整流程。'),isPrimary:s.id===primaryId}));
       const id=randomUUID();
       const ordinary=makeCombinedPrompt(candidates,primaryId,roles,brief);
-      const prompt=this.manualMode?.enabled(agent)?`${selectionMarker(id)}\n\n${ordinary.replace(/加载所选技能：[\s\S]*?\n\n执行方式：/,'所选完整技能由选择器注入，无须调用 skill 工具；依赖其他技能时请我补选。\n\n执行方式：')}`:ordinary;
+      const orderedForPortable=[...candidates].sort((a,b)=>a.id===primaryId?-1:b.id===primaryId?1:0);
+      const prompt=request.portable===true
+        ? await this.portablePrompt(orderedForPortable,primaryId,roles,brief)
+        : this.manualMode?.enabled(agent)?`${selectionMarker(id)}\n\n${ordinary.replace(/加载所选技能：[\s\S]*?\n\n执行方式：/,'所选完整技能由选择器注入，无须调用 skill 工具；依赖其他技能时请我补选。\n\n执行方式：')}`:ordinary;
       const trial={id,kind:'combination',primaryId,members,skillId:primaryId,skillTitle:'组合：'+ordered.map(s=>s.title).join(' + '),brief,model:'组合使用',prompt,time:new Date().toISOString(),sessionId:agent.id};
       await this.domain.table('trials').put(trial.id,trial);
       return {trial,prompt,notice:'组合草稿已保存。请先预览分工，再加入当前草稿并自行发送；尚未执行任何技能。评价记录针对组合整体，不计入单个技能的平均分。'};

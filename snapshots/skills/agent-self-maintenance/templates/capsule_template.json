@@ -1,0 +1,55 @@
+{
+  "_comment": "胶囊模板 - 用于创建新的经验胶囊",
+  "_template_version": "1.0",
+  
+  "id": "capsule_xxx",
+  "gene": "gene_learn_from_experience",
+  "type": "pattern_capsule",
+  
+  "name": "胶囊名称（简洁、体现核心价值）",
+  "created_at": "2026-04-19T10:00:00+08:00",
+  "source_event": "触发来源（任务/错误/灵感/学习）",
+  
+  "context": {
+    "description": "使用背景描述",
+    "trigger": "什么触发了这次发现",
+    "user_value": "对用户有什么价值"
+  },
+  
+  "pattern": {
+    "what_worked": "具体有效的做法/方法/技巧",
+    "when_to_apply": [
+      "适用场景1",
+      "适用场景2"
+    ],
+    "why_it_works": "背后的原理/逻辑"
+  },
+  
+  "example_output": "示例输出或应用效果",
+  
+  "key_insight": "核心洞察（一句话总结）",
+  
+  "confidence": 0.6,
+  "success_count": 0,
+  "status": "pending",
+  
+  "internalized_at": null,
+  "last_applied_at": null,
+  "last_apply_result": null,
+  
+  "bound_scenarios": [],
+  
+  "validation": "",
+  
+  "_usage_guide": {
+    "id": "唯一标识符，格式 capsule_xxx",
+    "gene": "所属基因，影响胶囊分类",
+    "type": "pattern_capsule-模式 | response_capsule-响应 | tool_capsule-工具",
+    "name": "清晰表达胶囊价值，避免模糊",
+    "confidence_range": {
+      "create": "初始 0.5-0.7",
+      "first_success": "提升至 0.7-0.8",
+      "high_confidence": "0.9+ 需要多次成功验证"
+    }
+  }
+}

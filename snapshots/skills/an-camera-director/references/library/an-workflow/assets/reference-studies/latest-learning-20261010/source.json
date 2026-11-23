@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-10",
+  "video_source_checks": [
+    {
+      "path": "D:\\新建文件夹 (2)\\《凡人修仙传》动画大电影先导片4K.mp4",
+      "sha256": "c705df327ba2a7601fabdcbc9f3a935496db3a6e4ac7c7de9102b9a2836a20e1",
+      "matches_previous_study": true
+    },
+    {
+      "path": "C:\\Users\\宋\\Downloads\\video-1 (4).mp4",
+      "sha256": "fe04f85dd8d833ea0d0eb14c6494adedc6b48628f96cbd01f1bf907725fcee82",
+      "matches_previous_study": true
+    },
+    {
+      "path": "C:\\Users\\宋\\Downloads\\video-1 (3).mp4",
+      "sha256": "2fdb50aacab5a8230ac86af413e334d633322bb050aedbf828342d45c0db1bda",
+      "matches_previous_study": true
+    }
+  ],
+  "contact_sheets_reviewed": {
+    "viewed_contact_sheet_count": 34,
+    "full_sheet_count": 27,
+    "v1_sheet_count": 4,
+    "v2_sheet_count": 3
+  },
+  "normal_speed_av_playback": false,
+  "audio_listening": false,
+  "exact_cut_boundary_audit": false,
+  "prompt_folder_files": [
+    {
+      "id": "P01",
+      "name": "异域舞娘打斗割草.txt",
+      "path": "C:\\Users\\宋\\Desktop\\提示词\\异域舞娘打斗割草.txt",
+      "bytes": 9733,
+      "sha256": "d73b8c02518d7b7e12a9c0db6781e884e2e76642049b0a0cc9f9c16d7087e47c",
+      "characters": 3924,
+      "lines": 147,
+      "readable_file": "C:\\Users\\宋\\Documents\\ChatGPT\\优化2\\prompt-folder-study-20261010\\readable\\P01-异域舞娘打斗割草.txt",
+      "numbered_file": "C:\\Users\\宋\\Documents\\ChatGPT\\优化2\\prompt-folder-study-20261010\\readable\\P01-numbered.txt",
+      "extraction": {
+        "encoding": "utf-8-sig"
+      }
+    },
+    {
+      "id": "P02",
+      "name": "怪潮割草提示词.txt",
+      "path": "C:\\Users\\宋\\Desktop\\提示词\\怪潮割草提示词.txt",
+      "bytes": 8733,
+      "sha256": "f83f0a9287dfd8ff1cb2e103f518d30c10a1a11eab981a4038d2c00eb5ae9f06",
+      "characters": 3051,
+      "lines": 79,
+      "readable_file": "C:\\Users\\宋\\Documents\\ChatGPT\\优化2\\prompt-folder-study-20261010\\readable\\P02-怪潮割草提示词.txt",
+      "numbered_file": "C:\\Users\\宋\\Documents\\ChatGPT\\优化2\\prompt-folder-study-20261010\\readable\\P02-numbered.txt",
+      "extraction": {
+        "encoding": "utf-8-sig"
+      }
+    },
+    {
+      "id": "P03",
+      "name": "暗黑3A实机演示提示词.txt",
+      "path": "C:\\Users\\宋\\Desktop\\提示词\\暗黑3A实机演示提示词.txt",
+      "bytes": 9931,
+      "sha256": "5bcae1832a13a3f89b98e3bbc5754b3541c47cc3267f9790362c41c06585ca43",
+      "characters": 3448,
+      "lines": 58,
+      "readable_file": "C:\\Users\\宋\\Documents\\ChatGPT\\优化2\\prompt-folder-study-20261010\\readable\\P03-暗黑3A实机演示提示词.txt",
+      "numbered_file": "C:\\Users\\宋\\Documents\\ChatGPT\\优化2\\prompt-folder-study-20261010\\readable\\P03-numbered.txt",
+      "extraction": {
+        "encoding": "utf-8-sig"
+      }
+    },
+    {
+      "id": "P04",
+      "name": "机械少女空战跳伞入场BOSS战完整提示词.doc",
+      "path": "C:\\Users\\宋\\Desktop\\提示词\\机械少女空战跳伞入场BOSS战完整提示词.doc",
+      "bytes": 20992,
+      "sha256": "4164c5e5cf424208c3a1e6dcd6ac9c678614e5cc9b03cc4d8124b56ecf300248",
+      "characters": 3189,
+      "lines": 99,
+      "readable_file": "C:\\Users\\宋\\Documents\\ChatGPT\\优化2\\prompt-folder-study-20261010\\readable\\P04-机械少女空战跳伞入场BOSS战完整提示词.txt",
+      "numbered_file": "C:\\Users\\宋\\Documents\\ChatGPT\\优化2\\prompt-folder-study-20261010\\readable\\P04-numbered.txt",
+      "extraction": {
+        "streams": {
+          "Root Entry": {
+            "kind": 5,
+            "sid": 3,
+            "size": 4544
+          },
+          "\u0005SummaryInformation": {
+            "kind": 2,
+            "sid": 0,
+            "size": 440
+          },
+          "\u0005DocumentSummaryInformation": {
+            "kind": 2,
+            "sid": 7,
+            "size": 712
+          },
+          "WordDocument": {
+            "kind": 2,
+            "sid": 7,
+            "size": 13363
+          },
+          "0Table": {
+            "kind": 2,
+            "sid": 21,
+            "size": 3195
+          },
+          "Data": {
+            "kind": 2,
+            "sid": 4294967294,
+            "size": 0
+          },
+          "WpsCustomData": {
+            "kind": 2,
+            "sid": 19,
+            "size": 68
+          }
+        },
+        "nFib": 193,
+        "table_stream": "0Table",
+        "story_code_units": {
+          "main": 3184,
+          "footnotes": 0,
+          "headers": 4,
+          "annotations": 0,
+          "endnotes": 0,
+          "textboxes": 0,
+          "header_textboxes": 0
+        },
+        "piece_count": 1,
+        "pieces": [
+          {
+            "cp_start": 0,
+            "cp_end": 3189,
+            "byte_offset": 2048,
+            "compressed": false,
+            "code_units": 3189
+          }
+        ],
+        "piece_table_covers_all_text_stories": true,
+        "main_story_code_units_verified": 3184,
+        "other_text_stories_present": true,
+        "auxiliary_sequence_repr": "'\\x08\\r\\r\\r\\r'",
+        "all_decoded_text_retained": true,
+        "layout_rendered": false
+      }
+    },
+    {
+      "id": "P05",
+      "name": "紫衣花海激战怪潮.txt",
+      "path": "C:\\Users\\宋\\Desktop\\提示词\\紫衣花海激战怪潮.txt",
+      "bytes": 9201,
+      "sha256": "cbfac8bc1053054adf64672a072ee85d2fadc6e4a0b2a8db622a81681e824dc5",
+      "characters": 3425,
+      "lines": 55,
+      "readable_file": "C:\\Users\\宋\\Documents\\ChatGPT\\优化2\\prompt-folder-study-20261010\\readable\\P05-紫衣花海激战怪潮.txt",
+      "numbered_file": "C:\\Users\\宋\\Documents\\ChatGPT\\优化2\\prompt-folder-study-20261010\\readable\\P05-numbered.txt",
+      "extraction": {
+        "encoding": "utf-8-sig"
+      }
+    }
+  ],
+  "written_shot_designs": 61,
+  "methods": 40,
+  "generated_video_validation": "NOT_RUN",
+  "local_research_hashes": {
+    "修仙战法与分镜二次研究.md": "c069ec1f58c8ff96acda679ac710780d0b61f415f000438cdf999378d1c2e540",
+    "evidence-manifest.json": "4f4c28c3a6d1cc0d667a85c7f917ca44ff97bbe675d6f6a58cd99d882a869ace",
+    "study-verification.json": "7176a7a64aed2b25d547bd927136307a9911b091a804872812e8036b136fbd1f"
+  }
+}

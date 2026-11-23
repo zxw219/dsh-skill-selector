@@ -1,0 +1,28 @@
+interface:
+  display_name: "瑞士主义角色海报"
+  short_description: "把角色编译成现代瑞士主义风格的竖版海报提示词，覆盖 GPT Image 2 / 2.5，输出完整可复制成品"
+  default_prompt: "用 $image-swiss-poster 把这个角色编译成瑞士主义风格竖版海报的完整、可直接复制的生图提示词。"
+  examples:
+    - "用瑞士风格给我做一张墨鸦的角色海报"
+    - "要国际主义风格、超大标题字那种竖版角色海报提示词"
+    - "Kafka 的瑞士风海报，竖版，带坐标编号那种"
+    - "把这张角色设定改成 Editorial 大字海报的提示词"
+
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "generic"
+    - "agent-skills-compatible"
+    - "vscode"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  permissions:
+    network: "none"
+    file_write: "none（本包不产生任何写操作）"
+    subprocess: "none"
+    credentials: "none"
+  notes: "纯文档包：无脚本、无依赖、无构建、不联网、不写入。产出为文本提示词；不代为出图。"

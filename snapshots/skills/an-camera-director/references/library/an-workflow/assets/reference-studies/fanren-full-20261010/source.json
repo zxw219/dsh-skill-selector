@@ -1,0 +1,24 @@
+{
+  "source_file": "D:\\新建文件夹 (2)\\《凡人修仙传》动画大电影先导片4K.mp4",
+  "source_sha256": "c705df327ba2a7601fabdcbc9f3a935496db3a6e4ac7c7de9102b9a2836a20e1",
+  "duration_seconds": 227.57999999999998,
+  "container_fps": 120,
+  "overview_frames": 455,
+  "dense_selected_frames": 1048,
+  "dense_windows": 22,
+  "sheet_pages_inspected": 85,
+  "selected_images_including_overlaps": 1503,
+  "counts": {
+    "events": 81,
+    "camera": 27,
+    "performance": 27,
+    "skills": 14
+  },
+  "source_modified": false,
+  "normal_continuous_av_playback": false,
+  "all_encoded_frames_inspected": false,
+  "audio_semantics_verified": false,
+  "timing_scope": "Intervals usually approximate; verified PTS applies only to selected source frames.",
+  "final_outcome": "Final aerial strike cuts to title before showing the outcome.",
+  "usage": "Observation, interpretation, transfer and generated-video validation remain separate."
+}

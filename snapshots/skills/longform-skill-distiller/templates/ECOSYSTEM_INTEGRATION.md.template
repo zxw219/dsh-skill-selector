@@ -1,0 +1,42 @@
+# {{TITLE}} — Skill 生态接入图
+
+> 目标：把本次蒸馏结果接入 {{HOST}} 的真实 Skill 生态，同时保持一个控制面一个 owner、按需调用、工具可替换。
+
+## 接入原则
+
+1. {{principle}}
+2. {{principle}}
+3. {{principle}}
+
+## 归宿判定
+
+| 候选 Skill | 归宿 | 理由 | 最终动作 |
+|---|---|---|---|
+| `{{new-skill}}` | 独立 owner / 收窄互补 / 并入既有 / reference-capsule | {{evidence}} | {{action}} |
+
+## 生态位置
+
+| 新 Skill | 拥有的控制面 | 主要既有 Skill | 输入/输出交接 | 明确不拥有 |
+|---|---|---|---|---|
+| `{{new-skill}}` | {{owner surface}} | `{{existing-skill}}` | {{handoff}} | {{boundary}} |
+
+## 推荐组合路线
+
+```text
+{{upstream}}
+-> {{new-skill}}
+-> {{existing-owner}}
+-> {{verification}}
+```
+
+## 不重复造轮子的边界
+
+- `{{new-skill}}` 负责 {{surface}}；`{{existing-skill}}` 继续负责 {{surface}}。
+
+## 验证与安装
+
+- 跨生态路由测试：{{passed}} / {{total}}
+- 原压力测试回归：{{passed}} / {{total}}
+- 中央路由：{{path}}
+- 安装位置：{{path}}
+- 安装副本校验：{{result}}

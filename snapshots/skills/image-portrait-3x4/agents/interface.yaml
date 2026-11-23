@@ -1,0 +1,48 @@
+interface:
+  display_name: "3:4 肖像创造器"
+  short_description: "从零创造 3:4 肖像的出图提示词：四定值锁定身份、无服饰、#808080 纯灰影棚背景、漫射柔光平光铺照"
+  default_prompt: "用 $image-portrait-3x4 从零创造一张 3:4 竖版肖像的出图提示词：先确认画风（未指定则默认中式写实），再按性别＋年龄＋气质从 220 脸型库选型或接住我的自然语言 brief，把 [骨相] [五官] [识别] [气质] 四项写成写入即固定的定值，服饰绝对不要，背景写死 #808080（18% 中性灰）纯净影棚背景板，光默认漫射柔光＋平光铺照、光比极小，构图取景至肩部并完整呈现头顶与全部发型，行文正向为主、禁止裁切锁死语义、负向词非必要不用，比例锁定 3:4。交付中文与英文两版可直接复制的完整提示词，附设定来源、光型取值、画风取值与假定项，并用 scripts/lint_prompt.py 自检通过。默认只出提示词，未经我逐次明确授权不要调用任何出图工具。"
+  examples:
+    - "帮我从零创造一个 3:4 角色肖像的提示词"
+    - "按 220 脸型库给这个角色生成 3:4 肖像提示词，用 F021 那股清冷劲"
+    - "出一版 3:4 头像提示词，中性灰影棚背景，服饰不要"
+    - "从无到有生成一个人物肖像 prompt，画风用三渲二"
+    - "帮我做一张纯灰底的人像提示词，不要出图，只要提示词"
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "generic"
+    - "agent-skills-compatible"
+    - "vscode"
+  activation:
+    mode: "auto"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow catalog metadata and read-only source review; forbid unreviewed execution"
+    generated_public_claims: "evidence-bound"
+  permissions:
+    network: "none"
+    file_write: "skill package files and the delivered prompt document only; never call image-generation tools without explicit per-instance authorization"
+    subprocess: "bundled lint script only (lint_prompt.py)"
+    interactive: "one question at most, only to confirm the art style when the user has not specified it"
+  degradation:
+    generic: "neutral-source"
+    agent-skills-compatible: "canonical-source"
+    vscode: "neutral-source-plus-review-notes"
+gates:
+  scaffold:
+    - "SKILL.md frontmatter"
+    - "README hook and natural trigger examples"
+    - "clear exclusions against casting-sheet and continuity skills"
+  production:
+    - "output eval via scripts/lint_prompt.py (7 rules)"
+    - "agents/interface.yaml"
+    - "root-only discoverable SKILL.md entrypoint"
+  library:
+    - "portability notes"
+    - "trust boundary"

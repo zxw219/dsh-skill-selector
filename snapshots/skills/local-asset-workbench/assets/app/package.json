@@ -1,0 +1,9 @@
+{
+  "name": "generation-asset-workbench",
+  "version": "0.4.5",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

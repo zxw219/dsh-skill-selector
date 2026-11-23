@@ -1,0 +1,4 @@
+interface:
+  display_name: "Semantic Recall"
+  short_description: "Search local skills, memory, and documents by meaning"
+  default_prompt: "Use $semantic-recall to find semantically related local knowledge, then verify the best matches in their source files."

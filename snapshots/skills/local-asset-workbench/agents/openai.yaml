@@ -1,0 +1,4 @@
+interface:
+  display_name: "本地资产工作台"
+  short_description: "安装、配置并维护本地图片视频资产浏览、归档与下载分流工作台"
+  default_prompt: "使用 $local-asset-workbench 为我安装并配置一个通用的本地资产工作台。"

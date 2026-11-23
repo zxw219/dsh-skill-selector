@@ -1,0 +1,12 @@
+{
+  "archive": "D:\\An工作流.zip",
+  "archive_sha256": "165000395e21cbc950638167efcaaa5dcfdc2555f656b6f8630f0a87fb974ce2",
+  "built_at_shanghai": "2026-10-25T14:41:08+08:00",
+  "entries": 5298,
+  "unsafe_paths": [],
+  "crc_error": null,
+  "payload_hash_errors": [],
+  "source_files": 520,
+  "installed_differences": [],
+  "distribution_differences": []
+}

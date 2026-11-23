@@ -1,0 +1,4 @@
+interface:
+  display_name: "An镜头设计"
+  short_description: "统一设计构图、分镜与运镜，保留已定剧情、动作、时长和输出格式"
+  default_prompt: "用 $an-camera-director 设计或修复这份内容的镜头，保留已定事实和输出格式。"

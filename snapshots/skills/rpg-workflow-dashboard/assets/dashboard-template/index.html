@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thread Quest Board · Codex 多线程看板</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="pixel-bg" aria-hidden="true"></div>
+  <main class="app-shell">
+    <section class="summary-grid">
+      <article class="metric-card pixel-panel progress-card">
+        <span class="metric-label">总进度</span>
+        <strong id="totalProgress">64%</strong>
+        <div class="pixel-progress big"><i id="totalProgressBar" style="width:64%"></i></div>
+        <small id="heartbeat">实现线程正在处理核心改动</small>
+      </article>
+      <article class="metric-card pixel-panel phase-card">
+        <span class="metric-label">当前阶段</span>
+        <strong id="currentPhase">实现开发</strong>
+        <small id="currentStatus">运行中</small>
+      </article>
+      <article class="metric-card pixel-panel eta-card">
+        <span class="metric-label">预计剩余</span>
+        <strong id="eta">≈ 08 分钟</strong>
+        <small>根据未完成步骤估算</small>
+      </article>
+    </section>
+
+    <section class="layout-grid">
+      <section class="quest-panel pixel-panel">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">FILM QUEST MAP</span>
+            <h2>片场路线</h2>
+          </div>
+          <div id="syncTime" class="sync-time">最后同步：--</div>
+        </div>
+        <div id="questPath" class="quest-path" aria-label="工作流步骤"></div>
+        <div id="activeDetail" class="active-detail"></div>
+      </section>
+
+      <aside class="narration-panel pixel-panel">
+        <div class="section-head compact">
+          <div>
+            <span class="eyebrow">DIRECTOR NARRATION</span>
+            <h2>片场旁白</h2>
+          </div>
+        </div>
+        <div id="narrationBox" class="narration-box"></div>
+      </aside>
+
+      <aside class="thread-panel pixel-panel">
+        <div class="section-head compact">
+          <div>
+            <span class="eyebrow">SKILL PARTY</span>
+            <h2>技能小队</h2>
+          </div>
+        </div>
+        <div id="threadList" class="thread-list"></div>
+      </aside>
+
+      <section class="log-panel pixel-panel">
+        <div class="section-head compact">
+          <div>
+            <span class="eyebrow">EVENT STREAM</span>
+            <h2>事件流</h2>
+          </div>
+        </div>
+        <div id="eventLog" class="event-log"></div>
+      </section>
+
+      <section class="artifact-panel pixel-panel">
+        <div class="section-head compact">
+          <div>
+            <span class="eyebrow">DELIVERABLES</span>
+            <h2>产物槽</h2>
+          </div>
+        </div>
+        <div id="artifactList" class="artifact-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <section id="clearOverlay" class="clear-overlay" hidden aria-live="polite">
+    <div class="clear-stars" aria-hidden="true"></div>
+    <div class="clear-panel">
+      <div class="clear-top">
+        <div class="clear-ribbon">MISSION CLEAR</div>
+        <div class="clear-chest" aria-hidden="true">
+          <i></i><b></b><span></span>
+        </div>
+        <div>
+          <p class="clear-kicker">影视工作流 · 通关结算</p>
+          <h1 id="clearTitle">副本通关</h1>
+          <p id="clearSubtitle" class="clear-subtitle">所有线程已完成，主控正在汇总结论。</p>
+        </div>
+      </div>
+
+      <div id="clearStats" class="clear-stats"></div>
+
+      <div class="clear-content">
+        <article class="clear-verdict">
+          <span>最终判定</span>
+          <strong id="clearVerdict">可以进入下一轮。</strong>
+        </article>
+        <div id="clearSections" class="clear-sections"></div>
+      </div>
+
+      <div class="clear-footer">
+        <div id="clearParty" class="clear-party"></div>
+        <div class="clear-next">下一步：主线程只需要按这张结算页继续推进。</div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./app.js"></script>
+</body>
+</html>

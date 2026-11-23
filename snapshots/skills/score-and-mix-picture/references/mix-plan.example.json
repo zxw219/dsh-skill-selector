@@ -1,0 +1,47 @@
+{
+  "picture": "picture.mp4",
+  "music": [
+    {
+      "path": "generated-score.wav",
+      "timeline_start": 0.0,
+      "source_in": 0.0,
+      "duration": 30.0,
+      "gain_db": -3.0,
+      "fade_in": 0.8,
+      "fade_out": 1.2,
+      "loop": false,
+      "label": "main-cue"
+    }
+  ],
+  "sfx": [
+    {
+      "path": "../assets/sfx/whoosh/oga-swishes__swish-5.wav",
+      "timeline_start": 4.72,
+      "source_in": 0.0,
+      "gain_db": -8.0,
+      "fade_in": 0.01,
+      "fade_out": 0.03,
+      "loop": false,
+      "label": "transition-whoosh"
+    }
+  ],
+  "original_audio": {
+    "enabled": true,
+    "gain_db": 0.0
+  },
+  "ducking": {
+    "enabled": true,
+    "threshold": 0.025,
+    "ratio": 8.0,
+    "attack_ms": 15.0,
+    "release_ms": 350.0,
+    "speech_band": true
+  },
+  "master": {
+    "sample_rate": 48000,
+    "music_target_lufs": -18.0,
+    "full_mix_target_lufs": -14.0,
+    "loudness_range": 11.0,
+    "true_peak_db": -1.0
+  }
+}

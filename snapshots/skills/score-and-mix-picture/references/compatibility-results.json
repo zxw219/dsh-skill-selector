@@ -1,0 +1,83 @@
+{
+  "tested_utc": "2026-07-16T16:00:00Z",
+  "platform": "Windows",
+  "python": "3.12.10",
+  "ffmpeg": "8.1.1-full_build-www.gyan.dev",
+  "results": [
+    {
+      "case": "python-syntax",
+      "status": "pass",
+      "evidence": "probe_media.py and render_picture_mix.py compiled with py_compile"
+    },
+    {
+      "case": "picture-technical-probe",
+      "status": "pass",
+      "evidence": "12 s H.264/AAC picture reported exact duration, video/audio streams, and three synthetic silence regions"
+    },
+    {
+      "case": "multi-cue-overlap-and-loop",
+      "status": "pass",
+      "evidence": "three cue instances rendered with overlap, fades, source offsets, and a looped ending"
+    },
+    {
+      "case": "original-audio-and-ducking",
+      "status": "pass",
+      "evidence": "dialogue-band sidechain path rendered; score-only measured -18.02 LUFS and full mix measured -14.00 LUFS"
+    },
+    {
+      "case": "exact-duration-masters",
+      "status": "pass",
+      "evidence": "music-edit.wav and full-mix.wav both matched the 12.000 s picture"
+    },
+    {
+      "case": "silent-picture-fallback",
+      "status": "pass",
+      "evidence": "4 s picture without audio produced equal-hash score/full masters and an explicit report note"
+    },
+    {
+      "case": "insufficient-source-duration",
+      "status": "pass",
+      "evidence": "non-looping 2 s music requested for 4 s was rejected with a corrective error"
+    },
+    {
+      "case": "overwrite-guard",
+      "status": "pass",
+      "evidence": "existing deliverables were protected unless --force is supplied"
+    },
+    {
+      "case": "cc0-sfx-library",
+      "status": "pass",
+      "evidence": "360 audio assets cataloged across ambience, digital, foley, impacts, UI, and whoosh categories; individual asset hashes and seven source records stored"
+    },
+    {
+      "case": "bilingual-sfx-search",
+      "status": "pass",
+      "evidence": "Chinese searches for heavy metal impact and light transition whoosh returned relevant local files with durations and absolute paths"
+    },
+    {
+      "case": "sfx-stem-and-full-mix",
+      "status": "pass",
+      "evidence": "three SFX instances rendered to sfx-edit.wav and mixed with original audio plus ducked music; all masters matched 12.000 s and full mix measured -13.99 LUFS"
+    },
+    {
+      "case": "silent-picture-with-sfx",
+      "status": "pass",
+      "evidence": "picture without audio produced a music-plus-SFX full mix and an explicit report note"
+    },
+    {
+      "case": "legacy-plan-compatibility",
+      "status": "pass",
+      "evidence": "plans without an sfx array still render the original music-edit/full-mix deliverables without an unwanted SFX stem"
+    },
+    {
+      "case": "skill-structure",
+      "status": "pass",
+      "evidence": "skill-creator quick_validate.py returned Skill is valid"
+    }
+  ],
+  "not_tested": [
+    "Semantic music judgment against a real user film; this requires an actual picture and remains a per-project review gate",
+    "Named third-party music-generation platform adapters; verify current official controls when a platform is selected",
+    "Editable NLE handoff; test inside the selected editor when requested"
+  ]
+}

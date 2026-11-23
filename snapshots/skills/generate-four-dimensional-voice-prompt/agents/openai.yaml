@@ -1,0 +1,6 @@
+interface:
+  display_name: "四维配音进阶版"
+  short_description: "将场景与对白整理为四维表演提示词，融合发声动作、运镜与灯光设计。"
+  default_prompt: "使用 $generate-four-dimensional-voice-prompt，将我提供的场景或对白扩写为中文四维表演提示词，依次输出场景、人物状态、发声方式、台词，并按情境融入运镜与灯光。"
+policy:
+  allow_implicit_invocation: true

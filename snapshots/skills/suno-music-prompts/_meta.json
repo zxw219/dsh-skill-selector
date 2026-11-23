@@ -1,0 +1,27 @@
+{
+  "name": "suno-music-prompts",
+  "version": "5.5",
+  "description": "Suno AI v5.5 音乐提示词专家（2026-03-27 规范对齐）。覆盖 Voices 个人声模型、Custom Models 自定义模型、My Taste 偏好学习、Granular Controls 颗粒化参数（BPM/Key/Instrumentation/Weirdness/Style Influence/Section Steering）、Stems 分轨与 MIDI 导出。基于专业音乐知识图谱（257种曲风、24种语言、80+人声标签、800+乐器技法、20种曲式结构）。",
+  "author": "Moke",
+  "tags": ["music", "suno", "suno-v5.5", "ai-music", "prompt-engineering", "songwriting", "stems", "midi"],
+  "triggers": [
+    "Suno提示词",
+    "Suno风格标签",
+    "AI音乐生成",
+    "Suno prompt",
+    "Suno v5.5",
+    "音乐风格标签",
+    "写一首歌",
+    "AI作曲",
+    "Suno创作",
+    "生成音乐",
+    "AI编曲",
+    "suno style tags",
+    "music prompt",
+    "song creation",
+    "Voices 声音模型",
+    "Custom Models",
+    "Stems 分轨",
+    "Section Steering"
+  ]
+}

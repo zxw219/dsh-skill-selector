@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Structure Design"
+  short_description: "Plan retention-ready video structures."
+  default_prompt: "Use $video-structure-design to turn this idea into a strong video structure with hook, buildup, turn, payoff, and timing."

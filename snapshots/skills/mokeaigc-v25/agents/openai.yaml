@@ -1,0 +1,4 @@
+interface:
+  display_name: "MOKEAIGC V25.1 · 世界观与风格导演"
+  short_description: "世界设定、生物设计与构图探索，含65项风格选项，可先选择或跳过"
+  default_prompt: "使用 $mokeaigc-v25，把我的灵感扩展成连贯世界；开始时让我选择一种视觉风格，也可以跳过。"

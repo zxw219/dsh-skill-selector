@@ -1,0 +1,4 @@
+interface:
+  display_name: "朴赞郁电影单帧"
+  short_description: "将朴赞郁的空间、光线与情绪语言转译为原创电影单帧和可执行提示词"
+  default_prompt: "用 $cinematic-park-chan-wook 为我描述的场景生成一张原创2.35:1电影单帧，附镜头卡和提示词。"

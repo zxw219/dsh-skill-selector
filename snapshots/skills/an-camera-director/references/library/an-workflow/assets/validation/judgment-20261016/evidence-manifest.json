@@ -1,0 +1,20 @@
+{
+  "scope": "Unedited raw trial artifacts; versions.json records the tested source version before adding this archive and maintenance report.",
+  "generated_media_test": false,
+  "sha256": {
+    "baseline-read.txt": "7ed8f1cefd607b987e6c88b00921324711c37c6546cc11a48df8e953f68cf913",
+    "baseline.txt": "0e925b2197de4ced54e5b973dd36543a3602c7599d0c930dd4bf69ee261c6c06",
+    "boundary.txt": "6b87f9bfe8d4272f2ea8de329568116e9f5fcf197d65ee1875ef6221d9729805",
+    "candidate-read.txt": "e815f29b0c234e930d295e517617f7e75e795660624878f86e23f7a2298e9bc3",
+    "candidate.txt": "a44916e3c4764f061962bf0fc117a88c439305161070123a75d5db21ef65de9c",
+    "draft-A.txt": "a44916e3c4764f061962bf0fc117a88c439305161070123a75d5db21ef65de9c",
+    "draft-B.txt": "0e925b2197de4ced54e5b973dd36543a3602c7599d0c930dd4bf69ee261c6c06",
+    "review.txt": "b0a87970799dfae3a47f60dcae99ad30dd9d559bbeb225b6a25be61bba5f2001",
+    "transfer-read.txt": "e815f29b0c234e930d295e517617f7e75e795660624878f86e23f7a2298e9bc3",
+    "transfer-review.txt": "d11e5e936229b5c1ac3877e81abb6e42ff51dea2a10ca2bea133da60456e4922",
+    "transfer.txt": "bb463aec343e10e4301263a762aec7355177b4ae92e881b2f7d1691013d9ba71",
+    "trial-spec.md": "373c7f3a0aaa0aa6ed181b81275558a73233dd1494a8e571950401521cf20b3a",
+    "version-map.json": "101c715a52a5be156c09083b54e0bcbb6906334e3e66071de3112b6021f7d5d0",
+    "versions.json": "df3241fd0a8c74999d7cc2eaed303c505d3193ce138f58aba20fce1cec9231cf"
+  }
+}

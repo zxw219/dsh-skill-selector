@@ -1,0 +1,11 @@
+{
+  "scope": "Raw independent text trial, boundary decision and review; not a media test or a controlled version comparison.",
+  "sha256": {
+    "trial-spec.md": "c3eccf67cc7f65c2ba3712bba3b52c40b13cdaea3c318a123448ed56d48882bd",
+    "tested-sources.json": "5a0a9fecd85a17fd83accd2f1c59eba7b6b8a8ce7383308e977365337167d75e",
+    "candidate.txt": "d9ec99f983cab0c2afd358c9bffe62b1df9d4f4bb32ab1295620aff4c5a43741",
+    "candidate-read.txt": "c38a4b9fc7859320b7ffc7e699645fc69241905265cda68a6665770a5a24d076",
+    "boundary.txt": "b51388894e430b859209639d801e5b210b954dc048a926d3de9826f509b29b71",
+    "review.txt": "98254dbd3b085ecb20ffb4709484055cd81bf29468c14b001369e06c04209bce"
+  }
+}

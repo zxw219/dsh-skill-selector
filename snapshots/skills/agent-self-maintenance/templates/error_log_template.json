@@ -1,0 +1,59 @@
+{
+  "_comment": "错误日志模板 - 用于记录和追踪错误",
+  "_template_version": "1.0",
+  
+  "timestamp": "2026-04-19 10:52:00",
+  "error_type": "执行偏差",
+  
+  "description": "错误的具体描述",
+  
+  "root_cause": {
+    "level_1": "直接原因",
+    "level_2": "深层原因",
+    "level_3": "系统原因",
+    "level_4": "根本原因",
+    "level_5": "预防点"
+  },
+  
+  "improvement": {
+    "immediate": "立即可执行的改进措施",
+    "short_term": "短期改进（1周内）",
+    "long_term": "长期改进（1月内）"
+  },
+  
+  "owner": "agent",
+  
+  "repeat_count": 1,
+  
+  "learned_at": null,
+  "prevention_rules": [],
+  
+  "_error_types": {
+    "execution_deviation": "执行偏差 - 操作结果与预期不符",
+    "tool_error": "工具错误 - 工具调用失败",
+    "cognitive_bias": "认知偏差 - 判断失误、遗漏关键信息",
+    "system_anomaly": "系统异常 - 外部服务/平台问题",
+    "file_error": "文件错误 - 文件操作相关问题",
+    "logic_error": "逻辑错误 - 代码/流程逻辑问题"
+  },
+  
+  "_5why_guide": {
+    "purpose": "通过连续追问找到根本原因",
+    "example": {
+      "problem": "Capsule内化后文件损坏",
+      "why1": "为什么文件损坏？→ JSON格式错误",
+      "why2": "为什么格式错误？→ heredoc追加时控制不当",
+      "why3": "为什么用heredoc？→ 没有用专业JSON工具",
+      "why4": "为什么不用JSON工具？→ 没有这个习惯",
+      "why5": "为什么没有习惯？→ 没有建立规范流程",
+      "conclusion": "改进：建立标准JSON操作流程+备份机制"
+    }
+  },
+  
+  "_improvement_principles": {
+    "specific": "具体可执行，而非模糊的建议",
+    "actionable": "能立即执行，而非需要大量准备",
+    "verifiable": "执行后可以验证效果",
+    "preventive": "预防同类问题再次发生"
+  }
+}

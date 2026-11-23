@@ -1,0 +1,16 @@
+{
+  "说明": "一段 10 秒打斗的击点表：普通攻防用轻效果，转折用重击，终结技才用暴击。at 是秒数，focus 是推近焦点（0–1 比例，指向接触点）。",
+  "cues": [
+    {"at": 1.20, "recipe": "light"},
+    {"at": 2.05, "recipe": "light"},
+    {"at": 3.40, "recipe": "heavy", "focus": [0.58, 0.42]},
+    {"at": 5.10, "recipe": "manga", "focus": [0.50, 0.50]},
+    {"at": 6.30, "layers": [
+      {"type": "hitstop", "ms": 70},
+      {"type": "rgbsplit", "ms": 160, "shift": 0.005},
+      {"type": "flash", "frames": 1, "color": "#FFC21A", "strength": 0.5},
+      {"type": "shake", "ms": 200, "amp": 0.007}
+    ]},
+    {"at": 8.70, "recipe": "crit", "focus": [0.62, 0.38]}
+  ]
+}

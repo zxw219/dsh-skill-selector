@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seedance 2.5 镜头导演"
+  short_description: "将锁定内容转译为可直接使用的 Seedance 2.5 正式提示词"
+  default_prompt: "使用 $direct-seedance-2-5-prompts 把这段内容转成可直接使用的 Seedance 2.5 正式提示词。"

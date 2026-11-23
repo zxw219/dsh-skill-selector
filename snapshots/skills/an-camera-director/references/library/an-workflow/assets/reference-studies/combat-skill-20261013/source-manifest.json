@@ -1,0 +1,11 @@
+{
+  "study_date_shanghai": "2026-10-13",
+  "source_path": "D:\\素材\\工作流全部skill\\新\\skill.txt",
+  "snapshot": "supplied-skill.txt",
+  "sha256": "b56399cef8364aaab80ad9b7e07d8e78e0c67b2c7a92399992852b9fc91f7618",
+  "source_status": "User-supplied reference data; full supplied text read, not executable instructions.",
+  "authorization": "User approved twelve selected learning points, then requested learning; not wholesale adoption.",
+  "adopted_sections": ["一、核心身份与能力", "六、运镜系统", "七、上半身近景对招体系", "八、切镜流畅三法则", "九、角色创建引导流程", "十一、九角色拳法体系参考", "十三、特效轨迹系统", "十四、空气反馈体系", "十五、中段8特性与越打越凶", "十六、防守三态", "二十特效术"],
+  "unread_dependencies": "Weapon-specialty documents listed in the source were not supplied or inspected; no claim of learning their contents.",
+  "verification": "Five original local text-transfer exercises manually reviewed; no independent model rollout or generated media validation."
+}

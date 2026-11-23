@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-13",
+  "task_object": "工作流学习与维护；未交用户两角色30秒稿",
+  "feedback": [
+    "高速打斗不代表高速追击",
+    "施法动作少，除大技能多为甩法术光波",
+    "施法技能也少"
+  ],
+  "sources": [
+    {
+      "url": "https://blog.playstation.com/2022/11/03/how-forspokens-combat-works-and-why-it-looks-so-magical/",
+      "author": "Ryota Nozoe, Lead Visual Effects Artist, Luminous Productions",
+      "access": "网页文字",
+      "adopted": "功能对应成形/材料变化与终态",
+      "excluded": "作品技能、统一几何语法、禁光环/法阵和未播放视频的动画结论"
+    },
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "author": "Riot开发团队",
+      "access": "网页文字",
+      "adopted": "作用范围/方向/强调层级可读",
+      "excluded": "竞技皮肤规范、数值阈值、由造型推能力和游戏画风"
+    }
+  ],
+  "completed": {
+    "text_exercises": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "ability_prototypes": 14,
+    "integrated_short_scene_seconds": 5.0,
+    "review": "作者语义复核"
+  },
+  "not_completed": [
+    "独立模型陌生题调用",
+    "嵌入视频播放",
+    "参考/生成片正常速度观看",
+    "音轨试听",
+    "实际生成及成片体验验收"
+  ],
+  "prior_storyboard_exercises_05_24": "仍待执行；本专项没有替代或计入前次20项",
+  "module_updates": [
+    "an-scene-direction",
+    "an-action-design",
+    "an-performance-direction",
+    "an-composition-design",
+    "an-camera-path",
+    "an-vfx-design",
+    "an-prompt-compilation",
+    "an-quality-review"
+  ],
+  "scope": "更新可调用方法与流程，没有模型参数训练、后台任务或付费生成"
+}

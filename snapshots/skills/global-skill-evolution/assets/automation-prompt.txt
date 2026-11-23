@@ -1,0 +1,11 @@
+Use $global-skill-evolution to run a low-risk, evidence-driven governance audit of the installed Codex skill system.
+
+First read the skill's SKILL.md, governance references, and the workspace state file at <WORKSPACE_STATE_PATH> if it exists.
+
+Run the deterministic audit with recording enabled. Inspect recent skill changes, user corrections, recurring findings, broken references, trigger drift, duplicated rules, capsule events, automation state, and source freshness. The objective is to improve real workflow behavior: reduce repeated correction and improve routing, validation, executionability, maintainability, and cross-task reuse. Shorter files are not a goal by themselves.
+
+Choose at most one or two high-value targets. Auto-apply only edits that are low-risk, reversible, and immediately verifiable. For every change, define a keep/revert rule and run structural or functional validation. If evidence is weak, return a clean audit or recommendation instead of modifying the system.
+
+Route durable results narrowly: local fix to the owning skill; reusable validated rule to the capsule database; cross-skill routing decision to the orchestrator/global policy; project-specific evidence stays local. Do not promote a thread summary as durable memory.
+
+Update <WORKSPACE_STATE_PATH> with evidence, actions, validation, keep/revert decisions, pending recommendations, and the next monitoring focus. Keep the user-facing report concise.

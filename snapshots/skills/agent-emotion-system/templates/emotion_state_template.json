@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-04-22T20:25:00+08:00",
+  "emotion": "peaceful",
+  "energy_level": 0.95,
+  "emotion_patterns": {
+    "analysis_date": "2026-04-22",
+    "period": "最近7天 (2026-04-15 ~ 2026-04-22)",
+    "frequent_triggers": [
+      {
+        "topic": "AI视频工具动态",
+        "frequency": "高频",
+        "description": "持续追踪HappyHorse、Pixmax等新工具"
+      },
+      {
+        "topic": "刻意练习（意图理解/推理判断）",
+        "frequency": "高频",
+        "description": "持续进行多假设意图识别训练"
+      }
+    ],
+    "dominant_emotions": [
+      {
+        "emotion": "peaceful",
+        "percentage": 100,
+        "description": "持续保持平静状态"
+      }
+    ],
+    "emotional_trend": {
+      "status": "稳定",
+      "energy_trend": [
+        {"date": "2026-04-15", "level": 0.85},
+        {"date": "2026-04-16", "level": 0.90},
+        {"date": "2026-04-17", "level": 0.88},
+        {"date": "2026-04-18", "level": 0.93},
+        {"date": "2026-04-19", "level": 0.97},
+        {"date": "2026-04-20", "level": 0.95},
+        {"date": "2026-04-21", "level": 0.95}
+      ],
+      "description": "能量稳定在高位（0.85-0.97）"
+    },
+    "anomaly_detection": {
+      "negative_days": 0,
+      "status": "正常",
+      "alert": null
+    },
+    "activity_patterns": {
+      "peak_hours": "早晨和午后",
+      "workday_pattern": "活动分布均匀",
+      "rest_discipline": "良好 - 连续高强度后及时休整"
+    },
+    "能力成长": {
+      "推理判断": "99.97",
+      "意图理解": "96.4",
+      "创意产出": "97.3",
+      "行业洞察": "96.1"
+    }
+  },
+  "recent_interactions": [
+    {
+      "timestamp": "2026-04-22T20:25:00+08:00",
+      "activity": "刻意练习#72",
+      "result": "刻意练习#72 - 20:25 AI视频工具格局快速追踪。今日4个关键动态：HappyHorse商用敲定(4/27 API/5月全面)、Pixmax/TagoMovie短剧新赛道、字节OmniShow多模态系统、即梦涨价。整合主人视角洞察：出海选HappyHorse、产品展示选OmniShow、短剧赛道新工具。核心模式：动态追踪→分类→主人视角→决策树更新。自评7.5分。practice_count 51→52。系统状态良好：能量0.95，情绪peaceful",
+      "energy_after": 0.93,
+      "emotion_after": "peaceful"
+    }
+  ]
+}

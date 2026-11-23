@@ -1,0 +1,4 @@
+interface:
+  display_name: "参考色彩 LUT 生成器"
+  short_description: "从参考视频或链接提取色彩风格，生成可复用 LUT、三栏对比和完整交付包"
+  default_prompt: "使用 $reference-lut-generator，根据参考视频或链接提取关键帧，检查我是否提供了待调色视频或图片，生成可复用 LUT、参考/原片/效果三栏对比和完整交付包。"

@@ -1,0 +1,120 @@
+{
+  "candidate": "candidate-v2",
+  "results": [
+    {
+      "skill": "action-camera-direction",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-action-design",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-camera-path",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-composition-design",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-continuity-assets",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-impact-frame",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-performance-direction",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-prompt-compilation",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-quality-review",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-scene-direction",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-seedance-25",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-sound-timing",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-vfx-design",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "an-workflow",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "cinematic-camera-design",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "combat-action-design",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "combat-vfx-design",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "dance-video-director",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "image-impact-frame",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "moke-seedance",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "performance-scene-director",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "seedance-2-5-prompting",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "spectacle-impact-direction",
+      "passed": true,
+      "message": "Skill is valid!"
+    }
+  ]
+}

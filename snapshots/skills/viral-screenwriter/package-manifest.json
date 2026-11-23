@@ -1,0 +1,578 @@
+{
+  "schema_version": 1,
+  "package": "viral-screenwriter",
+  "edition": "2026-11-03-v15-local",
+  "path_base": "package-root",
+  "files": [
+    {
+      "path": "INSTALL.md",
+      "bytes": 8078,
+      "sha256": "053ba81e09e217e56e004470fc082c8a602842c25443467638fa5aee417c26d0"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 12581,
+      "sha256": "af12c3d04dee3dab52bab86f574b24f71971599b12b2e3c2185e61ebaf65066b"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 453,
+      "sha256": "5c4648b09fa192a0b183ce1a41404901ef261c549172a06941fb4cd1425018ab"
+    },
+    {
+      "path": "assets/books/SOURCES.md",
+      "bytes": 3226,
+      "sha256": "f3243b30329e1c976cbc554e28eff8007abcafbd836a21206ff4bd71c282cf16"
+    },
+    {
+      "path": "assets/books/VALIDATION.md",
+      "bytes": 2954,
+      "sha256": "02d389a4db35a29b254e4ad4ffe5e8ea0fd134f51fd4ed7eea4b22b89ba23556"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/appendix.md",
+      "bytes": 29727,
+      "sha256": "40d5a35960ff89eef19cae26a9731e27c0fd4ffd6370986cfc4c0b6e48ec3885"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/back-cover.md",
+      "bytes": 1934,
+      "sha256": "524ba1b93abc83b90b853dda6233c563ab28b36ec2c2f56f7381a9517e7a19e3"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch01.md",
+      "bytes": 30006,
+      "sha256": "137b27cd5773b29d4728674db83e580bd80e17573168ae9b9fa4ff3a55ff4a2e"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch02.md",
+      "bytes": 16988,
+      "sha256": "7a28d6ad0e84f62a968740fba74b7ad589452737e491c6a166972ab441842809"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch03.md",
+      "bytes": 41907,
+      "sha256": "e593467f4218c25580fc878b45790a5e98938126be9bb71974272fef79a4ae12"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch04.md",
+      "bytes": 23983,
+      "sha256": "469dda527fd87e765b772e98cf675b131e6b02f2e761b8956187970cb070eba4"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch05.md",
+      "bytes": 38419,
+      "sha256": "f707e610180705bd0261b3b73351d27793cbbeaf0882590b696452df34c5b73f"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch06.md",
+      "bytes": 18948,
+      "sha256": "feff6991aab50a0fca8bc3f8e0f498f30d31f490c399adee595e3bc5b9eeedc1"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch07.md",
+      "bytes": 60364,
+      "sha256": "8e0e4b7f61f1144716afb45a324841dac84f40097760481a7cd81f5cd1c447eb"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch08.md",
+      "bytes": 31508,
+      "sha256": "d820372c03cabd1b7c4699cb2eb16c350bdb9cac09a9ef2fa43777bff98af967"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch09.md",
+      "bytes": 15463,
+      "sha256": "fdac506567041ebde4a5513fe40edfd2f1e697a8c7905e2de6c01ebcf2f670fd"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch10.md",
+      "bytes": 33785,
+      "sha256": "9d9fd6fd476800462c17e66d4403cf96fdb1e9b419f1a2e2e36351124fbd0523"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/ch11.md",
+      "bytes": 18710,
+      "sha256": "7fc496d880eea64ab09a8ecd15921b396b53a3cf324c9ccba947fa18ba361269"
+    },
+    {
+      "path": "assets/books/coffee-break/chapters/front-matter.md",
+      "bytes": 28372,
+      "sha256": "a8a33ca9136096c11218d9b4f879d289d36753b49b5b7f23b46f07d23443bc86"
+    },
+    {
+      "path": "assets/books/coffee-break/full.md",
+      "bytes": 381424,
+      "sha256": "0228acb61917b3930faf974913901084bd1e30d9129d3ec668442c832637b7c2"
+    },
+    {
+      "path": "assets/books/coffee-break/source-manifest.json",
+      "bytes": 42648,
+      "sha256": "991b9dfb24cbadd77d33c37517887d110158584cf5aaf56657c050c5d81793a0"
+    },
+    {
+      "path": "assets/books/inventory.json",
+      "bytes": 7298,
+      "sha256": "f4c4ad7601f33c05c1e081fed1c7534220e52388bd08a0f2af4810351637fadb"
+    },
+    {
+      "path": "assets/books/library/B01/full.md",
+      "bytes": 142673,
+      "sha256": "b6cd89e8a6518779207d89c2d1e9a36d22637eadf3024cb5b9ff5fa486a8f706"
+    },
+    {
+      "path": "assets/books/library/B01/index.json",
+      "bytes": 2117,
+      "sha256": "21c5df618ce4abaa483a9a8fe1bda7feba45c00b473177821f4ed3e02413eed5"
+    },
+    {
+      "path": "assets/books/library/B02/full.md",
+      "bytes": 736768,
+      "sha256": "5c534379db76d2b14025e7a5929dfa35628ca5c8c6a4b424a6fd99355bb78b88"
+    },
+    {
+      "path": "assets/books/library/B02/index.json",
+      "bytes": 28212,
+      "sha256": "c61049d591be62c0e41ef6d0455d7acb39c5c9b2fca46e4c55ecd6d2f897bd00"
+    },
+    {
+      "path": "assets/books/library/B03/full.md",
+      "bytes": 242028,
+      "sha256": "378f03b23d73ef981c8163dba85d9270fb7bd0e52054b8982da1248d8219ca73"
+    },
+    {
+      "path": "assets/books/library/B03/index.json",
+      "bytes": 13216,
+      "sha256": "9ca6cfe2c1fe759f11d1b9f7589975db4bb3929517aae9fc341eb799d9e0ddf0"
+    },
+    {
+      "path": "assets/books/library/B04/full.md",
+      "bytes": 577872,
+      "sha256": "227092c3b04fb0b09c9e587ac7fcb81ece25912a7c840990a9a6968eb471ff6d"
+    },
+    {
+      "path": "assets/books/library/B04/index.json",
+      "bytes": 68823,
+      "sha256": "e3086d3e680120e68505dc328009239ef53a995e5fed25b477e549a87d04b92f"
+    },
+    {
+      "path": "assets/books/library/B05/full.md",
+      "bytes": 470208,
+      "sha256": "86e5338a7b6b8071b7bf1a4f3360e78d94d0da1de90e79c7fcb8adba05bb9357"
+    },
+    {
+      "path": "assets/books/library/B05/index.json",
+      "bytes": 18332,
+      "sha256": "84ccb74c515f6e98d05cce591b7c3824ce32136687e41528520296ab8103fb68"
+    },
+    {
+      "path": "assets/books/library/B06/full.md",
+      "bytes": 431257,
+      "sha256": "c85aefcd8e155b52aafda229b12b74944efc7354e1ab9d8064f583087a562b7a"
+    },
+    {
+      "path": "assets/books/library/B06/index.json",
+      "bytes": 96752,
+      "sha256": "80814bd4716d25ca3469a79b3012e584baa6a7fb6ab2bfd3c96b9bb01cd1319e"
+    },
+    {
+      "path": "assets/books/library/B07/full.md",
+      "bytes": 518281,
+      "sha256": "c6b99b58fc495655c24048654a2032bf488b587a15a935f417dd26f1694a63df"
+    },
+    {
+      "path": "assets/books/library/B07/index.json",
+      "bytes": 10002,
+      "sha256": "d95273e5a451cb09966406f4017aa136ddd9104d2f5c1c1776e526a1c788a98b"
+    },
+    {
+      "path": "assets/books/library/B08/full.md",
+      "bytes": 1281574,
+      "sha256": "fe40f0277c075ea765deacaf4425c6422da142b489296c6f1e83269de8841f13"
+    },
+    {
+      "path": "assets/books/library/B08/index.json",
+      "bytes": 81566,
+      "sha256": "8c749384c1c6a859bd4fe5047e4170a039a2e954daeaa306573d5119ed713a51"
+    },
+    {
+      "path": "assets/books/library/B09/full.md",
+      "bytes": 359274,
+      "sha256": "3e70eba7e54caa95a39f2eeebd39511afbd7466f0b23e88c35a9ddb36f20524e"
+    },
+    {
+      "path": "assets/books/library/B09/index.json",
+      "bytes": 64672,
+      "sha256": "ea8b57b65048ac4e89b4ee80983723fa9c87c00d50735ac7d57f7008f24e20db"
+    },
+    {
+      "path": "assets/books/library/B10/full.md",
+      "bytes": 338645,
+      "sha256": "8abdd7983f029cac0c0c987c96276e77e5d53c94ea736b5fe533fc6abbc620bf"
+    },
+    {
+      "path": "assets/books/library/B10/index.json",
+      "bytes": 61783,
+      "sha256": "79254c649f793d3294805a43e8cdcd3f820d349c692726c10b9c340a98f2e44a"
+    },
+    {
+      "path": "assets/books/library/B11/full.md",
+      "bytes": 358984,
+      "sha256": "e357b9fd82bcd0e920f9c9fbbc8d8fecf96ab384115fcb41e082b2d9c53e729e"
+    },
+    {
+      "path": "assets/books/library/B11/index.json",
+      "bytes": 17888,
+      "sha256": "89782b792e675d5fd481b26c235564257ec2c48bfad291b8587782fbf6baddb3"
+    },
+    {
+      "path": "assets/books/library/index.md",
+      "bytes": 2456,
+      "sha256": "e7459fc4500bcfd647f4647336b3e80acce3225b3ae6d6888a8322678ffbbf62"
+    },
+    {
+      "path": "assets/books/library/manifest.json",
+      "bytes": 9298,
+      "sha256": "dc22f43ee793e923ff687b9641fc992fca5b3688c004e57cf6c7ca270546600e"
+    },
+    {
+      "path": "assets/books/library/reading-status.json",
+      "bytes": 1223,
+      "sha256": "7de5f98ff6aa3c3b401baaccae800943b73fd1c16d157cbfd10f558f1ba192c9"
+    },
+    {
+      "path": "assets/books/sources.json",
+      "bytes": 9857,
+      "sha256": "9d09316436a252ece8e01dac3cdcde5fc21729b2b3a0bd66323c8cf02e81bca4"
+    },
+    {
+      "path": "assets/books/validation.json",
+      "bytes": 8361,
+      "sha256": "f9c0dfc3e5e6d7e2b0158c8f13be3d1148e1f057792b5040c95c778668f059c0"
+    },
+    {
+      "path": "assets/evidence/README.md",
+      "bytes": 3491,
+      "sha256": "5b9f07b03f84b1913d7ea31f1411be0701b05d85b8311736f48d13665d0a2a1f"
+    },
+    {
+      "path": "assets/evidence/baseline-31-summary.json",
+      "bytes": 996,
+      "sha256": "3d300d3d94db3d6a37e091a347e5243e87dfbdd38d9157924d6a380dcf0e6e59"
+    },
+    {
+      "path": "assets/evidence/missing-evidence.json",
+      "bytes": 8545,
+      "sha256": "4404603257411676f06032f72125a4919f9c0d0b8c02e45fe0aa907a6610ca33"
+    },
+    {
+      "path": "assets/templates/delivery-reference-text.md",
+      "bytes": 26314,
+      "sha256": "fab2c51b2374b750cec47a95a92b5e8f41546096253ee2fcd5022d91ea99f995"
+    },
+    {
+      "path": "assets/templates/screenplay-template.md",
+      "bytes": 823,
+      "sha256": "02c5b3d2621e3ceb2b8c55bccd1c4424c71c04eedd58400304f7e5dd574417f9"
+    },
+    {
+      "path": "modules/video-reverse-storyboard/MODULE.md",
+      "bytes": 9765,
+      "sha256": "b536648c7a7d5e92df0065ba65e36daa879415361144dedf7010301ae3c2e997"
+    },
+    {
+      "path": "modules/video-reverse-storyboard/RUNTIME.md",
+      "bytes": 3470,
+      "sha256": "cf5788bbb2f21ef6724422f338489d86e38e19945158a45c41164252e6acad8d"
+    },
+    {
+      "path": "modules/video-reverse-storyboard/references/analysis-protocol.md",
+      "bytes": 9861,
+      "sha256": "2570225ed15ad6c56970d52171359fad06b91124559ea182a085f3989e743dff"
+    },
+    {
+      "path": "modules/video-reverse-storyboard/references/gag-context-research.md",
+      "bytes": 9438,
+      "sha256": "c6c169b9782ed28e4632c7155c8b922c49f621f572dd3eac64937610295ea940"
+    },
+    {
+      "path": "modules/video-reverse-storyboard/references/storyboard-contract.md",
+      "bytes": 7882,
+      "sha256": "4b958af87521ab6185c3c3f5bd17a3274da01cfc1912bd6f0eee892e03614a04"
+    },
+    {
+      "path": "modules/video-reverse-storyboard/scripts/extract_subtitles_ocr.py",
+      "bytes": 26280,
+      "sha256": "9553f3d2908d7e75c62952ea37d4011be1e26c12abdad8dd4d1c1e1b589b335d"
+    },
+    {
+      "path": "modules/video-reverse-storyboard/scripts/prepare_video_evidence.py",
+      "bytes": 66014,
+      "sha256": "08dc58c7ecd52c2bfca14de850539593cd3204fe21b317b2d5508af48b278648"
+    },
+    {
+      "path": "modules/video-reverse-storyboard/scripts/transcribe_audio.py",
+      "bytes": 11180,
+      "sha256": "e2856c0f7083909864fb0bb255dcdcd411cfdc7d8e85278433e806c8be87ed05"
+    },
+    {
+      "path": "modules/video-reverse-storyboard/scripts/validate_storyboard.py",
+      "bytes": 28236,
+      "sha256": "dcaced960bcd9e56921410537eb3ee4069039c790cc045c7ec146123894f34d7"
+    },
+    {
+      "path": "references/book-library.md",
+      "bytes": 11523,
+      "sha256": "483b4bdb2dba7bd30feff71f4bc005918ba8c6e7a7de3b500b2ceb502bc1af86"
+    },
+    {
+      "path": "references/challenge-variety.md",
+      "bytes": 8544,
+      "sha256": "32b2143f72fd3fc9134085ab589a9be3231844bd299f0fb418a25f19df16925c"
+    },
+    {
+      "path": "references/character-theme.md",
+      "bytes": 7957,
+      "sha256": "4b71665fa1ab1edb0e4483871d413b3ce3cfc640679180cec364d288f5c64ba4"
+    },
+    {
+      "path": "references/coffee-break-method.md",
+      "bytes": 6085,
+      "sha256": "02ae53dd7a0a03fe8de16c917c3c266a37eafd8d1c5003c0e83e1b5fe2bf26db"
+    },
+    {
+      "path": "references/coffee-break/appendix-notes.md",
+      "bytes": 5621,
+      "sha256": "45dccc001e278629fe4c12e029265ba367585e2726a4465e96276d13395133d6"
+    },
+    {
+      "path": "references/coffee-break/ch01-story.md",
+      "bytes": 8863,
+      "sha256": "3b1ffc3a4ae740e47dbbf7806889877ac0cc5f467e5845fcc6bdb884dbf58283"
+    },
+    {
+      "path": "references/coffee-break/ch02-structure.md",
+      "bytes": 4370,
+      "sha256": "c8a5081e467edd14731f0f4881fb35caef44f911e2512769d2be37b329d4ebcb"
+    },
+    {
+      "path": "references/coffee-break/ch03-outline.md",
+      "bytes": 11833,
+      "sha256": "e11baa782e5fd25073c5ae7d70525edf047297847a8391e23640ad339153b8a4"
+    },
+    {
+      "path": "references/coffee-break/ch04-character.md",
+      "bytes": 7249,
+      "sha256": "2fdb39565277e3b972041d07b082da6bd458ff1928cf1817cf6bd235bae89909"
+    },
+    {
+      "path": "references/coffee-break/ch05-draft.md",
+      "bytes": 7763,
+      "sha256": "b05945eff33e04185e040f8011826f215ff6e51c94f325d91ff9e6be1f4b0165"
+    },
+    {
+      "path": "references/coffee-break/ch06-dialogue.md",
+      "bytes": 4866,
+      "sha256": "d1946f8ba5bfa8e3302434fc636c926a8a1e6514f730483ef13ca3604116ea19"
+    },
+    {
+      "path": "references/coffee-break/ch07-rewrite.md",
+      "bytes": 17056,
+      "sha256": "1ed62587624827542d41e01ca1929fd8274f3eb7fc6ded83fd40ae6b085a29ff"
+    },
+    {
+      "path": "references/coffee-break/ch08-polish.md",
+      "bytes": 6467,
+      "sha256": "145765d0f54d237c37f172af8809a0c53db00265faa66989c1fb9ab1a47f9a53"
+    },
+    {
+      "path": "references/coffee-break/ch09-finalize.md",
+      "bytes": 3430,
+      "sha256": "cdccfb3ad79e79c6b0366fabe49e9a060220a1f74d597d958347163f5798d667"
+    },
+    {
+      "path": "references/coffee-break/ch10-pitch.md",
+      "bytes": 8225,
+      "sha256": "43831cb185a8f48c32848bad821522dece689d4801e13af258ae17873f6110dd"
+    },
+    {
+      "path": "references/coffee-break/ch11-opportunities.md",
+      "bytes": 3178,
+      "sha256": "ff71bec1bca20597232eb0ed647cb9b8b0e930eb8a7cf5e4114fb79e22c8b516"
+    },
+    {
+      "path": "references/coffee-break/coverage.json",
+      "bytes": 38126,
+      "sha256": "d992075c45569b7fd007b9a865383cf240b619548d0644a4478023335c0c8c50"
+    },
+    {
+      "path": "references/coffee-break/index.md",
+      "bytes": 3583,
+      "sha256": "09c5782271e6e540977418e99c9c5beed63bbca3a0c56f3d4f9f211e63574476"
+    },
+    {
+      "path": "references/daily-evolution.md",
+      "bytes": 5567,
+      "sha256": "65755ae37ab79afcdf2e7f42be06ce9e2e7ea8a03996d8d40c7d49dd9499e9bf"
+    },
+    {
+      "path": "references/dialogue-performance.md",
+      "bytes": 7553,
+      "sha256": "2319a3d05455587f1d3113556a49b9d28e8d13d07f97bebedf2fb3474bc63040"
+    },
+    {
+      "path": "references/director-handoff.md",
+      "bytes": 6206,
+      "sha256": "9b6de931cf4d73874299fc195a53c6290ac38e916d4582e1dcf9163db97109b5"
+    },
+    {
+      "path": "references/dynamic-viral-rules.md",
+      "bytes": 7619,
+      "sha256": "56fe5ed6b38d068bbcdf5bcda0a6bc3b6b7cee6e1425af56212013753efa9c11"
+    },
+    {
+      "path": "references/evolution/history/20260907T011043p0800-v0000-to-v0001.json",
+      "bytes": 43035,
+      "sha256": "061bba7ab291590cfbc6d465b06af22215cd6b2bf27162fb0e36f5556da66a47"
+    },
+    {
+      "path": "references/evolution/history/portability-20260929.json",
+      "bytes": 1349,
+      "sha256": "b6bd146d24cb8b0f8d1ea235e729c433213eadc39bef7541dbe31ddd9b8badec"
+    },
+    {
+      "path": "references/evolution/history/version-0000.json",
+      "bytes": 715,
+      "sha256": "6ffa1240d200d5d4a5def3692533b0ce7ba54801dc0817bcdf5d7a4ce96f2202"
+    },
+    {
+      "path": "references/evolution/rules.json",
+      "bytes": 17459,
+      "sha256": "a717b6d73441221843d14d104a568dda324e8421b8ca9d5552ab4e019e905115"
+    },
+    {
+      "path": "references/exercise-orchestration.md",
+      "bytes": 9996,
+      "sha256": "9a1681b60214ee825de79936bbc7186b4ee71895997d6c223160d7722cee50dd"
+    },
+    {
+      "path": "references/library/index.md",
+      "bytes": 3234,
+      "sha256": "3f888d922c6a9e28e14e074664d93a39a9f6f701ee617e4ada245da12b846e3a"
+    },
+    {
+      "path": "references/library/supplement-cron.md",
+      "bytes": 12144,
+      "sha256": "1b2fe59b4708f3bc7ac1e36fdba2576e5e05a4c7f5fe5fd1bdcd58ad7e1cc57f"
+    },
+    {
+      "path": "references/library/supplement-snyder.md",
+      "bytes": 3655,
+      "sha256": "5595fa4d998e9c062e69956495b9e8706351807474ba0aeab03daa1099839a67"
+    },
+    {
+      "path": "references/library/supplement-walter.md",
+      "bytes": 10589,
+      "sha256": "ea5eccdd2456da5e05ab40d8739c2aec8b5e93916c001361c05b38e0160d3631"
+    },
+    {
+      "path": "references/media-tools.md",
+      "bytes": 3140,
+      "sha256": "0fc9c9e51e9cdba3b34dfa4fe709f9e641ead792c41c5c78f3f927f84d1f7d3a"
+    },
+    {
+      "path": "references/project-delivery.md",
+      "bytes": 8483,
+      "sha256": "21feea21d1e7753a0a7a1c243db5532ca8fe153d7c3a3c20e100d51d01acb4e5"
+    },
+    {
+      "path": "references/reference-to-original.md",
+      "bytes": 12350,
+      "sha256": "b3e441bd4de2d1b7a93e3531aa9655efc1c257a7bddd99cf40c6e3dd0cda96c5"
+    },
+    {
+      "path": "references/research-protocol.md",
+      "bytes": 12619,
+      "sha256": "2e6bbaeceed36f5e8538d16db887c6626fa71430bfb60ef1fdee1f538a5dd3c2"
+    },
+    {
+      "path": "references/screenplay-format.md",
+      "bytes": 10924,
+      "sha256": "a2e5d3d72b511a5a554f85f855b165496c17be4b4740233ddfcd07a4e9fe0b9f"
+    },
+    {
+      "path": "references/shortform-craft.md",
+      "bytes": 10712,
+      "sha256": "71f142404fa762fab6d46e1d44eea6a18cc0f0108947bfa0e26447f1dc8d30be"
+    },
+    {
+      "path": "references/soul-questioning.md",
+      "bytes": 3930,
+      "sha256": "76a597960d7ed34004bb459d4295ae15bb2b2e8ea44fbc0bac2555438da5e414"
+    },
+    {
+      "path": "references/story-scene-structure.md",
+      "bytes": 9474,
+      "sha256": "96b695ac687d9e74c9375a29aee853367c9926b2eedaee043d784860b53ad634"
+    },
+    {
+      "path": "references/storyboard-contract.md",
+      "bytes": 14475,
+      "sha256": "dc7a15e8df04e670662d3b906e85441524a2b914ed992fa7b25eadcfdd6b0e21"
+    },
+    {
+      "path": "references/storyboard-revision.md",
+      "bytes": 5299,
+      "sha256": "c358d298bfa1e31e1e487c43a0191dc049a7751ed918535a99bbf9bf223976f5"
+    },
+    {
+      "path": "references/viral-rules.md",
+      "bytes": 18144,
+      "sha256": "ea2c9097ab38f46f2b1b715e3eb2f15fa30f0d9cb6af805863791fb685f99736"
+    },
+    {
+      "path": "references/visual-storyboarding.md",
+      "bytes": 14309,
+      "sha256": "ba7bce0f29ad3d4f711e429724e5389867ac58edb4c5aa74d2b5bcd553d101fa"
+    },
+    {
+      "path": "scripts/check_environment.py",
+      "bytes": 1802,
+      "sha256": "5eda08211141a59b7ff292308e8fc77485cc0e6740fecc4875b685469b5338b7"
+    },
+    {
+      "path": "scripts/validate_output.py",
+      "bytes": 30806,
+      "sha256": "17bcaa09630314a5f297aa4a541ee3ff1c1d697a0424e19736b78aec17e528e7"
+    },
+    {
+      "path": "scripts/verify_portable.py",
+      "bytes": 9388,
+      "sha256": "9f815548f09ed7d936072d75ca13df3a158595fa3a78f188f585129b4db84443"
+    }
+  ],
+  "baseline": {
+    "archive": "viral-screenwriter_v10_feishu_2026-10-15.zip",
+    "sha256": "7b073d74e369caf3ccebb7cf44d96032469f256b6a2fa039187e8b5cab41295b"
+  },
+  "optional_external_skills": [
+    {
+      "name": "director-seedance-prompt",
+      "purpose": "User-requested video model prompts; not required for ordinary writing",
+      "bundled": false
+    }
+  ],
+  "entrypoint": "SKILL.md",
+  "layout": "compact-full-text-v1",
+  "packaging_revision": "2026-11-03-v15-dual-editions",
+  "compact_source": {
+    "archive": "viral-screenwriter_v11_2026-10-22_claude-upload.zip",
+    "sha256": "bf77087d140de66e76895b05dabc15d4164b127395657fefaac57801a0793d59"
+  },
+  "text_repair_source": {
+    "archive": "viral-screenwriter_v11_2026-10-22_b11-fix_claude-upload.zip",
+    "sha256": "ccb3b1dc372ba9e0dba49269bd3962e9f0fd8af89c9988b998853cfb247e2323"
+  },
+  "release_version": "v15",
+  "release_date": "2026-11-03",
+  "workspace_edition": "local"
+}

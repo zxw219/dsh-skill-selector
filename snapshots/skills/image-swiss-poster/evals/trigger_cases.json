@@ -1,0 +1,47 @@
+{
+  "skill": "image-swiss-poster",
+  "version": "1.1.1",
+  "recommended_threshold": 0.34,
+  "positive_concepts": {
+    "swiss_style": ["瑞士", "瑞士主义", "瑞士风格", "瑞士风", "国际主义", "国际排版", "swiss", "modern swiss", "international typographic", "国际平面设计", "现代主义平面"],
+    "character_poster": ["角色海报", "人物海报", "竖版海报", "竖版角色", "角色主视觉", "人物主视觉", "角色图", "人物图", "海报提示词", "海报", "角色"],
+    "typographic_layout": ["超大标题", "超大字体", "大字海报", "标题字", "非对称", "非对称网格", "网格", "留白", "editorial", "编辑设计", "杂志封面", "封面感", "坐标", "编号", "排版海报"]
+  },
+  "description_required_concepts": ["swiss_style", "character_poster", "typographic_layout"],
+  "negative_patterns": [
+    "三视图", "设定表", "角色设定表", "角色设计", "选角",
+    "品牌规范", "品牌视觉", "brand kit", "配色规范",
+    "修图", "抠图", "换脸", "去水印",
+    "视频", "分镜", "剧本", "动效", "动画",
+    "ppt", "课件", "excel", "幻灯片",
+    "天气", "安装到技能库", "发布到 github", "打包"
+  ],
+  "should_trigger": [
+    { "text": "用瑞士风格给我做一张墨鸦的角色海报，竖版", "family": "core" },
+    { "text": "要国际主义风格那种竖版角色海报的提示词，完整一条给我", "family": "swiss-alias" },
+    { "text": "做张超大标题字、带坐标编号的那种杂志封面感角色海报", "family": "typographic" },
+    { "text": "把这个角色改成 Editorial 大字海报的提示词", "family": "editorial" },
+    { "text": "这张角色图能不能做成瑞士风海报？给我提示词", "family": "from-image" },
+    { "text": "给我一条 GPT Image 2.5 用的瑞士风角色海报提示词", "family": "model-specific" },
+    { "text": "角色海报，非对称网格、大面积留白那种，竖版", "family": "grid" },
+    { "text": "帮我写一条夜巡人的瑞士主义海报提示词，强调色只要一个", "family": "named-character" }
+  ],
+  "should_not_trigger": [
+    { "text": "帮我做一张电影剧照感的海报，要有大片氛围和光影张力", "family": "cinematic-poster" },
+    { "text": "设计一个角色的三视图设定表，要正面侧面背面", "family": "character-sheet" },
+    { "text": "出一套品牌视觉规范，包含配色、字体和使用场景", "family": "brandkit" },
+    { "text": "画一张日漫手绘大色块风格的人设图", "family": "handdrawn-anime" },
+    { "text": "帮我做一份 30 页的 AIGC 课程 PPT", "family": "deck" },
+    { "text": "做条海报动效视频，要 6 秒", "family": "video" },
+    { "text": "帮我把这张照片做个人像精修的修图提示词", "family": "image-edit" },
+    { "text": "今天天气怎么样", "family": "unrelated" }
+  ],
+  "near_neighbor": [
+    { "text": "帮我做一张电影剧照感的人物主视觉海报", "family": "cinematic-poster-designer" },
+    { "text": "出一套品牌配色和字体规范，我要做系列海报", "family": "brandkit" },
+    { "text": "把这张海报上的英文标题翻译成中文", "family": "text-replace" },
+    { "text": "帮我把这个 skill 安装到技能库", "family": "install" },
+    { "text": "给我一份角色设定表，含身高体重性格", "family": "character-cast" },
+    { "text": "帮我把这个海报模板套进 PPT 封面", "family": "deck" }
+  ]
+}

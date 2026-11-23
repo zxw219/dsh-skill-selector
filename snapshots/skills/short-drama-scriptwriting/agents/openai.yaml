@@ -1,0 +1,4 @@
+interface:
+  display_name: "付费短剧编剧"
+  short_description: "创作自然人声、强情绪和高留存的付费短剧与漫剧（国内 / 海外）"
+  default_prompt: "使用 $short-drama-scriptwriting，把我的故事改成剧情有活性、台词像真人、情绪有潜台词且每集有留存拉力的付费短剧。"

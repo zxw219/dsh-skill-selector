@@ -1,0 +1,6 @@
+interface:
+  display_name: "Reference Role Planner｜参考职责规划器"
+  short_description: "Reference roles & precedence｜参考分工与优先级规划"
+  default_prompt: "Use $reference-role-planner to assign clear roles and precedence to my references."
+policy:
+  allow_implicit_invocation: true

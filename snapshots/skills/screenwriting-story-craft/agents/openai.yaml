@@ -1,0 +1,4 @@
+interface:
+  display_name: "Screenwriting Story Craft"
+  short_description: "Build filmable story beats and scripts."
+  default_prompt: "Use $screenwriting-story-craft to turn this idea into a filmable short script with conflict, beats, and scene purpose."

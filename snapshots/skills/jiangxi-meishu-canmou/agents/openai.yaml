@@ -1,0 +1,4 @@
+interface:
+  display_name: "讲戏美术参谋"
+  short_description: "带集数讲清长剧本并审查能力规则连续性与漫剧美术方向"
+  default_prompt: "使用 $jiangxi-meishu-canmou 带集数锚点讲清这份长剧本，审查人物、能力和场景连续性，提炼美术方向并附逐集制作导航。"

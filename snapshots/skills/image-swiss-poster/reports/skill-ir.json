@@ -1,0 +1,108 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-09-28",
+  "package": {
+    "name": "image-swiss-poster",
+    "version": "1.1.1",
+    "maturity_tier": "production",
+    "lifecycle_stage": "production",
+    "upstream_inspiration": null,
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "把任意角色编译成现代瑞士主义（国际主义平面设计 / Modern Swiss Style）风格的竖版角色海报提示词——超大无衬线标题、非对称网格、大面积留白、强调色至多一种、坐标与编号次级信息层，可选中文书法＋印章的东方变体。覆盖 GPT Image 2 与 GPT Image 2.5。输出完整、可直接复制的提示词。",
+    "job_to_be_done": "把任意角色编译成现代瑞士主义（国际主义平面设计 / Modern Swiss Style）风格的竖版角色海报提示词——超大无衬线标题、非对称网格、大面积留白、强调色至多一种、坐标与编号次级信息层，可选中文书法＋印章的东方变体。覆盖 GPT Image 2 与 GPT Image 2.5。输出完整、可直接复制的提示词。",
+    "target_users": [
+      "Qiaomu operator"
+    ],
+    "inputs": [],
+    "outputs": [],
+    "exclusions": [],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "用瑞士风格给我做一张墨鸦的角色海报，竖版",
+      "要国际主义风格那种竖版角色海报的提示词，完整一条给我",
+      "做张超大标题字、带坐标编号的那种杂志封面感角色海报",
+      "把这个角色改成 Editorial 大字海报的提示词",
+      "这张角色图能不能做成瑞士风海报？给我提示词",
+      "给我一条 GPT Image 2.5 用的瑞士风角色海报提示词",
+      "角色海报，非对称网格、大面积留白那种，竖版",
+      "帮我写一条夜巡人的瑞士主义海报提示词，强调色只要一个"
+    ],
+    "should_not_trigger": [
+      "帮我做一张电影剧照感的海报，要有大片氛围和光影张力",
+      "设计一个角色的三视图设定表，要正面侧面背面",
+      "出一套品牌视觉规范，包含配色、字体和使用场景",
+      "画一张日漫手绘大色块风格的人设图",
+      "帮我做一份 30 页的 AIGC 课程 PPT",
+      "做条海报动效视频，要 6 秒",
+      "帮我把这张照片做个人像精修的修图提示词",
+      "今天天气怎么样"
+    ],
+    "near_neighbor": [
+      "帮我做一张电影剧照感的人物主视觉海报",
+      "出一套品牌配色和字体规范，我要做系列海报",
+      "把这张海报上的英文标题翻译成中文",
+      "帮我把这个 skill 安装到技能库",
+      "给我一份角色设定表，含身高体重性格",
+      "帮我把这个海报模板套进 PPT 封面"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references\\01-prompt-template.md",
+      "references\\02-model-adaptation.md",
+      "references\\03-visual-anatomy.md",
+      "references\\04-failure-modes.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals\\trigger_cases.json"
+    ],
+    "reports": [
+      "reports\\creation-handoff.md",
+      "reports\\prior-art-research.md",
+      "reports\\skill-ir.json",
+      "reports\\trigger-eval.json"
+    ]
+  },
+  "portability": {
+    "canonical_format": "agent-skills",
+    "adapter_targets": [
+      "generic",
+      "agent-skills-compatible",
+      "vscode"
+    ],
+    "activation": {
+      "mode": "manual",
+      "paths": []
+    },
+    "execution": {
+      "context": "inline",
+      "shell": "bash"
+    },
+    "trust": {},
+    "permissions": {
+      "network": "none",
+      "file_write": "none（本包不产生任何写操作）",
+      "subprocess": "none",
+      "credentials": "none"
+    },
+    "degradation": {}
+  },
+  "gates": {},
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}

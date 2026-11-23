@@ -1,0 +1,4 @@
+interface:
+  display_name: "MiniMax H3 Prompt Guide"
+  short_description: "Guide an idea into an H3-compatible prompt for text, keyframe, or full-reference video"
+  default_prompt: "First decide whether my idea fits MiniMax H3 and select T2VA, I2VA, FL2VA, L2VA, or Ref2VA. If the brief is vague, offer a few suitable directions and recommend one; if it is concrete, compile a copy-ready prompt using this Skill's H3-compatible field order, labels, language, and timing notation."

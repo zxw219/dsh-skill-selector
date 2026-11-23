@@ -1,0 +1,4 @@
+interface:
+  display_name: "Global Skill Evolution"
+  short_description: "Govern, audit, validate, and evolve a Codex skill stack"
+  default_prompt: "Use $global-skill-evolution to audit recent skill changes, keep or revert them by evidence, and propagate validated lessons safely."

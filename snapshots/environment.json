@@ -1,6 +1,6 @@
 {
   "schema": "dsh-environment-snapshot@2",
-  "generatedAt": "2026-11-16T15:50:38.333Z",
+  "generatedAt": "2026-11-23T15:50:58.000Z",
   "machine": "ZXW",
   "dshProfile": "desktop",
   "restore": {
@@ -19,7 +19,6 @@
     "enabled": [
       "@deepseek-ai/dsh-base",
       "@deepseek-ai/dsh-web-app",
-      "@michengai/dsh-archive-manager",
       "billion-context",
       "dsh-blender-plugin",
       "dsh-prompt",
@@ -28,45 +27,50 @@
       "@noob-stupid/dsh-plugin-console",
       "@deepseek-ai/dsh-experimental-plugin-market-bundle",
       "dsh-better-sidebar",
-      "dsh-rewind-plugin",
-      "dsh-context",
       "dsh-chat-shell",
       "dsh-side-chat-plus",
-      "dshmarket",
-      "dsh-codex-subscription",
       "@zxw219/dsh-conversation-window",
+      "dsh-skill-selector-default-manual",
+      "dsh-rewind-plugin",
+      "dsh-codex-subscription",
+      "@michengai/dsh-archive-manager",
+      "dsh-context",
       "ds-harness-remote",
       "@wenaixi/dsh-ponytail",
-      "dsh-skill-selector-default-manual"
+      "dsh-ops",
+      "dsh-prompt-rewriter",
+      "dsh-image-gen"
     ],
     "dependencies": {
       "@ayanehana/dsh-reasoning-effort": "1.0.0",
-      "@deepseek-ai/dsh-subagent-codex": "0.2.2-rc.3",
       "@eddyskywalker/dsh-chatgpt-subscription": "0.72.0",
       "@linxin666/dsh-client-ui-skill-explorer": "0.4.18",
-      "@michengai/dsh-archive-manager": "1.3.5",
+      "@michengai/dsh-archive-manager": "1.4.1",
       "@noob-stupid/dsh-plugin-console": "0.5.110",
-      "@wenaixi/dsh-ponytail": "5.6.3",
+      "@wenaixi/dsh-ponytail": "5.6.4",
       "@zxw219/dsh-conversation-window": "link:C:/Users/Administrator/Desktop/DeepSeekHarnessWorkspace/dsh-conversation-window",
-      "billion-context": "0.1.213",
-      "ds-harness-remote": "0.6.4",
+      "billion-context": "0.1.216",
+      "ds-harness-remote": "0.6.6",
       "dsh-agent-dock": "link:C:/Users/Administrator/Desktop/DeepSeekHarnessWorkspace/dsh-agent-dock",
       "dsh-better-sidebar": "0.32.1",
       "dsh-blender-plugin": "3.0.6",
+      "dsh-ccgui": "1.0.6",
       "dsh-chat-shell": "github:zxw219/dsh-chat-shell#rail",
-      "dsh-codex-subscription": "3.2.15",
+      "dsh-codex-subscription": "3.2.27",
       "dsh-codex-subtask-cli": "npm:@openai/codex@0.166.0",
-      "dsh-connect-doubao": "github:Wahwayhale/dsh-connect-doubao#58bcc89710f9cbe7192db43462bc02e6c6cc86e8",
-      "dsh-context": "0.84.1",
+      "dsh-context": "0.86.0",
+      "dsh-image-gen": "0.11.4",
       "dsh-mattpocock-skills-deck": "1.9.0-beta.33",
+      "dsh-ops": "0.5.5",
       "dsh-plugin-tool-management": "0.22.8",
       "dsh-prompt": "0.4.41",
+      "dsh-prompt-rewriter": "1.8.4",
       "dsh-reference-anything": "0.5.2",
-      "dsh-rewind-plugin": "0.22.1",
+      "dsh-rewind-plugin": "0.22.2",
       "dsh-share": "0.5.0",
       "dsh-side-chat-plus": "0.5.2",
       "dsh-skill-selector-default-manual": "link:../../../Desktop/DeepSeekHarnessWorkspace/dsh-skill-selector",
-      "dshmarket": "1.73.19"
+      "dshmarket": "1.73.25"
     }
   },
   "skillGroups": [
@@ -79,9 +83,9 @@
       "memberCount": 90
     }
   ],
-  "skillCount": 119,
+  "skillCount": 307,
   "githubSkills": 90,
-  "bundledSkills": 29,
+  "bundledSkills": 217,
   "skills": [
     {
       "dir": "acting-performance",
@@ -91,6 +95,176 @@
       "source": {
         "type": "bundle",
         "path": "snapshots/skills/acting-performance"
+      }
+    },
+    {
+      "dir": "action-choreography-reference",
+      "name": "action-choreography-reference",
+      "description": "动作编排参考工具：为武术、舞蹈、体育、特技、双人配合和武器系统选择可靠的动作体系锚点，并把它们转化为符合身体力学、重心、距离与因果关系的虚构动作设计。用于设计打斗、追逐、招式和连续动作时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/action-choreography-reference"
+      }
+    },
+    {
+      "dir": "action-rhythm-editing",
+      "name": "action-rhythm-editing",
+      "description": "动作节奏与剪辑设计工具：规划蓄力、爆发、停顿、打击帧、慢动作、音乐卡点和收势节奏，让动作具备重量感与清晰的视听节拍。用于动作视频节奏、打击感和剪辑节拍设计时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/action-rhythm-editing"
+      }
+    },
+    {
+      "dir": "action-showcase-direction",
+      "name": "action-showcase-direction",
+      "description": "纯动作展示导演工具：围绕武器、装甲、机械能力、运动系统或角色战斗语言，设计无需对白也能成立的短时长动作展示。用于10至60秒动作概念片、能力展示和战斗片段时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/action-showcase-direction"
+      }
+    },
+    {
+      "dir": "aesthetic-style-intelligence",
+      "name": "aesthetic-style-intelligence",
+      "description": "审美风格智能工具：持续跟踪、评估和发展视觉偏好，把有效的色彩、构图、材质、光影和风格规律沉淀为可复用审美判断。用于建立审美标准、比较方案和统一创作方向时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/aesthetic-style-intelligence"
+      }
+    },
+    {
+      "dir": "agent-emotion-system",
+      "name": "agent-emotion-system",
+      "description": "用能量、情绪状态、活动池和心跳循环辅助 Agent 做节奏与休整决策；适用于需要可解释状态管理和自主活动调度的长期 Agent。An energy-and-emotion state system with activity pools and heartbeat loops for explainable pacing, rest decisions, and autonomous scheduling in long-running Agents.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/agent-emotion-system"
+      }
+    },
+    {
+      "dir": "agent-optimization-suite",
+      "name": "agent-optimization-suite",
+      "description": "Agent优化方法套件：综合深度推理、4D工作法、任务分层、快速回复、对话洞察、时段适配、行为准则、学习自评、创意分析、知识架构、情感追踪和工具调用方法。用于设计、校准或复盘通用Agent的判断、执行、沟通与自我改进流程。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/agent-optimization-suite"
+      }
+    },
+    {
+      "dir": "agent-self-maintenance",
+      "name": "agent-self-maintenance",
+      "description": "帮助 Agent 建立经验捕获、错误学习、复用实践、定期清理与复盘的自维护闭环；适用于长期运行、能力沉淀和避免重复错误。A self-maintenance loop for Agents that captures experience, learns from failures, applies reusable patterns, evicts stale knowledge, and performs periodic reflection for long-running systems.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/agent-self-maintenance"
+      }
+    },
+    {
+      "dir": "ai-material-realism",
+      "name": "ai-material-realism",
+      "description": "AI材质真实感基础工具：把图像或视频提示词转化为可信的材质、光学、照明、运动和渲染语言，减少塑料感、漂浮感与不符合物理规律的表现。用于任何追求真实质感的AI视觉生成任务。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/ai-material-realism"
+      }
+    },
+    {
+      "dir": "ai-video-iteration-doctor",
+      "name": "ai-video-iteration-doctor",
+      "description": "AI视频迭代诊断工具：根据生成结果定位动作、运镜、角色、空间、材质、节奏或提示词问题，并给出下一轮最小且明确的修改方案。用于结果不对、需要重试或不知道该改哪里时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/ai-video-iteration-doctor"
+      }
+    },
+    {
+      "dir": "ai-video-output-review",
+      "name": "ai-video-output-review",
+      "description": "AI视频成片审查工具：读取视频信息、抽取关键帧、建立时间点证据，并对照提示词检查角色、动作、镜头、空间、节奏和质量问题。用于生成完成后的验收、诊断和复盘。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/ai-video-output-review"
+      }
+    },
+    {
+      "dir": "ai-video-prompt-director",
+      "name": "ai-video-prompt-director",
+      "description": "AI视频提示词导演工具：以研究、结构、剧作、镜头、表演、动作、声音和生成约束为一体，组织完整的电影化视频提示词工作流。用于导演模式、片场模式或复杂AI视频提示词制作。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/ai-video-prompt-director"
+      }
+    },
+    {
+      "dir": "ai-video-prompt-preflight",
+      "name": "ai-video-prompt-preflight",
+      "description": "AI视频提示词提交前检查工具：在生成前检查可执行性、内部冲突、参考图职责、资产准备、时间负载、镜头数量、连续性和模型适配问题。用于正式提交提示词前的最终自检。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/ai-video-prompt-preflight"
+      }
+    },
+    {
+      "dir": "ai-video-workflow",
+      "name": "ai-video-workflow",
+      "description": "把文案、氛围底图、改图和视频生成串成可检查的 AI 视频生产流程，并提供阶段模板和质量检查点。A staged AI-video production workflow connecting script development, look frames, image revision, and video generation with prompt templates and quality gates.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/ai-video-workflow"
+      }
+    },
+    {
+      "dir": "almendros-cinematography",
+      "name": "almendros-cinematography",
+      "description": "为明确请求 almendros 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/almendros-cinematography"
+      }
+    },
+    {
+      "dir": "an-camera-director",
+      "name": "an-camera-director",
+      "description": "An镜头设计：将构图分镜与运镜设计合为一个入口，设计或修复景别、角度、纵深、切镜、摄影机路径、跟随速度与落幅；适用于镜头设计、分镜与摄影局部返工，继承已定剧情、动作和输出格式。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/an-camera-director"
+      }
+    },
+    {
+      "dir": "anamorphic-look",
+      "name": "anamorphic-look",
+      "description": "Write the anamorphic-lens block for image and video generation prompts: focal choice, oval bokeh, horizontal flares, strong-blur anchoring, film stock and the tech tail. Use when a prompt mentions anamorphic, анаморф, 24/35/40 мм, размытие, флэры, film still.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/anamorphic-look"
+      }
+    },
+    {
+      "dir": "asset-manager",
+      "name": "asset-manager",
+      "description": "为图片、视频、音频和文档素材建立项目、日期、类型、标签、命名和元数据规范，便于归档与检索。A foundational asset-organization Skill for classifying images, video, audio, and documents by project, date, type, tags, filenames, and metadata for reliable retrieval.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/asset-manager"
       }
     },
     {
@@ -114,6 +288,16 @@
       }
     },
     {
+      "dir": "bounded-explore-select",
+      "name": "bounded-explore-select",
+      "description": "有限预算探索与筛选工具：在固定时间、次数或成本内批量生成候选方案，建立统一评分标准并选择最值得继续深化的方向。用于需要多方案探索但必须控制资源消耗时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/bounded-explore-select"
+      }
+    },
+    {
       "dir": "browser-cdp",
       "name": "browser-cdp",
       "description": "Use this skill when you need to control a Chrome browser via CDP (Chrome DevTools Protocol) to reuse existing login sessions. Covers: launching Chrome in debug mode, opening URLs, waiting for page load, evaluating JavaScript, taking snapshots, and extracting auth tokens. Trigger phrases: browser aut",
@@ -126,7 +310,7 @@
     {
       "dir": "camera-lens-anchoring",
       "name": "camera-lens-anchoring",
-      "description": "当用户需要为特定情绪/风格/场景选择专业影视摄影机+镜头组合、或需要在AI视频prompt中添加具体摄影机锚点时调用。 核心 trigger：用户提到\"用什么摄影机\"、\"什么镜头\"、\"电影感\"、\"摄影机型号\"、\"镜头选择\"、\"画质风格\"、\"胶片感\"、\"数字感\"。 不适用于：纯剪辑问题（用 shot-design）、纯调色问题（用 color-grading）、纯叙事问题（用 directing）。",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -146,13 +330,63 @@
       }
     },
     {
-      "dir": "cinedance-seedance",
-      "name": "cinedance-seedance",
-      "description": "为 Seedance 或 Higgsfield Seedance 编写和修正镜头提示词，处理首帧、空间走位、视线、光学、动作时序和剪辑连续性；明确调用 CINEDANCE 时也适用。其他平台只移用通用镜头原则，不照搬平台语法。",
+      "dir": "capsule-engine",
+      "name": "capsule-engine",
+      "description": "知识胶囊引擎：把真实证据、用户反馈、成功案例、失败原因、修复方案和架构决策整理为有范围、有状态、可追溯的复用知识。用于经验沉淀、知识治理和工作流迭代。",
       "group": null,
       "source": {
         "type": "bundle",
-        "path": "snapshots/skills/cinedance-seedance"
+        "path": "snapshots/skills/capsule-engine"
+      }
+    },
+    {
+      "dir": "cardiff-cinematography",
+      "name": "cardiff-cinematography",
+      "description": "为明确请求 cardiff 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cardiff-cinematography"
+      }
+    },
+    {
+      "dir": "cg-cinematic-prompts",
+      "name": "cg-cinematic-prompts",
+      "description": "顶级 CG 电影质感（银黑高反差、液态金属墨流爆发、狂风长发）的 MJ v8.2 生图提示词批量生产，并根据定稿图和用户想法出 30 秒 Seedance 2.5 电影级视频提示词。用户提到 CG 风格提示词、MJ 批量出图、图生视频 30 秒时使用。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cg-cinematic-prompts"
+      }
+    },
+    {
+      "dir": "cg-mythic-beast-character",
+      "name": "cg-mythic-beast-character",
+      "description": "Generate compact Midjourney 8.2 prompts for stylized 3D anime CGI mythic-beast characters with porcelain anime faces, dominant silver-white groomed fur, luminous elemental energy, spectral beast spirits, and cinematic lighting. Use for white fox, dragon, Vermilion Bird, Azure Dragon, White Tiger, Bl",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cg-mythic-beast-character"
+      }
+    },
+    {
+      "dir": "character-continuity-bible",
+      "name": "character-continuity-bible",
+      "description": "角色连续性圣经工具：为角色、服装、道具、武器、场景和多镜头序列建立稳定锁定规则，减少跨镜头身份漂移与视觉不一致。用于连续镜头、系列内容和角色一致性管理。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/character-continuity-bible"
+      }
+    },
+    {
+      "dir": "chinese-aesthetic-video-director",
+      "name": "chinese-aesthetic-video-director",
+      "description": "根据一句想法、参考图片、人物资产、已有镜头或生成失败结果，编写、续写和修复中式东方美学 AI 视频提示词。适用于中式园林、东方情绪短片、风光水影、含蓄人物表演、软光大光圈和短事件叙事；当用户要求“输出作者的提示词”时输出内置作者案例。只写提示词与必要诊断，不生成图片或视频。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/chinese-aesthetic-video-director"
       }
     },
     {
@@ -166,6 +400,266 @@
       }
     },
     {
+      "dir": "cinema-language-atlas",
+      "name": "cinema-language-atlas",
+      "description": "电影语言图谱工具：研究、整理和调用镜头、构图、调度、运动、剪辑、表演、声音与叙事功能的电影语言体系。用于寻找专业影视表达、建立参考图谱或补足导演词汇时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinema-language-atlas"
+      }
+    },
+    {
+      "dir": "cinematic-agnes-varda",
+      "name": "cinematic-agnes-varda",
+      "description": "使用阿涅斯·瓦尔达（Agnès Varda）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-agnes-varda"
+      }
+    },
+    {
+      "dir": "cinematic-akira-kurosawa",
+      "name": "cinematic-akira-kurosawa",
+      "description": "使用黑泽明（Akira Kurosawa）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-akira-kurosawa"
+      }
+    },
+    {
+      "dir": "cinematic-alfred-hitchcock",
+      "name": "cinematic-alfred-hitchcock",
+      "description": "使用阿尔弗雷德·希区柯克（Alfred Hitchcock）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-alfred-hitchcock"
+      }
+    },
+    {
+      "dir": "cinematic-andrei-tarkovsky",
+      "name": "cinematic-andrei-tarkovsky",
+      "description": "使用安德烈·塔可夫斯基（Andrei Tarkovsky）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-andrei-tarkovsky"
+      }
+    },
+    {
+      "dir": "cinematic-audiovisual-language",
+      "name": "cinematic-audiovisual-language",
+      "description": "电影化视听语言工具：用景别、机位、轴线、调度、镜头运动、剪辑关系、声音和光线等正式影视语言设计提示词、分镜、镜头表与场景计划。用于任何需要专业镜头表达的AI视频任务。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-audiovisual-language"
+      }
+    },
+    {
+      "dir": "cinematic-bong-joon-ho",
+      "name": "cinematic-bong-joon-ho",
+      "description": "使用奉俊昊（Bong Joon-ho）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-bong-joon-ho"
+      }
+    },
+    {
+      "dir": "cinematic-chantal-akerman",
+      "name": "cinematic-chantal-akerman",
+      "description": "使用香特尔·阿克曼（Chantal Akerman）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-chantal-akerman"
+      }
+    },
+    {
+      "dir": "cinematic-christopher-nolan",
+      "name": "cinematic-christopher-nolan",
+      "description": "使用克里斯托弗·诺兰（Christopher Nolan）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-christopher-nolan"
+      }
+    },
+    {
+      "dir": "cinematic-david-fincher",
+      "name": "cinematic-david-fincher",
+      "description": "使用大卫·芬奇（David Fincher）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-david-fincher"
+      }
+    },
+    {
+      "dir": "cinematic-denis-villeneuve",
+      "name": "cinematic-denis-villeneuve",
+      "description": "使用丹尼斯·维伦纽瓦（Denis Villeneuve）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-denis-villeneuve"
+      }
+    },
+    {
+      "dir": "cinematic-director",
+      "name": "cinematic-director",
+      "description": ">-",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-director"
+      }
+    },
+    {
+      "dir": "cinematic-edward-yang",
+      "name": "cinematic-edward-yang",
+      "description": "使用杨德昌（Edward Yang）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-edward-yang"
+      }
+    },
+    {
+      "dir": "cinematic-federico-fellini",
+      "name": "cinematic-federico-fellini",
+      "description": "使用费德里科·费里尼（Federico Fellini）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-federico-fellini"
+      }
+    },
+    {
+      "dir": "cinematic-frame-director",
+      "name": "cinematic-frame-director",
+      "description": "Turn a user's idea, scene description, or mood into ONE production-grade cinematic still-image prompt in English for text-to-image models (Seedream, Midjourney, Flux, DALL-E, or any image generator). Use this skill whenever the user asks for an image prompt, a cinematic frame, a \"movie still\" look, ",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-frame-director"
+      }
+    },
+    {
+      "dir": "cinematic-hirokazu-koreeda",
+      "name": "cinematic-hirokazu-koreeda",
+      "description": "使用是枝裕和（Hirokazu Kore-eda）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-hirokazu-koreeda"
+      }
+    },
+    {
+      "dir": "cinematic-hou-hsiao-hsien",
+      "name": "cinematic-hou-hsiao-hsien",
+      "description": "使用侯孝贤（Hou Hsiao-hsien）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-hou-hsiao-hsien"
+      }
+    },
+    {
+      "dir": "cinematic-ingmar-bergman",
+      "name": "cinematic-ingmar-bergman",
+      "description": "使用英格玛·伯格曼（Ingmar Bergman）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-ingmar-bergman"
+      }
+    },
+    {
+      "dir": "cinematic-megastructure",
+      "name": "cinematic-megastructure",
+      "description": "Generate compact Midjourney 8.2 prompts for cinematic live-action megastructure compositions with an overwhelming scale contrast, at least 40 percent negative space, cropped monumental forms, tiny silhouettes for scale, atmospheric perspective, one soft light source, and a restrained monochromatic p",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-megastructure"
+      }
+    },
+    {
+      "dir": "cinematic-music-sound-design",
+      "name": "cinematic-music-sound-design",
+      "description": "电影配乐与声音设计工具：设计主题动机、速度、节拍、和声、配器、环境声、拟音、冲击声、静默、空间声场和声画关系。用于影片配乐、声音叙事和时间点声音规划。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-music-sound-design"
+      }
+    },
+    {
+      "dir": "cinematic-park-chan-wook",
+      "name": "cinematic-park-chan-wook",
+      "description": "使用朴赞郁（Park Chan-wook）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-park-chan-wook"
+      }
+    },
+    {
+      "dir": "cinematic-pedro-almodovar",
+      "name": "cinematic-pedro-almodovar",
+      "description": "使用佩德罗·阿莫多瓦（Pedro Almodóvar）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-pedro-almodovar"
+      }
+    },
+    {
+      "dir": "cinematic-scene-prompts",
+      "name": "cinematic-scene-prompts",
+      "description": "将剧情编写或改写为跨风格AI视频分镜提示词；支持拍法选案、实拍与动画媒介、混合风格，以及首尾帧和分镜图提示词。重点处理动作证据、情绪、空间、声光与连续性，不直接生成视频或处理一般静态排版设计。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-scene-prompts"
+      }
+    },
+    {
+      "dir": "cinematic-sergio-leone",
+      "name": "cinematic-sergio-leone",
+      "description": "使用赛尔乔·莱昂内（Sergio Leone）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-sergio-leone"
+      }
+    },
+    {
+      "dir": "cinematic-sofia-coppola",
+      "name": "cinematic-sofia-coppola",
+      "description": "使用索菲亚·科波拉（Sofia Coppola）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-sofia-coppola"
+      }
+    },
+    {
+      "dir": "cinematic-stanley-kubrick",
+      "name": "cinematic-stanley-kubrick",
+      "description": "使用斯坦利·库布里克（Stanley Kubrick）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-stanley-kubrick"
+      }
+    },
+    {
       "dir": "cinematic-style-repair",
       "name": "cinematic-style-repair",
       "description": "默认直接调用生图工具生成克制、主次清晰的写实电影感画面；适用于电影感生图、画面修复、提示词修复，以及画面杂乱、主体不突出、缺少主次、光线不可信、色彩太花、人物僵硬、像 AI 海报或 CG 的问题。只保留电影感和修复能力，不处理参考图风格复刻、动漫、电商产品图和导演模式字段模板。仅当用户明确要求写提示词、只要 prompt、不要出图、优化提示词，或生图工具失败时，才输出提示词。",
@@ -173,6 +667,26 @@
       "source": {
         "type": "bundle",
         "path": "snapshots/skills/cinematic-style-repair"
+      }
+    },
+    {
+      "dir": "cinematic-terrence-malick",
+      "name": "cinematic-terrence-malick",
+      "description": "使用泰伦斯·马力克（Terrence Malick）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-terrence-malick"
+      }
+    },
+    {
+      "dir": "cinematic-vfx-director",
+      "name": "cinematic-vfx-director",
+      "description": "电影特效导演工具：把叙事目标转化为可执行的视觉特效层级、运动逻辑、材质、光照、交互、镜头与合成要求。用于能量、烟火、破坏、变形和超自然特效设计。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-vfx-director"
       }
     },
     {
@@ -186,9 +700,49 @@
       }
     },
     {
+      "dir": "cinematic-wes-anderson",
+      "name": "cinematic-wes-anderson",
+      "description": "使用韦斯·安德森（Wes Anderson）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-wes-anderson"
+      }
+    },
+    {
+      "dir": "cinematic-wong-kar-wai",
+      "name": "cinematic-wong-kar-wai",
+      "description": "使用王家卫（Wong Kar-wai）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-wong-kar-wai"
+      }
+    },
+    {
+      "dir": "cinematic-yasujiro-ozu",
+      "name": "cinematic-yasujiro-ozu",
+      "description": "使用小津安二郎（Yasujirō Ozu）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-yasujiro-ozu"
+      }
+    },
+    {
+      "dir": "cinematic-zhang-yimou",
+      "name": "cinematic-zhang-yimou",
+      "description": "使用张艺谋（Zhang Yimou）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cinematic-zhang-yimou"
+      }
+    },
+    {
       "dir": "cinematography-180-degree-rule",
       "name": "cinematography-180-degree-rule",
-      "description": "用户提到180度法则、轴线、画面方向、分割线、摄影机放哪边",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -200,7 +754,7 @@
     {
       "dir": "cinematography-back-lighting",
       "name": "cinematography-back-lighting",
-      "description": "用户提到从后场打光、叠光、光源光、台灯/窗户照亮演员、真实光源不够亮",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -212,7 +766,7 @@
     {
       "dir": "cinematography-hard-soft-light",
       "name": "cinematography-hard-soft-light",
-      "description": "用户提到硬光、软光、柔光、阴影清晰/模糊、光源大小",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -224,7 +778,7 @@
     {
       "dir": "cinematography-light-direction-mood",
       "name": "cinematography-light-direction-mood",
-      "description": "用户提到灯光方向、侧光、背光、主光位置、想要戏剧性/神秘感",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -236,7 +790,7 @@
     {
       "dir": "cinematography-master-scene",
       "name": "cinematography-master-scene",
-      "description": "用户提到主场景法、先拍什么、镜头顺序、覆盖策略、备选镜头",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -248,7 +802,7 @@
     {
       "dir": "cinematography-three-point-lighting",
       "name": "cinematography-three-point-lighting",
-      "description": "用户提到布光、灯光设置、三点照明、灯光比、主光/补光/背光",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -260,7 +814,7 @@
     {
       "dir": "cinematography-zone-system",
       "name": "cinematography-zone-system",
-      "description": "用户提到分区曝光、定位、第V区、中灰18%、我想让这个物体看起来更亮/更暗",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -270,9 +824,19 @@
       }
     },
     {
+      "dir": "ciwei-superi-guofeng-video",
+      "name": "ciwei-superi-guofeng-video",
+      "description": "国风电影感视频工具：生成具有古装影视质感的中国历史题材图像提示词与图生视频提示词，强化服化道、场景、光影、表演和镜头语言。用于国风电影感、古装人物和历史场景创作。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/ciwei-superi-guofeng-video"
+      }
+    },
+    {
       "dir": "color-grading-color-temperature",
       "name": "color-grading-color-temperature",
-      "description": "用户提到色温、偏色、冷暖、混合光源",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -296,7 +860,7 @@
     {
       "dir": "color-grading-contrast-saturation",
       "name": "color-grading-contrast-saturation",
-      "description": "用户提到对比度调完颜色变了、饱和度、RGB处理",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -308,7 +872,7 @@
     {
       "dir": "color-grading-filter-nonlinear",
       "name": "color-grading-filter-nonlinear",
-      "description": "用户提到滤镜效果、模拟光学、数字滤镜",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -320,7 +884,7 @@
     {
       "dir": "color-grading-log-workflow",
       "name": "color-grading-log-workflow",
-      "description": "当用户处理Log编码素材（RED/ARRI/Sony RAW等）时调用。核心流程：先在Log状态下用Offset做整体调整，再用Shadow/Midtone/Highlight做影调分区，套用LUT正常化后做精细调整。Log状态适合大刀阔斧，正常化后适合精雕细琢。",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -332,7 +896,7 @@
     {
       "dir": "color-grading-look-development",
       "name": "color-grading-look-development",
-      "description": "当用户需要为影片建立创意色彩风格（Look）时调用。流程：评估素材→建立一级校色基础→用二级调色分区→叠加风格化处理。核心原则：技术校色与风格化处理分离，便于后期修改。",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -344,7 +908,7 @@
     {
       "dir": "color-grading-memory-colors",
       "name": "color-grading-memory-colors",
-      "description": "当用户需要校准画面色彩准确性、诊断'肤色不对'、或理解观众对色彩的心理预期时调用。核心 trigger：用户提到'肤色不对'、'天空颜色'、'色彩记忆'、'画面看起来不自然'。不适用于：用户讨论创意风格（用 look-development）。",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -356,7 +920,7 @@
     {
       "dir": "color-grading-overexposure-recovery",
       "name": "color-grading-overexposure-recovery",
-      "description": "最后一搏",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -368,7 +932,7 @@
     {
       "dir": "color-grading-primary-workflow",
       "name": "color-grading-primary-workflow",
-      "description": "当用户需要对视频/影片进行一级校色时调用。核心工作流：先调对比度（Lift/Gamma/Gain）建立良好的黑位和白位，再调色彩平衡校正偏色，最后微调饱和度。三个步骤有强交互性需迭代调整。",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -380,7 +944,7 @@
     {
       "dir": "color-grading-shot-matching",
       "name": "color-grading-shot-matching",
-      "description": "当用户需要让同一场景内的多个镜头看起来一致时调用。工作流：评估差异→匹配对比度→匹配色彩→匹配饱和度→排查异常→迭代。核心原则：知道何时停止，避免眼睛适应性导致失去客观性。",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -392,7 +956,7 @@
     {
       "dir": "color-grading-skin-tone-vectorscope",
       "name": "color-grading-skin-tone-vectorscope",
-      "description": "所有人种的肤色在矢量示波器上都落在围绕I-bar的狭窄楔形范围内。RGB分量示波器上肤色总是红色通道最强。调色师应利用这一物理事实作为色彩平衡的基准点。",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -402,9 +966,89 @@
       }
     },
     {
+      "dir": "concise-user-facing-output",
+      "name": "concise-user-facing-output",
+      "description": "简洁用户输出工具：默认把进度、状态、澄清和最终答复压缩为结论优先、重点清晰、可快速扫描的表达，同时保留必要信息。用于减少冗长回复和提升沟通效率。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/concise-user-facing-output"
+      }
+    },
+    {
+      "dir": "constraint-input-router",
+      "name": "constraint-input-router",
+      "description": "约束输入路由工具：当纯文字无法稳定控制构图、空间、景深、姿态、运动或连续性时，判断应增加参考图、草图、遮罩、深度图、姿态或其他结构化输入。用于选择更可靠的生成控制方式。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/constraint-input-router"
+      }
+    },
+    {
+      "dir": "coutard-cinematography",
+      "name": "coutard-cinematography",
+      "description": "为明确请求 coutard 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/coutard-cinematography"
+      }
+    },
+    {
+      "dir": "creative-anchor-director",
+      "name": "creative-anchor-director",
+      "description": "创意锚点导演工具：主动寻找、研究、筛选并组合导演、影片、摄影师、动画师、工作室、艺术流派和技术方法等高信息密度参考锚点。用于提升创意方向的明确度和可执行性。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/creative-anchor-director"
+      }
+    },
+    {
+      "dir": "creative-casebook",
+      "name": "creative-casebook",
+      "description": "创意案例簿工具：把成功与失败的生成结果整理为案例卡、提示词差异、模板、评价规则和改进建议。用于复盘创作、保留有效方法和避免重复失败。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/creative-casebook"
+      }
+    },
+    {
+      "dir": "creative-production-ledger",
+      "name": "creative-production-ledger",
+      "description": "创意生产台账工具：把提示词、参考资产及职责、模型设置、版本、生成结果、评审证据和采用决定绑定成可追溯记录。用于多轮生成、团队协作和资产版本管理。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/creative-production-ledger"
+      }
+    },
+    {
+      "dir": "creative-research-first",
+      "name": "creative-research-first",
+      "description": "创意研究优先工具：在重要的图像、视频、角色、场景、品牌、时尚、建筑、音乐或声音创作前，先完成有目标的网络研究与参考验证。用于避免凭空创作和提高参考质量。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/creative-research-first"
+      }
+    },
+    {
+      "dir": "cross-shot-consistency-audit",
+      "name": "cross-shot-consistency-audit",
+      "description": "跨镜头一致性审计工具：检查一组镜头或图像中的角色、服装、道具、场景、时间、光线、色彩、镜头逻辑和叙事事实是否一致。用于镜头组选片、成片检查和连续性修复。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/cross-shot-consistency-audit"
+      }
+    },
+    {
       "dir": "dialogue-barrier-narrative",
       "name": "dialogue-barrier-narrative",
-      "description": "障碍物、物理隔离、隔窗对峙、隔墙对话、隔栏杆、争吵到和好",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -416,7 +1060,7 @@
     {
       "dir": "dialogue-busy-hands-no-eye-contact",
       "name": "dialogue-busy-hands-no-eye-contact",
-      "description": "(1)演员对话时互相盯着对方眼睛不放；(2)表演感觉舞台化或不真实；(3)导演不知道如何让对话场景看起来自然",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -428,7 +1072,7 @@
     {
       "dir": "dialogue-camera-follow-identity",
       "name": "dialogue-camera-follow-identity",
-      "description": "当追逐/追赶/跟随场景中\"摄影机该跟谁\"的判断不确定时调用此 skill。核心 trigger：(1) 追逐场景不知道该跟随追的人还是被追的人；(2) 想让观众认同某个特定角色；(3) 一个人追着另一个人说话的张力场景。不适用于：全知视角的纪录片拍摄、需要同时展示双方的体育转播、客观记录式的监控风格镜头。",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -440,7 +1084,7 @@
     {
       "dir": "dialogue-camera-height-stance",
       "name": "dialogue-camera-height-stance",
-      "description": "摄影机高度、观众立场、仰拍俯拍、每个对话场景、摄影机放多高",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -452,7 +1096,7 @@
     {
       "dir": "dialogue-closeup-timing",
       "name": "dialogue-closeup-timing",
-      "description": "(1) 对话场景切太多特写让观众错过表情变化；(2) 不确定特写是否够资格切入；(3) 需要从全景/中景突然跳到特写制造冲击力",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -464,7 +1108,7 @@
     {
       "dir": "dialogue-deep-staging",
       "name": "dialogue-deep-staging",
-      "description": "深布景、三层空间、前景/中景/背景、摄影机靠墙、小空间、看起来不挤",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -476,7 +1120,7 @@
     {
       "dir": "dialogue-delayed-reveal",
       "name": "dialogue-delayed-reveal",
-      "description": "延迟揭示、角色出场、悬念、背影、沉默、关键台词、群戏",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -488,7 +1132,7 @@
     {
       "dir": "dialogue-distance-collapse-arc",
       "name": "dialogue-distance-collapse-arc",
-      "description": "(1) 角色情绪崩溃后需要自然过渡回日常；(2) 想用摄影机推近表达情感深入；(3) 需要在一镜到底中实现微妙的象征性空间变化",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -500,7 +1144,7 @@
     {
       "dir": "dialogue-focal-character-temperament",
       "name": "dialogue-focal-character-temperament",
-      "description": "(1)同一个角色在不同场景需要显得更友好或更可怕；(2)不确定用什么焦距拍某个角色；(3)需要通过视觉手段区分好人和坏人",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -512,7 +1156,7 @@
     {
       "dir": "dialogue-focal-progression",
       "name": "dialogue-focal-progression",
-      "description": "焦距变化、走近、缩近距离",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -524,7 +1168,7 @@
     {
       "dir": "dialogue-gaze-mapping",
       "name": "dialogue-gaze-mapping",
-      "description": "(1) 三人以上群戏需要交代空间关系；(2) 不能或不想用全景/建立镜头；(3) 多人对话场景中角色位置混乱",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -536,7 +1180,7 @@
     {
       "dir": "dialogue-position-swap",
       "name": "dialogue-position-swap",
-      "description": "位置交换、权力转移、主导地位",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -548,7 +1192,7 @@
     {
       "dir": "dialogue-task-overload",
       "name": "dialogue-task-overload",
-      "description": "任务过载、本能表演、演员反对、洗碗/泡咖啡/摆道具",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -560,7 +1204,7 @@
     {
       "dir": "dialogue-telephoto-claustrophobia",
       "name": "dialogue-telephoto-claustrophobia",
-      "description": "(1)角色听到无法承受的消息；(2)需要让观众直视角色的眼睛；(3)需要制造窒息感/幽闭感",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -570,9 +1214,29 @@
       }
     },
     {
+      "dir": "direct-seedance-2-5-prompts",
+      "name": "direct-seedance-2-5-prompts",
+      "description": "将已确定的剧本片段、镜头方案、多模态参考、前段视频状态或成片问题，转译为可直接使用的 Seedance 2.5 正式提示词。用于用户明确要求 Seedance 2.5 Prompt、投喂稿、连续生成、参考视频转制、局部或整段编辑、成片返修；不用于尚未定稿的故事开发、单纯分镜讨论，也不直接生成视频。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/direct-seedance-2-5-prompts"
+      }
+    },
+    {
+      "dir": "direct-seedance-2-5-prompts-z",
+      "name": "direct-seedance-2-5-prompts-z",
+      "description": "将已确定的剧本片段、镜头方案、多模态参考、前段视频状态或成片问题，转译为可直接使用的 Seedance 2.5 六栏正式提示词（投喂稿改良版 z）。用于用户明确要求 Seedance 2.5 Prompt、投喂稿、连续生成、参考视频转制、局部或整段编辑、成片返修；不用于尚未定稿的故事开发、单纯分镜讨论，也不直接生成视频。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/direct-seedance-2-5-prompts-z"
+      }
+    },
+    {
       "dir": "directing-activity-vs-action",
       "name": "directing-activity-vs-action",
-      "description": "用户问这段有用吗、这个场景要不要删、为什么这段看起来很无聊、闪回该不该用、日常场景怎么写才有戏剧性",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -584,7 +1248,7 @@
     {
       "dir": "directing-ambiguity-diagnosis",
       "name": "directing-ambiguity-diagnosis",
-      "description": "模糊/多义/开放性、这里是不是太模糊了、观众能理解吗、要不要解释得更清楚、开放式结局",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -596,7 +1260,7 @@
     {
       "dir": "directing-coincidence-trouble",
       "name": "directing-coincidence-trouble",
-      "description": "巧合、这个巧合太假了、怎么让转折不显得突兀、运气成分太重、天降神兵",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -608,7 +1272,7 @@
     {
       "dir": "directing-contrast-emphasis",
       "name": "directing-contrast-emphasis",
-      "description": "(1) 元素太多不知道该突出什么；(2) 本能反应是把重要的东西放大而非把不重要的东西缩小；(3) 场景中所有元素的视觉/叙事权重平均，缺乏层次",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -620,7 +1284,7 @@
     {
       "dir": "directing-credible-impossible",
       "name": "directing-credible-impossible",
-      "description": "可信、这个设定合理吗、观众会信吗、太假了、逻辑不通",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -632,7 +1296,7 @@
     {
       "dir": "directing-dramatic-irony",
       "name": "directing-dramatic-irony",
-      "description": "用户提到戏剧反讽、信息差、观众知道但角色不知道、怎么制造紧张感、悬念和惊喜的区别、希区柯克炸弹比喻",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -644,7 +1308,7 @@
     {
       "dir": "directing-end-before-begin",
       "name": "directing-end-before-begin",
-      "description": "我不知道从哪里开始写、开头写了很多版都不对、故事写到一半不知道怎么收、结构散了、结局总觉得不对",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -656,7 +1320,7 @@
     {
       "dir": "directing-idea-generation",
       "name": "directing-idea-generation",
-      "description": "用户说想不到点子、灵感枯竭、怎么才能有创意、不知道写什么、卡住了",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -668,7 +1332,7 @@
     {
       "dir": "directing-invisible-witness",
       "name": "directing-invisible-witness",
-      "description": "用户问摄影机应该放在哪、该用什么景别、观众应该认同谁、怎么引导观众注意力、为什么这个镜头用特写、怎么决定拍谁",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -680,7 +1344,7 @@
     {
       "dir": "directing-odets-rewrite",
       "name": "directing-odets-rewrite",
-      "description": "(1) 两个角色在对话但感觉像聊天而非交锋；(2) 场景中信息是平铺直叙地交代而非在冲突中释放；(3) 需要将二人对话升级为多人互动以增加密度",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -692,7 +1356,7 @@
     {
       "dir": "directing-protagonist-endangered",
       "name": "directing-protagonist-endangered",
-      "description": "(1) 故事/场景中有多个重要角色，无法确定谁是主角；(2) 主角的存在感薄弱、观众不关心其命运；(3) 冲突感觉不够紧但不知道为什么",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -704,7 +1368,7 @@
     {
       "dir": "directing-reaction-over-action",
       "name": "directing-reaction-over-action",
-      "description": "(1) 场景中发生了重大事件但观众反应平淡；(2) 拍摄/剪辑时不确定该聚焦于事件本身还是事件的后果；(3) 需要让体育直播、采访、纪录片等非虚构内容更有电影感",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -716,7 +1380,7 @@
     {
       "dir": "directing-scene-necessity",
       "name": "directing-scene-necessity",
-      "description": "这段要不要删、是不是多余、怎么精简、场景很松散、结构拖沓",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -728,7 +1392,7 @@
     {
       "dir": "directing-story-framework",
       "name": "directing-story-framework",
-      "description": "用户提到写故事、故事结构、叙事框架、不知道怎么开头/结尾、支线怎么设计",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -740,13 +1404,103 @@
     {
       "dir": "directing-tension-formula",
       "name": "directing-tension-formula",
-      "description": "(1) 不确定场景为何无聊；(2) 需要诊断张力断层——某段内容只有期待没有不确定（乏味的等待），或只有不确定没有期待（令人困惑的混乱）；(3) 设计中国套盒式嵌套悬念——在解决旧问题的同时制造新问题",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
         "repo": "geegl/directorskills",
         "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
         "path": "output/books/directing-masterclass/directing-tension-formula"
+      }
+    },
+    {
+      "dir": "director-seedance-prompt",
+      "name": "director-seedance-prompt",
+      "description": "Compile stories, scripts, references, storyboards, or accepted prompts into cinematic Seedance video prompts; direct performance, camera, light, sound, continuity, and bounded revisions. Use for 分镜、视频提示词、Seedance、提示词续写/修尾、对白与动作调度、剧情演唱与翻唱导演、表情管理与微表演、参考素材编译、静态资产预制、角色板及光影运镜规则反推；also adapt to an explici",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/director-seedance-prompt"
+      }
+    },
+    {
+      "dir": "director-workflow-70",
+      "name": "director-workflow-70",
+      "description": "导演工作流总控工具：组织一套覆盖研究、世界观、角色、视觉、分镜、动作、提示词、生成检查、复盘和资产管理的完整AI影视生产流程。用于大型或多环节AI视频项目的统一调度。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/director-workflow-70"
+      }
+    },
+    {
+      "dir": "doyle-cinematography",
+      "name": "doyle-cinematography",
+      "description": "为明确请求 doyle 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/doyle-cinematography"
+      }
+    },
+    {
+      "dir": "emmanuel-lubezki-cinematography",
+      "name": "emmanuel-lubezki-cinematography",
+      "description": "为明确请求 emmanuel-lubezki 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/emmanuel-lubezki-cinematography"
+      }
+    },
+    {
+      "dir": "emotion-prompt",
+      "name": "emotion-prompt",
+      "description": "AI视频真人表情情绪控制提示词生成系统。三层架构（主体情绪+面部细节+核心姿态），20种情绪全覆盖，双层结构（肌肉动作→视觉结果），支持多阶段情绪转换和呼吸控制。当用户需要生成人物面部表情提示词、情绪表演控制、微表情描写、或AI视频工具的表情控制提示词时触发。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/emotion-prompt"
+      }
+    },
+    {
+      "dir": "entity-continuity-system",
+      "name": "entity-continuity-system",
+      "description": "实体连续性系统：为跨镜头、跨集和跨媒介反复出现的角色、物体、品牌与场景建立身份字段、视觉不变量和变更记录。用于长期项目中的实体一致性维护。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/entity-continuity-system"
+      }
+    },
+    {
+      "dir": "entrocamp-behaviors",
+      "name": "entrocamp-behaviors",
+      "description": "把 EntroCamp 的记忆、意图、安全、推理、执行和沟通方法转成可复用的 Agent 行为检查清单。A reusable Agent behavior framework covering layered memory, intent interpretation, safety boundaries, structured reasoning, task execution, quality checks, and audience-aware communication.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/entrocamp-behaviors"
+      }
+    },
+    {
+      "dir": "evidence-driven-self-iteration",
+      "name": "evidence-driven-self-iteration",
+      "description": "证据驱动自迭代工具：基于近期工作、用户纠正、案例、知识胶囊、技能状态和来源新鲜度开展周期性自审，形成可验证、可回滚的改进。用于技能栈和工作流持续优化。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/evidence-driven-self-iteration"
+      }
+    },
+    {
+      "dir": "film-breakdown-distiller",
+      "name": "film-breakdown-distiller",
+      "description": "影视拆解蒸馏工具：发现并分析影片、片段或案例，把镜头、表演、调度、节奏、声音、美术和叙事规律提炼为可执行方法。用于拉片、参考研究和创作方法沉淀。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/film-breakdown-distiller"
       }
     },
     {
@@ -757,6 +1511,46 @@
       "source": {
         "type": "bundle",
         "path": "snapshots/skills/film-knowledge"
+      }
+    },
+    {
+      "dir": "fraser-cinematography",
+      "name": "fraser-cinematography",
+      "description": "为明确请求 fraser 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/fraser-cinematography"
+      }
+    },
+    {
+      "dir": "game-scene-631",
+      "name": "game-scene-631",
+      "description": "Design, rewrite, generate, or critique game-environment and cinematic scene images with a flexible 6:3:1 hierarchy across composition, lighting, color, spatial layout, asset form, and information density. Use when focal clarity and visual prioritization matter; do not use for isolated subjects with ",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/game-scene-631"
+      }
+    },
+    {
+      "dir": "generate-four-dimensional-voice-prompt",
+      "name": "generate-four-dimensional-voice-prompt",
+      "description": "将简短场景、人物处境、对白构想或 AI 视频镜头扩写为严格四维的中文表演提示词，固定使用“场景、人物状态、发声方式、台词”四个标签，并把专业运镜、构图、焦点和灯光设计按情境整合进四维内容。用于 AI 配音、角色对白、情绪表演、短剧台词、数字人口播、文生视频或图生视频说话镜头的生成、扩写、优化与结构化。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/generate-four-dimensional-voice-prompt"
+      }
+    },
+    {
+      "dir": "global-skill-evolution",
+      "name": "global-skill-evolution",
+      "description": "全局Skill进化系统：通过证据发现、根因诊断、方案合成、对比评估、可回滚升级和治理记录，持续改善整个Skill体系。用于技能栈巡检、合并、修复与版本迭代。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/global-skill-evolution"
       }
     },
     {
@@ -790,6 +1584,16 @@
       }
     },
     {
+      "dir": "guided-skill-publisher",
+      "name": "guided-skill-publisher",
+      "description": "基础型 Skill 发布与自检助手，引导用户检查、诊断、修复、打包、上传、远程分析、提交审核和发布新版本；适用于准备 Skill 文件夹或 ZIP、排查平台校验错误、评估 Skill 质量及安全性，并通过平台适配器接入不同市场。Foundational guided Skill publishing and self-check assistant for inspecting, diagnosing, repairing, packaging, uploading, remotely analyzing, submitting, and versioning Skills across re",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/guided-skill-publisher"
+      }
+    },
+    {
       "dir": "hackernews-frontpage",
       "name": "hackernews-frontpage",
       "description": "获取 Hacker News 首页热门新闻，列出标题、链接、分数和评论数；用户想看 HN 热门、科技新闻或 Hacker News 首页时使用。",
@@ -797,6 +1601,196 @@
       "source": {
         "type": "bundle",
         "path": "snapshots/skills/hackernews-frontpage"
+      }
+    },
+    {
+      "dir": "hall-cinematography",
+      "name": "hall-cinematography",
+      "description": "为明确请求 hall 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/hall-cinematography"
+      }
+    },
+    {
+      "dir": "higgsfield-acting-director",
+      "name": "higgsfield-acting-director",
+      "description": "Write ACTING TASK blocks for AI video prompts (Seedance on Higgsfield) so characters read alive instead of glassy or over-acted. Use WHENEVER a prompt or scene needs acting direction: a reaction, a discovery, dialogue delivery, an emotional beat, a listener, \"make the eyes alive\", or when a generate",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/higgsfield-acting-director"
+      }
+    },
+    {
+      "dir": "higgsfield-acting-skill",
+      "name": "higgsfield-acting-skill",
+      "description": "Tigran's method for writing ACTING TASK blocks in AI video prompts (Seedance / Higgsfield) and for directing character performance in any scene work. Use WHENEVER a prompt or scene needs character acting direction — dialogue delivery, emotional beats, \"make the eyes alive,\" listening behavior, react",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/higgsfield-acting-skill"
+      }
+    },
+    {
+      "dir": "higgsfield-fight-scene",
+      "name": "higgsfield-fight-scene",
+      "description": "higgsfield-fight-scene — a Jeet Kune Do fight choreographer for video prompts. Always activate when a fight scene mentions Jeet Kune Do, JKD, or Bruce Lee's style, or when Victor requests a fight scene, brawl, combat sequence, intercepted strike, or fight choreography in this style — in any prompt f",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/higgsfield-fight-scene"
+      }
+    },
+    {
+      "dir": "higgsfield-prompt-engine",
+      "name": "higgsfield-prompt-engine",
+      "description": ">",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/higgsfield-prompt-engine"
+      }
+    },
+    {
+      "dir": "higgsfield-seedance-prompt-writer",
+      "name": "higgsfield-seedance-prompt-writer",
+      "description": ">",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/higgsfield-seedance-prompt-writer"
+      }
+    },
+    {
+      "dir": "high-tension-shot-design",
+      "name": "high-tension-shot-design",
+      "description": "高张力镜头设计工具：通过景别、机位、构图、透视、镜头运动、速度感、剪辑节拍和视觉重心增强画面张力。用于动作、悬念、冲突、海报和强视觉冲击镜头。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/high-tension-shot-design"
+      }
+    },
+    {
+      "dir": "hot-memory-system",
+      "name": "hot-memory-system",
+      "description": "用热、暖、冷三层架构管理会话信息、近期笔记和长期知识，并提供蒸馏、归档与清理流程。A three-tier hot, warm, and cold memory workflow for managing session context, recent notes, and long-term knowledge through distillation, archiving, retrieval, and cleanup.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/hot-memory-system"
+      }
+    },
+    {
+      "dir": "hoytema-cinematography",
+      "name": "hoytema-cinematography",
+      "description": "为明确请求 hoytema 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/hoytema-cinematography"
+      }
+    },
+    {
+      "dir": "im2-clean-image",
+      "name": "im2-clean-image",
+      "description": "为 IM2 / GPT Image 2 图像生成、重绘与照片修复提供材质真实感、信息密度、干净渲染、负面提示和证据保真控制；适用于画面清理、物理光路、空气透视、结构重量与保守修复。A clean-image control layer for IM2 / GPT Image 2 generation, redraws, and evidence-preserving photo repair, covering material realism, information density, negative-prompt hygiene, physical lighting, atmospher",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/im2-clean-image"
+      }
+    },
+    {
+      "dir": "image-impact-frame",
+      "name": "image-impact-frame",
+      "description": "冲击帧导演 2.1：把剧本节拍、参考图或一句话需求，编译成可直接复制的冲击帧生图提示词与生视频提示词。画面层守六条硬口径（写在「那一瞬」不是状态、炸满画面但不并实、每个色值一个职责、硬边清爽不晕、参考图留形不画物、零解剖词）；三类笔分层（线层有缝／碎片层实心／剪影层实心平涂只在边缘崩解）＋崩解三档；强度层用 L1–L5 档位旋钮；结构层用五帧型 × 力学四式 × 四种灭点；另含连招多镜交接、参考图拆解、失败修复、九张参考图矩阵示例、以及本地视频后期工具 framecraft（顿帧/闪白/墨色/负片/色散/震屏/推近/插图，8 配方 9 图层）。默认只出提示词，不调用出图工具。触发词：冲击帧、冲",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/image-impact-frame"
+      }
+    },
+    {
+      "dir": "image-portrait-3x4",
+      "name": "image-portrait-3x4",
+      "description": "从零创造 3:4 肖像的出图提示词生成器：锁定 3:4 竖版比例，身份四定值（骨相／五官／识别／气质）写入即固定，服饰绝对不要，背景为 18% 中性灰 #808080 纯净影棚背景板，光默认漫射柔光＋平光铺照，措辞正向为主、禁裁切锁死语义、负向词非必要不用，画风未指定则默认中式写实；默认只出提示词，不调用出图工具。Use when the user wants to create a 3:4 portrait or headshot prompt from scratch, assemble a character portrait prompt from the 220 face-type ",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/image-portrait-3x4"
+      }
+    },
+    {
+      "dir": "image-portrait-4d",
+      "name": "image-portrait-4d",
+      "description": "人像摄影四维导演。输入角色、主题或产品，输出可直接投喂图像模型的完整人像提示词。核心是一套四维坐标：摄影者关系（受邀／在场未摆／未察觉／已察觉）× 光学距离（标准／中长焦／超长焦／广角贴近，配遮挡层）× 瞬间相位（定格／将动／进行中／余韵）× 成片介质（数码棚拍／胶片／手机计算／长焦纪实）。任意需求 = 四维各取一值，四维正交，可自由交叉，产出「杂志质感的偷拍」「广角摆拍」「长焦被察觉」这类单一风格做不到的组合。内置 8 张人像证据卡与 6 种偷拍机位，全部标注在同一坐标系内作为锚点，配 Preserve／Replace／Avoid 三段契约。适用于人像、肖像、海报、杂志封面、品牌广告、时尚大",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/image-portrait-4d"
+      }
+    },
+    {
+      "dir": "image-swiss-poster",
+      "name": "image-swiss-poster",
+      "description": "把任意角色编译成现代瑞士主义（国际主义平面设计 / Modern Swiss Style）风格的竖版角色海报提示词——超大无衬线标题、非对称网格、大面积留白、强调色至多一种、坐标与编号次级信息层，可选中文书法＋印章的东方变体。覆盖 GPT Image 2 与 GPT Image 2.5。输出完整、可直接复制的提示词。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/image-swiss-poster"
+      }
+    },
+    {
+      "dir": "industry-briefing",
+      "name": "industry-briefing",
+      "description": "行业快报工具：追踪AI、新能源、医疗、金融、电商等行业的最新动态，筛选可信来源并生成结构清晰、可阅读的HTML或Markdown快报。用于行业信息汇总与每日简报。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/industry-briefing"
+      }
+    },
+    {
+      "dir": "invariant-exploration-director",
+      "name": "invariant-exploration-director",
+      "description": "不变量探索导演工具：在角色、品牌、叙事事实或视觉身份保持稳定的前提下，系统探索构图、镜头、光影、材质、场景和风格变化。用于既要一致性又要多样化的创作任务。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/invariant-exploration-director"
+      }
+    },
+    {
+      "dir": "jiangxi-meishu-canmou",
+      "name": "jiangxi-meishu-canmou",
+      "description": "面向 AI 漫剧、动态漫、漫画短剧和影视前期制作的可追溯长剧本速读、美术策划与原文审查技能。用于用户要求快速讲清长剧本并标注集数、梳理人物关系与造型变化、建立能力和法器规则时间轴、检查跨集连续性与逻辑漏洞、提炼场景和服装、建立美术视觉方向，或生成逐集剧情推进、增量变体、高光及可拓展镜头导航时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/jiangxi-meishu-canmou"
+      }
+    },
+    {
+      "dir": "khondji-cinematography",
+      "name": "khondji-cinematography",
+      "description": "为明确请求 khondji 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/khondji-cinematography"
+      }
+    },
+    {
+      "dir": "kinetic-action-visual-master",
+      "name": "kinetic-action-visual-master",
+      "description": "动势动作视觉总纲工具：为高能动作视频建立统一的真实感、动画动势、分镜表达、速度感、材质、色彩和镜头风格。用于动作短片的整体视觉基准与跨镜头统一。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/kinetic-action-visual-master"
       }
     },
     {
@@ -810,6 +1804,16 @@
       }
     },
     {
+      "dir": "leos-six-department-directing-team-skill-v1",
+      "name": "leos-six-department-directing-team-skill-v1",
+      "description": "AI 长片、AI 剧集与叙事视频的六角色导演组 Skill。以总导演、表演指导、镜内执行导演、摄影指导、提示词导演和场记/连续性监督协作，把剧本、资产、分镜、提示词、视频或时间线转化为场次设计、摄影方案、5000 字内结构化纯文本视频提示词、逐角色逐镜审稿、连续性记录、最小返工及项目风格沉淀。用户需要分职位会诊、在明确授权后生成视频提示词、审核镜头与摄影语言或从生成记录更新方法时使用。不处理现实制作中的人员分工、排期、交付节奏或项目风险管理。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/leos-six-department-directing-team-skill-v1"
+      }
+    },
+    {
       "dir": "lira-image-prompts",
       "name": "lira-image-prompts",
       "description": "为 AI 图像生成与编辑编写、诊断和优化生产级提示词，覆盖角色、场景、道具和局部修复工作流。",
@@ -817,6 +1821,76 @@
       "source": {
         "type": "bundle",
         "path": "snapshots/skills/lira-image-prompts"
+      }
+    },
+    {
+      "dir": "local-asset-workbench",
+      "name": "local-asset-workbench",
+      "description": "本地资产工作台工具：在Windows上安装、配置和操作图片、视频、音频资产浏览与整理工作台，支持项目分类、案例管理、拖拽排序、预览和故障排查。用于本地创作资产管理。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/local-asset-workbench"
+      }
+    },
+    {
+      "dir": "longform-skill-distiller",
+      "name": "longform-skill-distiller",
+      "description": "长内容Skill蒸馏工具：把书籍、长视频字幕、播客、课程或访谈提炼为连贯、可执行的Skill集合，并把有效方法接入现有技能生态。用于长内容知识提炼和能力模块化。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/longform-skill-distiller"
+      }
+    },
+    {
+      "dir": "mark-lee-pingbing-cinematography",
+      "name": "mark-lee-pingbing-cinematography",
+      "description": "为明确请求 mark-lee-pingbing 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/mark-lee-pingbing-cinematography"
+      }
+    },
+    {
+      "dir": "master-shot-camera-planning",
+      "name": "master-shot-camera-planning",
+      "description": "主镜头与机位规划工具：围绕场景空间、人物调度、轴线、视线、动作路径和叙事重点规划主镜头、覆盖镜头与机位关系。用于复杂场面的镜头覆盖和空间连续性设计。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/master-shot-camera-planning"
+      }
+    },
+    {
+      "dir": "mechanical-transformation-design",
+      "name": "mechanical-transformation-design",
+      "description": "机械变形设计工具：设计具有可见传动链、铰链、滑轨、伸缩、折叠、锁定、表面替换和武器变形逻辑的可信机械或生物机械变换。用于机甲、装甲、载具和武器变形。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/mechanical-transformation-design"
+      }
+    },
+    {
+      "dir": "minimax-h3-prompting",
+      "name": "minimax-h3-prompting",
+      "description": "把创意需求引导为可生成的 MiniMax H3 / 海螺 H3 提示词，并针对 T2VA、I2VA、FL2VA、L2VA 与 Ref2VA 分配信息密度、参考职责和预检规则。A guided MiniMax H3 prompting Skill for evaluating fit, assigning multimodal reference roles, budgeting information density, compiling H3-compatible fields, and diagnosing inspected outputs across T2VA, I2VA, FL2V",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/minimax-h3-prompting"
+      }
+    },
+    {
+      "dir": "minimum-visual-bible",
+      "name": "minimum-visual-bible",
+      "description": "最小视觉圣经工具：在批量生成、多镜头或多人协作前，用最少但关键的规则锁定角色、世界、色彩、材质、镜头、光线和禁区。用于快速建立可执行的视觉一致性基准。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/minimum-visual-bible"
       }
     },
     {
@@ -840,9 +1914,39 @@
       }
     },
     {
+      "dir": "mokeaigc-v25",
+      "name": "mokeaigc-v25",
+      "description": "将灵感或参考图扩展为连贯世界设定、生物物种设计或同一场景的多种构图，交付中英静帧图像提示词。支持先从内置65项视觉选项中选一种、自定义风格，或跳过选择。适用于世界视觉开发和系列剧照探索，不用于视频运动提示词、无关单张出图或单个角色身份档案。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/mokeaigc-v25"
+      }
+    },
+    {
+      "dir": "mokeaigc-v9",
+      "name": "mokeaigc-v9",
+      "description": "电影感世界观构建导演。把任意灵感、氛围、文化、地点、名字、类型或参考图，转化为一个可信的想象世界，先产出世界概述、世界设定正文、关系与一致性说明；默认附九张世界概览的 Midjourney 中英双语提示词，画幅 16:9，总数可扩展；用户明确要求“仅设定”时省略视觉展开（居民、动物、建筑、地景、日常、迁徙/运动、声音/文化、权力/张力、肖像）。视觉展开产出的是\"电影剧照式\"图像提示词，适用于 Midjourney、Nano Banana Pro、GPT Image 2 等工具——不是视频运动提示词。适用场景：用户想把一个虚构/想象世界视觉化展开、请求世界观构建、想通过图像探索一个\"世界\"、给出",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/mokeaigc-v9"
+      }
+    },
+    {
+      "dir": "mr-li-seedance-25",
+      "name": "mr-li-seedance-25",
+      "description": "安装或本机首次启用先显示固定署名与特别鸣谢。引导用户确认剧本、制作范围，按剧本推荐并自定义审美基调，按真实表演容量编写 Seedance 提示词，制作与分类资产、返工并交付。适用于逐步选择或按已确认方案连续执行、保持对白与连续性、整理总素材库及分集分场文件夹的任务。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/mr-li-seedance-25"
+      }
+    },
+    {
       "dir": "msv3-body-performance",
       "name": "msv3-body-performance",
-      "description": "肢体表演, 特写, 全景",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -854,7 +1958,7 @@
     {
       "dir": "msv3-lens-emotion-mapping",
       "name": "msv3-lens-emotion-mapping",
-      "description": "焦距选择, 镜头情感, 长焦广角",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -866,7 +1970,7 @@
     {
       "dir": "msv3-power-distance",
       "name": "msv3-power-distance",
-      "description": "权力, 距离, 谁更有力量",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -878,7 +1982,7 @@
     {
       "dir": "msv3-speed-conveyance",
       "name": "msv3-speed-conveyance",
-      "description": "速度感, 紧迫感, 追逐",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -890,7 +1994,7 @@
     {
       "dir": "msv3-symbolic-staging",
       "name": "msv3-symbolic-staging",
-      "description": "象征性, 镜头叙事, 权力关系",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -902,13 +2006,23 @@
     {
       "dir": "msv3-unexpected-reveal",
       "name": "msv3-unexpected-reveal",
-      "description": "揭示, 意外, 悬念",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
         "repo": "geegl/directorskills",
         "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
         "path": "output/books/master-shots-v3/msv3-unexpected-reveal"
+      }
+    },
+    {
+      "dir": "nykvist-cinematography",
+      "name": "nykvist-cinematography",
+      "description": "为明确请求 nykvist 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/nykvist-cinematography"
       }
     },
     {
@@ -932,6 +2046,16 @@
       }
     },
     {
+      "dir": "performance-scene-director",
+      "name": "performance-scene-director",
+      "description": "情绪表演导演工具：统一设计怒、哭、哀、喜、乐及混合情绪场景，涵盖微表情、身体动作、情绪递进、镜头、灯光、声音与节奏。用于AI视频或图像中的角色表演设计。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/performance-scene-director"
+      }
+    },
+    {
       "dir": "pixel-previs",
       "name": "pixel-previs",
       "description": "像素风镜头预演（previs）生成器。用户用文字描述想要的分镜、运镜或一段镜头序列时，或者丢来一段视频想拉片复刻它的分镜运镜时使用。输出统一风格的像素预演视频（MP4/GIF）和每个镜头的中英文提示词，可直接作为 AI 视频生成的运镜参考。",
@@ -952,9 +2076,159 @@
       }
     },
     {
+      "dir": "pre-publish-security",
+      "name": "pre-publish-security",
+      "description": "在发布代码或内容前检查密钥、外部域名、用户数据、危险函数、依赖与许可证问题，并给出阻断、警告和修复建议。A pre-publication security audit for secrets, external domains, user-data exposure, dangerous functions, dependencies, and license concerns, with blockers, warnings, and repair guidance.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/pre-publish-security"
+      }
+    },
+    {
+      "dir": "prieto-cinematography",
+      "name": "prieto-cinematography",
+      "description": "为明确请求 prieto 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/prieto-cinematography"
+      }
+    },
+    {
+      "dir": "production-design-worldbuilding",
+      "name": "production-design-worldbuilding",
+      "description": "美术与世界观设计工具：建立连贯的世界规则、视觉方向、地点、建筑、道具、服装、载具和武器设计语言。用于AI图像与视频项目的美术统筹和场景体系建设。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/production-design-worldbuilding"
+      }
+    },
+    {
+      "dir": "professional-storyboard-director",
+      "name": "professional-storyboard-director",
+      "description": "专业分镜导演工具：把剧本或创意转化为具有镜头功能、景别、机位、构图、调度、运动、节奏、转场和声音提示的专业分镜方案。用于广告、短片、动作片和AI视频分镜。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/professional-storyboard-director"
+      }
+    },
+    {
+      "dir": "prompt-contamination-guard",
+      "name": "prompt-contamination-guard",
+      "description": "提示词污染防护工具：清理图像和视频提示词中的上下文残留、否定联想、纠错痕迹、默认模板、内部术语和互相冲突的控制语句。用于正式生成前获得干净、单一目标的模型输入。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/prompt-contamination-guard"
+      }
+    },
+    {
+      "dir": "prompt-library",
+      "name": "prompt-library",
+      "description": "引导收集、拆解、评分、归档和复用提示词，覆盖结构分析、技巧识别、质量矩阵、适用性判断和索引更新。A guided prompt-library workflow for collecting, decomposing, scoring, storing, and reusing prompts through structural analysis, technique detection, quality matrices, applicability checks, and index updates.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/prompt-library"
+      }
+    },
+    {
+      "dir": "rea-video",
+      "name": "rea-video",
+      "description": "逆向拆解一条视频是怎么做出来的——逐镜头判断实拍 / 影视片段 / AI 生成 / 3D 渲染 / 2D 动画 / 定格动画 / 代码模板渲染 / 录屏截图 / 静态图推拉 / 静帧，以及实拍是否经过 AI 加工（换脸、对口型、风格化），标出后期叠加层（逐句字幕时间轴、花字、标题、贴纸 / GIF / 表情包、画中画）和用户真实素材，拆解人声、背景音乐、音效（卡在哪个画面事件上）与剪辑节奏，并给出可执行的复刻方案（可用 capsule-cinema、ChatCut 等复刻）。当用户给出参考视频、问\"这条视频怎么做的 / 是不是 AI / 用了什么素材 / 怎么复刻 / 想二创或做一条同款\"时使",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/rea-video"
+      }
+    },
+    {
+      "dir": "reference-hunting-board",
+      "name": "reference-hunting-board",
+      "description": "参考搜寻板工具：为AI图像和视频创作建立有目标的视觉、动作、影片、镜头、武术、服装、场景与材质参考搜索板。用于缺少参考、需要对标或需要明确搜索方向时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/reference-hunting-board"
+      }
+    },
+    {
+      "dir": "reference-lut-generator",
+      "name": "reference-lut-generator",
+      "description": "根据用户提供的参考视频、视频链接或参考图提取关键帧和色彩风格，收集待调色的视频片段或图片，生成可复用的 .cube LUT、参考/原片/效果三栏对比与完整交付包。用于参考调色、风格匹配、LUT 制作；不用于视频分镜反推或仅生成调色提示词。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/reference-lut-generator"
+      }
+    },
+    {
+      "dir": "reference-role-planner",
+      "name": "reference-role-planner",
+      "description": "Assigns explicit responsibilities to image, video, audio, text, and style references; detects conflicting authority, overloaded references, and missing coverage; and produces a precedence-aware reference matrix before generation or production. 为多模态参考图、视频、音频和文本分配明确职责，发现冲突与缺口，生成带优先级的参考责任表。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/reference-role-planner"
+      }
+    },
+    {
+      "dir": "requirement-brief-builder",
+      "name": "requirement-brief-builder",
+      "description": "Guided bilingual requirement intake that turns a rough request into an executable brief with confirmed facts, assumptions, open questions, constraints, non-goals, risks, deliverables, and acceptance criteria. Use when a request is vague, stakeholders are misaligned, a task needs scoping before execu",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/requirement-brief-builder"
+      }
+    },
+    {
+      "dir": "richardson-cinematography",
+      "name": "richardson-cinematography",
+      "description": "为明确请求 richardson 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/richardson-cinematography"
+      }
+    },
+    {
+      "dir": "roger-deakins-cinematography",
+      "name": "roger-deakins-cinematography",
+      "description": "为明确请求 roger-deakins 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/roger-deakins-cinematography"
+      }
+    },
+    {
+      "dir": "rpg-workflow-dashboard",
+      "name": "rpg-workflow-dashboard",
+      "description": "RPG像素风工作流看板工具：为Codex多任务或多Agent工作建立右侧浏览器进度面板，展示项目状态、任务队列、线程进展和可视化反馈。用于需要可视化工作台和任务追踪时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/rpg-workflow-dashboard"
+      }
+    },
+    {
+      "dir": "ryan-cinematography",
+      "name": "ryan-cinematography",
+      "description": "为明确请求 ryan 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/ryan-cinematography"
+      }
+    },
+    {
       "dir": "scene-transition-binary-opposition",
       "name": "scene-transition-binary-opposition",
-      "description": "用户提到场景对比、二元对立、场所选择、场景并置、对比产生张力",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -966,7 +2240,7 @@
     {
       "dir": "scene-transition-caboose-diagnosis",
       "name": "scene-transition-caboose-diagnosis",
-      "description": "用户提到场景多余、要不要删、节奏拖沓、末节场景",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -978,7 +2252,7 @@
     {
       "dir": "scene-transition-four-function-diagnosis",
       "name": "scene-transition-four-function-diagnosis",
-      "description": "用户在问这个场景转换应该怎么做、场景之间怎么衔接、转场应该是什么风格、过场动画该用什么形式",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -990,7 +2264,7 @@
     {
       "dir": "scene-transition-low-point-no-plot",
       "name": "scene-transition-low-point-no-plot",
-      "description": "用户提到场景太紧张、观众需要休息、低潮、节奏太快、审美疲劳",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1002,7 +2276,7 @@
     {
       "dir": "scene-transition-loyalty-transfer",
       "name": "scene-transition-loyalty-transfer",
-      "description": "用户提到观众认同谁、角色转换、忠诚转移、配角戏份",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1014,7 +2288,7 @@
     {
       "dir": "scene-transition-music-quadrant",
       "name": "scene-transition-music-quadrant",
-      "description": "用户提到场景转换用什么音乐、静默还是配乐、音乐怎么过渡、转换的音频策略",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1026,7 +2300,7 @@
     {
       "dir": "scene-transition-seamless-pause",
       "name": "scene-transition-seamless-pause",
-      "description": "用户提到没有间歇、观众不知道在休息、无缝过渡、欺骗观众",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1038,7 +2312,7 @@
     {
       "dir": "scene-transition-synch-node",
       "name": "scene-transition-synch-node",
-      "description": "用户提到多线叙事、故事线怎么交汇、同步节点、多情节连接",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1050,7 +2324,7 @@
     {
       "dir": "scene-transition-weather-contrast",
       "name": "scene-transition-weather-contrast",
-      "description": "用户提到天气、场景天气、天气配合情绪、天气对比",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1060,13 +2334,273 @@
       }
     },
     {
-      "dir": "seedance-20",
-      "name": "seedance-20",
-      "description": "This skill should be used when creating, improving, or troubleshooting Seedance 2.0 video on any surface - Dreamina, Jimeng, CapCut, Doubao, Volcengine/Ark, BytePlus, Runway's Seedance route, fal, or third-party provider/router surfaces such as EvoLink, OpenRouter, Kie.ai, PiAPI, LaoZhang, Runware, ",
+      "dir": "score-and-mix-picture",
+      "name": "score-and-mix-picture",
+      "description": "看画配乐与混音工具：分析锁定画面，制作带时间码的音乐与音效点位，编写AI音乐提示词，选择本地音效并完成声画同步剪辑与混音。用于成片配乐、音效设计和最终混音。",
       "group": null,
       "source": {
         "type": "bundle",
-        "path": "snapshots/skills/seedance-20"
+        "path": "snapshots/skills/score-and-mix-picture"
+      }
+    },
+    {
+      "dir": "screenwriting-story-craft",
+      "name": "screenwriting-story-craft",
+      "description": "影视剧作工具：开发可拍摄的故事前提、人物弧光、日志线、节拍表、场景大纲、对白、冲突、赌注、反转与结尾。用于短片、广告、AI视频故事和剧本创作。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/screenwriting-story-craft"
+      }
+    },
+    {
+      "dir": "sd25-pe",
+      "name": "sd25-pe",
+      "description": "Use when a user asks an Agent to optimize text, stories, or optional multimodal references for Seedance 2.5 text-to-video, multi-reference generation, keyframes, storyboards, blockouts, video editing, audio editing, or extension.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/sd25-pe"
+      }
+    },
+    {
+      "dir": "sd25-physics-prompt",
+      "name": "sd25-physics-prompt",
+      "description": ">-",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/sd25-physics-prompt"
+      }
+    },
+    {
+      "dir": "seale-cinematography",
+      "name": "seale-cinematography",
+      "description": "为明确请求 seale 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seale-cinematography"
+      }
+    },
+    {
+      "dir": "security-baseline",
+      "name": "security-baseline",
+      "description": "为 Agent 输入和敏感操作提供提示注入识别、危险动作分级、路径检查和确认机制。A foundational Agent security baseline for prompt-injection recognition, sensitive-operation classification, risky-path checks, and explicit confirmation gates.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/security-baseline"
+      }
+    },
+    {
+      "dir": "seedance-2-5-prompting",
+      "name": "seedance-2-5-prompting",
+      "description": "Write prompts for Seedance 2.5 / Dreamina 2.5 video generation, editing, and extension. Use whenever the target model is Seedance 2.5, or when the task needs any 2.5-only capability — up to 50 reference materials with @Image N / @Video N / @Audio N role mapping, videos up to 30 seconds structured as",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-2-5-prompting"
+      }
+    },
+    {
+      "dir": "seedance-antislop",
+      "name": "seedance-antislop",
+      "description": "Seedance反套路工具：识别并消除空泛电影感、无意义运镜、堆砌形容词、模板化节奏和廉价AI感，让提示词更具体、更有因果关系。用于提升Seedance提示词的原创性与可执行性。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-antislop"
+      }
+    },
+    {
+      "dir": "seedance-audio",
+      "name": "seedance-audio",
+      "description": "Seedance声音工具：规划对白、旁白、环境声、拟音、音乐、节奏和声画同步要求。用于Seedance原生音频或需要明确声音叙事的视频生成任务。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-audio"
+      }
+    },
+    {
+      "dir": "seedance-camera",
+      "name": "seedance-camera",
+      "description": "Seedance镜头工具：设计景别、机位、构图、镜头运动、焦点、轴线和镜头衔接，并限制不必要的运镜。用于Seedance镜头语言和摄影控制。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-camera"
+      }
+    },
+    {
+      "dir": "seedance-characters",
+      "name": "seedance-characters",
+      "description": "Seedance角色工具：锁定角色身份、外观、服装、比例、表情、动作和跨镜头连续性。用于Seedance人物生成、多人互动和角色一致性控制。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-characters"
+      }
+    },
+    {
+      "dir": "seedance-continuation",
+      "name": "seedance-continuation",
+      "description": "Seedance续写工具：根据已有视频的最后状态延续角色、动作、镜头、空间、光线和节奏，减少跳变与重复。用于视频续写、扩展镜头和连续片段生成。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-continuation"
+      }
+    },
+    {
+      "dir": "seedance-copyright",
+      "name": "seedance-copyright",
+      "description": "Seedance版权检查工具：识别提示词中的受保护角色、品牌、艺术家风格和潜在侵权表达，并改写为保留目标特征的原创描述。用于公开发布或商业使用前的版权风险检查。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-copyright"
+      }
+    },
+    {
+      "dir": "seedance-examples-ja",
+      "name": "seedance-examples-ja",
+      "description": "Seedance日语示例库：提供适合日语用户的提示词结构、镜头、动作、角色和声音示例。用于需要日语Seedance提示词范例或本地化参考时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-examples-ja"
+      }
+    },
+    {
+      "dir": "seedance-examples-ko",
+      "name": "seedance-examples-ko",
+      "description": "Seedance韩语示例库：提供适合韩语用户的提示词结构、镜头、动作、角色和声音示例。用于需要韩语Seedance提示词范例或本地化参考时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-examples-ko"
+      }
+    },
+    {
+      "dir": "seedance-examples-zh",
+      "name": "seedance-examples-zh",
+      "description": "Seedance中文示例库：提供中文提示词结构、镜头、动作、角色、声音和常见场景示例。用于需要中文Seedance提示词范例与快速套用参考时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-examples-zh"
+      }
+    },
+    {
+      "dir": "seedance-fight-director",
+      "name": "seedance-fight-director",
+      "description": "Seedance打斗导演工具：为Seedance 2.0设计具备站位、距离、攻防因果、身体力学、节奏、镜头和打击反馈的动作场面。用于武打、搏斗、兵器和多人战斗视频。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-fight-director"
+      }
+    },
+    {
+      "dir": "seedance-filter",
+      "name": "seedance-filter",
+      "description": "Seedance提示词过滤工具：检查并清理可能触发平台限制、造成生成失败或降低稳定性的词语与表达，同时尽量保留创作意图。用于提交前的兼容性过滤。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-filter"
+      }
+    },
+    {
+      "dir": "seedance-interview",
+      "name": "seedance-interview",
+      "description": "Seedance访谈视频工具：设计人物身份、机位、构图、表演、口型、环境、对白、声音和镜头变化，生成自然可信的访谈内容。用于播客、采访、口播和纪录片式视频。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-interview"
+      }
+    },
+    {
+      "dir": "seedance-interview-short",
+      "name": "seedance-interview-short",
+      "description": "Seedance短访谈工具：用精简结构快速生成短时长口播或采访提示词，控制人物、机位、表情、对白和声音重点。用于社交媒体短采访和简短口播视频。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-interview-short"
+      }
+    },
+    {
+      "dir": "seedance-lighting",
+      "name": "seedance-lighting",
+      "description": "Seedance灯光工具：设计主光、辅光、轮廓光、环境光、色温、方向、强弱、动态变化和材质响应。用于Seedance场景气氛、时间状态和人物塑造。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-lighting"
+      }
+    },
+    {
+      "dir": "seedance-motion",
+      "name": "seedance-motion",
+      "description": "Seedance运动工具：描述角色、物体、布料、头发、镜头和环境运动的起因、路径、速度、重量、惯性与结束状态。用于提升动作清晰度和物理可信度。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-motion"
+      }
+    },
+    {
+      "dir": "seedance-pipeline",
+      "name": "seedance-pipeline",
+      "description": "Seedance生产流程工具：组织需求、参考资产、提示词、模型设置、生成、检查、重试、版本和交付步骤。用于把Seedance任务变成稳定、可复用的完整生产流程。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-pipeline"
+      }
+    },
+    {
+      "dir": "seedance-prompt",
+      "name": "seedance-prompt",
+      "description": "Seedance完整提示词工具：把创意整理为包含主体、场景、动作、镜头、光线、声音、节奏、连续性和限制条件的生成级提示词。用于复杂或高质量Seedance视频生成。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-prompt"
+      }
+    },
+    {
+      "dir": "seedance-prompt-short",
+      "name": "seedance-prompt-short",
+      "description": "Seedance精简提示词工具：在有限字数内保留主体、核心动作、镜头、场景和关键限制，输出直接可用的短提示词。用于快速生成或模型更偏好简洁输入时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-prompt-short"
+      }
+    },
+    {
+      "dir": "seedance-recipes",
+      "name": "seedance-recipes",
+      "description": "Seedance配方库：提供常见题材、镜头、动作、访谈、产品、叙事和视觉风格的可复用组合方法。用于快速选择成熟结构并按任务调整。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-recipes"
+      }
+    },
+    {
+      "dir": "seedance-sequence",
+      "name": "seedance-sequence",
+      "description": "Seedance镜头序列工具：规划多镜头或多段视频中的动作承接、空间方向、信息递进、节奏、转场和状态连续性。用于连续叙事、分段生成和长序列设计。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-sequence"
       }
     },
     {
@@ -1080,9 +2614,149 @@
       }
     },
     {
+      "dir": "seedance-style",
+      "name": "seedance-style",
+      "description": "Seedance风格工具：把抽象审美转化为色彩、材质、光线、镜头、造型、渲染和运动特征，并保持跨镜头统一。用于视觉风格设定与风格一致性控制。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-style"
+      }
+    },
+    {
+      "dir": "seedance-troubleshoot",
+      "name": "seedance-troubleshoot",
+      "description": "Seedance故障排查工具：诊断人物漂移、动作失真、镜头混乱、口型问题、画面污染、闪烁和生成失败，并给出最小重试方案。用于结果异常或需要定向修复时。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-troubleshoot"
+      }
+    },
+    {
+      "dir": "seedance-vfx",
+      "name": "seedance-vfx",
+      "description": "Seedance视觉特效工具：编排能量、烟雾、火焰、破坏、粒子、光效和环境交互的发生阶段、运动规律、材质与镜头关系。用于Seedance特效镜头与奇观场面。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-vfx"
+      }
+    },
+    {
+      "dir": "seedance-vocab-en",
+      "name": "seedance-vocab-en",
+      "description": "Seedance英语词汇库：整理英语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于英文提示词编写、翻译和词汇选择。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-vocab-en"
+      }
+    },
+    {
+      "dir": "seedance-vocab-es",
+      "name": "seedance-vocab-es",
+      "description": "Seedance西班牙语词汇库：整理西班牙语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于西班牙语提示词编写与本地化。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-vocab-es"
+      }
+    },
+    {
+      "dir": "seedance-vocab-ja",
+      "name": "seedance-vocab-ja",
+      "description": "Seedance日语词汇库：整理日语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于日语提示词编写与本地化。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-vocab-ja"
+      }
+    },
+    {
+      "dir": "seedance-vocab-ko",
+      "name": "seedance-vocab-ko",
+      "description": "Seedance韩语词汇库：整理韩语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于韩语提示词编写与本地化。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-vocab-ko"
+      }
+    },
+    {
+      "dir": "seedance-vocab-ru",
+      "name": "seedance-vocab-ru",
+      "description": "Seedance俄语词汇库：整理俄语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于俄语提示词编写与本地化。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-vocab-ru"
+      }
+    },
+    {
+      "dir": "seedance-vocab-zh",
+      "name": "seedance-vocab-zh",
+      "description": "Seedance中文词汇库：整理中文环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于中文提示词编写、改写和专业词汇选择。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/seedance-vocab-zh"
+      }
+    },
+    {
+      "dir": "self-reflection",
+      "name": "self-reflection",
+      "description": "在输出前检查事实依据、过度承诺和置信度表达，帮助 Agent 生成更诚实、透明且可校验的回答。A lightweight pre-response reflection Skill that checks factual support, overpromising, confidence labels, and uncertainty disclosure for more honest and verifiable answers.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/self-reflection"
+      }
+    },
+    {
+      "dir": "semantic-concept-poster",
+      "name": "semantic-concept-poster",
+      "description": "语义概念海报工具：把词语、短句、字母、人物、物体或参考图的含义转化为高概念视觉隐喻、构图和海报提示词。用于封面、主视觉、概念海报和符号化创意。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/semantic-concept-poster"
+      }
+    },
+    {
+      "dir": "semantic-recall",
+      "name": "semantic-recall",
+      "description": "本地语义召回工具：在Codex技能、记忆笔记、项目文档、研究资料和工作记录中按含义检索相关内容。用于记得概念但记不清原句、寻找旧方案或复用历史经验。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/semantic-recall"
+      }
+    },
+    {
+      "dir": "short-drama-scriptwriting",
+      "name": "short-drama-scriptwriting",
+      "description": ">",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/short-drama-scriptwriting"
+      }
+    },
+    {
+      "dir": "short-drama-storyboard",
+      "name": "short-drama-storyboard",
+      "description": "将短剧、演绎剧或解说剧剧本改编为可独立投喂 AI 视频模型的逐镜提示词。严格使用“人物/场景/影调光影/空间与轴线/[分镜N]”格式，保留原台词，设计具体表演、专业镜头调度、声音与跨组连续性。用于创作、扩写和修订短剧分镜提示词；不用于仅提取角色资产或直接生成成片。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/short-drama-storyboard"
+      }
+    },
+    {
       "dir": "shot-camera-choreography",
       "name": "shot-camera-choreography",
-      "description": "用户提到演员怎么走位、摄影机怎么配合、镜头设计、运动路线、演员和摄影机同时动",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1094,7 +2768,7 @@
     {
       "dir": "shot-design-angle-context",
       "name": "shot-design-angle-context",
-      "description": "用户提到摄影角度、仰拍俯拍、低角度怎么用、画面感觉不对",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1106,7 +2780,7 @@
     {
       "dir": "shot-design-axis-of-action",
       "name": "shot-design-axis-of-action",
-      "description": "用户提到轴线、180度规则、跳轴、摄影机放哪边、空间连续性、银幕方向",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1118,7 +2792,7 @@
     {
       "dir": "shot-design-continuity-composition",
       "name": "shot-design-continuity-composition",
-      "description": "用户提到构图、画面不对、特写怎么构图、剪辑节奏",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1130,7 +2804,7 @@
     {
       "dir": "shot-design-dialogue-staging",
       "name": "shot-design-dialogue-staging",
-      "description": "用户提到对话场景、对话怎么拍、两人/三人/多人对话、调度、staging",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1142,7 +2816,7 @@
     {
       "dir": "shot-design-dramatic-range",
       "name": "shot-design-dramatic-range",
-      "description": "用户提到纵深调度、摄影机在动作范围内外、前景中景后景、景深、空间分隔",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1154,7 +2828,7 @@
     {
       "dir": "shot-design-pov-spectrum",
       "name": "shot-design-pov-spectrum",
-      "description": "用户提到视点、POV、观众认同、主观镜头、叙事视角、观众代入感",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1166,7 +2840,7 @@
     {
       "dir": "shot-design-sightline-cut",
       "name": "shot-design-sightline-cut",
-      "description": "用户提到视线方向、怎么切镜头、空间关系、主观镜头",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1178,7 +2852,7 @@
     {
       "dir": "shot-design-storyboard-rapid",
       "name": "shot-design-storyboard-rapid",
-      "description": "用户提到画分镜、故事板、怎么把剧本变成镜头、快速可视化",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1190,7 +2864,7 @@
     {
       "dir": "shot-distract-and-scare",
       "name": "shot-distract-and-scare",
-      "description": "用户提到吓人、惊吓、分散注意力、出其不意、打破预期、怎么让观众没想到",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1202,7 +2876,7 @@
     {
       "dir": "shot-dual-camera-tension",
       "name": "shot-dual-camera-tension",
-      "description": "用户提到两台摄影机、双机位、不同运动状态、手持vs推车、力量对比、谁占上风",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1214,7 +2888,7 @@
     {
       "dir": "shot-equal-length-rhythm",
       "name": "shot-equal-length-rhythm",
-      "description": "用户提到等长镜头、节奏控制、平行剪辑、安全感、打破节奏、镜头长度一致",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1224,9 +2898,19 @@
       }
     },
     {
+      "dir": "shot-information-progression",
+      "name": "shot-information-progression",
+      "description": "镜头信息递进工具：规划每个镜头新增、保留或揭示的信息，避免重复表达和信息跳跃，并控制悬念、升级、转折与回报。用于镜头序列、预告片和短视频结构优化。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/shot-information-progression"
+      }
+    },
+    {
       "dir": "shot-still-vs-motion-decision",
       "name": "shot-still-vs-motion-decision",
-      "description": "用户提到角色做决定、下定决心、转折点、静止和运动的对比、背景运动、决定的瞬间",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1238,7 +2922,7 @@
     {
       "dir": "shot-telephoto-compression",
       "name": "shot-telephoto-compression",
-      "description": "用户提到借位打斗、让距离看起来更近、长焦压缩、假打怎么拍、追踪者显得更近",
+      "description": "|",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1248,9 +2932,19 @@
       }
     },
     {
+      "dir": "sophia-mode",
+      "name": "sophia-mode",
+      "description": "Sophia运行模式：维护风险感知、诚实归因、价值门控、主动性边界、记忆卫生和知识胶囊式能力成长。用于需要稳定人格、审慎执行和长期自我维护的Agent工作。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/sophia-mode"
+      }
+    },
+    {
       "dir": "sound-design-auditory-hierarchy",
       "name": "sound-design-auditory-hierarchy",
-      "description": "Three-level auditory hierarchy: foreground (conscious), midground (aware), background (subconscious). Manages audience attention through conscious layering of sound elements.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1262,7 +2956,7 @@
     {
       "dir": "sound-design-consistency",
       "name": "sound-design-consistency",
-      "description": "Once a sound-image association is established, it must remain consistent throughout the film. Inconsistent sounds break audience trust and immersion.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1274,7 +2968,7 @@
     {
       "dir": "sound-design-contrast-drama",
       "name": "sound-design-contrast-drama",
-      "description": "Drama comes from contrast, not absolute values. Loud-soft, fast-slow, full-empty contrasts create tension. Constant loudness causes auditory fatigue.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1286,7 +2980,7 @@
     {
       "dir": "sound-design-diegetic-taxonomy",
       "name": "sound-design-diegetic-taxonomy",
-      "description": "Sound-image relationship taxonomy: on-screen, off-screen, non-diegetic, acousmatic. Classifies any film sound by its relationship to the story world.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1298,7 +2992,7 @@
     {
       "dir": "sound-design-energy-model",
       "name": "sound-design-energy-model",
-      "description": "Four-layer sound energy transformation model for film: physical, emotional, intellectual, ethical. Maps how sound travels from source to audience across technical, dramatic, aesthetic, and spiritual dimensions.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1310,7 +3004,7 @@
     {
       "dir": "sound-design-entrainment",
       "name": "sound-design-entrainment",
-      "description": "Human physiological rhythms (heartbeat, breathing, brainwaves) synchronize with external sound rhythms. Sound designers can use this to guide audience states.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1322,7 +3016,7 @@
     {
       "dir": "sound-design-expectation",
       "name": "sound-design-expectation",
-      "description": "Sound's emotional power comes from building and violating expectations. Surprise requires prior setup; too-accurate prediction causes boredom.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1334,7 +3028,7 @@
     {
       "dir": "sound-design-less-is-more",
       "name": "sound-design-less-is-more",
-      "description": "Use minimum sound elements for maximum impact. Let audience fill in gaps mentally. Counter-intuitive: removing sounds often increases emotional engagement.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1346,7 +3040,7 @@
     {
       "dir": "sound-design-listening-modes",
       "name": "sound-design-listening-modes",
-      "description": "Four listening modes (reduced, causal, semantic, referential) for understanding how audiences perceive and interpret sounds. Enables conscious mode-switching for effective sound design.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1358,7 +3052,7 @@
     {
       "dir": "sound-design-music-story-parallel",
       "name": "sound-design-music-story-parallel",
-      "description": "Music-story parallel structure: melody=character, harmony=setting, dissonance=conflict, rhythm=tempo. Maps musical elements to narrative elements for integrated sound design.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1370,7 +3064,7 @@
     {
       "dir": "sound-design-size-control",
       "name": "sound-design-size-control",
-      "description": "Perceived size of sound sources can be controlled by changing playback speed. Slower = larger, faster = smaller. Combine with original speed for realism.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1382,7 +3076,7 @@
     {
       "dir": "sound-design-sonata-drama",
       "name": "sound-design-sonata-drama",
-      "description": "Sonata form maps to dramatic structure: exposition (setup) → development (conflict) → recapitulation (resolution). Mirrors Hero's Journey and three-act structure.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
@@ -1394,13 +3088,43 @@
     {
       "dir": "sound-design-sync-illusion",
       "name": "sound-design-sync-illusion",
-      "description": "Audiences believe any sound synchronized with image IS the image's sound. Real sounds often have poor dramatic effect; substitute sources work better.",
+      "description": ">",
       "group": "film-knowledge",
       "source": {
         "type": "github",
         "repo": "geegl/directorskills",
         "ref": "57d2ef52de61b926bdcac13fe27d07c17bc36516",
         "path": "output/books/sound-design/sound-design-sync-illusion"
+      }
+    },
+    {
+      "dir": "source-evidence-auditor",
+      "name": "source-evidence-auditor",
+      "description": "Audits research claims against their supporting sources, dates, provenance, directness, and cross-source agreement; flags stale, unsupported, overstated, or citation-unready statements; and produces a repair plan. 审计研究结论与信源之间的证据链，检查时效、出处、直接性和交叉印证，定位无依据、过度表述或不可引用的问题并给出修复方案。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/source-evidence-auditor"
+      }
+    },
+    {
+      "dir": "space-perspective-expression",
+      "name": "space-perspective-expression",
+      "description": "用数学、物理和化学三层方法，把空间透视图、场景设定或图片生成需求写成结构清晰、具有空间深度和材质逻辑的文字提示。Use for requests emphasizing spatial perspective, layered environments, architectural depth, or consistent lighting and materials; not every image prompt.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/space-perspective-expression"
+      }
+    },
+    {
+      "dir": "storaro-cinematography",
+      "name": "storaro-cinematography",
+      "description": "为明确请求 storaro 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/storaro-cinematography"
       }
     },
     {
@@ -1414,6 +3138,46 @@
       }
     },
     {
+      "dir": "suno-music-prompts",
+      "name": "suno-music-prompts",
+      "description": "Suno AI v5.5 音乐提示词专家（2026-03-27 规范对齐）。覆盖 Voices 个人声模型、Custom Models 自定义模型、My Taste 偏好学习、颗粒化参数（BPM / Key / Instrumentation / Weirdness / Style Influence / Section Steering）、Stems 分轨与 MIDI 导出。内嵌专业音乐知识图谱（246 条曲风 × 19 大类、24 种语言、80 个人声标签、799 条乐器×技法 × 17 个家族、20 种曲式结构），覆盖流行、摇滚、电子、嘻哈、爵士、古典、民谣、金属、国风、拉丁、世界音乐、",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/suno-music-prompts"
+      }
+    },
+    {
+      "dir": "task-layer-executor",
+      "name": "task-layer-executor",
+      "description": "按工具数量、步骤复杂度和预计耗时把任务分为 L1–L4，并选择直接响应、进度更新或异步执行策略。A task-complexity router that classifies work into L1–L4 using tool count, reasoning depth, and expected duration, then selects direct, progress-reported, or asynchronous execution.",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/task-layer-executor"
+      }
+    },
+    {
+      "dir": "think-one-step-further",
+      "name": "think-one-step-further",
+      "description": "多想一步工具：在完成表面需求后检查底层原因、相邻问题、系统性影响、可复用机会和下一步价值。用于举一反三、整体优化、方案复核和避免只修局部问题。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/think-one-step-further"
+      }
+    },
+    {
+      "dir": "toland-cinematography",
+      "name": "toland-cinematography",
+      "description": "为明确请求 toland 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/toland-cinematography"
+      }
+    },
+    {
       "dir": "toonflow",
       "name": "toonflow",
       "description": "通过 Toonflow MCP 操作工作区、实时画布、节点、文档和媒体生成，以及管理插件、技能和模型。当用户希望控制正在运行的 Toonflow 或修改其中的内容与配置时使用。",
@@ -1421,6 +3185,126 @@
       "source": {
         "type": "bundle",
         "path": "snapshots/skills/toonflow"
+      }
+    },
+    {
+      "dir": "track-cross-platform-hotspots",
+      "name": "track-cross-platform-hotspots",
+      "description": "Fully automatic, profile-driven monitoring of news, trends, releases, research, products, and public signals across independent platforms. Use when Codex needs to create a daily or ad-hoc hotspot brief, identify the main story reported by multiple platforms, monitor selected interest directions, cha",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/track-cross-platform-hotspots"
+      }
+    },
+    {
+      "dir": "vfx-effect-construction-engine",
+      "name": "vfx-effect-construction-engine",
+      "description": "视觉特效构建引擎：把粒子、流体、烟火、破坏、能量、光线、碎片和环境交互拆成可控制的结构、阶段、材质与运动参数。用于构建和审查复杂特效镜头。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/vfx-effect-construction-engine"
+      }
+    },
+    {
+      "dir": "video-shotcraft",
+      "name": "video-shotcraft",
+      "description": "Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says \"use video-shotcraft t",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/video-shotcraft"
+      }
+    },
+    {
+      "dir": "video-structure-design",
+      "name": "video-structure-design",
+      "description": "视频宏观结构工具：在写剧本和分镜前规划钩子、首帧、留存曲线、节拍顺序、信息释放、升级、转折、回报和循环结构。用于短视频、广告、MV和叙事视频结构设计。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/video-structure-design"
+      }
+    },
+    {
+      "dir": "viral-screenwriter",
+      "name": "viral-screenwriter",
+      "description": "爆款编剧skill（本地版）。以《The Coffee Break Screenwriter》及书库方法共创人物、因果反转和对白，支持故事开发、直接成稿、续写、定点修改及参考片研究，分批交付标准中文Markdown剧本；直接在本地项目工作，按需与导演Skill交接。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/viral-screenwriter"
+      }
+    },
+    {
+      "dir": "visual-calibration-loop",
+      "name": "visual-calibration-loop",
+      "description": "视觉校准循环工具：基于剧本、镜头表、品牌内容或已有生成结果，持续比较目标与输出，校准角色、构图、色彩、材质、光线、风格和镜头一致性。用于多轮视觉迭代。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/visual-calibration-loop"
+      }
+    },
+    {
+      "dir": "visual-reference-vocabulary",
+      "name": "visual-reference-vocabulary",
+      "description": "视觉参考词汇工具：主动发现、推荐并保存导演、影片、工作室、摄影师、艺术家、镜头、材质和风格等高密度视觉锚点。用于把模糊审美转成明确且可搜索的参考语言。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/visual-reference-vocabulary"
+      }
+    },
+    {
+      "dir": "visual-style-aesthetic-direction",
+      "name": "visual-style-aesthetic-direction",
+      "description": "视觉风格与审美导演工具：为摄影、电影、插画、动画、三维、平面、产品、时尚和建筑等方向建立高级视觉风格系统。用于风格探索、审美统筹和提示词视觉方向设计。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/visual-style-aesthetic-direction"
+      }
+    },
+    {
+      "dir": "willis-cinematography",
+      "name": "willis-cinematography",
+      "description": "为明确请求 willis 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/willis-cinematography"
+      }
+    },
+    {
+      "dir": "windows-safe-cleanup",
+      "name": "windows-safe-cleanup",
+      "description": "Windows安全清理工具：审计并安全清理磁盘压力、临时文件、浏览器缓存、开发缓存、回收站和显卡着色器缓存，同时验证目标路径并避免误删。用于Windows空间清理和存储维护。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/windows-safe-cleanup"
+      }
+    },
+    {
+      "dir": "wonghowe-cinematography",
+      "name": "wonghowe-cinematography",
+      "description": "为明确请求 wonghowe 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/wonghowe-cinematography"
+      }
+    },
+    {
+      "dir": "young-cinematography",
+      "name": "young-cinematography",
+      "description": "为明确请求 young 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+      "group": null,
+      "source": {
+        "type": "bundle",
+        "path": "snapshots/skills/young-cinematography"
       }
     },
     {

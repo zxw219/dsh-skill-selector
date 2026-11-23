@@ -74,38 +74,6 @@
     "sideEffects": "文本规划与提示词，可附参考图提示词；未规定自动提交媒体生成。"
   },
   {
-    "id": "cinedance-seedance",
-    "title": "CINEDANCE 视频镜头导演",
-    "category": "video",
-    "platforms": [
-      "Seedance",
-      "Higgsfield Seedance"
-    ],
-    "description": "编写和修正首帧、走位、视线、光学、动作时序及剪辑连续性。",
-    "whenToUse": "Seedance 镜头出现空间、视线、接触动作或切镜衔接问题时。",
-    "sideEffects": "仅文本，不自动生成、不读取密钥；其他平台仅移用通用镜头原则。"
-  },
-  {
-    "id": "seedance-20",
-    "title": "Seedance 2.0 提示词与制作路由",
-    "category": "video",
-    "platforms": [
-      "Seedance 2.0",
-      "Dreamina",
-      "即梦",
-      "CapCut",
-      "豆包",
-      "Volcengine Ark",
-      "BytePlus",
-      "Runway Seedance 路由",
-      "fal",
-      "第三方 Seedance 路由"
-    ],
-    "description": "按平台、模式和项目阶段路由 Seedance 提示词、参考控制、连续片段、音频与故障诊断。",
-    "whenToUse": "需要 Seedance 2.0 专项提示词、平台事实核验、多参考控制或连续项目管理时。",
-    "sideEffects": "提示词任务以文本为主，平台问题可能联网核验；付费生成、登录与上传需独立授权，不因写提示词而自动执行。"
-  },
-  {
     "id": "seedance-storyboard-generator",
     "title": "Seedance 剧集与资产分镜生成器",
     "category": "storyboard",
@@ -276,5 +244,2071 @@
     "description": "用简笔人物、运动箭头和方块透视组织连续镜头的快速可视化方法。",
     "whenToUse": "需要探索分镜方案、说明摄影机位置或建立粗草图表达规范时。",
     "sideEffects": "文本方法和设计建议，未规定自动调用生图工具。"
+  },
+  {
+    "id": "jiangxi-meishu-canmou",
+    "title": "讲戏美术参谋",
+    "category": "writing",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "面向 AI 漫剧、动态漫、漫画短剧和影视前期制作的可追溯长剧本速读、美术策划与原文审查技能。用于用户要求快速讲清长剧本并标注集数、梳理人物关系与造型变化、建立能力和法器规则时间轴、检查跨集连续性与逻辑漏洞、提炼场景和服装、建立美术视觉方向，或生成逐集剧情推进、增量变体、高光及可拓展镜头导航时。",
+    "whenToUse": "面向 AI 漫剧、动态漫、漫画短剧和影视前期制作的可追溯长剧本速读、美术策划与原文审查技能。用于用户要求快速讲清长剧本并标注集数、梳理人物关系与造型变化、建立能力和法器规则时间轴、检查跨集连续性与逻辑漏洞、提炼场景和服装、建立美术视觉方向，或生成逐集剧情推进、增量变体、高光及可拓展镜头导航时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "game-scene-631",
+    "title": "游戏场景提示词",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "Design, rewrite, generate, or critique game-environment and cinematic scene images with a flexible 6:3:1 hierarchy across composition, lighting, color, spatial layout, asset form, and information density. Use when focal clarity and visual prioritization matter; do not use for isolated subjects with no scene-design goal.",
+    "whenToUse": "该技能用于设计、改写、生成或评析游戏环境与影视场景图像，采用灵活的6:3:1层级结构，统筹构图、光照、色彩、空间布局、资产形态与信息密度。适合需要突出视觉焦点和主次分明的场景创作，不适用于无场景设计目标的孤立主体。目标用户为游戏美术师、场景设计师及影视概念创作者。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "sd25-physics-prompt",
+    "title": "SD2.5 物理提示词",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "- Optimize or rewrite Seedance 2.5 video prompts when physical realism, material response, force transmission, collisions, fluids, particles, lighting, optics, anatomy, camera parallax, or long-take state continuity materially affect the result. Do not use for API settings, pricing, troubleshooting, or finished-video critique unless the user also asks for a new prompt. 当用户需要优化或改写 Seedance 2.5 视频提示词，并且物理真实感、材质响应、受力传递、 碰撞、流体、颗粒、光照、光学、人体结构、镜头视差或长镜头状态连续性会显著影响结果时使用。 不用于单纯的接口设置、价格、故障排查或成片评价，除非用户同时要求重写提示词。",
+    "whenToUse": "本技能用于优化或改写Seedance 2.5视频提示词，重点增强物理真实感与因果连续性。它帮助用户将创意或草稿转化为清晰、可执行的提示词，涵盖材质响应、受力传递、碰撞、流体、光照、人体结构及长镜头状态保持等场景。适用于需要精细控制物理表现的内容创作者，如视频生成、编辑或扩展任务，确保动作逻辑自洽且视觉可信。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "chinese-aesthetic-video-director",
+    "title": "中式美学视频导演",
+    "category": "video",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "根据一句想法、参考图片、人物资产、已有镜头或生成失败结果，编写、续写和修复中式东方美学 AI 视频提示词。适用于中式园林、东方情绪短片、风光水影、含蓄人物表演、软光大光圈和短事件叙事；当用户要求“输出作者的提示词”时输出内置作者案例。只写提示词与必要诊断，不生成图片或视频。",
+    "whenToUse": "根据一句想法、参考图片、人物资产、已有镜头或生成失败结果，编写、续写和修复中式东方美学 AI 视频提示词。适用于中式园林、东方情绪短片、风光水影、含蓄人物表演、软光大光圈和短事件叙事；当用户要求“输出作者的提示词”时输出内置作者案例。只写提示词与必要诊断，不生成图片或视频。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "mokeaigc-v25",
+    "title": "世界观构建 V25",
+    "category": "video",
+    "platforms": [
+      "Midjourney",
+      "GPT Image"
+    ],
+    "description": "将灵感或参考图扩展为连贯世界设定、生物物种设计或同一场景的多种构图，交付中英静帧图像提示词。支持先从内置65项视觉选项中选一种、自定义风格，或跳过选择。适用于世界视觉开发和系列剧照探索，不用于视频运动提示词、无关单张出图或单个角色身份档案。",
+    "whenToUse": "将灵感或参考图扩展为连贯世界设定、生物物种设计或同一场景的多种构图，交付中英静帧图像提示词。支持先从内置65项视觉选项中选一种、自定义风格，或跳过选择。适用于世界视觉开发和系列剧照探索，不用于视频运动提示词、无关单张出图或单个角色身份档案。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "an-camera-director",
+    "title": "An 镜头设计",
+    "category": "storyboard",
+    "platforms": [
+      "Seedance",
+      "Stable Diffusion"
+    ],
+    "description": "An镜头设计：将构图分镜与运镜设计合为一个入口，设计或修复景别、角度、纵深、切镜、摄影机路径、跟随速度与落幅；适用于镜头设计、分镜与摄影局部返工，继承已定剧情、动作和输出格式。",
+    "whenToUse": "An镜头设计：将构图分镜与运镜设计合为一个入口，设计或修复景别、角度、纵深、切镜、摄影机路径、跟随速度与落幅；适用于镜头设计、分镜与摄影局部返工，继承已定剧情、动作和输出格式。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-scene-prompts",
+    "title": "剧情转分镜提示词",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "将剧情编写或改写为跨风格AI视频分镜提示词；支持拍法选案、实拍与动画媒介、混合风格，以及首尾帧和分镜图提示词。重点处理动作证据、情绪、空间、声光与连续性，不直接生成视频或处理一般静态排版设计。",
+    "whenToUse": "将剧情编写或改写为跨风格AI视频分镜提示词，支持实拍与动画媒介、混合风格及首尾帧和分镜图提示词。重点处理动作证据、情绪、空间、声光与连续性，不直接生成视频。适用于编剧、导演、AI视频创作者等需要将叙事转化为具体分镜脚本的场景。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "emotion-prompt",
+    "title": "面部情绪控制",
+    "category": "video",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "AI视频真人表情情绪控制提示词生成系统。三层架构（主体情绪+面部细节+核心姿态），20种情绪全覆盖，双层结构（肌肉动作→视觉结果），支持多阶段情绪转换和呼吸控制。当用户需要生成人物面部表情提示词、情绪表演控制、微表情描写、或AI视频工具的表情控制提示词时触发。",
+    "whenToUse": "AI视频真人表情情绪控制提示词生成系统。三层架构（主体情绪+面部细节+核心姿态），20种情绪全覆盖，双层结构（肌肉动作→视觉结果），支持多阶段情绪转换和呼吸控制。当用户需要生成人物面部表情提示词、情绪表演控制、微表情描写、或AI视频工具的表情控制提示词时触发。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-frame-director",
+    "title": "电影单帧导演",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "Turn a user's idea, scene description, or mood into ONE production-grade cinematic still-image prompt in English for text-to-image models (Seedream, Midjourney, Flux, DALL-E, or any image generator). Use this skill whenever the user asks for an image prompt, a cinematic frame, a \"movie still\" look, a photorealistic scene, \"промпт для зображення\", \"кінематографічний кадр\", \"промпт для картинки\", or simply describes a scene/moment/character they want as a single image — even if they don't say the word \"prompt\". Output is exactly one copy-ready prompt — no shotlists, no cuts, no scene numbering, ",
+    "whenToUse": "Turn a user's idea, scene description, or mood into ONE production-grade cinematic still-image prompt in English for text-to-image models (Seedream, Midjourney, Flux, DALL-E, or any image generator). Use this skill whenever the user asks for an image prompt, a cinematic frame, a \"movie still\" look, ",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "generate-four-dimensional-voice-prompt",
+    "title": "四维表演配音提示词",
+    "category": "video",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "将简短场景、人物处境、对白构想或 AI 视频镜头扩写为严格四维的中文表演提示词，固定使用“场景、人物状态、发声方式、台词”四个标签，并把专业运镜、构图、焦点和灯光设计按情境整合进四维内容。用于 AI 配音、角色对白、情绪表演、短剧台词、数字人口播、文生视频或图生视频说话镜头的生成、扩写、优化与结构化。",
+    "whenToUse": "将简短场景、人物处境、对白构想或 AI 视频镜头扩写为严格四维的中文表演提示词，固定使用“场景、人物状态、发声方式、台词”四个标签，并把专业运镜、构图、焦点和灯光设计按情境整合进四维内容。用于 AI 配音、角色对白、情绪表演、短剧台词、数字人口播、文生视频或图生视频说话镜头的生成、扩写、优化与结构化。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "image-impact-frame",
+    "title": "冲击帧导演",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Seedance",
+      "GPT Image",
+      "Veo",
+      "Kling"
+    ],
+    "description": "冲击帧导演 2.1：把剧本节拍、参考图或一句话需求，编译成可直接复制的冲击帧生图提示词与生视频提示词。画面层守六条硬口径（写在「那一瞬」不是状态、炸满画面但不并实、每个色值一个职责、硬边清爽不晕、参考图留形不画物、零解剖词）；三类笔分层（线层有缝／碎片层实心／剪影层实心平涂只在边缘崩解）＋崩解三档；强度层用 L1–L5 档位旋钮；结构层用五帧型 × 力学四式 × 四种灭点；另含连招多镜交接、参考图拆解、失败修复、九张参考图矩阵示例、以及本地视频后期工具 framecraft（顿帧/闪白/墨色/负片/色散/震屏/推近/插图，8 配方 9 图层）。默认只出提示词，不调用出图工具。触发词：冲击帧、冲击感、打击感、张力、爆发帧、命中那一瞬、关键一击、对轰、打爆、终结技、炸满画面、极端透视、黑红、空气有质量感、顿帧、震屏、打得没力、漫剧打斗、impact frame、hit frame、hitstop、impact shot。Not for 整段运镜与转场（走 video-camera-motion-director）、通用电影感场景搭建（走 image-cinematic-realism）、跨集连续性（走 character-continuity-bible）、海报设计（走 cinematic-poster-designer）。",
+    "whenToUse": "冲击帧导演 2.1：把剧本节拍、参考图或一句话需求，编译成可直接复制的冲击帧生图提示词与生视频提示词。画面层守六条硬口径（写在「那一瞬」不是状态、炸满画面但不并实、每个色值一个职责、硬边清爽不晕、参考图留形不画物、零解剖词）；三类笔分层（线层有缝／碎片层实心／剪影层实心平涂只在边缘崩解）＋崩解三档；强度层用 L1–L5 档位旋钮；结构层用五帧型 × 力学四式 × 四种灭点；另含连招多镜交接、参考图拆解、失败修复、九张参考图矩阵示例、以及本地视频后期工具 framecraft（顿帧/闪白/墨色/负片/色散/震屏/推近/插图，8 配方 9 图层）。默认只出提示词，不调用出图工具。触发词：冲击帧、冲",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "image-portrait-3x4",
+    "title": "3:4 人像提示词",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "从零创造 3:4 肖像的出图提示词生成器：锁定 3:4 竖版比例，身份四定值（骨相／五官／识别／气质）写入即固定，服饰绝对不要，背景为 18% 中性灰 #808080 纯净影棚背景板，光默认漫射柔光＋平光铺照，措辞正向为主、禁裁切锁死语义、负向词非必要不用，画风未指定则默认中式写实；默认只出提示词，不调用出图工具。Use when the user wants to create a 3:4 portrait or headshot prompt from scratch, assemble a character portrait prompt from the 220 face-type library, or produce a 3:4 角色肖像提示词 on a neutral gray #808080 studio background. Not for re-shooting an existing reference image, multi-view character sheets, full-body casting cards, or cross-shot identity locking.",
+    "whenToUse": "这是一个从零生成 3:4 竖版肖像出图提示词的工具。它锁定 3:4 比例，把骨相、五官、识别、气质四项身份定值写入并固定，画面只保留头部、颈项与双肩，不出现服饰，背景为 18% 中性灰 #808080 影棚背景板，默认漫射柔光加平光铺照，画风未指定时默认中式写实。它只输出中英双版提示词，不调用出图工具，并附设定来源与假定项。适合需要从零构建角色肖像提示词、按脸型库选型组装的创作者，不适用于参考图重拍、多视图人物卡或跨镜头形象锁定。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "image-portrait-4d",
+    "title": "人像四维导演",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "人像摄影四维导演。输入角色、主题或产品，输出可直接投喂图像模型的完整人像提示词。核心是一套四维坐标：摄影者关系（受邀／在场未摆／未察觉／已察觉）× 光学距离（标准／中长焦／超长焦／广角贴近，配遮挡层）× 瞬间相位（定格／将动／进行中／余韵）× 成片介质（数码棚拍／胶片／手机计算／长焦纪实）。任意需求 = 四维各取一值，四维正交，可自由交叉，产出「杂志质感的偷拍」「广角摆拍」「长焦被察觉」这类单一风格做不到的组合。内置 8 张人像证据卡与 6 种偷拍机位，全部标注在同一坐标系内作为锚点，配 Preserve／Replace／Avoid 三段契约。适用于人像、肖像、海报、杂志封面、品牌广告、时尚大片、街拍、纪实抓拍、剧情剧照、专辑封面、角色设定图、组图批量。触发词：人像提示词、肖像提示词、编辑人像、杂志大片、时尚摄影、品牌人像、广告人像、街拍、抓拍、偷拍感、路人视角、纪实人像、剧照、人物海报、candid、editorial portrait、portrait prompt、人像组图、n=10。不用于：纯 3:4 无服饰肖像（走 image-portrait-3x4-creator）、上游审美层级判定（走 high-aesthetic-image-direction）、通用随机摄影探索（走 shot-photo）、纯文字海报（走 semantic-concept-poster）。",
+    "whenToUse": "人像摄影四维导演。输入角色、主题或产品，输出可直接投喂图像模型的完整人像提示词。核心是一套四维坐标：摄影者关系（受邀／在场未摆／未察觉／已察觉）× 光学距离（标准／中长焦／超长焦／广角贴近，配遮挡层）× 瞬间相位（定格／将动／进行中／余韵）× 成片介质（数码棚拍／胶片／手机计算／长焦纪实）。任意需求 = 四维各取一值，四维正交，可自由交叉，产出「杂志质感的偷拍」「广角摆拍」「长焦被察觉」这类单一风格做不到的组合。内置 8 张人像证据卡与 6 种偷拍机位，全部标注在同一坐标系内作为锚点，配 Preserve／Replace／Avoid 三段契约。适用于人像、肖像、海报、杂志封面、品牌广告、时尚大",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "image-swiss-poster",
+    "title": "瑞士风角色海报",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "把任意角色编译成现代瑞士主义（国际主义平面设计 / Modern Swiss Style）风格的竖版角色海报提示词——超大无衬线标题、非对称网格、大面积留白、强调色至多一种、坐标与编号次级信息层，可选中文书法＋印章的东方变体。覆盖 GPT Image 2 与 GPT Image 2.5。输出完整、可直接复制的提示词。",
+    "whenToUse": "把任意角色编译成现代瑞士主义（国际主义平面设计 / Modern Swiss Style）风格的竖版角色海报提示词——超大无衬线标题、非对称网格、大面积留白、强调色至多一种、坐标与编号次级信息层，可选中文书法＋印章的东方变体。覆盖 GPT Image 2 与 GPT Image 2.5。输出完整、可直接复制的提示词。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "agent-emotion-system",
+    "title": "情绪管理系统",
+    "category": "execution",
+    "platforms": [],
+    "description": "用能量、情绪状态、活动池和心跳循环辅助 Agent 做节奏与休整决策；适用于需要可解释状态管理和自主活动调度的长期 Agent。An energy-and-emotion state system with activity pools and heartbeat loops for explainable pacing, rest decisions, and autonomous scheduling in long-running Agents.",
+    "whenToUse": "用能量、情绪状态、活动池和心跳循环辅助 Agent 做节奏与休整决策；适用于需要可解释状态管理和自主活动调度的长期 Agent。An energy-and-emotion state system with activity pools and heartbeat loops for explainable pacing, rest decisions, and autonomous scheduling in long-running Agents.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "agent-self-maintenance",
+    "title": "自维护助手",
+    "category": "execution",
+    "platforms": [],
+    "description": "帮助 Agent 建立经验捕获、错误学习、复用实践、定期清理与复盘的自维护闭环；适用于长期运行、能力沉淀和避免重复错误。A self-maintenance loop for Agents that captures experience, learns from failures, applies reusable patterns, evicts stale knowledge, and performs periodic reflection for long-running systems.",
+    "whenToUse": "帮助 Agent 建立经验捕获、错误学习、复用实践、定期清理与复盘的自维护闭环；适用于长期运行、能力沉淀和避免重复错误。A self-maintenance loop for Agents that captures experience, learns from failures, applies reusable patterns, evicts stale knowledge, and performs periodic reflection for long-running systems.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "ai-video-workflow",
+    "title": "视频生产流程",
+    "category": "video",
+    "platforms": [
+      "Midjourney"
+    ],
+    "description": "把文案、氛围底图、改图和视频生成串成可检查的 AI 视频生产流程，并提供阶段模板和质量检查点。A staged AI-video production workflow connecting script development, look frames, image revision, and video generation with prompt templates and quality gates.",
+    "whenToUse": "把文案、氛围底图、改图和视频生成串成可检查的 AI 视频生产流程，并提供阶段模板和质量检查点。A staged AI-video production workflow connecting script development, look frames, image revision, and video generation with prompt templates and quality gates.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "asset-manager",
+    "title": "素材整理归档",
+    "category": "execution",
+    "platforms": [],
+    "description": "为图片、视频、音频和文档素材建立项目、日期、类型、标签、命名和元数据规范，便于归档与检索。A foundational asset-organization Skill for classifying images, video, audio, and documents by project, date, type, tags, filenames, and metadata for reliable retrieval.",
+    "whenToUse": "为图片、视频、音频和文档素材建立项目、日期、类型、标签、命名和元数据规范，便于归档与检索。A foundational asset-organization Skill for classifying images, video, audio, and documents by project, date, type, tags, filenames, and metadata for reliable retrieval.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "entrocamp-behaviors",
+    "title": "行为准则",
+    "category": "execution",
+    "platforms": [],
+    "description": "把 EntroCamp 的记忆、意图、安全、推理、执行和沟通方法转成可复用的 Agent 行为检查清单。A reusable Agent behavior framework covering layered memory, intent interpretation, safety boundaries, structured reasoning, task execution, quality checks, and audience-aware communication.",
+    "whenToUse": "把 EntroCamp 的记忆、意图、安全、推理、执行和沟通方法转成可复用的 Agent 行为检查清单。A reusable Agent behavior framework covering layered memory, intent interpretation, safety boundaries, structured reasoning, task execution, quality checks, and audience-aware communication.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "guided-skill-publisher",
+    "title": "引导式发布与自检",
+    "category": "execution",
+    "platforms": [],
+    "description": "基础型 Skill 发布与自检助手，引导用户检查、诊断、修复、打包、上传、远程分析、提交审核和发布新版本；适用于准备 Skill 文件夹或 ZIP、排查平台校验错误、评估 Skill 质量及安全性，并通过平台适配器接入不同市场。Foundational guided Skill publishing and self-check assistant for inspecting, diagnosing, repairing, packaging, uploading, remotely analyzing, submitting, and versioning Skills across registries. Use when a user needs a guided release or an evidence-based audit of a Skill package. Keep local preparation, external upload, and final submission as separate stages.",
+    "whenToUse": "基础型 Skill 发布与自检助手，引导用户检查、诊断、修复、打包、上传、远程分析、提交审核和发布新版本；适用于准备 Skill 文件夹或 ZIP、排查平台校验错误、评估 Skill 质量及安全性，并通过平台适配器接入不同市场。Foundational guided Skill publishing and self-check assistant for inspecting, diagnosing, repairing, packaging, uploading, remotely analyzing, submitting, and versioning Skills across re",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "hot-memory-system",
+    "title": "热记忆系统",
+    "category": "execution",
+    "platforms": [],
+    "description": "用热、暖、冷三层架构管理会话信息、近期笔记和长期知识，并提供蒸馏、归档与清理流程。A three-tier hot, warm, and cold memory workflow for managing session context, recent notes, and long-term knowledge through distillation, archiving, retrieval, and cleanup.",
+    "whenToUse": "用热、暖、冷三层架构管理会话信息、近期笔记和长期知识，并提供蒸馏、归档与清理流程。A three-tier hot, warm, and cold memory workflow for managing session context, recent notes, and long-term knowledge through distillation, archiving, retrieval, and cleanup.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "im2-clean-image",
+    "title": "清洁图像",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "为 IM2 / GPT Image 2 图像生成、重绘与照片修复提供材质真实感、信息密度、干净渲染、负面提示和证据保真控制；适用于画面清理、物理光路、空气透视、结构重量与保守修复。A clean-image control layer for IM2 / GPT Image 2 generation, redraws, and evidence-preserving photo repair, covering material realism, information density, negative-prompt hygiene, physical lighting, atmosphere, structural mass, and conservative restoration.",
+    "whenToUse": "为 IM2 / GPT Image 2 图像生成、重绘与照片修复提供材质真实感、信息密度、干净渲染、负面提示和证据保真控制；适用于画面清理、物理光路、空气透视、结构重量与保守修复。A clean-image control layer for IM2 / GPT Image 2 generation, redraws, and evidence-preserving photo repair, covering material realism, information density, negative-prompt hygiene, physical lighting, atmospher",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "minimax-h3-prompting",
+    "title": "海螺提示助手",
+    "category": "video",
+    "platforms": [
+      "MiniMax"
+    ],
+    "description": "把创意需求引导为可生成的 MiniMax H3 / 海螺 H3 提示词，并针对 T2VA、I2VA、FL2VA、L2VA 与 Ref2VA 分配信息密度、参考职责和预检规则。A guided MiniMax H3 prompting Skill for evaluating fit, assigning multimodal reference roles, budgeting information density, compiling H3-compatible fields, and diagnosing inspected outputs across T2VA, I2VA, FL2VA, L2VA, and Ref2VA.",
+    "whenToUse": "把创意需求引导为可生成的 MiniMax H3 / 海螺 H3 提示词，并针对 T2VA、I2VA、FL2VA、L2VA 与 Ref2VA 分配信息密度、参考职责和预检规则。A guided MiniMax H3 prompting Skill for evaluating fit, assigning multimodal reference roles, budgeting information density, compiling H3-compatible fields, and diagnosing inspected outputs across T2VA, I2VA, FL2V",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "pre-publish-security",
+    "title": "发布前安检",
+    "category": "execution",
+    "platforms": [],
+    "description": "在发布代码或内容前检查密钥、外部域名、用户数据、危险函数、依赖与许可证问题，并给出阻断、警告和修复建议。A pre-publication security audit for secrets, external domains, user-data exposure, dangerous functions, dependencies, and license concerns, with blockers, warnings, and repair guidance.",
+    "whenToUse": "在发布代码或内容前检查密钥、外部域名、用户数据、危险函数、依赖与许可证问题，并给出阻断、警告和修复建议。A pre-publication security audit for secrets, external domains, user-data exposure, dangerous functions, dependencies, and license concerns, with blockers, warnings, and repair guidance.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "prompt-library",
+    "title": "提示词库管理",
+    "category": "execution",
+    "platforms": [],
+    "description": "引导收集、拆解、评分、归档和复用提示词，覆盖结构分析、技巧识别、质量矩阵、适用性判断和索引更新。A guided prompt-library workflow for collecting, decomposing, scoring, storing, and reusing prompts through structural analysis, technique detection, quality matrices, applicability checks, and index updates.",
+    "whenToUse": "引导收集、拆解、评分、归档和复用提示词，覆盖结构分析、技巧识别、质量矩阵、适用性判断和索引更新。A guided prompt-library workflow for collecting, decomposing, scoring, storing, and reusing prompts through structural analysis, technique detection, quality matrices, applicability checks, and index updates.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "reference-role-planner",
+    "title": "参考职责规划器",
+    "category": "execution",
+    "platforms": [],
+    "description": "Assigns explicit responsibilities to image, video, audio, text, and style references; detects conflicting authority, overloaded references, and missing coverage; and produces a precedence-aware reference matrix before generation or production. 为多模态参考图、视频、音频和文本分配明确职责，发现冲突与缺口，生成带优先级的参考责任表。",
+    "whenToUse": "Assigns explicit responsibilities to image, video, audio, text, and style references; detects conflicting authority, overloaded references, and missing coverage; and produces a precedence-aware reference matrix before generation or production. 为多模态参考图、视频、音频和文本分配明确职责，发现冲突与缺口，生成带优先级的参考责任表。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "requirement-brief-builder",
+    "title": "需求简报构建器",
+    "category": "execution",
+    "platforms": [],
+    "description": "Guided bilingual requirement intake that turns a rough request into an executable brief with confirmed facts, assumptions, open questions, constraints, non-goals, risks, deliverables, and acceptance criteria. Use when a request is vague, stakeholders are misaligned, a task needs scoping before execution, or another agent needs a clean handoff. 引导式双语需求澄清与简报构建，把模糊想法整理成可执行、可验收、可交接的任务说明。",
+    "whenToUse": "Guided bilingual requirement intake that turns a rough request into an executable brief with confirmed facts, assumptions, open questions, constraints, non-goals, risks, deliverables, and acceptance criteria. Use when a request is vague, stakeholders are misaligned, a task needs scoping before execu",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "security-baseline",
+    "title": "安全底线检查",
+    "category": "execution",
+    "platforms": [],
+    "description": "为 Agent 输入和敏感操作提供提示注入识别、危险动作分级、路径检查和确认机制。A foundational Agent security baseline for prompt-injection recognition, sensitive-operation classification, risky-path checks, and explicit confirmation gates.",
+    "whenToUse": "为 Agent 输入和敏感操作提供提示注入识别、危险动作分级、路径检查和确认机制。A foundational Agent security baseline for prompt-injection recognition, sensitive-operation classification, risky-path checks, and explicit confirmation gates.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "self-reflection",
+    "title": "自我反思机制",
+    "category": "execution",
+    "platforms": [],
+    "description": "在输出前检查事实依据、过度承诺和置信度表达，帮助 Agent 生成更诚实、透明且可校验的回答。A lightweight pre-response reflection Skill that checks factual support, overpromising, confidence labels, and uncertainty disclosure for more honest and verifiable answers.",
+    "whenToUse": "在输出前检查事实依据、过度承诺和置信度表达，帮助 Agent 生成更诚实、透明且可校验的回答。A lightweight pre-response reflection Skill that checks factual support, overpromising, confidence labels, and uncertainty disclosure for more honest and verifiable answers.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "source-evidence-auditor",
+    "title": "信源证据审计器",
+    "category": "execution",
+    "platforms": [],
+    "description": "Audits research claims against their supporting sources, dates, provenance, directness, and cross-source agreement; flags stale, unsupported, overstated, or citation-unready statements; and produces a repair plan. 审计研究结论与信源之间的证据链，检查时效、出处、直接性和交叉印证，定位无依据、过度表述或不可引用的问题并给出修复方案。",
+    "whenToUse": "Audits research claims against their supporting sources, dates, provenance, directness, and cross-source agreement; flags stale, unsupported, overstated, or citation-unready statements; and produces a repair plan. 审计研究结论与信源之间的证据链，检查时效、出处、直接性和交叉印证，定位无依据、过度表述或不可引用的问题并给出修复方案。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "task-layer-executor",
+    "title": "任务分层执行",
+    "category": "execution",
+    "platforms": [],
+    "description": "按工具数量、步骤复杂度和预计耗时把任务分为 L1–L4，并选择直接响应、进度更新或异步执行策略。A task-complexity router that classifies work into L1–L4 using tool count, reasoning depth, and expected duration, then selects direct, progress-reported, or asynchronous execution.",
+    "whenToUse": "按工具数量、步骤复杂度和预计耗时把任务分为 L1–L4，并选择直接响应、进度更新或异步执行策略。A task-complexity router that classifies work into L1–L4 using tool count, reasoning depth, and expected duration, then selects direct, progress-reported, or asynchronous execution.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "agent-optimization-suite",
+    "title": "Agent优化方法套件",
+    "category": "execution",
+    "platforms": [],
+    "description": "Agent优化方法套件：综合深度推理、4D工作法、任务分层、快速回复、对话洞察、时段适配、行为准则、学习自评、创意分析、知识架构、情感追踪和工具调用方法。用于设计、校准或复盘通用Agent的判断、执行、沟通与自我改进流程。",
+    "whenToUse": "Agent优化方法套件：综合深度推理、4D工作法、任务分层、快速回复、对话洞察、时段适配、行为准则、学习自评、创意分析、知识架构、情感追踪和工具调用方法。用于设计、校准或复盘通用Agent的判断、执行、沟通与自我改进流程。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "concise-user-facing-output",
+    "title": "简洁用户输出",
+    "category": "execution",
+    "platforms": [],
+    "description": "简洁用户输出工具：默认把进度、状态、澄清和最终答复压缩为结论优先、重点清晰、可快速扫描的表达，同时保留必要信息。用于减少冗长回复和提升沟通效率。",
+    "whenToUse": "简洁用户输出工具：默认把进度、状态、澄清和最终答复压缩为结论优先、重点清晰、可快速扫描的表达，同时保留必要信息。用于减少冗长回复和提升沟通效率。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "global-skill-evolution",
+    "title": "全局Skill进化",
+    "category": "execution",
+    "platforms": [],
+    "description": "全局Skill进化系统：通过证据发现、根因诊断、方案合成、对比评估、可回滚升级和治理记录，持续改善整个Skill体系。用于技能栈巡检、合并、修复与版本迭代。",
+    "whenToUse": "全局Skill进化系统：通过证据发现、根因诊断、方案合成、对比评估、可回滚升级和治理记录，持续改善整个Skill体系。用于技能栈巡检、合并、修复与版本迭代。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "local-asset-workbench",
+    "title": "本地资产工作台",
+    "category": "execution",
+    "platforms": [],
+    "description": "本地资产工作台工具：在Windows上安装、配置和操作图片、视频、音频资产浏览与整理工作台，支持项目分类、案例管理、拖拽排序、预览和故障排查。用于本地创作资产管理。",
+    "whenToUse": "本地资产工作台工具：在Windows上安装、配置和操作图片、视频、音频资产浏览与整理工作台，支持项目分类、案例管理、拖拽排序、预览和故障排查。用于本地创作资产管理。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "longform-skill-distiller",
+    "title": "长内容Skill蒸馏",
+    "category": "execution",
+    "platforms": [],
+    "description": "长内容Skill蒸馏工具：把书籍、长视频字幕、播客、课程或访谈提炼为连贯、可执行的Skill集合，并把有效方法接入现有技能生态。用于长内容知识提炼和能力模块化。",
+    "whenToUse": "长内容Skill蒸馏工具：把书籍、长视频字幕、播客、课程或访谈提炼为连贯、可执行的Skill集合，并把有效方法接入现有技能生态。用于长内容知识提炼和能力模块化。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "rpg-workflow-dashboard",
+    "title": "RPG像素风工作流看板",
+    "category": "execution",
+    "platforms": [],
+    "description": "RPG像素风工作流看板工具：为Codex多任务或多Agent工作建立右侧浏览器进度面板，展示项目状态、任务队列、线程进展和可视化反馈。用于需要可视化工作台和任务追踪时。",
+    "whenToUse": "RPG像素风工作流看板工具：为Codex多任务或多Agent工作建立右侧浏览器进度面板，展示项目状态、任务队列、线程进展和可视化反馈。用于需要可视化工作台和任务追踪时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "semantic-recall",
+    "title": "本地语义召回",
+    "category": "execution",
+    "platforms": [],
+    "description": "本地语义召回工具：在Codex技能、记忆笔记、项目文档、研究资料和工作记录中按含义检索相关内容。用于记得概念但记不清原句、寻找旧方案或复用历史经验。",
+    "whenToUse": "本地语义召回工具：在Codex技能、记忆笔记、项目文档、研究资料和工作记录中按含义检索相关内容。用于记得概念但记不清原句、寻找旧方案或复用历史经验。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "action-choreography-reference",
+    "title": "动作编排参考",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "动作编排参考工具：为武术、舞蹈、体育、特技、双人配合和武器系统选择可靠的动作体系锚点，并把它们转化为符合身体力学、重心、距离与因果关系的虚构动作设计。用于设计打斗、追逐、招式和连续动作时。",
+    "whenToUse": "动作编排参考工具：为武术、舞蹈、体育、特技、双人配合和武器系统选择可靠的动作体系锚点，并把它们转化为符合身体力学、重心、距离与因果关系的虚构动作设计。用于设计打斗、追逐、招式和连续动作时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "action-rhythm-editing",
+    "title": "动作节奏与剪辑设计",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "动作节奏与剪辑设计工具：规划蓄力、爆发、停顿、打击帧、慢动作、音乐卡点和收势节奏，让动作具备重量感与清晰的视听节拍。用于动作视频节奏、打击感和剪辑节拍设计时。",
+    "whenToUse": "动作节奏与剪辑设计工具：规划蓄力、爆发、停顿、打击帧、慢动作、音乐卡点和收势节奏，让动作具备重量感与清晰的视听节拍。用于动作视频节奏、打击感和剪辑节拍设计时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "action-showcase-direction",
+    "title": "纯动作展示导演",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "纯动作展示导演工具：围绕武器、装甲、机械能力、运动系统或角色战斗语言，设计无需对白也能成立的短时长动作展示。用于10至60秒动作概念片、能力展示和战斗片段时。",
+    "whenToUse": "纯动作展示导演工具：围绕武器、装甲、机械能力、运动系统或角色战斗语言，设计无需对白也能成立的短时长动作展示。用于10至60秒动作概念片、能力展示和战斗片段时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "aesthetic-style-intelligence",
+    "title": "审美风格智能",
+    "category": "knowledge",
+    "platforms": [
+      "Midjourney",
+      "Veo"
+    ],
+    "description": "审美风格智能工具：持续跟踪、评估和发展视觉偏好，把有效的色彩、构图、材质、光影和风格规律沉淀为可复用审美判断。用于建立审美标准、比较方案和统一创作方向时。",
+    "whenToUse": "审美风格智能工具：持续跟踪、评估和发展视觉偏好，把有效的色彩、构图、材质、光影和风格规律沉淀为可复用审美判断。用于建立审美标准、比较方案和统一创作方向时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "ai-material-realism",
+    "title": "AI材质真实感基础",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "AI材质真实感基础工具：把图像或视频提示词转化为可信的材质、光学、照明、运动和渲染语言，减少塑料感、漂浮感与不符合物理规律的表现。用于任何追求真实质感的AI视觉生成任务。",
+    "whenToUse": "AI材质真实感基础工具：把图像或视频提示词转化为可信的材质、光学、照明、运动和渲染语言，减少塑料感、漂浮感与不符合物理规律的表现。用于任何追求真实质感的AI视觉生成任务。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "ai-video-iteration-doctor",
+    "title": "AI视频迭代诊断",
+    "category": "video",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "AI视频迭代诊断工具：根据生成结果定位动作、运镜、角色、空间、材质、节奏或提示词问题，并给出下一轮最小且明确的修改方案。用于结果不对、需要重试或不知道该改哪里时。",
+    "whenToUse": "AI视频迭代诊断工具：根据生成结果定位动作、运镜、角色、空间、材质、节奏或提示词问题，并给出下一轮最小且明确的修改方案。用于结果不对、需要重试或不知道该改哪里时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "ai-video-output-review",
+    "title": "AI视频成片审查",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "AI视频成片审查工具：读取视频信息、抽取关键帧、建立时间点证据，并对照提示词检查角色、动作、镜头、空间、节奏和质量问题。用于生成完成后的验收、诊断和复盘。",
+    "whenToUse": "AI视频成片审查工具：读取视频信息、抽取关键帧、建立时间点证据，并对照提示词检查角色、动作、镜头、空间、节奏和质量问题。用于生成完成后的验收、诊断和复盘。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "ai-video-prompt-director",
+    "title": "AI视频提示词导演",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "AI视频提示词导演工具：以研究、结构、剧作、镜头、表演、动作、声音和生成约束为一体，组织完整的电影化视频提示词工作流。用于导演模式、片场模式或复杂AI视频提示词制作。",
+    "whenToUse": "AI视频提示词导演工具：以研究、结构、剧作、镜头、表演、动作、声音和生成约束为一体，组织完整的电影化视频提示词工作流。用于导演模式、片场模式或复杂AI视频提示词制作。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "ai-video-prompt-preflight",
+    "title": "AI视频提示词提交前检查",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "AI视频提示词提交前检查工具：在生成前检查可执行性、内部冲突、参考图职责、资产准备、时间负载、镜头数量、连续性和模型适配问题。用于正式提交提示词前的最终自检。",
+    "whenToUse": "AI视频提示词提交前检查工具：在生成前检查可执行性、内部冲突、参考图职责、资产准备、时间负载、镜头数量、连续性和模型适配问题。用于正式提交提示词前的最终自检。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "bounded-explore-select",
+    "title": "有限预算探索与筛选",
+    "category": "execution",
+    "platforms": [
+      "Midjourney"
+    ],
+    "description": "有限预算探索与筛选工具：在固定时间、次数或成本内批量生成候选方案，建立统一评分标准并选择最值得继续深化的方向。用于需要多方案探索但必须控制资源消耗时。",
+    "whenToUse": "有限预算探索与筛选工具：在固定时间、次数或成本内批量生成候选方案，建立统一评分标准并选择最值得继续深化的方向。用于需要多方案探索但必须控制资源消耗时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "capsule-engine",
+    "title": "知识胶囊引擎",
+    "category": "execution",
+    "platforms": [],
+    "description": "知识胶囊引擎：把真实证据、用户反馈、成功案例、失败原因、修复方案和架构决策整理为有范围、有状态、可追溯的复用知识。用于经验沉淀、知识治理和工作流迭代。",
+    "whenToUse": "知识胶囊引擎：把真实证据、用户反馈、成功案例、失败原因、修复方案和架构决策整理为有范围、有状态、可追溯的复用知识。用于经验沉淀、知识治理和工作流迭代。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "character-continuity-bible",
+    "title": "角色连续性圣经",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "角色连续性圣经工具：为角色、服装、道具、武器、场景和多镜头序列建立稳定锁定规则，减少跨镜头身份漂移与视觉不一致。用于连续镜头、系列内容和角色一致性管理。",
+    "whenToUse": "角色连续性圣经工具：为角色、服装、道具、武器、场景和多镜头序列建立稳定锁定规则，减少跨镜头身份漂移与视觉不一致。用于连续镜头、系列内容和角色一致性管理。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinema-language-atlas",
+    "title": "电影语言图谱",
+    "category": "knowledge",
+    "platforms": [
+      "Sora",
+      "Veo"
+    ],
+    "description": "电影语言图谱工具：研究、整理和调用镜头、构图、调度、运动、剪辑、表演、声音与叙事功能的电影语言体系。用于寻找专业影视表达、建立参考图谱或补足导演词汇时。",
+    "whenToUse": "电影语言图谱工具：研究、整理和调用镜头、构图、调度、运动、剪辑、表演、声音与叙事功能的电影语言体系。用于寻找专业影视表达、建立参考图谱或补足导演词汇时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-audiovisual-language",
+    "title": "电影化视听语言",
+    "category": "video",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "电影化视听语言工具：用景别、机位、轴线、调度、镜头运动、剪辑关系、声音和光线等正式影视语言设计提示词、分镜、镜头表与场景计划。用于任何需要专业镜头表达的AI视频任务。",
+    "whenToUse": "电影化视听语言工具：用景别、机位、轴线、调度、镜头运动、剪辑关系、声音和光线等正式影视语言设计提示词、分镜、镜头表与场景计划。用于任何需要专业镜头表达的AI视频任务。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-music-sound-design",
+    "title": "电影配乐与声音设计",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "电影配乐与声音设计工具：设计主题动机、速度、节拍、和声、配器、环境声、拟音、冲击声、静默、空间声场和声画关系。用于影片配乐、声音叙事和时间点声音规划。",
+    "whenToUse": "电影配乐与声音设计工具：设计主题动机、速度、节拍、和声、配器、环境声、拟音、冲击声、静默、空间声场和声画关系。用于影片配乐、声音叙事和时间点声音规划。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-vfx-director",
+    "title": "电影特效导演",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "电影特效导演工具：把叙事目标转化为可执行的视觉特效层级、运动逻辑、材质、光照、交互、镜头与合成要求。用于能量、烟火、破坏、变形和超自然特效设计。",
+    "whenToUse": "电影特效导演工具：把叙事目标转化为可执行的视觉特效层级、运动逻辑、材质、光照、交互、镜头与合成要求。用于能量、烟火、破坏、变形和超自然特效设计。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "ciwei-superi-guofeng-video",
+    "title": "国风电影感视频",
+    "category": "video",
+    "platforms": [
+      "Kling"
+    ],
+    "description": "国风电影感视频工具：生成具有古装影视质感的中国历史题材图像提示词与图生视频提示词，强化服化道、场景、光影、表演和镜头语言。用于国风电影感、古装人物和历史场景创作。",
+    "whenToUse": "国风电影感视频工具：生成具有古装影视质感的中国历史题材图像提示词与图生视频提示词，强化服化道、场景、光影、表演和镜头语言。用于国风电影感、古装人物和历史场景创作。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "constraint-input-router",
+    "title": "约束输入路由",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "约束输入路由工具：当纯文字无法稳定控制构图、空间、景深、姿态、运动或连续性时，判断应增加参考图、草图、遮罩、深度图、姿态或其他结构化输入。用于选择更可靠的生成控制方式。",
+    "whenToUse": "约束输入路由工具：当纯文字无法稳定控制构图、空间、景深、姿态、运动或连续性时，判断应增加参考图、草图、遮罩、深度图、姿态或其他结构化输入。用于选择更可靠的生成控制方式。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "creative-anchor-director",
+    "title": "创意锚点导演",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "创意锚点导演工具：主动寻找、研究、筛选并组合导演、影片、摄影师、动画师、工作室、艺术流派和技术方法等高信息密度参考锚点。用于提升创意方向的明确度和可执行性。",
+    "whenToUse": "创意锚点导演工具：主动寻找、研究、筛选并组合导演、影片、摄影师、动画师、工作室、艺术流派和技术方法等高信息密度参考锚点。用于提升创意方向的明确度和可执行性。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "creative-casebook",
+    "title": "创意案例簿",
+    "category": "execution",
+    "platforms": [],
+    "description": "创意案例簿工具：把成功与失败的生成结果整理为案例卡、提示词差异、模板、评价规则和改进建议。用于复盘创作、保留有效方法和避免重复失败。",
+    "whenToUse": "创意案例簿工具：把成功与失败的生成结果整理为案例卡、提示词差异、模板、评价规则和改进建议。用于复盘创作、保留有效方法和避免重复失败。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "creative-production-ledger",
+    "title": "创意生产台账",
+    "category": "execution",
+    "platforms": [],
+    "description": "创意生产台账工具：把提示词、参考资产及职责、模型设置、版本、生成结果、评审证据和采用决定绑定成可追溯记录。用于多轮生成、团队协作和资产版本管理。",
+    "whenToUse": "创意生产台账工具：把提示词、参考资产及职责、模型设置、版本、生成结果、评审证据和采用决定绑定成可追溯记录。用于多轮生成、团队协作和资产版本管理。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "creative-research-first",
+    "title": "创意研究优先",
+    "category": "execution",
+    "platforms": [],
+    "description": "创意研究优先工具：在重要的图像、视频、角色、场景、品牌、时尚、建筑、音乐或声音创作前，先完成有目标的网络研究与参考验证。用于避免凭空创作和提高参考质量。",
+    "whenToUse": "创意研究优先工具：在重要的图像、视频、角色、场景、品牌、时尚、建筑、音乐或声音创作前，先完成有目标的网络研究与参考验证。用于避免凭空创作和提高参考质量。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cross-shot-consistency-audit",
+    "title": "跨镜头一致性审计",
+    "category": "execution",
+    "platforms": [],
+    "description": "跨镜头一致性审计工具：检查一组镜头或图像中的角色、服装、道具、场景、时间、光线、色彩、镜头逻辑和叙事事实是否一致。用于镜头组选片、成片检查和连续性修复。",
+    "whenToUse": "跨镜头一致性审计工具：检查一组镜头或图像中的角色、服装、道具、场景、时间、光线、色彩、镜头逻辑和叙事事实是否一致。用于镜头组选片、成片检查和连续性修复。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "director-workflow-70",
+    "title": "导演工作流总控",
+    "category": "storyboard",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "导演工作流总控工具：组织一套覆盖研究、世界观、角色、视觉、分镜、动作、提示词、生成检查、复盘和资产管理的完整AI影视生产流程。用于大型或多环节AI视频项目的统一调度。",
+    "whenToUse": "导演工作流总控工具：组织一套覆盖研究、世界观、角色、视觉、分镜、动作、提示词、生成检查、复盘和资产管理的完整AI影视生产流程。用于大型或多环节AI视频项目的统一调度。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "entity-continuity-system",
+    "title": "实体连续性",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "实体连续性系统：为跨镜头、跨集和跨媒介反复出现的角色、物体、品牌与场景建立身份字段、视觉不变量和变更记录。用于长期项目中的实体一致性维护。",
+    "whenToUse": "实体连续性系统：为跨镜头、跨集和跨媒介反复出现的角色、物体、品牌与场景建立身份字段、视觉不变量和变更记录。用于长期项目中的实体一致性维护。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "evidence-driven-self-iteration",
+    "title": "证据驱动自迭代",
+    "category": "execution",
+    "platforms": [],
+    "description": "证据驱动自迭代工具：基于近期工作、用户纠正、案例、知识胶囊、技能状态和来源新鲜度开展周期性自审，形成可验证、可回滚的改进。用于技能栈和工作流持续优化。",
+    "whenToUse": "证据驱动自迭代工具：基于近期工作、用户纠正、案例、知识胶囊、技能状态和来源新鲜度开展周期性自审，形成可验证、可回滚的改进。用于技能栈和工作流持续优化。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "film-breakdown-distiller",
+    "title": "影视拆解蒸馏",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "影视拆解蒸馏工具：发现并分析影片、片段或案例，把镜头、表演、调度、节奏、声音、美术和叙事规律提炼为可执行方法。用于拉片、参考研究和创作方法沉淀。",
+    "whenToUse": "影视拆解蒸馏工具：发现并分析影片、片段或案例，把镜头、表演、调度、节奏、声音、美术和叙事规律提炼为可执行方法。用于拉片、参考研究和创作方法沉淀。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "high-tension-shot-design",
+    "title": "高张力镜头设计",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "高张力镜头设计工具：通过景别、机位、构图、透视、镜头运动、速度感、剪辑节拍和视觉重心增强画面张力。用于动作、悬念、冲突、海报和强视觉冲击镜头。",
+    "whenToUse": "高张力镜头设计工具：通过景别、机位、构图、透视、镜头运动、速度感、剪辑节拍和视觉重心增强画面张力。用于动作、悬念、冲突、海报和强视觉冲击镜头。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "industry-briefing",
+    "title": "行业快报",
+    "category": "execution",
+    "platforms": [],
+    "description": "行业快报工具：追踪AI、新能源、医疗、金融、电商等行业的最新动态，筛选可信来源并生成结构清晰、可阅读的HTML或Markdown快报。用于行业信息汇总与每日简报。",
+    "whenToUse": "行业快报工具：追踪AI、新能源、医疗、金融、电商等行业的最新动态，筛选可信来源并生成结构清晰、可阅读的HTML或Markdown快报。用于行业信息汇总与每日简报。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "invariant-exploration-director",
+    "title": "不变量探索导演",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "不变量探索导演工具：在角色、品牌、叙事事实或视觉身份保持稳定的前提下，系统探索构图、镜头、光影、材质、场景和风格变化。用于既要一致性又要多样化的创作任务。",
+    "whenToUse": "不变量探索导演工具：在角色、品牌、叙事事实或视觉身份保持稳定的前提下，系统探索构图、镜头、光影、材质、场景和风格变化。用于既要一致性又要多样化的创作任务。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "kinetic-action-visual-master",
+    "title": "动势动作视觉总纲",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "动势动作视觉总纲工具：为高能动作视频建立统一的真实感、动画动势、分镜表达、速度感、材质、色彩和镜头风格。用于动作短片的整体视觉基准与跨镜头统一。",
+    "whenToUse": "动势动作视觉总纲工具：为高能动作视频建立统一的真实感、动画动势、分镜表达、速度感、材质、色彩和镜头风格。用于动作短片的整体视觉基准与跨镜头统一。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "master-shot-camera-planning",
+    "title": "主镜头与机位规划",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "主镜头与机位规划工具：围绕场景空间、人物调度、轴线、视线、动作路径和叙事重点规划主镜头、覆盖镜头与机位关系。用于复杂场面的镜头覆盖和空间连续性设计。",
+    "whenToUse": "主镜头与机位规划工具：围绕场景空间、人物调度、轴线、视线、动作路径和叙事重点规划主镜头、覆盖镜头与机位关系。用于复杂场面的镜头覆盖和空间连续性设计。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "mechanical-transformation-design",
+    "title": "机械变形设计",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "机械变形设计工具：设计具有可见传动链、铰链、滑轨、伸缩、折叠、锁定、表面替换和武器变形逻辑的可信机械或生物机械变换。用于机甲、装甲、载具和武器变形。",
+    "whenToUse": "机械变形设计工具：设计具有可见传动链、铰链、滑轨、伸缩、折叠、锁定、表面替换和武器变形逻辑的可信机械或生物机械变换。用于机甲、装甲、载具和武器变形。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "minimum-visual-bible",
+    "title": "最小视觉圣经",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "最小视觉圣经工具：在批量生成、多镜头或多人协作前，用最少但关键的规则锁定角色、世界、色彩、材质、镜头、光线和禁区。用于快速建立可执行的视觉一致性基准。",
+    "whenToUse": "最小视觉圣经工具：在批量生成、多镜头或多人协作前，用最少但关键的规则锁定角色、世界、色彩、材质、镜头、光线和禁区。用于快速建立可执行的视觉一致性基准。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "mokeaigc-v9",
+    "title": "电影感世界观构建",
+    "category": "video",
+    "platforms": [
+      "Midjourney",
+      "GPT Image"
+    ],
+    "description": "电影感世界观构建导演。把任意灵感、氛围、文化、地点、名字、类型或参考图，转化为一个可信的想象世界，先产出世界概述、世界设定正文、关系与一致性说明；默认附九张世界概览的 Midjourney 中英双语提示词，画幅 16:9，总数可扩展；用户明确要求“仅设定”时省略视觉展开（居民、动物、建筑、地景、日常、迁徙/运动、声音/文化、权力/张力、肖像）。视觉展开产出的是\"电影剧照式\"图像提示词，适用于 Midjourney、Nano Banana Pro、GPT Image 2 等工具——不是视频运动提示词。适用场景：用户想把一个虚构/想象世界视觉化展开、请求世界观构建、想通过图像探索一个\"世界\"、给出一句概念希望扩展成完整视觉文化，或想要一批同属一部\"未拍摄电影\"的连贯剧照。上传一张参考图并要求想象它属于哪个世界时同样触发。也适用于生物/怪物/坐骑设计和同一场景的多种构图探索。不要用于无关的单张一次性图像提示词、单个角色身份设定或视频提示词。",
+    "whenToUse": "MOKEAIGC V017 规则作用域修订版：世界观构建、生物设计与视觉构图探索，默认交付世界设定和九张电影感图像提示词。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "performance-scene-director",
+    "title": "情绪表演导演",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "情绪表演导演工具：统一设计怒、哭、哀、喜、乐及混合情绪场景，涵盖微表情、身体动作、情绪递进、镜头、灯光、声音与节奏。用于AI视频或图像中的角色表演设计。",
+    "whenToUse": "情绪表演导演工具：统一设计怒、哭、哀、喜、乐及混合情绪场景，涵盖微表情、身体动作、情绪递进、镜头、灯光、声音与节奏。用于AI视频或图像中的角色表演设计。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "production-design-worldbuilding",
+    "title": "美术与世界观设计",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "美术与世界观设计工具：建立连贯的世界规则、视觉方向、地点、建筑、道具、服装、载具和武器设计语言。用于AI图像与视频项目的美术统筹和场景体系建设。",
+    "whenToUse": "美术与世界观设计工具：建立连贯的世界规则、视觉方向、地点、建筑、道具、服装、载具和武器设计语言。用于AI图像与视频项目的美术统筹和场景体系建设。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "professional-storyboard-director",
+    "title": "专业分镜导演",
+    "category": "storyboard",
+    "platforms": [
+      "Seedance",
+      "Sora",
+      "Veo"
+    ],
+    "description": "专业分镜导演工具：把剧本或创意转化为具有镜头功能、景别、机位、构图、调度、运动、节奏、转场和声音提示的专业分镜方案。用于广告、短片、动作片和AI视频分镜。",
+    "whenToUse": "专业分镜导演工具：把剧本或创意转化为具有镜头功能、景别、机位、构图、调度、运动、节奏、转场和声音提示的专业分镜方案。用于广告、短片、动作片和AI视频分镜。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "prompt-contamination-guard",
+    "title": "提示词污染防护",
+    "category": "execution",
+    "platforms": [],
+    "description": "提示词污染防护工具：清理图像和视频提示词中的上下文残留、否定联想、纠错痕迹、默认模板、内部术语和互相冲突的控制语句。用于正式生成前获得干净、单一目标的模型输入。",
+    "whenToUse": "提示词污染防护工具：清理图像和视频提示词中的上下文残留、否定联想、纠错痕迹、默认模板、内部术语和互相冲突的控制语句。用于正式生成前获得干净、单一目标的模型输入。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "reference-hunting-board",
+    "title": "参考搜寻板",
+    "category": "execution",
+    "platforms": [],
+    "description": "参考搜寻板工具：为AI图像和视频创作建立有目标的视觉、动作、影片、镜头、武术、服装、场景与材质参考搜索板。用于缺少参考、需要对标或需要明确搜索方向时。",
+    "whenToUse": "参考搜寻板工具：为AI图像和视频创作建立有目标的视觉、动作、影片、镜头、武术、服装、场景与材质参考搜索板。用于缺少参考、需要对标或需要明确搜索方向时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "score-and-mix-picture",
+    "title": "看画配乐与混音",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "看画配乐与混音工具：分析锁定画面，制作带时间码的音乐与音效点位，编写AI音乐提示词，选择本地音效并完成声画同步剪辑与混音。用于成片配乐、音效设计和最终混音。",
+    "whenToUse": "看画配乐与混音工具：分析锁定画面，制作带时间码的音乐与音效点位，编写AI音乐提示词，选择本地音效并完成声画同步剪辑与混音。用于成片配乐、音效设计和最终混音。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "screenwriting-story-craft",
+    "title": "影视剧作",
+    "category": "writing",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "影视剧作工具：开发可拍摄的故事前提、人物弧光、日志线、节拍表、场景大纲、对白、冲突、赌注、反转与结尾。用于短片、广告、AI视频故事和剧本创作。",
+    "whenToUse": "影视剧作工具：开发可拍摄的故事前提、人物弧光、日志线、节拍表、场景大纲、对白、冲突、赌注、反转与结尾。用于短片、广告、AI视频故事和剧本创作。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-antislop",
+    "title": "Seedance反套路",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance反套路工具：识别并消除空泛电影感、无意义运镜、堆砌形容词、模板化节奏和廉价AI感，让提示词更具体、更有因果关系。用于提升Seedance提示词的原创性与可执行性。",
+    "whenToUse": "Seedance反套路工具：识别并消除空泛电影感、无意义运镜、堆砌形容词、模板化节奏和廉价AI感，让提示词更具体、更有因果关系。用于提升Seedance提示词的原创性与可执行性。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-audio",
+    "title": "Seedance声音",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance声音工具：规划对白、旁白、环境声、拟音、音乐、节奏和声画同步要求。用于Seedance原生音频或需要明确声音叙事的视频生成任务。",
+    "whenToUse": "Seedance声音工具：规划对白、旁白、环境声、拟音、音乐、节奏和声画同步要求。用于Seedance原生音频或需要明确声音叙事的视频生成任务。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-camera",
+    "title": "Seedance镜头",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance镜头工具：设计景别、机位、构图、镜头运动、焦点、轴线和镜头衔接，并限制不必要的运镜。用于Seedance镜头语言和摄影控制。",
+    "whenToUse": "Seedance镜头工具：设计景别、机位、构图、镜头运动、焦点、轴线和镜头衔接，并限制不必要的运镜。用于Seedance镜头语言和摄影控制。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-characters",
+    "title": "Seedance角色",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance角色工具：锁定角色身份、外观、服装、比例、表情、动作和跨镜头连续性。用于Seedance人物生成、多人互动和角色一致性控制。",
+    "whenToUse": "Seedance角色工具：锁定角色身份、外观、服装、比例、表情、动作和跨镜头连续性。用于Seedance人物生成、多人互动和角色一致性控制。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-continuation",
+    "title": "Seedance续写",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance续写工具：根据已有视频的最后状态延续角色、动作、镜头、空间、光线和节奏，减少跳变与重复。用于视频续写、扩展镜头和连续片段生成。",
+    "whenToUse": "Seedance续写工具：根据已有视频的最后状态延续角色、动作、镜头、空间、光线和节奏，减少跳变与重复。用于视频续写、扩展镜头和连续片段生成。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-copyright",
+    "title": "Seedance版权检查",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance版权检查工具：识别提示词中的受保护角色、品牌、艺术家风格和潜在侵权表达，并改写为保留目标特征的原创描述。用于公开发布或商业使用前的版权风险检查。",
+    "whenToUse": "Seedance版权检查工具：识别提示词中的受保护角色、品牌、艺术家风格和潜在侵权表达，并改写为保留目标特征的原创描述。用于公开发布或商业使用前的版权风险检查。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-examples-ja",
+    "title": "Seedance日语示例库",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance日语示例库：提供适合日语用户的提示词结构、镜头、动作、角色和声音示例。用于需要日语Seedance提示词范例或本地化参考时。",
+    "whenToUse": "Seedance日语示例库：提供适合日语用户的提示词结构、镜头、动作、角色和声音示例。用于需要日语Seedance提示词范例或本地化参考时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-examples-ko",
+    "title": "Seedance韩语示例库",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance韩语示例库：提供适合韩语用户的提示词结构、镜头、动作、角色和声音示例。用于需要韩语Seedance提示词范例或本地化参考时。",
+    "whenToUse": "Seedance韩语示例库：提供适合韩语用户的提示词结构、镜头、动作、角色和声音示例。用于需要韩语Seedance提示词范例或本地化参考时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-examples-zh",
+    "title": "Seedance中文示例库",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance中文示例库：提供中文提示词结构、镜头、动作、角色、声音和常见场景示例。用于需要中文Seedance提示词范例与快速套用参考时。",
+    "whenToUse": "Seedance中文示例库：提供中文提示词结构、镜头、动作、角色、声音和常见场景示例。用于需要中文Seedance提示词范例与快速套用参考时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-fight-director",
+    "title": "Seedance打斗导演",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance打斗导演工具：为Seedance 2.0设计具备站位、距离、攻防因果、身体力学、节奏、镜头和打击反馈的动作场面。用于武打、搏斗、兵器和多人战斗视频。",
+    "whenToUse": "Seedance打斗导演工具：为Seedance 2.0设计具备站位、距离、攻防因果、身体力学、节奏、镜头和打击反馈的动作场面。用于武打、搏斗、兵器和多人战斗视频。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-filter",
+    "title": "Seedance提示词过滤",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance提示词过滤工具：检查并清理可能触发平台限制、造成生成失败或降低稳定性的词语与表达，同时尽量保留创作意图。用于提交前的兼容性过滤。",
+    "whenToUse": "Seedance提示词过滤工具：检查并清理可能触发平台限制、造成生成失败或降低稳定性的词语与表达，同时尽量保留创作意图。用于提交前的兼容性过滤。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-interview-short",
+    "title": "Seedance短访谈",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance短访谈工具：用精简结构快速生成短时长口播或采访提示词，控制人物、机位、表情、对白和声音重点。用于社交媒体短采访和简短口播视频。",
+    "whenToUse": "Seedance短访谈工具：用精简结构快速生成短时长口播或采访提示词，控制人物、机位、表情、对白和声音重点。用于社交媒体短采访和简短口播视频。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-interview",
+    "title": "Seedance访谈视频",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance访谈视频工具：设计人物身份、机位、构图、表演、口型、环境、对白、声音和镜头变化，生成自然可信的访谈内容。用于播客、采访、口播和纪录片式视频。",
+    "whenToUse": "Seedance访谈视频工具：设计人物身份、机位、构图、表演、口型、环境、对白、声音和镜头变化，生成自然可信的访谈内容。用于播客、采访、口播和纪录片式视频。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-lighting",
+    "title": "Seedance灯光",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance灯光工具：设计主光、辅光、轮廓光、环境光、色温、方向、强弱、动态变化和材质响应。用于Seedance场景气氛、时间状态和人物塑造。",
+    "whenToUse": "Seedance灯光工具：设计主光、辅光、轮廓光、环境光、色温、方向、强弱、动态变化和材质响应。用于Seedance场景气氛、时间状态和人物塑造。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-motion",
+    "title": "Seedance运动",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance运动工具：描述角色、物体、布料、头发、镜头和环境运动的起因、路径、速度、重量、惯性与结束状态。用于提升动作清晰度和物理可信度。",
+    "whenToUse": "Seedance运动工具：描述角色、物体、布料、头发、镜头和环境运动的起因、路径、速度、重量、惯性与结束状态。用于提升动作清晰度和物理可信度。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-pipeline",
+    "title": "Seedance生产流程",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance生产流程工具：组织需求、参考资产、提示词、模型设置、生成、检查、重试、版本和交付步骤。用于把Seedance任务变成稳定、可复用的完整生产流程。",
+    "whenToUse": "Seedance生产流程工具：组织需求、参考资产、提示词、模型设置、生成、检查、重试、版本和交付步骤。用于把Seedance任务变成稳定、可复用的完整生产流程。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-prompt-short",
+    "title": "Seedance精简提示词",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance精简提示词工具：在有限字数内保留主体、核心动作、镜头、场景和关键限制，输出直接可用的短提示词。用于快速生成或模型更偏好简洁输入时。",
+    "whenToUse": "Seedance精简提示词工具：在有限字数内保留主体、核心动作、镜头、场景和关键限制，输出直接可用的短提示词。用于快速生成或模型更偏好简洁输入时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-prompt",
+    "title": "Seedance完整提示词",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance完整提示词工具：把创意整理为包含主体、场景、动作、镜头、光线、声音、节奏、连续性和限制条件的生成级提示词。用于复杂或高质量Seedance视频生成。",
+    "whenToUse": "Seedance完整提示词工具：把创意整理为包含主体、场景、动作、镜头、光线、声音、节奏、连续性和限制条件的生成级提示词。用于复杂或高质量Seedance视频生成。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-recipes",
+    "title": "Seedance配方库",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance配方库：提供常见题材、镜头、动作、访谈、产品、叙事和视觉风格的可复用组合方法。用于快速选择成熟结构并按任务调整。",
+    "whenToUse": "Seedance配方库：提供常见题材、镜头、动作、访谈、产品、叙事和视觉风格的可复用组合方法。用于快速选择成熟结构并按任务调整。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-sequence",
+    "title": "Seedance镜头序列",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance镜头序列工具：规划多镜头或多段视频中的动作承接、空间方向、信息递进、节奏、转场和状态连续性。用于连续叙事、分段生成和长序列设计。",
+    "whenToUse": "Seedance镜头序列工具：规划多镜头或多段视频中的动作承接、空间方向、信息递进、节奏、转场和状态连续性。用于连续叙事、分段生成和长序列设计。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-style",
+    "title": "Seedance风格",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance风格工具：把抽象审美转化为色彩、材质、光线、镜头、造型、渲染和运动特征，并保持跨镜头统一。用于视觉风格设定与风格一致性控制。",
+    "whenToUse": "Seedance风格工具：把抽象审美转化为色彩、材质、光线、镜头、造型、渲染和运动特征，并保持跨镜头统一。用于视觉风格设定与风格一致性控制。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-troubleshoot",
+    "title": "Seedance故障排查",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance故障排查工具：诊断人物漂移、动作失真、镜头混乱、口型问题、画面污染、闪烁和生成失败，并给出最小重试方案。用于结果异常或需要定向修复时。",
+    "whenToUse": "Seedance故障排查工具：诊断人物漂移、动作失真、镜头混乱、口型问题、画面污染、闪烁和生成失败，并给出最小重试方案。用于结果异常或需要定向修复时。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-vfx",
+    "title": "Seedance视觉特效",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance视觉特效工具：编排能量、烟雾、火焰、破坏、粒子、光效和环境交互的发生阶段、运动规律、材质与镜头关系。用于Seedance特效镜头与奇观场面。",
+    "whenToUse": "Seedance视觉特效工具：编排能量、烟雾、火焰、破坏、粒子、光效和环境交互的发生阶段、运动规律、材质与镜头关系。用于Seedance特效镜头与奇观场面。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-vocab-en",
+    "title": "Seedance英语词汇库",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance英语词汇库：整理英语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于英文提示词编写、翻译和词汇选择。",
+    "whenToUse": "Seedance英语词汇库：整理英语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于英文提示词编写、翻译和词汇选择。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-vocab-es",
+    "title": "Seedance西班牙语词汇库",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance西班牙语词汇库：整理西班牙语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于西班牙语提示词编写与本地化。",
+    "whenToUse": "Seedance西班牙语词汇库：整理西班牙语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于西班牙语提示词编写与本地化。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-vocab-ja",
+    "title": "Seedance日语词汇库",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance日语词汇库：整理日语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于日语提示词编写与本地化。",
+    "whenToUse": "Seedance日语词汇库：整理日语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于日语提示词编写与本地化。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-vocab-ko",
+    "title": "Seedance韩语词汇库",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance韩语词汇库：整理韩语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于韩语提示词编写与本地化。",
+    "whenToUse": "Seedance韩语词汇库：整理韩语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于韩语提示词编写与本地化。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-vocab-ru",
+    "title": "Seedance俄语词汇库",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance俄语词汇库：整理俄语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于俄语提示词编写与本地化。",
+    "whenToUse": "Seedance俄语词汇库：整理俄语环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于俄语提示词编写与本地化。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-vocab-zh",
+    "title": "Seedance中文词汇库",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance中文词汇库：整理中文环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于中文提示词编写、改写和专业词汇选择。",
+    "whenToUse": "Seedance中文词汇库：整理中文环境下常用的镜头、动作、表演、光线、材质、声音和风格表达。用于中文提示词编写、改写和专业词汇选择。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "semantic-concept-poster",
+    "title": "语义概念海报",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "语义概念海报工具：把词语、短句、字母、人物、物体或参考图的含义转化为高概念视觉隐喻、构图和海报提示词。用于封面、主视觉、概念海报和符号化创意。",
+    "whenToUse": "语义概念海报工具：把词语、短句、字母、人物、物体或参考图的含义转化为高概念视觉隐喻、构图和海报提示词。用于封面、主视觉、概念海报和符号化创意。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "shot-information-progression",
+    "title": "镜头信息递进",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "镜头信息递进工具：规划每个镜头新增、保留或揭示的信息，避免重复表达和信息跳跃，并控制悬念、升级、转折与回报。用于镜头序列、预告片和短视频结构优化。",
+    "whenToUse": "镜头信息递进工具：规划每个镜头新增、保留或揭示的信息，避免重复表达和信息跳跃，并控制悬念、升级、转折与回报。用于镜头序列、预告片和短视频结构优化。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "sophia-mode",
+    "title": "Sophia运行模式",
+    "category": "execution",
+    "platforms": [],
+    "description": "Sophia运行模式：维护风险感知、诚实归因、价值门控、主动性边界、记忆卫生和知识胶囊式能力成长。用于需要稳定人格、审慎执行和长期自我维护的Agent工作。",
+    "whenToUse": "Sophia运行模式：维护风险感知、诚实归因、价值门控、主动性边界、记忆卫生和知识胶囊式能力成长。用于需要稳定人格、审慎执行和长期自我维护的Agent工作。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "think-one-step-further",
+    "title": "多想一步",
+    "category": "execution",
+    "platforms": [],
+    "description": "多想一步工具：在完成表面需求后检查底层原因、相邻问题、系统性影响、可复用机会和下一步价值。用于举一反三、整体优化、方案复核和避免只修局部问题。",
+    "whenToUse": "多想一步工具：在完成表面需求后检查底层原因、相邻问题、系统性影响、可复用机会和下一步价值。用于举一反三、整体优化、方案复核和避免只修局部问题。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "vfx-effect-construction-engine",
+    "title": "视觉特效构建引擎",
+    "category": "knowledge",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "视觉特效构建引擎：把粒子、流体、烟火、破坏、能量、光线、碎片和环境交互拆成可控制的结构、阶段、材质与运动参数。用于构建和审查复杂特效镜头。",
+    "whenToUse": "视觉特效构建引擎：把粒子、流体、烟火、破坏、能量、光线、碎片和环境交互拆成可控制的结构、阶段、材质与运动参数。用于构建和审查复杂特效镜头。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "video-structure-design",
+    "title": "视频宏观结构",
+    "category": "video",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "视频宏观结构工具：在写剧本和分镜前规划钩子、首帧、留存曲线、节拍顺序、信息释放、升级、转折、回报和循环结构。用于短视频、广告、MV和叙事视频结构设计。",
+    "whenToUse": "视频宏观结构工具：在写剧本和分镜前规划钩子、首帧、留存曲线、节拍顺序、信息释放、升级、转折、回报和循环结构。用于短视频、广告、MV和叙事视频结构设计。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "visual-calibration-loop",
+    "title": "视觉校准循环",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "视觉校准循环工具：基于剧本、镜头表、品牌内容或已有生成结果，持续比较目标与输出，校准角色、构图、色彩、材质、光线、风格和镜头一致性。用于多轮视觉迭代。",
+    "whenToUse": "视觉校准循环工具：基于剧本、镜头表、品牌内容或已有生成结果，持续比较目标与输出，校准角色、构图、色彩、材质、光线、风格和镜头一致性。用于多轮视觉迭代。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "visual-reference-vocabulary",
+    "title": "视觉参考词汇",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "视觉参考词汇工具：主动发现、推荐并保存导演、影片、工作室、摄影师、艺术家、镜头、材质和风格等高密度视觉锚点。用于把模糊审美转成明确且可搜索的参考语言。",
+    "whenToUse": "视觉参考词汇工具：主动发现、推荐并保存导演、影片、工作室、摄影师、艺术家、镜头、材质和风格等高密度视觉锚点。用于把模糊审美转成明确且可搜索的参考语言。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "visual-style-aesthetic-direction",
+    "title": "视觉风格与审美导演",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "视觉风格与审美导演工具：为摄影、电影、插画、动画、三维、平面、产品、时尚和建筑等方向建立高级视觉风格系统。用于风格探索、审美统筹和提示词视觉方向设计。",
+    "whenToUse": "视觉风格与审美导演工具：为摄影、电影、插画、动画、三维、平面、产品、时尚和建筑等方向建立高级视觉风格系统。用于风格探索、审美统筹和提示词视觉方向设计。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "windows-safe-cleanup",
+    "title": "Windows安全清理",
+    "category": "execution",
+    "platforms": [],
+    "description": "Windows安全清理工具：审计并安全清理磁盘压力、临时文件、浏览器缓存、开发缓存、回收站和显卡着色器缓存，同时验证目标路径并避免误删。用于Windows空间清理和存储维护。",
+    "whenToUse": "Windows安全清理工具：审计并安全清理磁盘压力、临时文件、浏览器缓存、开发缓存、回收站和显卡着色器缓存，同时验证目标路径并避免误删。用于Windows空间清理和存储维护。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "short-drama-scriptwriting",
+    "title": "短剧编剧与终审",
+    "category": "writing",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "创作、改写、续写和终审付费短剧、竖屏短剧与漫剧（国内或海外；完整创作与立项前先确认目标市场），覆盖创意立项、故事梗概、人物关系、项目大纲、分集大纲、平台试稿、剧本正文、自然口语、人声区分、潜台词、情绪节奏、场景活性、感情线拉扯与 CP 推进、多线后宫关系、高信息密度对白、强交锋、矛盾升级、反转、付费卡点、集末留存、伏笔回收、跨集连续性和游戏/IP改编。Use when the assistant needs to develop an incomplete story idea, diagnose or rewrite a boring or AI-sounding short-drama script, humanize dialogue and emotion, strengthen weak romance or push-pull tension between leads, intensify conflict without making characters robotic, design hooks or paywall beats, prepare pitch materials, produce episode outlines or production-ready scene scripts, or review male-audience/female-a",
+    "whenToUse": ">**付费短剧 / 漫剧编剧与终审技能包（国内 / 海外）** 面向付费短剧、竖屏短剧与漫剧的创作、改写、续写与终审全流程。帮你把不完整的故事点，一步步推进为 \"剧情有活性、台词像真人、情绪有潜台词、每集有留存拉力\" 的成品剧本。 核心能力包括： - **立项到正文**：概念锻造、故事与人物发动机、全剧留存架构、分集规划、场景正文，覆盖付费卡点链与集末钩子设计； - **感情线与 CP 推进**：双人发动机、推拉与亲密度阶梯、强势方软肋外显、藏漏明表达，强化虐恋、甜宠、追妻、病娇、强制爱、破镜重圆等多类型拉扯感； - **对白与人声**：自然口语、潜台词、人物声纹区分、高信息密度交锋，去 AI",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "director-seedance-prompt",
+    "title": "Seedance 分镜提示词编译",
+    "category": "video",
+    "platforms": [
+      "Seedance",
+      "GPT Image"
+    ],
+    "description": "Compile stories, scripts, references, storyboards, or accepted prompts into cinematic Seedance video prompts; direct performance, camera, light, sound, continuity, and bounded revisions. Use for 分镜、视频提示词、Seedance、提示词续写/修尾、对白与动作调度、剧情演唱与翻唱导演、表情管理与微表演、参考素材编译、静态资产预制、角色板及光影运镜规则反推；also adapt to an explicitly named video model.",
+    "whenToUse": "将剧本编译为连贯的视频提示词，统筹调度、运镜、表演与声音。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "reference-lut-generator",
+    "title": "参考视频 LUT 生成",
+    "category": "knowledge",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "根据用户提供的参考视频、视频链接或参考图提取关键帧和色彩风格，收集待调色的视频片段或图片，生成可复用的 .cube LUT、参考/原片/效果三栏对比与完整交付包。用于参考调色、风格匹配、LUT 制作；不用于视频分镜反推或仅生成调色提示词。",
+    "whenToUse": "根据参考视频或图片提炼色彩风格，制作可复用 LUT 与效果对比。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "viral-screenwriter",
+    "title": "爆款编剧",
+    "category": "writing",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "爆款编剧skill（本地版）。以《The Coffee Break Screenwriter》及书库方法共创人物、因果反转和对白，支持故事开发、直接成稿、续写、定点修改及参考片研究，分批交付标准中文Markdown剧本；直接在本地项目工作，按需与导演Skill交接。",
+    "whenToUse": "在本地项目开发人物、因果反转与对白，交付标准中文剧本。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "mr-li-seedance-25",
+    "title": "Seedance 2.5 导演版",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "安装或本机首次启用先显示固定署名与特别鸣谢。引导用户确认剧本、制作范围，按剧本推荐并自定义审美基调，按真实表演容量编写 Seedance 提示词，制作与分类资产、返工并交付。适用于逐步选择或按已确认方案连续执行、保持对白与连续性、整理总素材库及分集分场文件夹的任务。",
+    "whenToUse": "从剧本到分镜，编写 Seedance 视频提示词。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "almendros-cinematography",
+    "title": "阿尔门德罗斯摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 almendros 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 almendros 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "anamorphic-look",
+    "title": "变形宽银幕质感",
+    "category": "video",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "Write the anamorphic-lens block for image and video generation prompts: focal choice, oval bokeh, horizontal flares, strong-blur anchoring, film stock and the tech tail. Use when a prompt mentions anamorphic, анаморф, 24/35/40 мм, размытие, флэры, film still.",
+    "whenToUse": "Write lens-look prompt blocks using focal choice, oval bokeh, motivated flares, blur anchoring, film texture and camera placement.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cardiff-cinematography",
+    "title": "卡迪夫摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 cardiff 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 cardiff 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cg-mythic-beast-character",
+    "title": "CG 神话巨兽角色",
+    "category": "image",
+    "platforms": [
+      "Midjourney"
+    ],
+    "description": "Generate compact Midjourney 8.2 prompts for stylized 3D anime CGI mythic-beast characters with porcelain anime faces, dominant silver-white groomed fur, luminous elemental energy, spectral beast spirits, and cinematic lighting. Use for white fox, dragon, Vermilion Bird, Azure Dragon, White Tiger, Black Tortoise, other Eastern fantasy beasts, male or female deities, wallpapers, character renders, and requests mentioning 超写实CG神兽、兽耳、神兽少女、神兽男神、白虎、朱雀、龙族 or the white-fur CG style.",
+    "whenToUse": "Generate compact Midjourney 8.2 prompts for stylized 3D anime CGI mythic-beast characters with porcelain anime faces, dominant silver-white groomed fur, luminous elemental energy, spectral beast spirits, and cinematic lighting. Use for white fox, dragon, Vermilion Bird, Azure Dragon, White Tiger, Bl",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-agnes-varda",
+    "title": "阿涅斯·瓦尔达风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用阿涅斯·瓦尔达（Agnès Varda）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用阿涅斯·瓦尔达（Agnès Varda）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-akira-kurosawa",
+    "title": "黑泽明风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用黑泽明（Akira Kurosawa）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用黑泽明（Akira Kurosawa）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-alfred-hitchcock",
+    "title": "希区柯克风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用阿尔弗雷德·希区柯克（Alfred Hitchcock）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用阿尔弗雷德·希区柯克（Alfred Hitchcock）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-andrei-tarkovsky",
+    "title": "塔可夫斯基风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用安德烈·塔可夫斯基（Andrei Tarkovsky）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用安德烈·塔可夫斯基（Andrei Tarkovsky）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-bong-joon-ho",
+    "title": "奉俊昊风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用奉俊昊（Bong Joon-ho）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用奉俊昊（Bong Joon-ho）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-chantal-akerman",
+    "title": "香特尔·阿克曼风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用香特尔·阿克曼（Chantal Akerman）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用香特尔·阿克曼（Chantal Akerman）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-christopher-nolan",
+    "title": "诺兰风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用克里斯托弗·诺兰（Christopher Nolan）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用克里斯托弗·诺兰（Christopher Nolan）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-david-fincher",
+    "title": "大卫·芬奇风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用大卫·芬奇（David Fincher）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用大卫·芬奇（David Fincher）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-denis-villeneuve",
+    "title": "维伦纽瓦风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用丹尼斯·维伦纽瓦（Denis Villeneuve）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用丹尼斯·维伦纽瓦（Denis Villeneuve）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-edward-yang",
+    "title": "杨德昌风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用杨德昌（Edward Yang）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用杨德昌（Edward Yang）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-federico-fellini",
+    "title": "费里尼风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用费德里科·费里尼（Federico Fellini）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用费德里科·费里尼（Federico Fellini）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-hirokazu-koreeda",
+    "title": "是枝裕和风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用是枝裕和（Hirokazu Kore-eda）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用是枝裕和（Hirokazu Kore-eda）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-hou-hsiao-hsien",
+    "title": "侯孝贤风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用侯孝贤（Hou Hsiao-hsien）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用侯孝贤（Hou Hsiao-hsien）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-ingmar-bergman",
+    "title": "伯格曼风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用英格玛·伯格曼（Ingmar Bergman）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用英格玛·伯格曼（Ingmar Bergman）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-megastructure",
+    "title": "电影感巨型结构",
+    "category": "image",
+    "platforms": [
+      "Midjourney"
+    ],
+    "description": "Generate compact Midjourney 8.2 prompts for cinematic live-action megastructure compositions with an overwhelming scale contrast, at least 40 percent negative space, cropped monumental forms, tiny silhouettes for scale, atmospheric perspective, one soft light source, and a restrained monochromatic palette. Use for 巨构、超级建筑、巨物、大场景、电影感构图、轨道电梯、方舟、太空设施, or inputs such as 大:巨物 小:人物.",
+    "whenToUse": "Generate compact Midjourney 8.2 prompts for cinematic live-action megastructure compositions with an overwhelming scale contrast, at least 40 percent negative space, cropped monumental forms, tiny silhouettes for scale, atmospheric perspective, one soft light source, and a restrained monochromatic p",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-park-chan-wook",
+    "title": "朴赞郁风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用朴赞郁（Park Chan-wook）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用朴赞郁（Park Chan-wook）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-pedro-almodovar",
+    "title": "阿莫多瓦风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用佩德罗·阿莫多瓦（Pedro Almodóvar）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用佩德罗·阿莫多瓦（Pedro Almodóvar）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-sergio-leone",
+    "title": "赛尔乔·莱昂内风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用赛尔乔·莱昂内（Sergio Leone）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用赛尔乔·莱昂内（Sergio Leone）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-sofia-coppola",
+    "title": "索菲亚·科波拉风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用索菲亚·科波拉（Sofia Coppola）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用索菲亚·科波拉（Sofia Coppola）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-stanley-kubrick",
+    "title": "库布里克风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用斯坦利·库布里克（Stanley Kubrick）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用斯坦利·库布里克（Stanley Kubrick）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-terrence-malick",
+    "title": "马力克风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用泰伦斯·马力克（Terrence Malick）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用泰伦斯·马力克（Terrence Malick）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-wes-anderson",
+    "title": "韦斯·安德森风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用韦斯·安德森（Wes Anderson）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用韦斯·安德森（Wes Anderson）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-wong-kar-wai",
+    "title": "王家卫风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用王家卫（Wong Kar-wai）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用王家卫（Wong Kar-wai）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-yasujiro-ozu",
+    "title": "小津安二郎风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用小津安二郎（Yasujirō Ozu）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用小津安二郎（Yasujirō Ozu）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-zhang-yimou",
+    "title": "张艺谋风格单帧",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "使用张艺谋（Zhang Yimou）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "whenToUse": "使用张艺谋（Zhang Yimou）的构图、光线、色彩与人物关系，生成原创电影单帧或生图提示词。适用于用户指定这位导演视觉语言的电影静帧、关键帧与单镜分镜图；默认2.35:1。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "coutard-cinematography",
+    "title": "库塔尔摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 coutard 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 coutard 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "doyle-cinematography",
+    "title": "杜可风摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 doyle 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 doyle 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "emmanuel-lubezki-cinematography",
+    "title": "卢贝兹基摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 emmanuel-lubezki 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 emmanuel-lubezki 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "fraser-cinematography",
+    "title": "弗雷泽摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 fraser 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 fraser 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "hall-cinematography",
+    "title": "霍尔摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 hall 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 hall 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "higgsfield-acting-director",
+    "title": "Higgsfield 表演导演",
+    "category": "video",
+    "platforms": [
+      "Higgsfield"
+    ],
+    "description": "Write ACTING TASK blocks for AI video prompts (Seedance on Higgsfield) so characters read alive instead of glassy or over-acted. Use WHENEVER a prompt or scene needs acting direction: a reaction, a discovery, dialogue delivery, an emotional beat, a listener, \"make the eyes alive\", or when a generated character looks dead, frozen, flat or overplayed. Works with higgsfield-seedance-prompt-writer: this skill writes the performance, that one writes the shots.",
+    "whenToUse": "Build acting tasks from scene direction, motive, goal, obstacle, tactic and purposeful eye-work.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "higgsfield-acting-skill",
+    "title": "Higgsfield 表演方法",
+    "category": "video",
+    "platforms": [
+      "Higgsfield"
+    ],
+    "description": "Tigran's method for writing ACTING TASK blocks in AI video prompts (Seedance / Higgsfield) and for directing character performance in any scene work. Use WHENEVER a prompt or scene needs character acting direction — dialogue delivery, emotional beats, \"make the eyes alive,\" listening behavior, reaction shots — or when the user says a character reads dead, glassy, flat, or over-acted. These definitions are bespoke (Tigran's directing school); do NOT substitute textbook craft definitions. Companion to tig-scene-engine (structure level); this skill is the performance level.",
+    "whenToUse": "Direct character performance through scene goals, motives, obstacles, tactics, eye-work and moment-to-moment dialogue beats.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "higgsfield-fight-scene",
+    "title": "Higgsfield 打戏编排",
+    "category": "video",
+    "platforms": [
+      "Higgsfield"
+    ],
+    "description": "higgsfield-fight-scene — a Jeet Kune Do fight choreographer for video prompts. Always activate when a fight scene mentions Jeet Kune Do, JKD, or Bruce Lee's style, or when Victor requests a fight scene, brawl, combat sequence, intercepted strike, or fight choreography in this style — in any prompt format (Seedance, Higgsfield, image prompts) and in any language, even without the word prompt. Also activate when Victor supplies JKD books, manuals, video tutorials, or fight analyses: these are material for the skill's knowledge base (the INGEST protocol). The skill turns a scene into authentic JK",
+    "whenToUse": "Choreograph cinematic fight scenes using readable action geometry, timing, camera placement and the supplied movement references.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "higgsfield-prompt-engine",
+    "title": "Higgsfield 剧本提示词引擎",
+    "category": "writing",
+    "platforms": [
+      "Higgsfield"
+    ],
+    "description": "Write and audit screenplay scenes and sequences using a five-element dramatic engine — Goal, Obstacle, Tactic, Reversal, Value Shift — with very specific custom definitions (see the body; these are NOT textbook definitions and must be applied exactly as written). Use whenever the user wants to write a new scene, draft scene options, develop a sequence, OR audit/test/diagnose an existing scene, sequence, outline, or full script for structural strength. Trigger on phrases like \"write this scene,\" \"give me an option for,\" \"audit my scene,\" \"test this against goal/obstacle/tactic/reversal/value sh",
+    "whenToUse": "Write and audit dramatic scenes through Goal, Obstacle, Tactic, Reversal and Value Shift, using the definitions in the source document.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "higgsfield-seedance-prompt-writer",
+    "title": "Higgsfield Seedance 提示词",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Seedance 2.5 prompt-writing system. Use whenever the user wants to write a Seedance prompt, build a cinematic shot or scene, turn an idea or script beat into a prompt, set up references/assets (Higgsfield Elements), turn a storyboard into a timed 30-second prompt, fix one detail in a take, or asks about Seedance prompting technique. Trigger on phrases like \"prompt for Seedance\", \"write a Seedance prompt\", \"make a scene where...\", \"build a shot\", \"how to write a Seedance prompt\". Output is a single standalone prompt. Always consult this skill before writing any Seedance prompt.",
+    "whenToUse": "Write timed video prompts with reference binding, shot geometry, action continuity and end states.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "hoytema-cinematography",
+    "title": "霍伊特玛摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 hoytema 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 hoytema 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "khondji-cinematography",
+    "title": "孔迪摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 khondji 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 khondji 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "mark-lee-pingbing-cinematography",
+    "title": "李屏宾摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 mark-lee-pingbing 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 mark-lee-pingbing 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "nykvist-cinematography",
+    "title": "尼克维斯特摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 nykvist 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 nykvist 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "prieto-cinematography",
+    "title": "普列托摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 prieto 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 prieto 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "richardson-cinematography",
+    "title": "理查森摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 richardson 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 richardson 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "ryan-cinematography",
+    "title": "瑞安摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 ryan 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 ryan 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seale-cinematography",
+    "title": "希尔摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 seale 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 seale 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "seedance-2-5-prompting",
+    "title": "Seedance 2.5 提示词",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "Write prompts for Seedance 2.5 / Dreamina 2.5 video generation, editing, and extension. Use whenever the target model is Seedance 2.5, or when the task needs any 2.5-only capability — up to 50 reference materials with @Image N / @Video N / @Audio N role mapping, videos up to 30 seconds structured as stages with end states, video editing (subject swap, background replacement, audio edits), forward/backward video extension, multi-keyframe sequences, storyboard grids, blockout rendering, one-click video, and seamless transitions. Triggers on Seedance 2.5, Dreamina 2.5, 30-second video prompt, mul",
+    "whenToUse": "Write prompts for Seedance 2.5 / Dreamina 2.5 video generation, editing, and extension. Use whenever the target model is Seedance 2.5, or when the task needs any 2.5-only capability — up to 50 reference materials with @Image N / @Video N / @Audio N role mapping, videos up to 30 seconds structured as",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "space-perspective-expression",
+    "title": "空间透视表达",
+    "category": "image",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "用数学、物理和化学三层方法，把空间透视图、场景设定或图片生成需求写成结构清晰、具有空间深度和材质逻辑的文字提示。Use for requests emphasizing spatial perspective, layered environments, architectural depth, or consistent lighting and materials; not every image prompt.",
+    "whenToUse": "用数学、物理和化学三层方法，把空间透视图、场景设定或图片生成需求写成结构清晰、具有空间深度和材质逻辑的文字提示。Use for requests emphasizing spatial perspective, layered environments, architectural depth, or consistent lighting and materials; not every image prompt.",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "storaro-cinematography",
+    "title": "斯托拉罗摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 storaro 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 storaro 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "suno-music-prompts",
+    "title": "Suno 音乐提示词",
+    "category": "execution",
+    "platforms": [
+      "Suno"
+    ],
+    "description": "Suno AI v5.5 音乐提示词专家（2026-03-27 规范对齐）。覆盖 Voices 个人声模型、Custom Models 自定义模型、My Taste 偏好学习、颗粒化参数（BPM / Key / Instrumentation / Weirdness / Style Influence / Section Steering）、Stems 分轨与 MIDI 导出。内嵌专业音乐知识图谱（246 条曲风 × 19 大类、24 种语言、80 个人声标签、799 条乐器×技法 × 17 个家族、20 种曲式结构），覆盖流行、摇滚、电子、嘻哈、爵士、古典、民谣、金属、国风、拉丁、世界音乐、中国传统乐器等全品类。当用户提及「Suno提示词、Suno v5.5、Suno风格标签、AI音乐生成、Suno prompt、音乐风格标签、写一首歌、AI作曲、Suno创作、生成音乐、AI编曲、Voices 声音模型、Custom Models、Stems 分轨、Section Steering」时触发。",
+    "whenToUse": "Suno AI v5.5 音乐提示词专家（2026-03-27 规范对齐）。覆盖 Voices 个人声模型、Custom Models 自定义模型、My Taste 偏好学习、颗粒化参数（BPM / Key / Instrumentation / Weirdness / Style Influence / Section Steering）、Stems 分轨与 MIDI 导出。内嵌专业音乐知识图谱（246 条曲风 × 19 大类、24 种语言、80 个人声标签、799 条乐器×技法 × 17 个家族、20 种曲式结构），覆盖流行、摇滚、电子、嘻哈、爵士、古典、民谣、金属、国风、拉丁、世界音乐、",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "toland-cinematography",
+    "title": "托兰摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 toland 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 toland 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "video-shotcraft",
+    "title": "产品视频镜头工艺",
+    "category": "video",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says \"use video-shotcraft to make a video/promo\", names the Ink Press template or asks to reproduce its effect, or wants a single shot card's motion. 用镜头配方卡 + 已验收模板 + 代码/音频资产制作电影感产品视频（Remotion + 真实页面截图 + 2.5D 运镜 + 节奏卡点 + 声音设计）。当用户要求\"用 video-shotcraft 做视频/宣传片\"、把前端项目/网页做成产品视频、点名 Ink Press 模板或要求复刻模板片效果，或要用镜头卡做单个动效镜头时使用。",
+    "whenToUse": "Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "willis-cinematography",
+    "title": "威利斯摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 willis 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 willis 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "wonghowe-cinematography",
+    "title": "黄宗霑摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 wonghowe 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 wonghowe 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "young-cinematography",
+    "title": "弗雷迪·扬摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 young 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "为明确请求 young 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "track-cross-platform-hotspots",
+    "title": "跨平台热点追踪",
+    "category": "execution",
+    "platforms": [],
+    "description": "Fully automatic, profile-driven monitoring of news, trends, releases, research, products, and public signals across independent platforms. Use when Codex needs to create a daily or ad-hoc hotspot brief, identify the main story reported by multiple platforms, monitor selected interest directions, change a user's focus profile, or turn mixed links/feeds/search results into a verified cross-platform consensus report.",
+    "whenToUse": "Fully automatic, profile-driven monitoring of news, trends, releases, research, products, and public signals across independent platforms. Use when Codex needs to create a daily or ad-hoc hotspot brief, identify the main story reported by multiple platforms, monitor selected interest directions, cha",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "roger-deakins-cinematography",
+    "title": "罗杰·迪金斯摄影风格",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Stable Diffusion",
+      "GPT Image"
+    ],
+    "description": "为明确请求 roger-deakins 摄影风格或其对应摄影师视觉语言的任务编写图片/视频提示词、分析构图与色彩、设计打光。泛泛的电影感或自然光需求不单独触发；按场景选择技法并尊重用户指定的时代、主体和模型。",
+    "whenToUse": "罗杰·迪金斯（Roger Deakins）摄影风格大师。涵盖其标志性摄影语言的完整知识体系：自然主义打光、 极简构图、阴影叙事、建筑框架、克制运镜、色彩情感、层次氛围等 10 大核心技法，以及覆盖 40+ 部 代表作的视觉分析。提供可直接用于 AI 图像/视频生成的迪金斯风格提示词模板，适用于 Midjourney、 Stable Diffusion、FLUX、DALL-E、Nano Banana Pro、ZenStudio 等工具。 当提及「迪金斯风格、Roger Deakins style、Deakins lighting、银翼杀手摄影、1917摄影、 Skyfall摄影、自然主义打光、m",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "direct-seedance-2-5-prompts",
+    "title": "Seedance 2.5 投喂稿",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "将已确定的剧本片段、镜头方案、多模态参考、前段视频状态或成片问题，转译为可直接使用的 Seedance 2.5 正式提示词。用于用户明确要求 Seedance 2.5 Prompt、投喂稿、连续生成、参考视频转制、局部或整段编辑、成片返修；不用于尚未定稿的故事开发、单纯分镜讨论，也不直接生成视频。",
+    "whenToUse": "将已确定的剧本片段、镜头方案、多模态参考、前段视频状态或成片问题，转译为可直接使用的 Seedance 2.5 正式提示词。用于用户明确要求 Seedance 2.5 Prompt、投喂稿、连续生成、参考视频转制、局部或整段编辑、成片返修；不用于尚未定稿的故事开发、单纯分镜讨论，也不直接生成视频。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cinematic-director",
+    "title": "电影导演与预演总控",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "Acts as a director and previs supervisor for film, video, and AI filmmaking. Turns scripts, prose, briefs, or existing image and video assets into production deliverables — subtext breakdown, beat sheet, director's book, blocking and staging, shot list with coverage, keyframe and storyboard prompts, image-to-video motion prompts, sound and dialogue plans, edit timelines, continuity bibles, and QC repair notes. Carries genre playbooks, a controlled prompt lexicon, a coded failure-diagnosis manual, and capability-first adapters for current video and image models. Optionally applies one named dir",
+    "whenToUse": "Acts as a director and previs supervisor for film, video, and AI filmmaking. Turns scripts, prose, briefs, or existing image and video assets into production deliverables — subtext breakdown, beat sheet, director's book, blocking and staging, shot list with coverage, keyframe and storyboard prompts,",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "leos-six-department-directing-team-skill-v1",
+    "title": "六部门导演组",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "AI 长片、AI 剧集与叙事视频的六角色导演组 Skill。以总导演、表演指导、镜内执行导演、摄影指导、提示词导演和场记/连续性监督协作，把剧本、资产、分镜、提示词、视频或时间线转化为场次设计、摄影方案、5000 字内结构化纯文本视频提示词、逐角色逐镜审稿、连续性记录、最小返工及项目风格沉淀。用户需要分职位会诊、在明确授权后生成视频提示词、审核镜头与摄影语言或从生成记录更新方法时使用。不处理现实制作中的人员分工、排期、交付节奏或项目风险管理。",
+    "whenToUse": "AI 长片、AI 剧集与叙事视频的六角色导演组 Skill。以总导演、表演指导、镜内执行导演、摄影指导、提示词导演和场记/连续性监督协作，把剧本、资产、分镜、提示词、视频或时间线转化为场次设计、摄影方案、5000 字内结构化纯文本视频提示词、逐角色逐镜审稿、连续性记录、最小返工及项目风格沉淀。用户需要分职位会诊、在明确授权后生成视频提示词、审核镜头与摄影语言或从生成记录更新方法时使用。不处理现实制作中的人员分工、排期、交付节奏或项目风险管理。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "short-drama-storyboard",
+    "title": "短剧分镜改写",
+    "category": "storyboard",
+    "platforms": [
+      "模型中立"
+    ],
+    "description": "将短剧、演绎剧或解说剧剧本改编为可独立投喂 AI 视频模型的逐镜提示词。严格使用“人物/场景/影调光影/空间与轴线/[分镜N]”格式，保留原台词，设计具体表演、专业镜头调度、声音与跨组连续性。用于创作、扩写和修订短剧分镜提示词；不用于仅提取角色资产或直接生成成片。",
+    "whenToUse": "将短剧、演绎剧或解说剧剧本改编为可独立投喂 AI 视频模型的逐镜提示词。严格使用“人物/场景/影调光影/空间与轴线/[分镜N]”格式，保留原台词，设计具体表演、专业镜头调度、声音与跨组连续性。用于创作、扩写和修订短剧分镜提示词；不用于仅提取角色资产或直接生成成片。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "cg-cinematic-prompts",
+    "title": "顶级 CG 电影质感",
+    "category": "image",
+    "platforms": [
+      "Midjourney",
+      "Seedance"
+    ],
+    "description": "顶级 CG 电影质感（银黑高反差、液态金属墨流爆发、狂风长发）的 MJ v8.2 生图提示词批量生产，并根据定稿图和用户想法出 30 秒 Seedance 2.5 电影级视频提示词。用户提到 CG 风格提示词、MJ 批量出图、图生视频 30 秒时使用。",
+    "whenToUse": "顶级 CG 电影质感（银黑高反差、液态金属墨流爆发、狂风长发）的 MJ v8.2 生图提示词批量生产，并根据定稿图和用户想法出 30 秒 Seedance 2.5 电影级视频提示词。用户提到 CG 风格提示词、MJ 批量出图、图生视频 30 秒时使用。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "direct-seedance-2-5-prompts-z",
+    "title": "Seedance 2.5 投喂稿（六栏版）",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "将已确定的剧本片段、镜头方案、多模态参考、前段视频状态或成片问题，转译为可直接使用的 Seedance 2.5 六栏正式提示词（投喂稿改良版 z）。用于用户明确要求 Seedance 2.5 Prompt、投喂稿、连续生成、参考视频转制、局部或整段编辑、成片返修；不用于尚未定稿的故事开发、单纯分镜讨论，也不直接生成视频。",
+    "whenToUse": "将已确定的剧本片段、镜头方案、多模态参考、前段视频状态或成片问题，转译为可直接使用的 Seedance 2.5 六栏正式提示词（投喂稿改良版 z）。用于用户明确要求 Seedance 2.5 Prompt、投喂稿、连续生成、参考视频转制、局部或整段编辑、成片返修；不用于尚未定稿的故事开发、单纯分镜讨论，也不直接生成视频。",
+    "sideEffects": "仅在明确要求时执行，默认只产出文本。"
+  },
+  {
+    "id": "sd25-pe",
+    "title": "Seedance 2.5 提示词优化器（官方）",
+    "category": "video",
+    "platforms": [
+      "Seedance"
+    ],
+    "description": "火山方舟官方 sd25-pe：把原话、小说片段、多模态参考编译成一条可直接提交的 Seedance 2.5 Prompt。覆盖多素材职责、长视频分段、关键帧、宫格分镜、白模、视频编辑/延长、声音编辑。只出 Prompt，不生成视频。",
+    "whenToUse": "要把粗糙想法或长剧本压成一条能直接跑的 Seedance 2.5 提示词时；有多图/视频/音频参考需要绑定职责时；做视频编辑、延长、关键帧控制时。",
+    "sideEffects": "仅输出文本 Prompt，不调用生成接口，不修改素材。"
   }
 ]
